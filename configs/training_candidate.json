@@ -1,5 +1,6 @@
 {
   "status": "candidate; requires student review before official training",
+  "runtime": {"amp_initial_scale": 128.0},
   "benchmark": {"batches": [6, 5, 4], "subset_images": 180, "warmup_steps": 5, "measured_steps": 20},
   "training": {
     "task": "detect", "imgsz": 768, "batch": 6, "epochs": 30,

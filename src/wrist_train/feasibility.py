@@ -59,6 +59,7 @@ def make_trainer(args, directory):
     save_json(directory / "resolved_config.json", settings)
     save_json(directory / "provenance.json", {
         "implementation_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+        "uncommitted_source_changes": bool(subprocess.check_output(["git", "status", "--porcelain", "--", "src/wrist_train", "configs/training_candidate.json"], text=True).strip()),
         "candidate_config_sha256": digest((Path(__file__).resolve().parents[2] / "configs/training_candidate.json").read_bytes()),
         "pretrained_sha256": expected, "split_manifest_sha256": frozen["split_manifest_sha256"]})
     init_seeds(42, deterministic=True)
@@ -113,6 +114,7 @@ def benchmark(args, directory):
     assert finite_tensors(list(trainer.model.parameters()))
     result = {"status": "passed", "purpose": "diagnostic benchmark; not an experiment result",
               "imgsz": 768, "batch": args.batch, "amp_requested": not args.no_amp, "amp_actual": trainer.amp,
+              "amp_initial_scale": candidate()["runtime"]["amp_initial_scale"] if trainer.amp else None,
               "workers": args.workers, "train_subset_images": len(trainer.train_loader.dataset),
               "warmup_steps": plan["warmup_steps"], "measured_steps": len(steady),
               "mean_iteration_s": seconds / len(steady), "median_iteration_s": statistics.median(r["seconds"] for r in steady),
@@ -163,6 +165,7 @@ def smoke(args, directory):
     result = {"status": "passed", "purpose": "one-epoch diagnostic only; not the official baseline",
               "epochs_completed": 1, "training_images": trainer.training_images_seen,
               "train_batches": trainer.train_batches, "imgsz": 768, "batch": args.batch, "amp": trainer.amp,
+              "amp_initial_scale": candidate()["runtime"]["amp_initial_scale"] if trainer.amp else None,
               "workers": args.workers, "optimizer": describe_optimizer(trainer),
               "optimizer_attempts": trainer.optimizer_attempts, "optimizer_updates": trainer.optimizer_updates,
               "parameter_changes": trainer.parameter_changes, "gradient_overflows": trainer.gradient_overflows,
@@ -195,7 +198,8 @@ def main():
     except Exception as error:
         # Never erase a failed attempt or publish non-standard JSON NaN values.
         save_json(directory / "failure.json", {"type": type(error).__name__, "message": str(error),
-                                               "traceback": traceback.format_exc(), "request": vars(args)})
+                                               "traceback": traceback.format_exc(), "request": vars(args),
+                                               "memory": memory_peaks() if torch.cuda.is_initialized() else None})
         raise
     finally:
         gc.collect()

@@ -7,7 +7,7 @@ import subprocess
 import threading
 import time
 
-from .common import OUTPUT, configure_runtime
+from .common import OUTPUT, candidate, configure_runtime
 
 configure_runtime()
 import torch
@@ -95,6 +95,13 @@ class CheckedTrainer(DetectionTrainer):
         self.add_callback("on_val_start", self._start_validation)
         self.add_callback("on_val_batch_end", self._check_validation)
         self.add_callback("on_val_end", self._end_validation)
+
+    def _setup_train(self):
+        super()._setup_train()
+        # Same-batch FP32/AMP checks showed the default 65536 scale overflowed backward.
+        if self.amp:
+            self.scaler = torch.amp.GradScaler("cuda", enabled=True,
+                init_scale=candidate()["runtime"]["amp_initial_scale"])
 
     def _build_train_pipeline(self):
         # Reject the framework's automatic batch halving; candidates must remain explicit.

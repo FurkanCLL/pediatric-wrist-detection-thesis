@@ -27,6 +27,10 @@ def export(benchmark_name, smoke_name):
     save_json(directory / "pretrained_verification.json", json.loads((OUTPUT / "environment/pretrained_verification.json").read_text()))
     save_json(directory / "cuda_wheels.json", json.loads((OUTPUT / "environment/wheel_verification.json").read_text()))
     save_json(directory / "benchmark.json", benchmark)
+    precision = json.loads((OUTPUT / "precision_probe_01/result.json").read_text())
+    for row in precision["results"]:
+        row["nonfinite_gradient_layer_count"] = len(row.pop("nonfinite_gradient_layers"))
+    save_json(directory / "precision_probe.json", precision)
     # Keep diagnostic AP/loss values local: these checkpoints are not study results.
     metrics = smoke.pop("diagnostic_metrics_only")
     smoke["metrics_artifact"] = {"rows": 1, "columns": list(metrics), "all_values_finite": True,
