@@ -1,0 +1,25 @@
+{
+  "status": "candidate; requires student review before official training",
+  "benchmark": {"batches": [6, 5, 4], "subset_images": 180, "warmup_steps": 5, "measured_steps": 20},
+  "training": {
+    "task": "detect", "imgsz": 768, "batch": 6, "epochs": 30,
+    "device": "0", "seed": 42, "deterministic": true, "amp": true,
+    "optimizer": "AdamW", "lr0": 0.001, "lrf": 0.01, "momentum": 0.9,
+    "weight_decay": 0.0005, "nbs": 24, "warmup_epochs": 1.0,
+    "warmup_momentum": 0.8, "warmup_bias_lr": 0.0, "cos_lr": true,
+    "patience": 0, "workers": 2, "cache": false, "rect": false,
+    "multi_scale": 0.0, "compile": false, "freeze": null,
+    "degrees": 10.0, "translate": 0.05, "scale": 0.1,
+    "shear": 0.0, "perspective": 0.0, "flipud": 0.0, "fliplr": 0.0,
+    "hsv_h": 0.0, "hsv_s": 0.0, "hsv_v": 0.1,
+    "mosaic": 0.0, "mixup": 0.0, "cutmix": 0.0, "copy_paste": 0.0,
+    "close_mosaic": 0, "augmentations": [], "bgr": 0.0,
+    "cls_pw": 0.0, "cls_remap": false, "box": 7.5, "cls": 0.5, "dfl": 1.5,
+    "single_cls": false, "fraction": 1.0, "resume": false,
+    "pretrained": true, "val": true, "split": "val", "augment": false,
+    "conf": 0.001, "iou": 0.7, "max_det": 300,
+    "save": true, "save_period": -1, "plots": false,
+    "save_json": false, "save_txt": false, "save_conf": false,
+    "verbose": false, "exist_ok": false
+  }
+}
