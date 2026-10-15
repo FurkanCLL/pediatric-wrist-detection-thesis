@@ -16,6 +16,7 @@ dependencies = [
 wrist-audit = "wrist_audit.audit:main"
 wrist-prepare = "wrist_prepare.pipeline:main"
 wrist-feasibility = "wrist_train.feasibility:main"
+wrist-train = "wrist_train.launch:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
