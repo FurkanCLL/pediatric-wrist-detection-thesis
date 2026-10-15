@@ -1,0 +1,9 @@
+{
+  "asset": "yolov8s.pt",
+  "grazpedwri_trained_initialization": false,
+  "original_classes": 80,
+  "original_dataset": "coco.yaml",
+  "parameters": 11166560,
+  "sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+  "task": "detect"
+}

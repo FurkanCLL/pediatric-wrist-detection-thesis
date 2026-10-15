@@ -1,0 +1,27 @@
+{
+  "base_versions_preserved": true,
+  "changes": [
+    {
+      "after": "2.14.1+cu126",
+      "before_import_build": "2.14.1+cpu",
+      "before_metadata": "2.14.1",
+      "package": "torch"
+    },
+    {
+      "after": "0.29.1+cu126",
+      "before_import_build": "0.29.1+cpu",
+      "before_metadata": "0.29.1",
+      "package": "torchvision"
+    }
+  ],
+  "initial_transfer": "stopped before package replacement because of slow download",
+  "new_declaration": {
+    "already_installed": true,
+    "package": "PyYAML",
+    "version": "6.0.3"
+  },
+  "official_index": "https://download.pytorch.org/whl/cu126",
+  "other_installed_dependencies_unchanged": true,
+  "requirements_and_pyproject_consistent": true,
+  "successful_transfer": "official wheel bytes retrieved in parallel ranges; full SHA-256 verified before installation"
+}

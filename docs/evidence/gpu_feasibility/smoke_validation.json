@@ -1,0 +1,164 @@
+{
+  "actual_warmup_iterations": 0,
+  "amp": true,
+  "amp_initial_scale": 128.0,
+  "augmentation": {
+    "affine_trials": 32,
+    "changed_trials": 16,
+    "equal_channels_preserved": true,
+    "grayscale_intensity_trials": 16,
+    "hsv_h": 0,
+    "hsv_s": 0,
+    "hsv_v": 0.1,
+    "optional_albumentations": "explicit empty list",
+    "perspective": 0,
+    "scale_bounds": [
+      0.9,
+      1.1
+    ],
+    "shear": 0
+  },
+  "batch": 6,
+  "checkpoint_verification": [
+    {
+      "bytes": 22484842,
+      "classes": 8,
+      "reloaded_finite": true,
+      "role": "last",
+      "sha256": "d892d34e08fd4f8cd3c1b4542abcfee6b06cd57793ac22f45cdbe1c5700199e8"
+    },
+    {
+      "bytes": 22484842,
+      "classes": 8,
+      "reloaded_finite": true,
+      "role": "best",
+      "sha256": "e10457a53e49165ec3225fd0dafe37d98b03242e1438ff933ab77b2c72fae6ff"
+    }
+  ],
+  "epochs_completed": 1,
+  "gpu_telemetry": {
+    "clock_mhz": {
+      "max": 2580.0,
+      "mean": 2328.7398373983738
+    },
+    "device_memory_mib": {
+      "max": 2985.0,
+      "mean": 2370.211382113821
+    },
+    "power_w": {
+      "max": 76.06,
+      "mean": 52.222384823848245
+    },
+    "samples": 369,
+    "temperature_c": {
+      "max": 73.0,
+      "mean": 66.42005420054201
+    },
+    "utilization_percent": {
+      "max": 94.0,
+      "mean": 67.9810298102981
+    }
+  },
+  "gradient_overflows": [],
+  "imgsz": 768,
+  "metrics_artifact": {
+    "all_values_finite": true,
+    "columns": [
+      "epoch",
+      "lr/pg0",
+      "lr/pg1",
+      "lr/pg2",
+      "metrics/mAP50(B)",
+      "metrics/mAP50-95(B)",
+      "metrics/precision(B)",
+      "metrics/recall(B)",
+      "time",
+      "train/box_loss",
+      "train/cls_loss",
+      "train/dfl_loss",
+      "val/box_loss",
+      "val/cls_loss",
+      "val/dfl_loss"
+    ],
+    "interpretation": "technical diagnostic only; no performance conclusion",
+    "rows": 1
+  },
+  "official_training_started": false,
+  "optimizer": {
+    "accumulation": 4,
+    "class": "AdamW",
+    "effective_batch": 24,
+    "groups": [
+      {
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "lr": 0.001,
+        "param_group": "weight",
+        "weight_decay": 0.0005
+      },
+      {
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "lr": 0.001,
+        "param_group": "bn",
+        "weight_decay": 0.0
+      },
+      {
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "lr": 0.001,
+        "param_group": "bias",
+        "weight_decay": 0.0
+      }
+    ]
+  },
+  "optimizer_attempts": 586,
+  "optimizer_updates": 586,
+  "parameter_changes": 586,
+  "purpose": "one-epoch diagnostic only; not the official baseline",
+  "scaler_events": [],
+  "status": "passed",
+  "test_evaluated": false,
+  "total_wall_s": 398.6007363000026,
+  "train_batches": 2344,
+  "training_images": 14061,
+  "training_images_per_s": 47.51435597639729,
+  "training_memory": {
+    "peak_allocated_gib": 1.9051218032836914,
+    "peak_reserved_gib": 2.025390625
+  },
+  "training_s": 295.9316128999999,
+  "validation_runs": [
+    {
+      "augmentation": false,
+      "batch": 12,
+      "batches": 258,
+      "images": 3088,
+      "peak_allocated_gib": 0.6823086738586426,
+      "peak_reserved_gib": 2.486328125,
+      "rect": true,
+      "seconds": 38.22267070000089,
+      "trainer_integrated": true,
+      "workers": 4
+    },
+    {
+      "augmentation": false,
+      "batch": 12,
+      "batches": 258,
+      "images": 3088,
+      "peak_allocated_gib": 0.6108527183532715,
+      "peak_reserved_gib": 2.486328125,
+      "rect": true,
+      "seconds": 23.40510340000037,
+      "trainer_integrated": false,
+      "workers": 4
+    }
+  ],
+  "workers": 2
+}

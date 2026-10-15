@@ -1,0 +1,84 @@
+{
+  "interpretation": "precision-only comparison; no optimization or model performance evaluation",
+  "results": [
+    {
+      "all_gradients_finite": true,
+      "amp": false,
+      "components": {
+        "box_loss": 2.276311159133911,
+        "cls_loss": 16.40972900390625,
+        "dfl_loss": 1.5953822135925293
+      },
+      "loss": 121.68853759765625,
+      "nonfinite_gradient_layer_count": 0,
+      "optimizer_updates": 0,
+      "scale": 1
+    },
+    {
+      "all_gradients_finite": false,
+      "amp": true,
+      "components": {
+        "box_loss": 2.264681100845337,
+        "cls_loss": 16.675941467285156,
+        "dfl_loss": 1.5946199893951416
+      },
+      "loss": 123.21145629882812,
+      "nonfinite_gradient_layer_count": 171,
+      "optimizer_updates": 0,
+      "scale": 65536
+    },
+    {
+      "all_gradients_finite": false,
+      "amp": true,
+      "components": {
+        "box_loss": 2.264681100845337,
+        "cls_loss": 16.675941467285156,
+        "dfl_loss": 1.5946199893951416
+      },
+      "loss": 123.21145629882812,
+      "nonfinite_gradient_layer_count": 8,
+      "optimizer_updates": 0,
+      "scale": 2048
+    },
+    {
+      "all_gradients_finite": false,
+      "amp": true,
+      "components": {
+        "box_loss": 2.264681100845337,
+        "cls_loss": 16.675941467285156,
+        "dfl_loss": 1.5946199893951416
+      },
+      "loss": 123.21145629882812,
+      "nonfinite_gradient_layer_count": 1,
+      "optimizer_updates": 0,
+      "scale": 512
+    },
+    {
+      "all_gradients_finite": true,
+      "amp": true,
+      "components": {
+        "box_loss": 2.264681100845337,
+        "cls_loss": 16.675941467285156,
+        "dfl_loss": 1.5946199893951416
+      },
+      "loss": 123.21145629882812,
+      "nonfinite_gradient_layer_count": 0,
+      "optimizer_updates": 0,
+      "scale": 128
+    },
+    {
+      "all_gradients_finite": true,
+      "amp": true,
+      "components": {
+        "box_loss": 2.264681100845337,
+        "cls_loss": 16.675941467285156,
+        "dfl_loss": 1.5946199893951416
+      },
+      "loss": 123.21145629882812,
+      "nonfinite_gradient_layer_count": 0,
+      "optimizer_updates": 0,
+      "scale": 1
+    }
+  ],
+  "same_batch_and_parameters": true
+}

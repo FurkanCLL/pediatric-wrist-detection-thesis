@@ -1,0 +1,11 @@
+{
+  "attempts": [
+    {
+      "attempt": "benchmark_b6_amp_01",
+      "error_type": "FloatingPointError",
+      "stage": "benchmark"
+    }
+  ],
+  "count": 1,
+  "details": "Full tracebacks and any data paths remain in ignored local outputs"
+}

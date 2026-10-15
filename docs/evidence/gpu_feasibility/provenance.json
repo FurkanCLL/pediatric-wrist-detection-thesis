@@ -1,0 +1,23 @@
+{
+  "benchmark_attempt": "benchmark_b6_amp_02",
+  "benchmark_start_commit": "53bd1015c6b659185396ea3339d95ca84a8b541f",
+  "benchmark_uncommitted_source_changes": "not recorded in early receipt",
+  "candidate_config_sha256": "8dba53610aee511bcf7137c228a348c0d066c8653f3f917ee379552f52115eb5",
+  "framework_source_sha256": {
+    "cfg/default.yaml": "b91e4622e293270595e6e58d5bc3f3cdcb4a1d4f8b28c9035ec883bb2835081f",
+    "data/augment.py": "802333ea359def55e88f61d6726e35c29d28a6491110840a5e912ec1fafd1de3",
+    "data/build.py": "5e44d8dc88f502f824fbf13991ba373b05b8bc0b199321dfc20b33b9497faa1e",
+    "engine/trainer.py": "7016131a47b61a8b9b9ea51ef5a9e59b0fb896a328eed4901c89ac7a83169655",
+    "engine/validator.py": "4fa6e43d3b090e50c563ab904e7af095348e5f8471374048adb60eee66452111",
+    "models/yolo/detect/train.py": "584e9c89f73f4c4ff68e2870c9e0778d254d808c421746c7ad66163b143b36d6",
+    "utils/metrics.py": "e2f216964bb0d89ac26efecb4e0a76750b554d2e670a27e6ed4a8f42d998b2a0",
+    "utils/torch_utils.py": "9bd9e9e9476959e93214ceccec4f8ead10f3b8aa8a7791efe22f5f1a9ef86f77"
+  },
+  "implementation_commit": "ef79a555ea98fde3aa35267a035af7aebca6301e",
+  "official_protocol_frozen": false,
+  "smoke_attempt": "smoke_b6_amp_01",
+  "smoke_start_commit": "ef79a555ea98fde3aa35267a035af7aebca6301e",
+  "smoke_started_with_uncommitted_source_changes": false,
+  "split_manifest_sha256": "ee49e4ae1810ac1fb9541261e2d8df43eb32b5ca827433e1f9f22c20bb3c9c49",
+  "test_evaluated": false
+}

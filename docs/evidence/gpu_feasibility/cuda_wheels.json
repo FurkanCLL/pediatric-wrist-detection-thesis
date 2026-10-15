@@ -1,0 +1,20 @@
+[
+  {
+    "bytes": 2602768778,
+    "download_seconds": 489.80191970000305,
+    "official_index": "https://download.pytorch.org/whl/cu126/torch/",
+    "package": "torch",
+    "sha256": "97e3bc87ea74367518b740d912a7f5259c25a3c8115bf5916abee1d53ff115a4",
+    "sha256_matches_official_index": true,
+    "url": "https://download.pytorch.org/whl/cu126/torch-2.14.1%2Bcu126-cp312-cp312-win_amd64.whl"
+  },
+  {
+    "bytes": 6111898,
+    "download_seconds": 1.1957567999997991,
+    "official_index": "https://download.pytorch.org/whl/cu126/torchvision/",
+    "package": "torchvision",
+    "sha256": "ab045bfb0ac014b80afb478190d14c6f7d3b57ade0d1fcd6ffc07414a0266b96",
+    "sha256_matches_official_index": true,
+    "url": "https://download.pytorch.org/whl/cu126/torchvision-0.29.1%2Bcu126-cp312-cp312-win_amd64.whl"
+  }
+]

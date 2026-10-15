@@ -1,0 +1,39 @@
+{
+  "checkpoint_state_verification": [
+    {
+      "classes": 8,
+      "input_channels": 3,
+      "parameters_and_buffers_finite": true,
+      "role": "last",
+      "sha256": "d892d34e08fd4f8cd3c1b4542abcfee6b06cd57793ac22f45cdbe1c5700199e8",
+      "state_tensors_checked": 355
+    },
+    {
+      "classes": 8,
+      "input_channels": 3,
+      "parameters_and_buffers_finite": true,
+      "role": "best",
+      "sha256": "e10457a53e49165ec3225fd0dafe37d98b03242e1438ff933ab77b2c72fae6ff",
+      "state_tensors_checked": 355
+    }
+  ],
+  "frozen_data_receipts_unchanged": true,
+  "gpu_work_repeated_after_interruption": false,
+  "official_training_started": false,
+  "pip_check": "No broken requirements found.",
+  "results_csv_rows": 1,
+  "results_csv_values_finite": true,
+  "runtime_versions": {
+    "Pillow": "12.3.0",
+    "PyYAML": "6.0.3",
+    "numpy": "2.3.5",
+    "opencv-python": "5.0.0.93",
+    "torch": "2.14.1+cu126",
+    "torchvision": "0.29.1+cu126",
+    "ultralytics": "8.4.177"
+  },
+  "split_manifest_sha256": "ee49e4ae1810ac1fb9541261e2d8df43eb32b5ca827433e1f9f22c20bb3c9c49",
+  "status": "passed",
+  "test_evaluated": false,
+  "tests": 49
+}
