@@ -1,0 +1,55 @@
+{
+  "dataset_csv_official_md5_match": true,
+  "doi": "10.6084/m9.figshare.14825193.v2",
+  "folder_archive": {
+    "counts": {
+      "archive_files": 60986,
+      "identical_local": 60986
+    },
+    "md5": "e484b434286428750e9c838a7ed6ada7",
+    "official_md5_match": true
+  },
+  "image_archive_checksums_verified": false,
+  "image_archive_limitation": "Original image ZIPs were not supplied to this workflow; no full re-download was performed.",
+  "license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "value": 1
+  },
+  "official_files": [
+    {
+      "computed_md5": "f2e996300443654faa62983b7ef1b4c1",
+      "name": "dataset.csv",
+      "size": 1850724
+    },
+    {
+      "computed_md5": "e484b434286428750e9c838a7ed6ada7",
+      "name": "folder_structure.zip",
+      "size": 26304897
+    },
+    {
+      "computed_md5": "964fae38f2f2b6657463922838ddec0e",
+      "name": "images_part1.zip",
+      "size": 4046496654
+    },
+    {
+      "computed_md5": "4c0e859f24166584bbb34800040d9b71",
+      "name": "images_part2.zip",
+      "size": 4122307169
+    },
+    {
+      "computed_md5": "9c61c1acc2930d414d1e8141e265b01e",
+      "name": "images_part3.zip",
+      "size": 3851047067
+    },
+    {
+      "computed_md5": "d35abc668fcec0b5805048760fe448de",
+      "name": "images_part4.zip",
+      "size": 4207646096
+    }
+  ],
+  "published_date": "2022-05-06T12:26:17Z",
+  "release_api": "https://api.figshare.com/v2/articles/14825193/versions/2",
+  "title": "GRAZPEDWRI-DX",
+  "version": 2
+}

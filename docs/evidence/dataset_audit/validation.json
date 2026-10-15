@@ -1,0 +1,58 @@
+{
+  "audit_date": "2026-10-15",
+  "deferred": [
+    "patient splits",
+    "image conversion",
+    "prepared labels",
+    "model training",
+    "inference implementation",
+    "model evaluation"
+  ],
+  "dependency_check": {
+    "command": ".venv/Scripts/python.exe -m pip check",
+    "result": "No broken requirements found"
+  },
+  "environment": {
+    "numpy": "2.3.5",
+    "pillow": "12.3.0",
+    "python": "3.12.5"
+  },
+  "export_recheck": {
+    "command": ".venv/Scripts/python.exe -m wrist_audit.exports",
+    "original_full_scan_not_overwritten": true,
+    "receipt": "export_crosscheck.json",
+    "voc_files": 20327,
+    "yolo_files": 20327
+  },
+  "export_recheck_code_commit": "7cf93922be7a0cb117665cfc3f10bc4c0266d159",
+  "full_scan": {
+    "decoded_images": 534,
+    "exact_duplicate_images": 0,
+    "image_integrity_passed": 20327,
+    "initial_voc_parser_errors": 20327,
+    "original_local_receipt": "outputs/dataset_audit/summary.json",
+    "raw_bytes": 16275229234,
+    "raw_files": 81314,
+    "raw_stat_snapshot_unchanged": true
+  },
+  "full_scan_code_commit": "339457abc893e64a4b63c15f90eac85dcb0fc9ca",
+  "independent_reconciliation": {
+    "box_geometry": "passed against an independent archive calculation",
+    "class_instances_images_patients": "passed against an independent official-archive tally"
+  },
+  "tests": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -q",
+    "result": "passed",
+    "tests_run": 25
+  },
+  "visual_spot_check": {
+    "categories": [
+      "fracture",
+      "bonelesion",
+      "foreignbody",
+      "empty detection annotations"
+    ],
+    "original_images_viewed": 4,
+    "scope": "technical display check only; no image derivatives generated"
+  }
+}

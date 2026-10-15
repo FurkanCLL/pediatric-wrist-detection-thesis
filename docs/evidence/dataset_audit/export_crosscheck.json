@@ -1,0 +1,75 @@
+{
+  "archive_md5": "e484b434286428750e9c838a7ed6ada7",
+  "class_counts_by_format": {
+    "supervisely": {
+      "boneanomaly": 276,
+      "bonelesion": 45,
+      "foreignbody": 8,
+      "fracture": 18090,
+      "metal": 819,
+      "periostealreaction": 3453,
+      "pronatorsign": 567,
+      "softtissue": 464,
+      "text": 23722
+    },
+    "voc": {
+      "boneanomaly": 276,
+      "bonelesion": 45,
+      "foreignbody": 8,
+      "fracture": 18090,
+      "metal": 819,
+      "periostealreaction": 3453,
+      "pronatorsign": 567,
+      "softtissue": 464,
+      "text": 23722
+    },
+    "yolo": {
+      "boneanomaly": 276,
+      "bonelesion": 45,
+      "foreignbody": 8,
+      "fracture": 18090,
+      "metal": 818,
+      "periostealreaction": 3453,
+      "pronatorsign": 567,
+      "softtissue": 464,
+      "text": 23722
+    }
+  },
+  "comparison_tolerance_pixels": 1.0,
+  "crosschecks": {
+    "primary_detection_objects": 47444,
+    "voc_images_checked": 20327,
+    "voc_mismatched_objects": 0,
+    "voc_missing_sizes": 20327,
+    "voc_objects": 47444,
+    "voc_size_mismatches": 0,
+    "yolo_images_checked": 20327,
+    "yolo_mismatched_objects": 1,
+    "yolo_objects": 47443
+  },
+  "equivalent_local_files": 60986,
+  "issue_counts": {
+    "yolo_box": 491,
+    "yolo_comparison": 1
+  },
+  "issue_details": {
+    "yolo_box:line 1: rounding_at_border": 267,
+    "yolo_box:line 2: rounding_at_border": 143,
+    "yolo_box:line 3: rounding_at_border": 62,
+    "yolo_box:line 4: rounding_at_border": 14,
+    "yolo_box:line 5: rounding_at_border": 3,
+    "yolo_box:line 6: rounding_at_border": 1,
+    "yolo_box:line 7: rounding_at_border": 1,
+    "yolo_comparison:1": 1
+  },
+  "maximum_export_delta_pixels": {
+    "voc": 0.999971866607666,
+    "yolo": 0.0014760000001388107
+  },
+  "primary_dimensions": "Supervisely; verified against all original PNG headers by the full audit",
+  "source": "Official folder_structure.zip, previously compared with every extracted counterpart",
+  "voc_flags": {
+    "difficult:0": 47444,
+    "truncated:0": 47444
+  }
+}

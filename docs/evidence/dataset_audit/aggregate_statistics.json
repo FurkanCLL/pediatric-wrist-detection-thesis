@@ -1,0 +1,821 @@
+{
+  "annotations": {
+    "axis_lines": 20327,
+    "comparison_tolerance_pixels": 1.0,
+    "crosschecks": {
+      "duplicate_source_boxes": 0,
+      "primary_detection_objects": 47444,
+      "voc_images_checked": 20327,
+      "voc_mismatched_objects": 0,
+      "voc_missing_sizes": 20327,
+      "voc_objects": 47444,
+      "voc_size_mismatches": 0,
+      "yolo_images_checked": 20327,
+      "yolo_mismatched_objects": 1,
+      "yolo_objects": 47443
+    },
+    "description_counts": {},
+    "detection_objects": 47444,
+    "eight_class_objects": 47436,
+    "geometry_counts": {
+      "axis:line": 20327,
+      "boneanomaly:rectangle": 276,
+      "bonelesion:polygon": 45,
+      "foreignbody:rectangle": 8,
+      "fracture:rectangle": 18090,
+      "metal:rectangle": 819,
+      "periostealreaction:polygon": 3453,
+      "pronatorsign:rectangle": 567,
+      "softtissue:rectangle": 464,
+      "text:rectangle": 23722
+    },
+    "image_tags": {
+      "ao_classification": 14158,
+      "cast": 5776,
+      "diagnosis_uncertain": 537,
+      "initial_exam": 10861,
+      "osteopenia": 2473,
+      "projection_ap": 10086,
+      "projection_lat": 10148,
+      "projection_oblique": 93,
+      "side_left": 11135,
+      "side_right": 9192
+    },
+    "images_with_foreignbody": 8,
+    "images_without_detection_boxes": 15,
+    "images_without_eight_class_boxes": 15,
+    "maximum_export_delta_pixels": {
+      "voc": 0.999971866607666,
+      "yolo": 0.0014760000001388107
+    },
+    "object_tags_total": 0,
+    "voc_flags": {
+      "difficult:0": 47444,
+      "truncated:0": 47444
+    }
+  },
+  "blocking_issue_counts": {
+    "axis_geometry": 11,
+    "yolo_comparison": 1
+  },
+  "classes": {
+    "boneanomaly": {
+      "area_below_0_1_percent": 0,
+      "aspect_ratio": {
+        "max": 4.714285714285714,
+        "mean": 1.1081307584861193,
+        "median": 0.8897647344166869,
+        "min": 0.18072289156626506,
+        "n": 276,
+        "p01": 0.2845435155561738,
+        "p25": 0.6642270861833105,
+        "p75": 1.4069119286510592,
+        "p99": 3.0125
+      },
+      "images": 192,
+      "instances": 276,
+      "patients": 95,
+      "proposed_id": 7,
+      "relative_area": {
+        "max": 0.16030978176194077,
+        "mean": 0.03050286236464598,
+        "median": 0.019442145336182062,
+        "min": 0.0011160349854227405,
+        "n": 276,
+        "p01": 0.0015491535768698255,
+        "p25": 0.006963943454618193,
+        "p75": 0.04562186645222996,
+        "p99": 0.1248294999299643
+      },
+      "short_side_at_1024": {
+        "max": 256.557734204793,
+        "mean": 97.10623357626879,
+        "median": 90.06364803809939,
+        "min": 20.936802973977695,
+        "n": 276,
+        "p01": 24.700818293913237,
+        "p25": 48.188324083696315,
+        "p75": 135.87276801850646,
+        "p99": 225.72784246867985
+      },
+      "short_side_below_16_at_1024": 0,
+      "short_side_pixels": {
+        "max": 247.0,
+        "mean": 103.56159420289855,
+        "median": 91.0,
+        "min": 22.0,
+        "n": 276,
+        "p01": 28.5,
+        "p25": 58.0,
+        "p75": 148.0,
+        "p99": 237.75
+      },
+      "source_id": 0,
+      "source_shape": "rectangle"
+    },
+    "bonelesion": {
+      "area_below_0_1_percent": 5,
+      "aspect_ratio": {
+        "max": 1.3636363636363635,
+        "mean": 0.8409923194264217,
+        "median": 0.7955801104972375,
+        "min": 0.24166666666666667,
+        "n": 45,
+        "p01": 0.33122374429223744,
+        "p25": 0.6721311475409836,
+        "p75": 0.967741935483871,
+        "p99": 1.3459893048128342
+      },
+      "images": 42,
+      "instances": 45,
+      "patients": 24,
+      "proposed_id": 5,
+      "relative_area": {
+        "max": 0.07699751138409404,
+        "mean": 0.008922937118516657,
+        "median": 0.0031479665346942237,
+        "min": 0.0007887153041104202,
+        "n": 45,
+        "p01": 0.0008147231565043465,
+        "p25": 0.0018651654910472057,
+        "p75": 0.005391304347826087,
+        "p99": 0.07685737813574751
+      },
+      "short_side_at_1024": {
+        "max": 186.59154929577466,
+        "mean": 48.00635137619325,
+        "median": 37.48571428571429,
+        "min": 20.018045112781955,
+        "n": 45,
+        "p01": 20.420871873038642,
+        "p25": 28.13186813186813,
+        "p75": 47.383033419023135,
+        "p99": 181.54665952962432
+      },
+      "short_side_below_16_at_1024": 0,
+      "short_side_pixels": {
+        "max": 207.0,
+        "mean": 46.4,
+        "median": 34.0,
+        "min": 21.0,
+        "n": 45,
+        "p01": 21.44,
+        "p25": 29.0,
+        "p75": 44.0,
+        "p99": 196.88000000000005
+      },
+      "source_id": 1,
+      "source_shape": "polygon"
+    },
+    "foreignbody": {
+      "area_below_0_1_percent": 0,
+      "aspect_ratio": {
+        "max": 1.5666666666666667,
+        "mean": 0.676401298158817,
+        "median": 0.5138888888888888,
+        "min": 0.24812030075187969,
+        "n": 8,
+        "p01": 0.2607518796992481,
+        "p25": 0.4366883116883117,
+        "p75": 0.7517006802721088,
+        "p99": 1.530333333333333
+      },
+      "images": 8,
+      "instances": 8,
+      "patients": 4,
+      "proposed_id": null,
+      "relative_area": {
+        "max": 0.019062765676761163,
+        "mean": 0.007269461117785635,
+        "median": 0.0020695035231840858,
+        "min": 0.0010169333937682322,
+        "n": 8,
+        "p01": 0.0010406757303574822,
+        "p25": 0.0014670081568179277,
+        "p75": 0.01537678617063661,
+        "p99": 0.018838696396056908
+      },
+      "short_side_at_1024": {
+        "max": 101.7639751552795,
+        "mean": 44.13133691604681,
+        "median": 30.49039723183391,
+        "min": 11.51424287856072,
+        "n": 8,
+        "p01": 12.241939570755164,
+        "p25": 22.60978516978517,
+        "p75": 58.139411608799364,
+        "p99": 100.57504234895538
+      },
+      "short_side_below_16_at_1024": 1,
+      "short_side_pixels": {
+        "max": 66.0,
+        "mean": 39.5,
+        "median": 36.0,
+        "min": 15.0,
+        "n": 8,
+        "p01": 15.28,
+        "p25": 26.5,
+        "p75": 54.25,
+        "p99": 65.86
+      },
+      "source_id": 2,
+      "source_shape": "rectangle"
+    },
+    "fracture": {
+      "area_below_0_1_percent": 0,
+      "aspect_ratio": {
+        "max": 4.777777777777778,
+        "mean": 1.4797516252936411,
+        "median": 1.4150943396226414,
+        "min": 0.1875,
+        "n": 18090,
+        "p01": 0.6315100250626566,
+        "p25": 1.1363636363636365,
+        "p75": 1.7424242424242424,
+        "p99": 2.8646553672316397
+      },
+      "images": 13550,
+      "instances": 18090,
+      "patients": 3587,
+      "proposed_id": 0,
+      "relative_area": {
+        "max": 0.1406332578703667,
+        "mean": 0.018855212030606913,
+        "median": 0.016482004777181983,
+        "min": 0.001842560322694873,
+        "n": 18090,
+        "p01": 0.004173524581043018,
+        "p25": 0.01050334921949992,
+        "p75": 0.023942990219074832,
+        "p99": 0.06049454930543298
+      },
+      "short_side_at_1024": {
+        "max": 312.0648899188876,
+        "mean": 83.73787180283259,
+        "median": 79.0729401714963,
+        "min": 21.52135593220339,
+        "n": 18090,
+        "p01": 41.82064374811646,
+        "p25": 63.74398780894328,
+        "p75": 98.46153846153847,
+        "p99": 169.21738161677007
+      },
+      "short_side_below_16_at_1024": 0,
+      "short_side_pixels": {
+        "max": 263.0,
+        "mean": 81.0433993165041,
+        "median": 76.0,
+        "min": 28.0,
+        "n": 18090,
+        "p01": 41.0,
+        "p25": 63.0,
+        "p75": 94.0,
+        "p99": 161.0
+      },
+      "source_id": 3,
+      "source_shape": "rectangle"
+    },
+    "metal": {
+      "area_below_0_1_percent": 4,
+      "aspect_ratio": {
+        "max": 6.30188679245283,
+        "mean": 0.5999455616665232,
+        "median": 0.4701492537313433,
+        "min": 0.03756708407871199,
+        "n": 819,
+        "p01": 0.062081828076899964,
+        "p25": 0.28819155666446306,
+        "p75": 0.6972348484848485,
+        "p99": 3.8499665890452293
+      },
+      "images": 708,
+      "instances": 819,
+      "patients": 157,
+      "proposed_id": 1,
+      "relative_area": {
+        "max": 0.8794466403162056,
+        "mean": 0.11023001693024317,
+        "median": 0.09955937609818073,
+        "min": 0.0006551271280257926,
+        "n": 819,
+        "p01": 0.0024571872562370017,
+        "p25": 0.05023713916310488,
+        "p75": 0.15020961866428986,
+        "p99": 0.329331480611009
+      },
+      "short_side_at_1024": {
+        "max": 600.0699708454811,
+        "mean": 163.49694408103898,
+        "median": 149.0848585690516,
+        "min": 9.979010494752623,
+        "n": 819,
+        "p01": 20.80826980498857,
+        "p25": 90.13335878955658,
+        "p75": 217.414958160596,
+        "p99": 422.66824059914967
+      },
+      "short_side_below_16_at_1024": 4,
+      "short_side_pixels": {
+        "max": 449.0,
+        "mean": 175.30769230769232,
+        "median": 171.0,
+        "min": 13.0,
+        "n": 819,
+        "p01": 22.0,
+        "p25": 100.0,
+        "p75": 236.0,
+        "p99": 400.3799999999994
+      },
+      "source_id": 4,
+      "source_shape": "rectangle"
+    },
+    "periostealreaction": {
+      "area_below_0_1_percent": 13,
+      "aspect_ratio": {
+        "max": 0.9496402877697842,
+        "mean": 0.190319706191126,
+        "median": 0.17307692307692307,
+        "min": 0.03374233128834356,
+        "n": 3453,
+        "p01": 0.0567038944982485,
+        "p25": 0.12544802867383512,
+        "p75": 0.2324561403508772,
+        "p99": 0.5
+      },
+      "images": 2235,
+      "instances": 3453,
+      "patients": 1089,
+      "proposed_id": 3,
+      "relative_area": {
+        "max": 0.12233337017795955,
+        "mean": 0.018947412499100882,
+        "median": 0.014471195978045293,
+        "min": 0.0003196403530479254,
+        "n": 3453,
+        "p01": 0.0016974384293333006,
+        "p25": 0.008228441241577664,
+        "p75": 0.024930565656145893,
+        "p99": 0.07560903172286168
+      },
+      "short_side_at_1024": {
+        "max": 170.66666666666666,
+        "mean": 42.00163655348108,
+        "median": 37.67965367965368,
+        "min": 5.701559020044543,
+        "n": 3453,
+        "p01": 11.163794948776186,
+        "p25": 26.666666666666668,
+        "p75": 52.64781491002571,
+        "p99": 116.72922807951049
+      },
+      "short_side_below_16_at_1024": 173,
+      "short_side_pixels": {
+        "max": 152.0,
+        "mean": 39.1830292499276,
+        "median": 35.0,
+        "min": 5.0,
+        "n": 3453,
+        "p01": 11.0,
+        "p25": 25.0,
+        "p75": 49.0,
+        "p99": 101.0
+      },
+      "source_id": 5,
+      "source_shape": "polygon"
+    },
+    "pronatorsign": {
+      "area_below_0_1_percent": 0,
+      "aspect_ratio": {
+        "max": 0.6418439716312057,
+        "mean": 0.2551564002121066,
+        "median": 0.24666666666666667,
+        "min": 0.1388888888888889,
+        "n": 567,
+        "p01": 0.15755947245162086,
+        "p25": 0.2156423153612617,
+        "p75": 0.2846644775170807,
+        "p99": 0.47923767402910106
+      },
+      "images": 566,
+      "instances": 567,
+      "patients": 555,
+      "proposed_id": 4,
+      "relative_area": {
+        "max": 0.18516949152542372,
+        "mean": 0.07160518289458227,
+        "median": 0.06673583899464397,
+        "min": 0.0019693033742481636,
+        "n": 567,
+        "p01": 0.022155919900103717,
+        "p25": 0.052860413915728446,
+        "p75": 0.0873363360835141,
+        "p99": 0.1513026429218395
+      },
+      "short_side_at_1024": {
+        "max": 221.03204047217537,
+        "mean": 94.43937229579983,
+        "median": 91.78207381370827,
+        "min": 23.616236162361623,
+        "n": 567,
+        "p01": 44.891590106007065,
+        "p25": 77.4989081270574,
+        "p75": 109.76728778467908,
+        "p99": 166.8141497261109
+      },
+      "short_side_below_16_at_1024": 0,
+      "short_side_pixels": {
+        "max": 232.0,
+        "mean": 96.65079365079364,
+        "median": 95.0,
+        "min": 25.0,
+        "n": 567,
+        "p01": 50.66,
+        "p25": 81.0,
+        "p75": 111.0,
+        "p99": 159.0
+      },
+      "source_id": 6,
+      "source_shape": "rectangle"
+    },
+    "softtissue": {
+      "area_below_0_1_percent": 0,
+      "aspect_ratio": {
+        "max": 0.6938775510204082,
+        "mean": 0.33929957599535865,
+        "median": 0.3311092098996278,
+        "min": 0.1685823754789272,
+        "n": 464,
+        "p01": 0.18268715894366067,
+        "p25": 0.27670191370063385,
+        "p75": 0.3939779064779065,
+        "p99": 0.5565124680827946
+      },
+      "images": 439,
+      "instances": 464,
+      "patients": 405,
+      "proposed_id": 6,
+      "relative_area": {
+        "max": 0.27192810350653457,
+        "mean": 0.0805314758728434,
+        "median": 0.06425967112604614,
+        "min": 0.015777217809975926,
+        "n": 464,
+        "p01": 0.023040048615387266,
+        "p25": 0.046685760178312,
+        "p75": 0.10461142945984364,
+        "p99": 0.23649654521228167
+      },
+      "short_side_at_1024": {
+        "max": 287.8468899521531,
+        "mean": 117.02851951601264,
+        "median": 109.4639343456681,
+        "min": 50.45992115637319,
+        "n": 464,
+        "p01": 54.29433021806854,
+        "p25": 88.95543485373994,
+        "p75": 135.82452772092518,
+        "p99": 236.16821426478347
+      },
+      "short_side_below_16_at_1024": 0,
+      "short_side_pixels": {
+        "max": 282.0,
+        "mean": 119.9353448275862,
+        "median": 110.0,
+        "min": 48.0,
+        "n": 464,
+        "p01": 65.63,
+        "p25": 91.0,
+        "p75": 140.0,
+        "p99": 253.74
+      },
+      "source_id": 7,
+      "source_shape": "rectangle"
+    },
+    "text": {
+      "area_below_0_1_percent": 1365,
+      "aspect_ratio": {
+        "max": 11.0,
+        "mean": 0.7262421232668684,
+        "median": 0.6891891891891891,
+        "min": 0.05970149253731343,
+        "n": 23722,
+        "p01": 0.23297260273972603,
+        "p25": 0.5784273544627299,
+        "p75": 0.7941176470588235,
+        "p99": 1.9285714285714286
+      },
+      "images": 20274,
+      "instances": 23722,
+      "patients": 6089,
+      "proposed_id": 2,
+      "relative_area": {
+        "max": 0.05383522212969333,
+        "mean": 0.005680863724815069,
+        "median": 0.00456344430365939,
+        "min": 2.3693875133278048e-05,
+        "n": 23722,
+        "p01": 0.00048132457235190853,
+        "p25": 0.0017228210576737681,
+        "p75": 0.007916413860982303,
+        "p99": 0.02222458789072808
+      },
+      "short_side_at_1024": {
+        "max": 182.6094808126411,
+        "mean": 42.629954805350195,
+        "median": 38.10889396860415,
+        "min": 1.3950953678474114,
+        "n": 23722,
+        "p01": 11.96170025718962,
+        "p25": 26.209596636130414,
+        "p75": 55.719465528888804,
+        "p99": 102.01581746813487
+      },
+      "short_side_below_16_at_1024": 611,
+      "short_side_pixels": {
+        "max": 207.0,
+        "mean": 41.24641223772248,
+        "median": 39.0,
+        "min": 1.0,
+        "n": 23722,
+        "p01": 11.0,
+        "p25": 25.0,
+        "p75": 55.0,
+        "p99": 93.0
+      },
+      "source_id": 8,
+      "source_shape": "rectangle"
+    }
+  },
+  "environment": {
+    "numpy": "2.3.5",
+    "pillow": "12.3.0",
+    "python": "3.12.5"
+  },
+  "images": {
+    "bit_depths": {
+      "16": 20327
+    },
+    "color_types": {
+      "0": 20327
+    },
+    "decode_requested_base": 512,
+    "distinct_dimensions": 19039,
+    "duplicate_groups_across_patients": 0,
+    "exact_duplicate_excess_files": 0,
+    "exact_duplicate_groups": 0,
+    "height": {
+      "max": 2328.0,
+      "mean": 1009.1214148669258,
+      "median": 999.0,
+      "min": 324.0,
+      "n": 20327,
+      "p01": 580.0,
+      "p25": 865.5,
+      "p75": 1144.0,
+      "p99": 1534.0
+    },
+    "integrity_checked": 20327,
+    "integrity_passed": 20327,
+    "pillow_modes": {
+      "I;16": 20327
+    },
+    "pixel_decoded": 534,
+    "sample_policy": "SHA256(filestem) ascending, plus up to eight images per source class and eight empty-box images",
+    "sampled_dtypes": {
+      "uint16": 534
+    },
+    "sampled_pixel_statistics": {
+      "max": {
+        "max": 65535.0,
+        "mean": 65534.99812734083,
+        "median": 65535.0,
+        "min": 65534.0,
+        "n": 534,
+        "p01": 65535.0,
+        "p25": 65535.0,
+        "p75": 65535.0,
+        "p99": 65535.0
+      },
+      "maximum_code_fraction": {
+        "max": 0.0016187567373338123,
+        "mean": 0.00016246865311720724,
+        "median": 2.582151840972871e-06,
+        "min": 0.0,
+        "n": 534,
+        "p01": 8.241889393172095e-07,
+        "p25": 1.668722119919432e-06,
+        "p75": 0.00029071332405542643,
+        "p99": 0.0009628644442234396
+      },
+      "mean": {
+        "max": 41281.01828245555,
+        "mean": 20021.714960936442,
+        "median": 20056.65127665885,
+        "min": 7655.597936570711,
+        "n": 534,
+        "p01": 10043.607773715301,
+        "p25": 17255.86749426078,
+        "p75": 22744.865329607885,
+        "p99": 30733.804626844852
+      },
+      "min": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 534,
+        "p01": 0.0,
+        "p25": 0.0,
+        "p75": 0.0,
+        "p99": 0.0
+      },
+      "p01": {
+        "max": 19572.0,
+        "mean": 724.1479400749064,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 534,
+        "p01": 0.0,
+        "p25": 0.0,
+        "p75": 0.0,
+        "p99": 7934.709999999987
+      },
+      "p50": {
+        "max": 41818.0,
+        "mean": 19938.654494382023,
+        "median": 20327.0,
+        "min": 0.0,
+        "n": 534,
+        "p01": 5189.41,
+        "p25": 16855.75,
+        "p75": 23425.75,
+        "p99": 32704.69999999993
+      },
+      "p99": {
+        "max": 60963.0,
+        "mean": 47260.28617977528,
+        "median": 47905.0,
+        "min": 22165.0,
+        "n": 534,
+        "p01": 31600.28,
+        "p25": 41970.0,
+        "p75": 53119.0,
+        "p99": 59286.34
+      },
+      "zero_fraction": {
+        "max": 0.592859646029876,
+        "mean": 0.07143609259361276,
+        "median": 0.04702419825589123,
+        "min": 1.5318627450980392e-06,
+        "n": 534,
+        "p01": 3.4400330823336666e-06,
+        "p25": 0.018151776603836975,
+        "p75": 0.09606372199157048,
+        "p99": 0.4528828425282697
+      }
+    },
+    "width": {
+      "max": 1664.0,
+      "mean": 562.7913612436661,
+      "median": 549.0,
+      "min": 212.0,
+      "n": 20327,
+      "p01": 330.0,
+      "p25": 476.0,
+      "p75": 632.0,
+      "p99": 964.9600000000064
+    },
+    "width_height_ratio": {
+      "max": 1.6792873051224944,
+      "mean": 0.5701245939497981,
+      "median": 0.5571992110453649,
+      "min": 0.24803767660910517,
+      "n": 20327,
+      "p01": 0.33063979943773003,
+      "p25": 0.47988479322001476,
+      "p75": 0.6430209732952636,
+      "p99": 0.9891509008817506
+    }
+  },
+  "inventory": {
+    "content_manifest_sha256": "d275fbeae0ad5644f25fb69ab337e2b5e4baa3e7293fb565813bc17b7832b5ca",
+    "images": {
+      "duplicate_stems": 0,
+      "files": 20327
+    },
+    "metadata_md5": "f2e996300443654faa62983b7ef1b4c1",
+    "metadata_sha256": "55a53cbe9673e5f29ef0f2f6074ae791f1c27a3b48efadcd0b771225ff6379e8",
+    "raw_bytes": 16275229234,
+    "raw_files": 81314,
+    "raw_stat_snapshot_unchanged": true,
+    "supervisely": {
+      "duplicate_stems": 0,
+      "files": 20327
+    },
+    "voc": {
+      "duplicate_stems": 0,
+      "files": 20327
+    },
+    "yolo": {
+      "duplicate_stems": 0,
+      "files": 20327
+    }
+  },
+  "issue_counts": {
+    "axis_geometry": 11,
+    "yolo_box": 491,
+    "yolo_comparison": 1
+  },
+  "joins": {
+    "metadata": {
+      "missing_for_image": 0,
+      "without_image": 0
+    },
+    "supervisely": {
+      "missing_for_image": 0,
+      "without_image": 0
+    },
+    "voc": {
+      "missing_for_image": 0,
+      "without_image": 0
+    },
+    "yolo": {
+      "missing_for_image": 0,
+      "without_image": 0
+    }
+  },
+  "metadata": {
+    "age_max_years": 19.0,
+    "age_min_years": 0.2,
+    "blank_fields": {
+      "age": 0,
+      "ao_classification": 6169,
+      "cast": 14551,
+      "device_manufacturer": 0,
+      "diagnosis_uncertain": 19790,
+      "filestem": 0,
+      "fracture_visible": 6777,
+      "gender": 0,
+      "initial_exam": 9466,
+      "laterality": 0,
+      "metal": 19619,
+      "osteopenia": 17854,
+      "patient_id": 0,
+      "pixel_spacing": 0,
+      "projection": 0,
+      "study_number": 0,
+      "timehash": 0
+    },
+    "exact_duplicate_rows": 0,
+    "gender_counts": {
+      "F": 8285,
+      "M": 12040,
+      "O": 2
+    },
+    "groups_with_both_lateralities": 143,
+    "groups_with_repeated_side_projection": 110,
+    "images_per_patient": {
+      "max": 30.0,
+      "mean": 3.3372188474798885,
+      "median": 2.0,
+      "min": 1.0,
+      "n": 6091,
+      "p01": 1.0,
+      "p25": 2.0,
+      "p75": 4.0,
+      "p99": 12.0
+    },
+    "images_per_study": {
+      "max": 4.0,
+      "mean": 1.8998971866529581,
+      "median": 2.0,
+      "min": 1.0,
+      "n": 10699,
+      "p01": 1.0,
+      "p25": 2.0,
+      "p75": 2.0,
+      "p99": 3.0
+    },
+    "issue_counts": {},
+    "patient_study_groups": 10699,
+    "patient_timehash_groups": 20327,
+    "patients": 6091,
+    "patients_with_inconsistent_gender": 0,
+    "rows": 20327,
+    "studies_with_multiple_timehashes": 9428,
+    "timehashes_with_multiple_studies": 0,
+    "unique_filestems": 20327
+  },
+  "primary_annotations": "supervisely/wrist/ann; rectangle or polygon exterior envelopes; axis excluded",
+  "resolved_tooling_findings": {
+    "cause": "Original VOC size elements are empty; the parser incorrectly required dimensions",
+    "initial_full_scan_retained_locally": true,
+    "initial_voc_parser_errors": 20327,
+    "resolution": "Optional VOC dimensions tested; every export rechecked against Supervisely dimensions"
+  },
+  "schema_version": 1,
+  "verification_batches": {
+    "annotation_exports": "Complete recheck from the checksum-verified archive, identical to extracted files",
+    "image_metadata_and_primary_geometry": "Full extracted-source audit; original receipt retained locally"
+  }
+}
