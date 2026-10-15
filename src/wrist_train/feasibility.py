@@ -7,6 +7,7 @@ import json
 import math
 from pathlib import Path
 import statistics
+import subprocess
 import time
 import traceback
 
@@ -47,10 +48,19 @@ def augmentation_probe():
 
 def make_trainer(args, directory):
     settings = candidate()["training"].copy()
+    data_path, frozen = write_data_yaml(directory, subset=args.action == "benchmark")
+    weights = OUTPUT / "weights/yolov8s.pt"
+    assets = json.loads((OUTPUT / "environment/pretrained_assets.json").read_text())
+    expected = next(asset["sha256"] for asset in assets if asset["asset"] == "yolov8s.pt")
+    assert digest(weights.read_bytes()) == expected, "Pretrained weights changed"
     # Smoke epochs are a hard scope limit; benchmark setup also cannot start official training.
     settings.update(epochs=1, batch=args.batch, amp=not args.no_amp, workers=args.workers,
-                    model=str(OUTPUT / "weights/yolov8s.pt"),
-                    project=str(directory), name="run", data=str(write_data_yaml(directory, subset=args.action == "benchmark")[0]))
+                    model=str(weights), project=str(directory), name="run", data=str(data_path))
+    save_json(directory / "resolved_config.json", settings)
+    save_json(directory / "provenance.json", {
+        "implementation_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+        "candidate_config_sha256": digest((Path(__file__).resolve().parents[2] / "configs/training_candidate.json").read_bytes()),
+        "pretrained_sha256": expected, "split_manifest_sha256": frozen["split_manifest_sha256"]})
     init_seeds(42, deterministic=True)
     return CheckedTrainer(overrides=settings)
 

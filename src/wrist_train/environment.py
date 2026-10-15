@@ -38,7 +38,7 @@ def verify_environment():
     gc.collect()
     torch.cuda.empty_cache()
     receipt = {"python": platform.python_version(), "platform": platform.system(),
-               "packages": {p: importlib.metadata.version(p) for p in ("torch", "torchvision", "ultralytics", "numpy", "opencv-python", "Pillow")},
+               "packages": {p: importlib.metadata.version(p) for p in ("torch", "torchvision", "ultralytics", "numpy", "opencv-python", "Pillow", "PyYAML")},
                "torch_version": torch.__version__, "torchvision_version": torchvision.__version__,
                "cuda_build": torch.version.cuda, "cudnn": torch.backends.cudnn.version(),
                "cuda_available": True, "gpu": properties.name, "vram_bytes": properties.total_memory,
@@ -48,6 +48,15 @@ def verify_environment():
                "allocated_after_cleanup_bytes": torch.cuda.memory_allocated(), "baseline_allocated_bytes": baseline}
     assert receipt["allocated_after_cleanup_bytes"] == baseline
     save_json(OUTPUT / "environment/cuda_verification.json", receipt)
+    from ultralytics import YOLO
+    pretrained = YOLO(str(OUTPUT / "weights/yolov8s.pt")).model
+    assert len(pretrained.names) == 80 and pretrained.names[0] == "person" and pretrained.names[79] == "toothbrush"
+    save_json(OUTPUT / "environment/pretrained_verification.json", {
+        "asset": "yolov8s.pt", "original_classes": 80, "task": "detect",
+        "original_dataset": str(pretrained.args.get("data")).replace("\\", "/").rsplit("/", 1)[-1],
+        "parameters": sum(p.numel() for p in pretrained.parameters()),
+        "sha256": digest((OUTPUT / "weights/yolov8s.pt").read_bytes()),
+        "grazpedwri_trained_initialization": False})
     print(json.dumps(receipt, indent=2))
 
 

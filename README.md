@@ -73,3 +73,22 @@ Prepared data live in ignored `data/prepared/grazpedwri_detection/`, with conven
 `validate` independently decodes every original and prepared PNG with OpenCV, checks all mapped pixels, verifies original hashes, reconstructs boxes from source points, and checks complete split membership without patient overlap. `loader` scans every split through the installed Ultralytics detection dataset and checks sample three-channel batches with augmentation disabled. Its 320-pixel tensor check is not the selected training resolution and runs no model. The installed PyTorch build is CPU-only; a compatible CUDA build must be selected before the next GPU feasibility stage.
 
 Patient/image manifests, source-object traceability, pixel review sheets, settings and caches stay under ignored `outputs/` or `data/`. Only aggregate evidence is exported to `docs/evidence/dataset_preparation/`. Training-only support and geometry statistics are provided for the later class-aware strategy; no weights, crop parameters or augmentation settings have been selected. The held-out test split is frozen and must not guide method development.
+
+## GPU diagnostics
+
+`configs/training_candidate.json` is a preliminary common configuration, requiring student review before official training. The diagnostic command enforces one epoch for the smoke test. It cannot launch the official standard or class-aware experiment.
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-cuda.txt
+.\.venv\Scripts\python.exe -m pip install -e . --no-deps
+.\.venv\Scripts\python.exe -m wrist_train.environment weights
+.\.venv\Scripts\python.exe -m wrist_train.environment verify
+.\.venv\Scripts\wrist-feasibility.exe benchmark --batch 6 --workers 2 --attempt benchmark_b6_amp_01
+.\.venv\Scripts\wrist-feasibility.exe smoke --batch 6 --workers 2 --attempt smoke_b6_amp_01
+```
+
+Use new attempt names for reruns; existing attempts are never replaced. CUDA is mandatory. Start at batch 6, then use 5 and 4 if memory errors justify them. Benchmark inputs come from a fixed hash-ordered training subset. A separate local YAML contains only train/validation paths. The test split is not evaluated. Full checkpoints, logs, source identities and detailed diagnostic metrics stay under ignored `outputs/gpu_feasibility/`.
+
+The benchmark includes augmented loading, loss, backward, AdamW and EMA updates. It measures five warmup steps followed by twenty timed steps. Every benchmark step updates the optimizer to include its state and cost; the smoke test uses the configured accumulation. Numerical checks cover training loss, gradients, parameters, raw validation predictions and trainer-integrated validation loss. Initial AMP scale calibration and any skipped updates are recorded explicitly. The framework's automatic OOM batch reduction is blocked so a failed configuration remains distinguishable.
+
+Mild intensity augmentation uses HSV value only, tested on equal grayscale channels; hue/saturation and optional Albumentations transforms are disabled. In this pinned framework a one-epoch run disables scheduler warmup, even when a longer candidate run requests it. The smoke receipt reports this actual behavior. Passing one epoch does not establish convergence or guarantee numerical stability throughout a longer run.

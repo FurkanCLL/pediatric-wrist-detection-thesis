@@ -183,7 +183,10 @@ class CheckedTrainer(DetectionTrainer):
     def _end_validation(self, validator):
         torch.cuda.synchronize()
         result = {"trainer_integrated": validator.training, "seconds": time.perf_counter() - self.val_started,
-                  "images": validator.seen, "batches": self.val_batches, **memory_peaks()}
+                  "images": validator.seen, "batches": self.val_batches,
+                  "batch": validator.dataloader.batch_size, "workers": validator.dataloader.num_workers,
+                  "rect": validator.dataloader.dataset.rect, "augmentation": validator.dataloader.dataset.augment,
+                  **memory_peaks()}
         self.validation_runs.append(result)
 
     def _handle_nan_recovery(self, epoch):
