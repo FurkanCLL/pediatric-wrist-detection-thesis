@@ -1,0 +1,7 @@
+{
+  "note": "Reviewed all 16 training-only cases on four comparison sheets. Cortical contours, trabecular texture and annotated regions remain reasonably visible relative to the source high-byte previews. Low-contrast cast images and black borders remain present in both views; no obvious conversion-induced degradation was observed. This is a technical visual check, not clinical adjudication.",
+  "passed": true,
+  "pilot_validation_sha256": "b4301701f76b8f9381a8e9ad3bca8da8ded1511bbccece455832550878fe8a5b",
+  "policy_sha256": "e1c56fa84047c4feafb7dcb00eef0024673977d68b99c325b48cfc9c9d97c9c1",
+  "split_manifest_sha256": "ee49e4ae1810ac1fb9541261e2d8df43eb32b5ca827433e1f9f22c20bb3c9c49"
+}

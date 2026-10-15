@@ -1,0 +1,185 @@
+{
+  "class_mapping": {
+    "0": "fracture",
+    "1": "metal",
+    "2": "text",
+    "3": "periostealreaction",
+    "4": "pronatorsign",
+    "5": "bonelesion",
+    "6": "softtissue",
+    "7": "boneanomaly"
+  },
+  "gpu_software_feasibility_verified": false,
+  "images": 20327,
+  "objects": 47436,
+  "patients": 6091,
+  "ready_for_training_feasibility_data_checks": true,
+  "seed": 42,
+  "splits": {
+    "test": {
+      "classes": {
+        "boneanomaly": {
+          "images": 24,
+          "objects": 35,
+          "patients": 14
+        },
+        "bonelesion": {
+          "images": 5,
+          "objects": 5,
+          "patients": 4
+        },
+        "fracture": {
+          "images": 2161,
+          "objects": 2860,
+          "patients": 538
+        },
+        "metal": {
+          "images": 102,
+          "objects": 123,
+          "patients": 24
+        },
+        "periostealreaction": {
+          "images": 329,
+          "objects": 463,
+          "patients": 163
+        },
+        "pronatorsign": {
+          "images": 84,
+          "objects": 84,
+          "patients": 83
+        },
+        "softtissue": {
+          "images": 64,
+          "objects": 68,
+          "patients": 61
+        },
+        "text": {
+          "images": 3169,
+          "objects": 3723,
+          "patients": 912
+        }
+      },
+      "empty_labels": 2,
+      "foreignbody_images_retained": 0,
+      "fracture_images": 2161,
+      "image_percent": 15.634377920991785,
+      "images": 3178,
+      "nonfracture_images": 1017,
+      "objects": 7361,
+      "patient_percent": 14.989328517484815,
+      "patients": 913
+    },
+    "train": {
+      "classes": {
+        "boneanomaly": {
+          "images": 147,
+          "objects": 205,
+          "patients": 67
+        },
+        "bonelesion": {
+          "images": 32,
+          "objects": 35,
+          "patients": 16
+        },
+        "fracture": {
+          "images": 9307,
+          "objects": 12422,
+          "patients": 2511
+        },
+        "metal": {
+          "images": 518,
+          "objects": 600,
+          "patients": 109
+        },
+        "periostealreaction": {
+          "images": 1590,
+          "objects": 2497,
+          "patients": 763
+        },
+        "pronatorsign": {
+          "images": 399,
+          "objects": 400,
+          "patients": 389
+        },
+        "softtissue": {
+          "images": 308,
+          "objects": 324,
+          "patients": 283
+        },
+        "text": {
+          "images": 14030,
+          "objects": 16388,
+          "patients": 4264
+        }
+      },
+      "empty_labels": 11,
+      "foreignbody_images_retained": 8,
+      "fracture_images": 9307,
+      "image_percent": 69.17400501795642,
+      "images": 14061,
+      "nonfracture_images": 4754,
+      "objects": 32871,
+      "patient_percent": 70.0049252996224,
+      "patients": 4264
+    },
+    "val": {
+      "classes": {
+        "boneanomaly": {
+          "images": 21,
+          "objects": 36,
+          "patients": 14
+        },
+        "bonelesion": {
+          "images": 5,
+          "objects": 5,
+          "patients": 4
+        },
+        "fracture": {
+          "images": 2082,
+          "objects": 2808,
+          "patients": 538
+        },
+        "metal": {
+          "images": 88,
+          "objects": 96,
+          "patients": 24
+        },
+        "periostealreaction": {
+          "images": 316,
+          "objects": 493,
+          "patients": 163
+        },
+        "pronatorsign": {
+          "images": 83,
+          "objects": 83,
+          "patients": 83
+        },
+        "softtissue": {
+          "images": 67,
+          "objects": 72,
+          "patients": 61
+        },
+        "text": {
+          "images": 3075,
+          "objects": 3611,
+          "patients": 913
+        }
+      },
+      "empty_labels": 2,
+      "foreignbody_images_retained": 0,
+      "fracture_images": 2082,
+      "image_percent": 15.191617061051803,
+      "images": 3088,
+      "nonfracture_images": 1006,
+      "objects": 7204,
+      "patient_percent": 15.005746182892793,
+      "patients": 914
+    }
+  },
+  "target_ratios": [
+    0.7,
+    0.15,
+    0.15
+  ],
+  "test_use": "Construction distribution and technical preparation checks only; no method tuning or model evaluation"
+}

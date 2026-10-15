@@ -1,0 +1,13 @@
+{
+  "implementation_commit": "f51ce169e39b078a544fab85c16528ed5054beed",
+  "packages": {
+    "Pillow": "12.3.0",
+    "numpy": "2.3.5",
+    "opencv-python": "5.0.0.93",
+    "torch": "2.14.1",
+    "torchvision": "0.29.1",
+    "ultralytics": "8.4.177"
+  },
+  "python": "3.12.5",
+  "zlib": "1.3.1"
+}

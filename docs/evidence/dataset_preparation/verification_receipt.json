@@ -1,0 +1,14 @@
+{
+  "aggregate_counts_match_source_audit": true,
+  "construction_correction": "An initial size-ordering bias was rejected before image conversion; seed remained 42. The rejected construction is retained locally.",
+  "dependency_declarations_match": true,
+  "frozen_manifest_replay_verified": true,
+  "no_model_training": true,
+  "pilot_resume_images": 16,
+  "pilot_resume_new": 0,
+  "pilot_resume_reused": 16,
+  "pip_check": "No broken requirements found",
+  "preparation_tests": 17,
+  "result": "passed",
+  "tests_run": 42
+}

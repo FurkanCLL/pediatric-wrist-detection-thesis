@@ -1,0 +1,26 @@
+{
+  "class_counts": {
+    "boneanomaly": 276,
+    "bonelesion": 45,
+    "fracture": 18090,
+    "metal": 819,
+    "periostealreaction": 3453,
+    "pronatorsign": 567,
+    "softtissue": 464,
+    "text": 23722
+  },
+  "coordinate_tolerance_pixels": 1e-08,
+  "decoder": "OpenCV IMREAD_UNCHANGED; uint16 source and uint8 single-channel output",
+  "empty_labels": 15,
+  "images_checked": 20327,
+  "maximum_coordinate_delta_pixels": 2.2737367544323206e-13,
+  "objects_checked": 47436,
+  "original_annotation_hashes_verified": 20327,
+  "original_image_hashes_verified": 20327,
+  "patient_overlap": 0,
+  "patients": 6091,
+  "pixel_mapping_mismatches": 0,
+  "pixel_reference": "float64 rint(source * 255 / 65535), independently of integer conversion",
+  "prepared_image_manifest_sha256": "c6e16d659767cf0778742bea5e36c18d47c838d55299a0f57891f8c481cfb318",
+  "raw_stat_snapshot_unchanged": true
+}

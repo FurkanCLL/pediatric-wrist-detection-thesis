@@ -1,0 +1,86 @@
+{
+  "augmentation": false,
+  "model_created": false,
+  "opencv": "5.0.0",
+  "splits": {
+    "test": {
+      "batch_dtype": "torch.uint8",
+      "batch_shape": [
+        2,
+        3,
+        320,
+        320
+      ],
+      "class_counts": {
+        "boneanomaly": 35,
+        "bonelesion": 5,
+        "fracture": 2860,
+        "metal": 123,
+        "periostealreaction": 463,
+        "pronatorsign": 84,
+        "softtissue": 68,
+        "text": 3723
+      },
+      "configured_channels": 3,
+      "cv2_read_flag": 1,
+      "images_scanned": 3178,
+      "native_three_channel_replication_verified": true,
+      "objects_loaded": 7361
+    },
+    "train": {
+      "batch_dtype": "torch.uint8",
+      "batch_shape": [
+        2,
+        3,
+        320,
+        320
+      ],
+      "class_counts": {
+        "boneanomaly": 205,
+        "bonelesion": 35,
+        "fracture": 12422,
+        "metal": 600,
+        "periostealreaction": 2497,
+        "pronatorsign": 400,
+        "softtissue": 324,
+        "text": 16388
+      },
+      "configured_channels": 3,
+      "cv2_read_flag": 1,
+      "images_scanned": 14061,
+      "native_three_channel_replication_verified": true,
+      "objects_loaded": 32871
+    },
+    "val": {
+      "batch_dtype": "torch.uint8",
+      "batch_shape": [
+        2,
+        3,
+        320,
+        320
+      ],
+      "class_counts": {
+        "boneanomaly": 36,
+        "bonelesion": 5,
+        "fracture": 2808,
+        "metal": 96,
+        "periostealreaction": 493,
+        "pronatorsign": 83,
+        "softtissue": 72,
+        "text": 3611
+      },
+      "configured_channels": 3,
+      "cv2_read_flag": 1,
+      "images_scanned": 3088,
+      "native_three_channel_replication_verified": true,
+      "objects_loaded": 7204
+    }
+  },
+  "technical_check_imgsz": 320,
+  "torch": "2.14.1+cpu",
+  "torch_cuda_build": null,
+  "torchvision": "0.29.1+cpu",
+  "training_run": false,
+  "ultralytics": "8.4.177",
+  "weights_loaded": false
+}
