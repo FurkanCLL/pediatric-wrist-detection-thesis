@@ -84,7 +84,7 @@ def publish_checkpoint(path, payload, backup=False):
 
 def check_payload(payload, identity, require_resume=True):
     official = payload.get("official", {})
-    for key in ("protocol_sha256", "split_manifest_sha256", "pretrained_sha256", "implementation_source_sha256"):
+    for key in ("protocol_sha256", "split_manifest_sha256", "pretrained_sha256", "implementation_source_sha256", "training_epochs"):
         if official.get(key) != identity[key]:
             raise ValueError("Checkpoint does not match the frozen official identity: " + key)
     if official.get("format_version") != 1:
@@ -98,8 +98,12 @@ def check_payload(payload, identity, require_resume=True):
         required = ("optimizer", "scaler", "scheduler", "accounting", "train_results", "train_args", "updates")
         if not official.get("resumable") or any(payload.get(key) is None for key in required):
             raise ValueError("Checkpoint lacks resumable training state")
-        if not 0 <= payload.get("epoch", -1) < 59:
-            raise ValueError("Checkpoint has no unfinished epoch within the frozen 60-epoch budget")
+        # The saved epoch is zero-based; one more completed epoch must still fit the frozen budget.
+        budget = identity["training_epochs"]
+        if payload["train_args"].get("epochs") != budget:
+            raise ValueError("Checkpoint arguments disagree with the frozen epoch budget")
+        if not 0 <= payload.get("epoch", -1) < budget - 1:
+            raise ValueError(f"Checkpoint has no unfinished epoch within the frozen {budget}-epoch budget")
         if payload["updates"] != payload["accounting"]["successful"]:
             raise ValueError("EMA and successful optimizer counts disagree")
         if payload["scheduler"]["last_epoch"] != payload["epoch"]:

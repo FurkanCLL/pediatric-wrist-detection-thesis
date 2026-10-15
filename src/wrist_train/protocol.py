@@ -41,7 +41,7 @@ def framework_hashes():
 
 def validate_protocol(protocol):
     args = protocol["training"]
-    expected = {"epochs": 60, "imgsz": 768, "batch": 6, "nbs": 24, "seed": 42,
+    expected = {"epochs": 80, "imgsz": 768, "batch": 6, "nbs": 24, "seed": 42,
                 "optimizer": "AdamW", "lr0": 0.001, "lrf": 0.01, "weight_decay": 0.0005,
                 "warmup_epochs": 1.0, "amp": True, "cos_lr": True, "patience": 0,
                 "save_period": 10, "val": True, "split": "val", "cls_pw": 0.0,
@@ -66,6 +66,8 @@ def load_protocol():
     lock = json.loads(LOCK.read_text())
     if canonical_hash(protocol) != lock["protocol_sha256"] or source_hashes() != lock["implementation_source_sha256"]:
         raise ValueError("Frozen protocol or implementation changed; review is required")
+    if lock["training_epochs"] != protocol["training"]["epochs"]:
+        raise ValueError("Frozen identity and configured epoch budget disagree")
     if framework_hashes() != lock["framework_source_sha256"]:
         raise ValueError("Installed framework source changed; resume compatibility requires review")
     return protocol, lock
@@ -162,10 +164,11 @@ def preflight(resume=False):
         raise RuntimeError("Insufficient free disk space for full-precision recovery checkpoints")
     counts = verify_inputs(protocol, identity["prepared_journal_sha256"])
     warnings = ["Epoch-boundary resume does not guarantee identical worker RNG, partial accumulation or update cadence.",
-                "60-epoch stability is unmeasured; no new full smoke epoch was run."]
+                f"{protocol['training']['epochs']}-epoch stability is unmeasured; no new full smoke epoch was run."]
     if environment["free_vram_gib"] < protocol["preflight"]["warn_below_free_vram_gib"]:
         warnings.append("Free VRAM is below 4 GiB; close other GPU applications before launch.")
-    result = {"status": "passed", "mode": "resume" if resume else "new run", "protocol_sha256": identity["protocol_sha256"],
+    result = {"status": "passed", "mode": "resume" if resume else "new run", "training_epochs": protocol["training"]["epochs"],
+              "protocol_sha256": identity["protocol_sha256"],
               "split_manifest_sha256": identity["split_manifest_sha256"], "pretrained_sha256": identity["pretrained_sha256"],
               "environment": environment, "free_disk_gib": disk, "verified_prepared_files": 2 * sum(counts.values()),
               "images": counts, "patient_overlap": 0, "test_files_opened": 0,

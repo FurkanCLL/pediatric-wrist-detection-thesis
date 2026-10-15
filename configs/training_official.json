@@ -14,7 +14,7 @@
     "task": "detect",
     "imgsz": 768,
     "batch": 6,
-    "epochs": 60,
+    "epochs": 80,
     "device": "0",
     "seed": 42,
     "deterministic": true,

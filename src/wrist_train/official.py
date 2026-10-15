@@ -80,7 +80,7 @@ class OfficialTrainer(CheckedTrainer):
                      "continuation": "epoch boundary; worker RNG and accumulation cadence are not bitwise restored"})
 
     def _start_training(self, trainer):
-        if self.device.type != "cuda" or self.epochs != 60 or self.batch_size != 6 or self.accumulate != 4:
+        if self.device.type != "cuda" or self.epochs != self.protocol["training"]["epochs"] or self.batch_size != 6 or self.accumulate != 4:
             raise ValueError("Official device/budget/batch/accumulation changed")
         if len(self.train_loader.dataset) != 14061 or len(self.test_loader.dataset) != 3088 or "test" in self.data:
             raise ValueError("Incorrect official train/validation inputs")

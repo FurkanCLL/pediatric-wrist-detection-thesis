@@ -137,7 +137,7 @@ def train_manually(resume=False, checkpoint_name="last"):
             from .official import OfficialTrainer
             trainer = OfficialTrainer(protocol, identity, directory, overrides, checkpoint)
             trainer.train()
-            write_json(directory / "completed.json", {"epochs": 60, "successful_updates": trainer.monitor.successful,
+            write_json(directory / "completed.json", {"epochs": protocol["training"]["epochs"], "successful_updates": trainer.monitor.successful,
                                                      "skipped_updates": trainer.monitor.skipped})
         except BaseException as error:
             write_json(directory / "failure.json", {"type": type(error).__name__, "message": str(error),
