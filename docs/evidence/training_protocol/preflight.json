@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "mode": "new run",
+  "protocol_sha256": "74fd5b563092f24338fe367a7b74214474e5d21e403dfacd7eb92e9ca87d5da0",
+  "split_manifest_sha256": "ee49e4ae1810ac1fb9541261e2d8df43eb32b5ca827433e1f9f22c20bb3c9c49",
+  "pretrained_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+  "environment": {
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "numpy": "2.3.5",
+      "opencv-python": "5.0.0.93",
+      "torch": "2.14.1+cu126",
+      "torchvision": "0.29.1+cu126",
+      "ultralytics": "8.4.177"
+    },
+    "python": "3.12.5",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "cuda_build": "12.6",
+    "free_vram_gib": 4.9443359375,
+    "total_vram_gib": 5.99658203125,
+    "allocated_after_probe_bytes": 0
+  },
+  "free_disk_gib": 105.08858871459961,
+  "verified_prepared_files": 34298,
+  "images": {
+    "train": 14061,
+    "val": 3088
+  },
+  "patient_overlap": 0,
+  "test_files_opened": 0,
+  "official_training_started": false,
+  "seconds": 356.9740812000018,
+  "warnings": [
+    "Epoch-boundary resume does not guarantee identical worker RNG, partial accumulation or update cadence.",
+    "60-epoch stability is unmeasured; no new full smoke epoch was run."
+  ]
+}

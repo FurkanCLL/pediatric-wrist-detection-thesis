@@ -2,14 +2,14 @@
 
 Implementation workspace for a new RTU Type 2 bachelor thesis study using the GRAZPEDWRI-DX pediatric wrist X-ray dataset, YOLOv8s, class-aware training, and adaptive local refinement.
 
-**Status:** Phase 2A GPU feasibility is complete. CUDA verification, a 768/batch-6 benchmark and one diagnostic training epoch passed. Seed-42 patient splits and the shared eight-class dataset are unchanged. The common training protocol remains a candidate for student review; official training and A-F results have not started. The 2 x 3 design is student-approved and subject to supervisor alignment for the formal thesis scope.
+**Status:** Phase 2B protocol freeze and baseline readiness are complete. The student-approved common protocol uses YOLOv8s, 768, batch 6, steady accumulation 4, AMP scale 128 and 60 epochs. Patient splits and prepared data are unchanged. Official training, A-F results and final test evaluation have not started. The 2 x 3 design remains subject to supervisor alignment for the formal thesis scope.
 
 ## Start here
 
 1. Read `AGENTS.md`, `docs/THESIS.md`, `docs/ROADMAP.md`, `docs/DECISIONS.md`.
 2. Install the pinned dependencies in the project Python environment.
-3. Read [the GPU feasibility report](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md), [dataset preparation](docs/evidence/dataset_preparation/DATASET_PREPARATION_REPORT.md), and the earlier [source audit](docs/evidence/dataset_audit/DATASET_AUDIT_REPORT.md).
-4. Follow `docs/ROADMAP.md`. The next step is student review of the proposed common protocol, before official training.
+3. Read [the frozen training protocol and manual commands](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md), [the GPU feasibility report](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md), [dataset preparation](docs/evidence/dataset_preparation/DATASET_PREPARATION_REPORT.md), and the earlier [source audit](docs/evidence/dataset_audit/DATASET_AUDIT_REPORT.md).
+4. Review the readiness report, run preflight, and manually launch the standard baseline when ready. Codex has not invoked the confirmed training command.
 
 The previous repository and experiments are archived separately. Do not copy its historical A-F results into this project's experimental outcomes.
 
@@ -76,7 +76,7 @@ Patient/image manifests, source-object traceability, pixel review sheets, settin
 
 ## GPU diagnostics
 
-`configs/training_candidate.json` is a preliminary common configuration, requiring student review before official training. The diagnostic command enforces one epoch for the smoke test. It cannot launch the official standard or class-aware experiment.
+`configs/training_candidate.json` preserves the earlier 30-epoch diagnostic proposal. The approved official 60-epoch configuration is separate at `configs/training_official.json`. The diagnostic command enforces one epoch for the smoke test. It cannot launch the official standard or class-aware experiment.
 
 The completed run used 768, batch 6, AMP with initial loss scale 128 and four-step accumulation. Training took 295.93 seconds; full trainer-integrated validation took 38.22 seconds. Read the [report and aggregate evidence](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md) before launching another diagnostic. Reuse existing successful receipts and checkpoints when continuing this phase.
 
@@ -102,3 +102,28 @@ The benchmark includes augmented loading, loss, backward, AdamW and EMA updates.
 The first benchmark stopped at the diagnostic overflow limit with the native 65,536 initial loss scale. A same-batch FP32/AMP comparison identified finite gradients at scale 128, and the corrected benchmark and complete smoke passed without overflow. `runtime.amp_initial_scale` is applied by the project trainer, not a native `YOLO.train()` argument. The failed attempt and comparison remain local; their aggregate receipts are public.
 
 Mild intensity augmentation uses HSV value only, tested on equal grayscale channels; hue/saturation and optional Albumentations transforms are disabled. In this pinned framework a one-epoch run disables scheduler warmup, even when a longer candidate run requests it. The smoke receipt reports this actual behavior. Passing one epoch does not establish convergence or guarantee numerical stability throughout a longer run.
+
+## Official baseline: manual launch
+
+Read [the protocol report](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md) for the frozen identity, measured timing basis, AMP limits, checkpoint retention and resume limitations. No official training was started during preparation. The first run initializes from verified COCO weights. Expected cost is approximately 5.57 hours, or 6.40 hours with a 15% allowance; official checkpoint/monitoring overhead is unmeasured.
+
+From this repository root in PowerShell, first run the non-training check:
+
+```powershell
+.\.venv\Scripts\wrist-train.exe preflight
+```
+
+After reviewing its result, the following explicit command starts the official standard baseline:
+
+```powershell
+.\.venv\Scripts\wrist-train.exe start --confirm-standard-baseline
+```
+
+Outputs stay under ignored `outputs/training/standard_baseline/`. Existing runs cannot be overwritten. In another terminal, use `wrist-train.exe status` or `monitor` with the same virtual-environment path. After the earlier training process exits, inspect recovery with preflight before deliberately resuming:
+
+```powershell
+.\.venv\Scripts\wrist-train.exe preflight --resume --checkpoint last
+.\.venv\Scripts\wrist-train.exe resume --confirm-resume-standard-baseline --checkpoint last
+```
+
+Resume restores the completed-epoch model/optimizer/EMA/schedule/scaler state into a new segment. Worker randomness and partial accumulation are not bitwise restored. The report explains verified predecessor/periodic fallback when the latest file is incomplete. Keep all segments and disclose actual successful/skipped updates in later comparisons. Class-aware sampling/cropping and the inference comparators remain future work.

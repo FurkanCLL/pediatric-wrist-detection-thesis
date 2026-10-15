@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "automated_tests": 71,
+  "new_protocol_tests": 22,
+  "existing_tests": 49,
+  "test_command": ".\\.venv\\Scripts\\python.exe -m unittest discover -s tests -q",
+  "pip_check": "No broken requirements found.",
+  "editable_entrypoint": "wrist-train.exe --help passed",
+  "official_training_epochs": 0,
+  "new_smoke_epochs": 0,
+  "gpu_benchmarks_repeated": false,
+  "official_run_directory_exists": false,
+  "test_model_evaluation": false,
+  "configuration_and_source_lock_check": "passed",
+  "implementation_revision": "2eaf21e36a0200c3d91617062b2d2b48cc6c1561",
+  "scope": "CPU unit tests, tiny synthetic CUDA updates, native setup-only, non-training preflight",
+  "resolved_test_fixture_issue": "One synthetic save fixture initially omitted native trainer.metrics; fixture completed before all 71 tests passed.",
+  "synthetic_cuda_fixture": "four tiny attempts, three successful updates, one forced skip; no YOLO/dataset inputs",
+  "preflight_status": "passed"
+}

@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "purpose": "tiny synthetic CUDA fixture; no YOLO/dataset inputs",
+  "official_training_epochs": 0,
+  "fixture_shape": "Conv2d(3,8,1)",
+  "fixture_attempts": 4,
+  "fixture_successful_updates": 3,
+  "fixture_forced_overflow_skips": 1,
+  "ema_updates": 3,
+  "final_scale": 128.0,
+  "test_only_growth_interval": 2,
+  "frozen_growth_interval_unchanged": 2000,
+  "fused_adamw_cuda_optimizer_roundtrip": "step counters restored on CUDA",
+  "events": [
+    {
+      "attempt": 2,
+      "successful_updates": 1,
+      "skipped_updates": 1,
+      "updated": false,
+      "scale_before": 128.0,
+      "scale_after": 64.0,
+      "recovered": false,
+      "persistent": false
+    },
+    {
+      "attempt": 3,
+      "successful_updates": 2,
+      "skipped_updates": 1,
+      "updated": true,
+      "scale_before": 64.0,
+      "scale_after": 64.0,
+      "recovered": true,
+      "persistent": false
+    },
+    {
+      "attempt": 4,
+      "successful_updates": 3,
+      "skipped_updates": 1,
+      "updated": true,
+      "scale_before": 64.0,
+      "scale_after": 128.0,
+      "recovered": false,
+      "persistent": false
+    }
+  ]
+}
