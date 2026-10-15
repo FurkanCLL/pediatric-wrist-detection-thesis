@@ -1,0 +1,2 @@
+# Add and pin runtime dependencies only after the Phase 0/1 environment check.
+# Do not copy old-project package versions without compatibility verification.
