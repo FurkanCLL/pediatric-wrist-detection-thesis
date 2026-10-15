@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pediatric-wrist-detection-thesis"
+version = "0.1.0"
+description = "Reproducible source audit for the GRAZPEDWRI-DX thesis study"
+requires-python = ">=3.12"
+dependencies = ["numpy==2.3.5", "Pillow==12.3.0"]
+
+[project.scripts]
+wrist-audit = "wrist_audit.audit:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
