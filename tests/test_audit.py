@@ -15,6 +15,7 @@ from wrist_audit.annotations import (PROPOSED_IDS, SOURCE_CLASSES, compare_objec
                                      object_box, read_voc, read_yolo, validate_box)
 from wrist_audit.audit import run_audit, validate_output_path
 from wrist_audit.evidence import export_evidence
+from wrist_audit.exports import check_exports
 from wrist_audit.images import inspect_image
 from wrist_audit.metadata import filename_disagreements, read_metadata
 from wrist_audit.provenance import check_archive
@@ -88,6 +89,15 @@ class FileTests(TemporaryFiles):
         self.assertEqual(size, (100, 80))
         self.assertEqual(objects, [("fracture", (1, 2, 30, 40))])
         self.assertEqual(flags["difficult", "0"], 1)
+
+    def test_original_voc_empty_size_keeps_object_coordinates(self):
+        path = self.root / "annotation.xml"
+        path.write_text("<annotation><size/><object><name>text</name>"
+                        "<bndbox><xmin>1</xmin><ymin>2</ymin><xmax>3</xmax><ymax>4</ymax>"
+                        "</bndbox></object></annotation>")
+        size, objects, _ = read_voc(path)
+        self.assertIsNone(size)
+        self.assertEqual(objects, [("text", (1, 2, 3, 4))])
 
     def test_archive_checksum_and_content_match(self):
         raw = self.root / "raw"
@@ -217,7 +227,7 @@ class IntegrationTests(TemporaryFiles):
         Image.fromarray(np.array([[0, 100], [200, 300]], dtype=np.uint16)).save(raw / "images" / (stem + ".png"))
         (raw / "supervisely/wrist/ann" / (stem + ".json")).write_text(json.dumps({
             "size": {"width": 2, "height": 2}, "objects": [{"classTitle": "axis", "points": {"exterior": [[0, 0], [1, 1]]}}], "tags": []}))
-        (raw / "pascalvoc" / (stem + ".xml")).write_text("<annotation><size><width>2</width><height>2</height></size></annotation>")
+        (raw / "pascalvoc" / (stem + ".xml")).write_text("<annotation><size/></annotation>")
         (raw / "yolov5/labels" / (stem + ".txt")).write_text("")
         summary = run_audit(raw, output, decode_sample=1, workers=1)
         self.assertEqual(summary["annotations"]["images_without_detection_boxes"], 1)
@@ -237,6 +247,42 @@ class IntegrationTests(TemporaryFiles):
         self.assertNotIn(stem, shared)
         self.assertNotIn("unreviewed free text", shared)
         self.assertEqual(json.loads(shared)["annotations"]["object_tags_total"], 1)
+
+        # Recheck from a verified synthetic archive, including the original empty-size case.
+        archive = output / "folder_structure.zip"
+        with zipfile.ZipFile(archive, "w") as target:
+            for path in raw.rglob("*"):
+                if path.is_file():
+                    target.write(path, path.relative_to(raw).as_posix())
+        archive_check, errors = check_archive(raw, archive, hashlib.md5(archive.read_bytes()).hexdigest())
+        self.assertEqual(errors, [])
+        (output / "source_release.json").write_text(json.dumps({"version": 2, "folder_archive": archive_check}))
+        result = check_exports(output)
+        self.assertEqual(result["crosschecks"]["voc_missing_sizes"], 1)
+        self.assertEqual(result["issue_counts"], {})
+        export_evidence(output, public)
+        self.assertEqual(json.loads((public / "aggregate_statistics.json").read_text())["annotations"]["crosschecks"]["voc_images_checked"], 1)
+        summary["issue_counts"] = summary["blocking_issue_counts"] = {"annotation_parse": 1}
+        (output / "summary.json").write_text(json.dumps(summary))
+        with (output / "issues.csv").open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=["check", "detail"])
+            writer.writeheader()
+            writer.writerow({"check": "annotation_parse", "detail": "TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'"})
+        export_evidence(output, public)
+        corrected = json.loads((public / "aggregate_statistics.json").read_text())
+        self.assertEqual(corrected["resolved_tooling_findings"]["initial_voc_parser_errors"], 1)
+        self.assertNotIn("annotation_parse", corrected["blocking_issue_counts"])
+        (output / "issues.csv").write_text("check,detail\nannotation_parse,unexplained error\n")
+        with self.assertRaises(ValueError):
+            export_evidence(output, public)
+
+    def test_export_recheck_requires_proven_source_equivalence(self):
+        output = self.root / "audit"
+        output.mkdir()
+        (output / "source_release.json").write_text(json.dumps({"folder_archive": {
+            "official_md5_match": True, "counts": {"archive_files": 2, "identical_local": 1}}}))
+        with self.assertRaises(ValueError):
+            check_exports(output)
 
 
 if __name__ == "__main__":

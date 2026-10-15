@@ -135,7 +135,8 @@ def run_audit(raw, output, decode_sample=512, workers=4):
                 failures, delta = compare_objects(primary, objects, 1.0)
                 crosschecks["voc_images_checked"] += 1
                 crosschecks["voc_mismatched_objects"] += failures
-                crosschecks["voc_size_mismatches"] += size != (width, height)
+                crosschecks["voc_missing_sizes"] += size is None
+                crosschecks["voc_size_mismatches"] += size is not None and size != (width, height)
                 max_deltas["voc"] = max(max_deltas["voc"], delta)
                 for _, box in objects:
                     problem = validate_box(box, width, height)

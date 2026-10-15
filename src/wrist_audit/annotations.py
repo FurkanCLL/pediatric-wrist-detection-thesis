@@ -42,7 +42,9 @@ def object_box(obj):
 
 def read_voc(path):
     root = ET.parse(path).getroot()
-    size = (int(root.findtext("size/width")), int(root.findtext("size/height")))
+    width, height = root.findtext("size/width"), root.findtext("size/height")
+    # The original export has an empty <size/> element in every file.
+    size = None if width is None and height is None else (int(width), int(height))
     objects = []
     for obj in root.findall("object"):
         box = tuple(float(obj.findtext("bndbox/" + k)) for k in ("xmin", "ymin", "xmax", "ymax"))
@@ -55,8 +57,12 @@ def read_voc(path):
 
 
 def read_yolo(path, width, height):
+    return parse_yolo(Path(path).read_text(encoding="utf-8"), width, height)
+
+
+def parse_yolo(text, width, height):
     objects, errors = [], []
-    for line_number, line in enumerate(Path(path).read_text(encoding="utf-8").splitlines(), 1):
+    for line_number, line in enumerate(text.splitlines(), 1):
         if not line.strip():
             continue
         try:
