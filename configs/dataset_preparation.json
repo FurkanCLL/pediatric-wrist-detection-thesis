@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "split_names": ["train", "val", "test"],
+  "ratios": [0.7, 0.15, 0.15],
+  "classes": ["fracture", "metal", "text", "periostealreaction", "pronatorsign", "bonelesion", "softtissue", "boneanomaly"],
+  "annotation_source": "supervisely/wrist/ann",
+  "foreignbody": "retain image; omit box as unlabeled background",
+  "axis_and_image_tags": "excluded from detector labels",
+  "conversion": "uint8((uint32(source) + 128) // 257)",
+  "rounding": "nearest integer; unsigned integer inputs cannot fall exactly halfway",
+  "png_compress_level": 6,
+  "geometry": "original dimensions, orientation and pixel positions",
+  "allocation": "rarest remaining patient feature first; deficit allocation with image and patient balance tie breaks",
+  "patient_order": "seeded shuffle within each rare-feature batch; never size-sorted",
+  "maximum_image_proportion_deviation": 0.03,
+  "features": "eight class-presence flags, any empty-target image, any non-fracture image",
+  "expected_images": 20327,
+  "expected_patients": 6091,
+  "expected_target_objects": 47436
+}

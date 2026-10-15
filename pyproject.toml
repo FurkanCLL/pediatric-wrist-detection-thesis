@@ -5,12 +5,16 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pediatric-wrist-detection-thesis"
 version = "0.1.0"
-description = "Reproducible source audit for the GRAZPEDWRI-DX thesis study"
+description = "Reproducible audit and preparation for the GRAZPEDWRI-DX thesis study"
 requires-python = ">=3.12"
-dependencies = ["numpy==2.3.5", "Pillow==12.3.0"]
+dependencies = [
+    "numpy==2.3.5", "Pillow==12.3.0", "opencv-python==5.0.0.93",
+    "ultralytics==8.4.177", "torch==2.14.1", "torchvision==0.29.1",
+]
 
 [project.scripts]
 wrist-audit = "wrist_audit.audit:main"
+wrist-prepare = "wrist_prepare.pipeline:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
