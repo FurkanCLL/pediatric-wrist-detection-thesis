@@ -2,7 +2,7 @@
 
 Implementation workspace for a new RTU Type 2 bachelor thesis study using the GRAZPEDWRI-DX pediatric wrist X-ray dataset, YOLOv8s, class-aware training, and adaptive local refinement.
 
-**Status:** Phase 2B protocol freeze and baseline readiness are complete. The student-approved common protocol uses YOLOv8s, 768, batch 6, steady accumulation 4, AMP scale 128 and 60 epochs. Patient splits and prepared data are unchanged. Official training, A-F results and final test evaluation have not started. The 2 x 3 design remains subject to supervisor alignment for the formal thesis scope.
+**Status:** Phase 2B protocol freeze and baseline readiness are complete. The student-approved common protocol uses YOLOv8s, 768, batch 6, steady accumulation 4, AMP scale 128 and 80 epochs (approved before the first official run). Patient splits and prepared data are unchanged. Official training, A-F results and final test evaluation have not started. The 2 x 3 design remains subject to supervisor alignment for the formal thesis scope.
 
 ## Start here
 
@@ -76,7 +76,7 @@ Patient/image manifests, source-object traceability, pixel review sheets, settin
 
 ## GPU diagnostics
 
-`configs/training_candidate.json` preserves the earlier 30-epoch diagnostic proposal. The approved official 60-epoch configuration is separate at `configs/training_official.json`. The diagnostic command enforces one epoch for the smoke test. It cannot launch the official standard or class-aware experiment.
+`configs/training_candidate.json` preserves the earlier 30-epoch diagnostic proposal. The approved official 80-epoch configuration is separate at `configs/training_official.json`. The diagnostic command enforces one epoch for the smoke test. It cannot launch the official standard or class-aware experiment.
 
 The completed run used 768, batch 6, AMP with initial loss scale 128 and four-step accumulation. Training took 295.93 seconds; full trainer-integrated validation took 38.22 seconds. Read the [report and aggregate evidence](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md) before launching another diagnostic. Reuse existing successful receipts and checkpoints when continuing this phase.
 
@@ -105,7 +105,7 @@ Mild intensity augmentation uses HSV value only, tested on equal grayscale chann
 
 ## Official baseline: manual launch
 
-Read [the protocol report](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md) for the frozen identity, measured timing basis, AMP limits, checkpoint retention and resume limitations. No official training was started during preparation. The first run initializes from verified COCO weights. Expected cost is approximately 5.57 hours, or 6.40 hours with a 15% allowance; official checkpoint/monitoring overhead is unmeasured.
+Read [the protocol report](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md) for the frozen identity, measured timing basis, AMP limits, checkpoint retention and resume limitations. No official training was started during preparation. The first run initializes from verified COCO weights. Expected cost is approximately 7 h 26 min, or 8 h 32 min with a 15% allowance; official checkpoint/monitoring overhead is unmeasured.
 
 From this repository root in PowerShell, first run the non-training check:
 

@@ -1,15 +1,15 @@
 {
-  "protocol_sha256": "74fd5b563092f24338fe367a7b74214474e5d21e403dfacd7eb92e9ca87d5da0",
+  "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
   "split_manifest_sha256": "ee49e4ae1810ac1fb9541261e2d8df43eb32b5ca827433e1f9f22c20bb3c9c49",
   "pretrained_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
-  "implementation_revision": "2eaf21e36a0200c3d91617062b2d2b48cc6c1561",
+  "implementation_revision": "382d9c8315d5585607c2943bb0232ee3a469fda1",
   "implementation_source_sha256": {
     "src/wrist_train/amp.py": "8761f4cb77bde8ba590eb7ff4eb737c49f99c634b05ceddedcd78d3a85a163f1",
-    "src/wrist_train/checkpoints.py": "2e201af0252bec3e36f5f6d112699b74633bdb09152ad0b9ee3349a27347b9e4",
+    "src/wrist_train/checkpoints.py": "3606970cdc65b9ba2ee8128de8b185b0c114a15375ba119384bc2e8215656e40",
     "src/wrist_train/progress.py": "567875c0b08447c8b28a46d1c6553ae3e79e2536a68dba267102c4b1416e347c",
-    "src/wrist_train/protocol.py": "6582fe7753d8e4bcb51338b27668d3357fd9b6ddefd4e5e38b6ba46b9b507700",
-    "src/wrist_train/official.py": "15d56201654453691cf37a693943cb4192df26515ced681602d23419fa90b4af",
-    "src/wrist_train/launch.py": "006eeb9ad8cc0313bbe423ab351d1ef5d282720ae9aa17e30585a67a235c6230",
+    "src/wrist_train/protocol.py": "e0c4b920c4fa060500cd7a177913c4e26cfa31440efa8fa36810dc6dcc36bbb2",
+    "src/wrist_train/official.py": "0ddc9e94c0f8360df1fa869a56229854c8f210f62cb4dd0b123e56443105b714",
+    "src/wrist_train/launch.py": "b0493f6fbd41d6e61a9b54626d8fc3f6a4f73388a12a7d45e45fddf33dc08d83",
     "src/wrist_train/common.py": "5d15a2be3302796bf40f1cd611938b4fcf3dab9f93e4d2a2b023d3f4764d14ac",
     "src/wrist_train/diagnostics.py": "ec6e945d84cf1d2eeff90ebf3c381e995ac6af3ce8ae182d1a44114134db91ab",
     "src/wrist_train/budget.py": "9ed21135fb65a6a77c7f6d44b25ee365a5fb488dfb7b8777f3903732fff25b09",
@@ -41,5 +41,6 @@
       "ultralytics": "8.4.177"
     }
   },
-  "checkpoint_format_version": 1
+  "checkpoint_format_version": 1,
+  "training_epochs": 80
 }
