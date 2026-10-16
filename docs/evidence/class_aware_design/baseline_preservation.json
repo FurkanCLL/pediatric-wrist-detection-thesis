@@ -1,0 +1,266 @@
+{
+  "status": "verified and unchanged",
+  "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+  "split_manifest_sha256": "ee49e4ae1810ac1fb9541261e2d8df43eb32b5ca827433e1f9f22c20bb3c9c49",
+  "pretrained_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+  "implementation_source_sha256": {
+    "src/wrist_train/amp.py": "8761f4cb77bde8ba590eb7ff4eb737c49f99c634b05ceddedcd78d3a85a163f1",
+    "src/wrist_train/checkpoints.py": "3606970cdc65b9ba2ee8128de8b185b0c114a15375ba119384bc2e8215656e40",
+    "src/wrist_train/progress.py": "567875c0b08447c8b28a46d1c6553ae3e79e2536a68dba267102c4b1416e347c",
+    "src/wrist_train/protocol.py": "e0c4b920c4fa060500cd7a177913c4e26cfa31440efa8fa36810dc6dcc36bbb2",
+    "src/wrist_train/official.py": "0ddc9e94c0f8360df1fa869a56229854c8f210f62cb4dd0b123e56443105b714",
+    "src/wrist_train/launch.py": "b0493f6fbd41d6e61a9b54626d8fc3f6a4f73388a12a7d45e45fddf33dc08d83",
+    "src/wrist_train/common.py": "5d15a2be3302796bf40f1cd611938b4fcf3dab9f93e4d2a2b023d3f4764d14ac",
+    "src/wrist_train/diagnostics.py": "ec6e945d84cf1d2eeff90ebf3c381e995ac6af3ce8ae182d1a44114134db91ab",
+    "src/wrist_train/budget.py": "9ed21135fb65a6a77c7f6d44b25ee365a5fb488dfb7b8777f3903732fff25b09",
+    "src/wrist_prepare/common.py": "3c1a119bdde34540b848f8bf47f6c06ef9dec8f21920874263591d69ae2d2920",
+    "src/wrist_prepare/records.py": "24fcc70fa3ab76b83128ac96fc8562594544fa770d3379c1721155d8d0fbb1c6"
+  },
+  "environment": {
+    "python": "3.12.5",
+    "cuda_build": "12.6",
+    "gpu_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "numpy": "2.3.5",
+      "opencv-python": "5.0.0.93",
+      "torch": "2.14.1+cu126",
+      "torchvision": "0.29.1+cu126",
+      "ultralytics": "8.4.177"
+    }
+  },
+  "artifact_inventory_sha256": "9e2d9b5316d816e2275f96a436367552c42be9dd6f5a0afcd887826b12884982",
+  "metrics_file_hashes": {
+    "results.csv": "38e0987223fdfebd802b4148c463f81c7a86a0c323c0455d00bd0416c817b9b3",
+    "epochs.jsonl": "01dfa69a2d53ef0744d6e9b102fd84fa0080d8bf0f980f7458575aa19762dbab",
+    "per_class.jsonl": "bfeec5a5cd1acc4011f2199306bd22101815ca9c511351c653cadb56c6f1b5cd",
+    "events.jsonl": "c1de86be855c9dcf2ae093e32ef2b5c92156f22f61cade253b2f725ff3b86ab8",
+    "frozen_protocol.json": "01b4f3d6feee8b6eb62c208e3ff8b28abfbded88eaa7dfb53217e40fb2a1e023",
+    "run_identity.json": "e19c3a86ef3a4fb2997763efe64c9ba218c918c904be61bb9a2232412eee4a0a"
+  },
+  "implementation_revision": "382d9c8315d5585607c2943bb0232ee3a469fda1",
+  "epochs": 80,
+  "artifact_files": 36,
+  "checkpoint_files": [
+    {
+      "file": "best.previous.pt",
+      "bytes": 178910370,
+      "completed_epoch": 19,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "b5ac21557e6d6f37a5fa3b239f6e0eba45cc6c7843b135dd9f3b2ad2824ed698",
+      "metadata_completed_epoch": 19,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    },
+    {
+      "file": "best.pt",
+      "bytes": 178910754,
+      "completed_epoch": 22,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+      "metadata_completed_epoch": 22,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    },
+    {
+      "file": "epoch010.pt",
+      "bytes": 223742331,
+      "completed_epoch": 10,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "656abbcd4a28278d03c4f42e7f11ef4c9eb1e7cfe3decf941560d0dc6e9cf6a5",
+      "metadata_completed_epoch": 10,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    },
+    {
+      "file": "epoch020.pt",
+      "bytes": 223743611,
+      "completed_epoch": 20,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "f9cee7754d05255c4e8d23b9d7dc9e6315dad1a15e9ea0d972bc4da3699c27c0",
+      "metadata_completed_epoch": 20,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    },
+    {
+      "file": "epoch030.pt",
+      "bytes": 223744891,
+      "completed_epoch": 30,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "909233eca549915f00a79043e6784ddc15475e0bf5060bdc3ffb3e1133efcd3f",
+      "metadata_completed_epoch": 30,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    },
+    {
+      "file": "epoch040.pt",
+      "bytes": 223746171,
+      "completed_epoch": 40,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "7a26b5fe2bd19d24a824522d4f0c4facc1f21765cb35d5bacec64e5bf1d05cc9",
+      "metadata_completed_epoch": 40,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    },
+    {
+      "file": "epoch050.pt",
+      "bytes": 223747451,
+      "completed_epoch": 50,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "89f640699e9eb75a6d2e7cc55f576084acd667c68e6af42d494cc9bfe7af14b8",
+      "metadata_completed_epoch": 50,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    },
+    {
+      "file": "epoch060.pt",
+      "bytes": 223748731,
+      "completed_epoch": 60,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "a52aa2b1447072ecaaf633ca68a071d7d200bb970f4a403af56651c5b645b86f",
+      "metadata_completed_epoch": 60,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    },
+    {
+      "file": "epoch070.pt",
+      "bytes": 223750011,
+      "completed_epoch": 70,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "c3eacf03c1458bb5ece867ae234e8bba9d18d19cfdef7353d2e91edfed992a3e",
+      "metadata_completed_epoch": 70,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    },
+    {
+      "file": "epoch080.pt",
+      "bytes": 223751291,
+      "completed_epoch": 80,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "3e6ee5f5994ac96cb480eba134d95c5b8c2e0ce3c898c15ba916a41cf2e6ed67",
+      "metadata_completed_epoch": 80,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    },
+    {
+      "file": "last.previous.pt",
+      "bytes": 223751163,
+      "completed_epoch": 79,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "c48d6c3b6c3e8cb9d5bc664cee01f14ad46758acb4b450071451693fab5fed16",
+      "metadata_completed_epoch": 79,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    },
+    {
+      "file": "last.pt",
+      "bytes": 223751291,
+      "completed_epoch": 80,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "sha256": "3e6ee5f5994ac96cb480eba134d95c5b8c2e0ce3c898c15ba916a41cf2e6ed67",
+      "metadata_completed_epoch": 80,
+      "finite_model_ema_best_and_optimizer": true,
+      "model_state_tensors": 355,
+      "class_mapping_verified": true
+    }
+  ],
+  "best": {
+    "completed_epoch": 22,
+    "sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+    "map50": 0.59908,
+    "map50_95": 0.3327,
+    "classes": [
+      {
+        "class_id": 0,
+        "class": "fracture",
+        "precision": 0.8667124411900623,
+        "recall": 0.8806980056980057,
+        "ap50": 0.9211619002569401,
+        "ap50_95": 0.5197308874753814
+      },
+      {
+        "class_id": 1,
+        "class": "metal",
+        "precision": 0.7665107157041154,
+        "recall": 0.8958333333333334,
+        "ap50": 0.8906817156058304,
+        "ap50_95": 0.5741713110084053
+      },
+      {
+        "class_id": 2,
+        "class": "text",
+        "precision": 0.9490824243893325,
+        "recall": 0.9836610357241762,
+        "ap50": 0.98768577621264,
+        "ap50_95": 0.6896492469382327
+      },
+      {
+        "class_id": 3,
+        "class": "periostealreaction",
+        "precision": 0.4722361100300861,
+        "recall": 0.6328600405679513,
+        "ap50": 0.5680835975275765,
+        "ap50_95": 0.21161783475547372
+      },
+      {
+        "class_id": 4,
+        "class": "pronatorsign",
+        "precision": 0.5294267325754052,
+        "recall": 0.6024096385542169,
+        "ap50": 0.5699075718633392,
+        "ap50_95": 0.23781842605259357
+      },
+      {
+        "class_id": 5,
+        "class": "bonelesion",
+        "precision": 1.0,
+        "recall": 0.3891567429498465,
+        "ap50": 0.415,
+        "ap50_95": 0.24050000000000002
+      },
+      {
+        "class_id": 6,
+        "class": "softtissue",
+        "precision": 0.6175757117927357,
+        "recall": 0.2361111111111111,
+        "ap50": 0.29644331590631323,
+        "ap50_95": 0.12454444336588973
+      },
+      {
+        "class_id": 7,
+        "class": "boneanomaly",
+        "precision": 0.5365800839051867,
+        "recall": 0.1388888888888889,
+        "ap50": 0.1436939826626153,
+        "ap50_95": 0.06354823345552352
+      }
+    ]
+  },
+  "successful_updates": 47416,
+  "skipped_updates": 17,
+  "nominal_attempts": 47433,
+  "resumes": 0,
+  "amp_recorded_skips": 17,
+  "amp_scale_min": 64.0,
+  "amp_scale_max": 8192.0,
+  "total_epoch_seconds": 30809.85971713066,
+  "test_inference_performed": false,
+  "new_model_inference_performed": false,
+  "limitations": [
+    "validation-selected checkpoint; no held-out test result",
+    "rare-class validation support is small",
+    "baseline metrics describe performance, never enter policy construction"
+  ]
+}
