@@ -9,20 +9,24 @@
     "training_runs": 0
   },
   "checks": {
+    "adversarial_blend_and_ranking_limitations": true,
     "approval_execution_flags_false": true,
+    "float32_confidence_caps_do_not_round_up": true,
     "inherited_global_values_match": true,
     "json_finite_unique_keys": true,
     "local_links_resolve": true,
     "phase3b_source_hashes_unchanged": true,
+    "protected_matching_competition_explicit": true,
     "protected_tracked_state_unchanged": true,
     "public_identifiers_and_host_paths_absent": true,
     "report_19_sections": true,
+    "reported_ap_values_match_saved_aggregates": true,
     "score_and_boost_arithmetic": true,
     "synthetic_crop_bounds": true,
     "target_mapping_and_budget_consistent": true
   },
-  "configuration_canonical_sha256": "007cf2310d6aa5490df2e963c91d6d55a0cd8652940044580190f9ee3f460cce",
-  "configuration_normalized_sha256": "9365905bd6afd7b59a6eeeb82d052e4f4edcfa8f31b0c9fd0d251076c5cdedc0",
+  "configuration_canonical_sha256": "a2e96ff54fdee455aefcb698b8a49008572a22decdb535cc2e65cd6d73997cc6",
+  "configuration_normalized_sha256": "b4ad64a0bb865123e2a2bf3375a15f490bbf08974858ee13f852c3bb01ddab3e",
   "future_implementation_tests": "Planned in report section 15; not performed in this design phase",
   "inspected_installed_source_sha256": {
     "metrics.py": "e2f216964bb0d89ac26efecb4e0a76750b554d2e670a27e6ed4a8f42d998b2a0",
@@ -31,7 +35,7 @@
   },
   "phase": "3C.1",
   "preservation_limit": "Tracked source/config/evidence checked against pre-phase Git state. No checkpoint/data content re-audit; existing Phase 3B preservation receipts remain historical evidence. No phase write targets checkpoint or dataset files.",
-  "report_normalized_sha256": "ea1cb457db2806c6e1978a48b45b533cdcf73c76b4bce7a996bec5f3e4bf9308",
+  "report_normalized_sha256": "e55c54cb74434b5788a7e947917b0c1381b4ae2bafa6ac1d76b8cf2f901beebc",
   "review_date": "2026-10-17",
   "reviewed_public_source_and_report_sha256": {
     "docs/evidence/class_aware_design/BASELINE_PRESERVATION_REPORT.md": "36a001cb51e06dabf4a7837bf5f14d14a44cc5650894444e932c31c6c7e99f6a",
@@ -57,6 +61,7 @@
   "source_review_revision": "a709747438977f071ede9995fe3e9efbb418f9b3",
   "status": "PROPOSED_UNAPPROVED",
   "synthetic_cases": {
+    "adversarial": 3,
     "boost": 6,
     "geometry": 8,
     "scoring": 5

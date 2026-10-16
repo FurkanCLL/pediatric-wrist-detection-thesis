@@ -2,14 +2,14 @@
 
 Implementation workspace for a new RTU Type 2 bachelor thesis study using the GRAZPEDWRI-DX pediatric wrist X-ray dataset, YOLOv8s, class-aware training, and adaptive local refinement.
 
-**Status:** Phase 3B is complete: baseline error analysis and two predefined SAHI variants are verified on all 3,088 validation images. Both SAHI variants recover targets but reduce overall/fracture AP and increase false positives and latency. The completed 80-epoch standard baseline is preserved. Candidate A remains proposed; no class-aware policy is approved, integrated or trained. Final adaptive inference and held-out A-F evaluation remain future work. Formal supervisor alignment of the revised thesis scope is still pending.
+**Status:** Phase 3C.1 design is complete: CG-ALR has an explicit unapproved specification and proposed configuration. No adaptive implementation or inference has run. Phase 3B's verified SAHI comparisons remain preserved as negative development evidence. The completed 80-epoch standard baseline is preserved; class-aware Candidate A remains proposed and untrained. Student review precedes Phase 3C.2. Final adaptive inference and held-out A-F evaluation remain future work. Formal supervisor alignment of the revised thesis scope is still pending.
 
 ## Start here
 
 1. Read `AGENTS.md`, `docs/THESIS.md`, `docs/ROADMAP.md`, `docs/DECISIONS.md`.
 2. Install the pinned dependencies in the project Python environment.
 3. Read [the validation error-analysis and SAHI findings](docs/evidence/error_analysis_sahi/ERROR_ANALYSIS_SAHI_REPORT.md), [the class-aware design and recommendation](docs/evidence/class_aware_design/CLASS_AWARE_DESIGN_REPORT.md), [baseline preservation](docs/evidence/class_aware_design/BASELINE_PRESERVATION_REPORT.md), [the frozen training protocol and original manual commands](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md), [the GPU feasibility report](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md), [dataset preparation](docs/evidence/dataset_preparation/DATASET_PREPARATION_REPORT.md), and the earlier [source audit](docs/evidence/dataset_audit/DATASET_AUDIT_REPORT.md).
-4. Review the proposed policy, private crop comparisons and inference findings before authorizing the next implementation step. Preserve the completed standard baseline; no class-aware training or final adaptive implementation is launched by Phase 3B.
+4. Review [the proposed adaptive-refinement specification](docs/evidence/adaptive_refinement_design/ADAPTIVE_REFINEMENT_DESIGN_REPORT.md), the class-aware policy, private crop comparisons and inference findings before authorizing the next implementation step. Preserve the completed standard baseline. Neither the proposed configuration nor this documentation authorizes adaptive execution or class-aware training.
 
 The previous repository and experiments are archived separately. Do not copy its historical A-F results into this project's experimental outcomes.
 
@@ -174,3 +174,9 @@ The completed-attempt commands below document the sequence. Inference output dir
 ```
 
 `analyze`, `bootstrap` and `bridge` read saved predictions without new neural inference. `verify` includes only a nine-image deterministic prediction replay plus integrity checks; it is not a repeated full benchmark. `qualitative` writes protected, private overlays and requires actual visual inspection before its public receipt is marked reviewed. All medical images, patient/image identities, detailed predictions and raw timing logs remain under ignored `outputs/error_analysis_sahi/`. Only aggregate evidence is tracked. No command in this section trains a model, evaluates test images or implements the final adaptive system. Class-aware candidates A/B/C remain unapproved and unchanged.
+
+## Adaptive refinement: proposed design only
+
+Read [the CG-ALR technical specification](docs/evidence/adaptive_refinement_design/ADAPTIVE_REFINEMENT_DESIGN_REPORT.md), [proposed parameters](configs/adaptive_refinement_proposed.json) and [design checks](docs/evidence/adaptive_refinement_design/design_verification.json). The proposal selects weak fracture/periosteal predictions, plans at most two broad local views and permits anchored confirmation or guarded coordinate blending. V1/V2 are development alternatives; one common adaptive rule must eventually serve both checkpoints in the existing A-F matrix.
+
+The configuration is explicitly unapproved and has no production consumer or launch command. Phase 3C.1 performed source review and lightweight synthetic arithmetic/configuration checks only, with zero model inference, GPU experiments or training. The report identifies the V2 correction, protected matching, inherited-duplicate limitation and success/stopping rules requiring student approval. Do not automatically proceed to Phase 3C.2 or treat recorded hashes as a protocol freeze.

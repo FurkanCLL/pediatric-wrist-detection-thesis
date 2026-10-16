@@ -1,34 +1,80 @@
 {
+  "adversarial": {
+    "localization": {
+      "blend": [
+        2.5,
+        0.0,
+        102.5,
+        100.0
+      ],
+      "blend_gt_iou": 0.9512195121858417,
+      "global_box": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "global_gt_iou": 0.9999999999899999,
+      "global_local_iou": 0.8181818181743801,
+      "local_box": [
+        10,
+        0,
+        110,
+        100
+      ],
+      "synthetic_gt": [
+        0,
+        0,
+        100,
+        100
+      ]
+    },
+    "protected_matching": {
+      "interpretation": "Joint descending-IoU matching reserves this local box for the protected global row; no weak-anchor boost",
+      "protected_iou": 0.9999999999899999,
+      "weak_anchor_iou": 0.694915254231399
+    },
+    "purpose": "Synthetic counterexamples, not measured detector performance",
+    "ranking": {
+      "confirming_fp_local_confidence": 0.9,
+      "interpretation": "FP moves ahead of TP; demonstrates ranking risk without recomputing or changing the project AP metric",
+      "original_fp_confidence": 0.2,
+      "original_tp_confidence": 0.28,
+      "precision_at_first_tp_after": 0.5,
+      "precision_at_first_tp_before": 1.0,
+      "updated_fp_confidence": 0.30000000000000004
+    }
+  },
   "boost_cases": [
     {
       "local": 0.25,
-      "original": 0.05,
-      "updated": 0.15000000000000002
+      "original": 0.05000000074505806,
+      "updated": 0.14999999105930328
     },
     {
-      "local": 0.8,
-      "original": 0.149,
-      "updated": 0.249
+      "local": 0.800000011920929,
+      "original": 0.14900000393390656,
+      "updated": 0.24899999797344208
     },
     {
       "local": 0.25,
-      "original": 0.15,
+      "original": 0.15000000596046448,
       "updated": 0.25
     },
     {
       "local": 0.25,
-      "original": 0.2,
+      "original": 0.20000000298023224,
       "updated": 0.25
     },
     {
-      "local": 0.6,
-      "original": 0.2,
-      "updated": 0.30000000000000004
+      "local": 0.6000000238418579,
+      "original": 0.20000000298023224,
+      "updated": 0.29999998211860657
     },
     {
-      "local": 0.9,
-      "original": 0.249,
-      "updated": 0.349
+      "local": 0.8999999761581421,
+      "original": 0.24899999797344208,
+      "updated": 0.3489999771118164
     }
   ],
   "crop_cases": [

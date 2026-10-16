@@ -75,14 +75,15 @@
   },
   "matching": {
     "anchor_scope": "All eligible global candidates whose expanded integer envelopes fit a selected ROI; not only ROI seeds",
+    "protected_competitors": "Target-class global rows with original confidence>=0.25 also compete for local evidence at the same IoU threshold, without any field update; expanded-envelope containment is required only for mutable anchors",
     "local_classes": [0, 3],
     "local_confidence_min": 0.25,
     "local_union_nms_iou": 0.7,
     "local_union_nms_rule": "Greedy same-class suppression at IoU>0.7, descending local confidence, then ROI ID and per-view row ID; preserve the winning source ROI",
     "global_local_iou_min": 0.5,
-    "pair_eligibility": "Same class; local evidence passes the artificial-edge guard; global expanded envelope fits that local detection's source ROI",
+    "pair_eligibility": "Same class; local evidence passes the artificial-edge guard; a mutable anchor's expanded envelope fits that local detection's source ROI; protected competitors do not need that containment check",
     "pair_sort_key": ["descending IoU", "descending local confidence", "descending original global confidence", "ascending global ID", "ascending ROI ID", "ascending per-view local ID"],
-    "assignment": "Greedy sorted eligible pairs; each global and each retained local ID consumed once across both ROIs; match once using original global boxes/scores for both fusion variants",
+    "assignment": "Greedy sorted eligible pairs including protected competitors; each global and each retained local ID consumed once across both ROIs; only matched mutable anchors are updated; match once using original global boxes/scores for both fusion variants",
     "rematch_after_veto": false
   },
   "fusion": {
@@ -90,6 +91,7 @@
     "maximum_positive_confidence_delta": 0.1,
     "maximum_updated_confidence": 0.35,
     "confidence_formula": "p_new=min(p_original+0.10,p_local,0.35); one update only",
+    "confidence_quantization": "Store the greatest float32 value not exceeding the computed cap, so rounding cannot exceed the +0.10/local/.35 bounds",
     "V1": {"coordinates": "Unchanged original global boxes"},
     "V2": {
       "inherits_V1_confidence": true,
@@ -147,7 +149,7 @@
     "inherited": "768, EMA/precision, confidence 0.001, NMS 0.7, max_det 300, mapping, split, pinned evaluator",
     "evidence_motivated_not_optimized": "Target classes and 64/32 size-priority references; Phase 3B proximity counts do not establish coverage for the narrower confidence interval",
     "requested_engineering_defaults": "0.05<=p<0.25, weights 0.6/0.4, max two ROIs, 0.75 crop fraction, V1 IoU 0.50/local 0.25/+0.10 cap",
-    "new_engineering_hypotheses_requiring_approval": "Minimum short side 1, shared 2-pixel geometry/boundary margins, ROI overlap 0.7 plus containment, all covered eligible anchors, V2 IoU>=0.50 with 0.25 blend, local-only NMS, no final global NMS, decision gates",
+    "new_engineering_hypotheses_requiring_approval": "Minimum short side 1, shared 2-pixel geometry/boundary margins, ROI overlap 0.7 plus containment, all covered eligible anchors with protected global matching competitors, V2 IoU>=0.50 with 0.25 blend, local-only NMS, no final global NMS, decision gates",
     "mathematical_necessities": "Finite positive geometry, outward integer bounds, deterministic tie rules, exact one-to-one assignment, one checkpoint per run, max 3 passes",
     "rejected_initial_alternative": "Unconditional coordinate replacement at IoU 0.35-0.50; it weakens correspondence without evidence of better localization"
   }
