@@ -3,6 +3,7 @@
 import hashlib
 import io
 import json
+import os
 from pathlib import Path
 import sqlite3
 
@@ -123,5 +124,12 @@ def verify_validation_files(rows):
 def source_snapshot():
     # Stat-only inventory detects accidental rewrites without opening held-out image contents.
     paths = (ROOT / "data/raw", PREPARED)
-    return {p.relative_to(ROOT).as_posix(): (p.stat().st_size, p.stat().st_mtime_ns)
-            for base in paths for p in base.rglob("*") if p.is_file()}
+    result={}
+    for base in paths:
+        for directory,_,_ in os.walk(base):
+            with os.scandir(directory) as entries:
+                for entry in entries:
+                    if entry.is_file():
+                        stat=entry.stat()
+                        result[Path(entry.path).relative_to(ROOT).as_posix()]=(stat.st_size,stat.st_mtime_ns)
+    return result

@@ -16,6 +16,15 @@ def validate_predictions(pred, width, height):
     return pred[np.argsort(-pred[:, 4], kind="stable")]
 
 
+def remove_padding_only(pred):
+    # A native network-space box can lie wholly in letterbox padding. Clipping then gives zero area.
+    # Keep it in native AP, but count and omit it from valid original-image prediction exports.
+    pred=np.asarray(pred,dtype=np.float32).reshape(-1,6)
+    if not np.isfinite(pred).all():raise ValueError("Non-finite original-image prediction")
+    keep=np.all(pred[:,2:4]>pred[:,:2],axis=1)
+    return pred[keep],int((~keep).sum())
+
+
 def ious(a, b):
     a, b = np.asarray(a).reshape(-1, 4), np.asarray(b).reshape(-1, 4)
     inter = np.maximum(np.minimum(a[:, None, 2:], b[None, :, 2:]) - np.maximum(a[:, None, :2], b[None, :, :2]), 0).prod(2)

@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "sahi_context": {
+      "max_slices": 4.0,
+      "peak_allocated_gib": 0.07759237289428711,
+      "predicted_full_seconds": 778.311872000447
+    },
+    "sahi_detail": {
+      "max_slices": 9.0,
+      "peak_allocated_gib": 0.07759237289428711,
+      "predicted_full_seconds": 1308.4208160667706
+    },
+    "standard_serial": {
+      "max_slices": 0.0,
+      "peak_allocated_gib": 0.07759237289428711,
+      "predicted_full_seconds": 218.78285713301375
+    }
+  },
+  "config_sha256": "86ed8fd6450b77734e6cdea4eff5dec5eed59d5f0ea9790f0e37c507f9336c13",
+  "forward_and_timing_accounting": {
+    "sahi_context": true,
+    "sahi_detail": true,
+    "standard_serial": true
+  },
+  "passed": true,
+  "scope": "validation development only",
+  "selection_images": 24,
+  "selection_rule": "Geometry extremes, class-first hash ranks, smallest class boxes, most annotations, then new patients; no model outcomes",
+  "technical_outputs_validated": true
+}

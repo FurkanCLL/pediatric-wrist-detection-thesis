@@ -6,3 +6,6 @@ ultralytics==8.4.177
 torch==2.14.1
 torchvision==0.29.1
 PyYAML==6.0.3
+
+# Validation-only slicing; existing training packages stay pinned above.
+sahi==0.12.8

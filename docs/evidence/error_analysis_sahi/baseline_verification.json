@@ -1,0 +1,152 @@
+{
+  "artifact_count": 36,
+  "checkpoint_sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+  "checkpoints": [
+    {
+      "completed_epoch": 19,
+      "file": "best.previous.pt",
+      "sha256": "b5ac21557e6d6f37a5fa3b239f6e0eba45cc6c7843b135dd9f3b2ad2824ed698"
+    },
+    {
+      "completed_epoch": 22,
+      "file": "best.pt",
+      "sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b"
+    },
+    {
+      "completed_epoch": 10,
+      "file": "epoch010.pt",
+      "sha256": "656abbcd4a28278d03c4f42e7f11ef4c9eb1e7cfe3decf941560d0dc6e9cf6a5"
+    },
+    {
+      "completed_epoch": 20,
+      "file": "epoch020.pt",
+      "sha256": "f9cee7754d05255c4e8d23b9d7dc9e6315dad1a15e9ea0d972bc4da3699c27c0"
+    },
+    {
+      "completed_epoch": 30,
+      "file": "epoch030.pt",
+      "sha256": "909233eca549915f00a79043e6784ddc15475e0bf5060bdc3ffb3e1133efcd3f"
+    },
+    {
+      "completed_epoch": 40,
+      "file": "epoch040.pt",
+      "sha256": "7a26b5fe2bd19d24a824522d4f0c4facc1f21765cb35d5bacec64e5bf1d05cc9"
+    },
+    {
+      "completed_epoch": 50,
+      "file": "epoch050.pt",
+      "sha256": "89f640699e9eb75a6d2e7cc55f576084acd667c68e6af42d494cc9bfe7af14b8"
+    },
+    {
+      "completed_epoch": 60,
+      "file": "epoch060.pt",
+      "sha256": "a52aa2b1447072ecaaf633ca68a071d7d200bb970f4a403af56651c5b645b86f"
+    },
+    {
+      "completed_epoch": 70,
+      "file": "epoch070.pt",
+      "sha256": "c3eacf03c1458bb5ece867ae234e8bba9d18d19cfdef7353d2e91edfed992a3e"
+    },
+    {
+      "completed_epoch": 80,
+      "file": "epoch080.pt",
+      "sha256": "3e6ee5f5994ac96cb480eba134d95c5b8c2e0ce3c898c15ba916a41cf2e6ed67"
+    },
+    {
+      "completed_epoch": 79,
+      "file": "last.previous.pt",
+      "sha256": "c48d6c3b6c3e8cb9d5bc664cee01f14ad46758acb4b450071451693fab5fed16"
+    },
+    {
+      "completed_epoch": 80,
+      "file": "last.pt",
+      "sha256": "3e6ee5f5994ac96cb480eba134d95c5b8c2e0ce3c898c15ba916a41cf2e6ed67"
+    }
+  ],
+  "classes": [
+    {
+      "ap50": 0.9211619002569401,
+      "ap50_95": 0.5197308874753814,
+      "class": "fracture",
+      "class_id": 0,
+      "precision": 0.8667124411900623,
+      "recall": 0.8806980056980057
+    },
+    {
+      "ap50": 0.8906817156058304,
+      "ap50_95": 0.5741713110084053,
+      "class": "metal",
+      "class_id": 1,
+      "precision": 0.7665107157041154,
+      "recall": 0.8958333333333334
+    },
+    {
+      "ap50": 0.98768577621264,
+      "ap50_95": 0.6896492469382327,
+      "class": "text",
+      "class_id": 2,
+      "precision": 0.9490824243893325,
+      "recall": 0.9836610357241762
+    },
+    {
+      "ap50": 0.5680835975275765,
+      "ap50_95": 0.21161783475547372,
+      "class": "periostealreaction",
+      "class_id": 3,
+      "precision": 0.4722361100300861,
+      "recall": 0.6328600405679513
+    },
+    {
+      "ap50": 0.5699075718633392,
+      "ap50_95": 0.23781842605259357,
+      "class": "pronatorsign",
+      "class_id": 4,
+      "precision": 0.5294267325754052,
+      "recall": 0.6024096385542169
+    },
+    {
+      "ap50": 0.415,
+      "ap50_95": 0.24050000000000002,
+      "class": "bonelesion",
+      "class_id": 5,
+      "precision": 1.0,
+      "recall": 0.3891567429498465
+    },
+    {
+      "ap50": 0.29644331590631323,
+      "ap50_95": 0.12454444336588973,
+      "class": "softtissue",
+      "class_id": 6,
+      "precision": 0.6175757117927357,
+      "recall": 0.2361111111111111
+    },
+    {
+      "ap50": 0.1436939826626153,
+      "ap50_95": 0.06354823345552352,
+      "class": "boneanomaly",
+      "class_id": 7,
+      "precision": 0.5365800839051867,
+      "recall": 0.1388888888888889
+    }
+  ],
+  "inventory_sha256": "6d50907df6da9163a68ac7de4b8abe59e7e70dc42cf391b8e985d6e1735d9de6",
+  "metrics": {
+    "fitness": 0.3327,
+    "metrics/mAP50(B)": 0.59908,
+    "metrics/mAP50-95(B)": 0.3327,
+    "metrics/precision(B)": 0.71727,
+    "metrics/recall(B)": 0.59495,
+    "val/box_loss": 1.26811,
+    "val/cls_loss": 0.60617,
+    "val/dfl_loss": 1.14444
+  },
+  "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+  "selected_epoch": 22,
+  "training_completion": {
+    "epochs": 80,
+    "skipped_updates": 17,
+    "successful_updates": 47416
+  },
+  "training_epochs": 80,
+  "unchanged": true
+}

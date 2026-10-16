@@ -10,6 +10,7 @@ requires-python = ">=3.12"
 dependencies = [
     "numpy==2.3.5", "Pillow==12.3.0", "opencv-python==5.0.0.93",
     "ultralytics==8.4.177", "torch==2.14.1", "torchvision==0.29.1", "PyYAML==6.0.3",
+    "sahi==0.12.8",
 ]
 
 [project.scripts]

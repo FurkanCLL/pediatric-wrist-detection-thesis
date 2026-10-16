@@ -6,7 +6,7 @@ import time
 
 from .common import (CLASSES, LOCAL, PREPARED, PUBLIC, config, identity, load_model,
                      save, source_snapshot, validation_records, verify_baseline, verify_validation_files)
-from .metrics import ap_summary, native_stats, validate_predictions
+from .metrics import ap_summary, native_stats, validate_predictions, remove_padding_only
 
 
 def run():
@@ -19,15 +19,19 @@ def run():
     from ultralytics.utils.torch_utils import init_seeds
     from wrist_train.common import require_cuda
 
-    directory = LOCAL / "reference"
+    directory = LOCAL / "reference_verified"
     directory.mkdir(parents=True, exist_ok=False)
     require_cuda()
     init_seeds(42, deterministic=True)
     cfg = config()
-    receipt = verify_baseline()
+    # Successful checkpoint verification from the first attempt remains valid if every artifact still matches.
+    from .common import baseline_inventory, identity as digest
+    receipt=json.loads((PUBLIC/"baseline_verification.json").read_text())
+    if digest(baseline_inventory())!=receipt["inventory_sha256"]:
+        raise RuntimeError("Baseline changed after verification")
     rows = validation_records()
     before = source_snapshot()
-    save(LOCAL / "source_snapshot_before.json", before)
+    save(LOCAL / "source_snapshot_verified_before.json", before)
     files = verify_validation_files(rows)
     data = {"val": str(PREPARED / "images/val"), "nc": 8, "channels": 3, "names": dict(enumerate(CLASSES))}
     validator = DetectionValidator(save_dir=directory, args={"imgsz": 768, "conf": .001, "iou": .7,
@@ -48,6 +52,7 @@ def run():
     model = load_model()
     validator.init_metrics(model)
     native, original, outputs = [], [], {}
+    padding_only=0
     shape_counts = {}
     torch.cuda.synchronize()
     start = time.perf_counter()
@@ -69,6 +74,8 @@ def run():
                 gt_orig = ops.scale_boxes(pbatch["imgsz"], pbatch["bboxes"].clone(), pbatch["ori_shape"], pbatch["ratio_pad"])
                 gt = torch.cat((gt_orig, pbatch["cls"][:, None]), 1).float().cpu().numpy()
                 arr = torch.cat((pred_orig, pred["conf"][:, None], pred["cls"][:, None]), 1).float().cpu().numpy()
+                arr,removed=remove_padding_only(arr)
+                padding_only+=removed
                 arr = validate_predictions(arr, pbatch["ori_shape"][1], pbatch["ori_shape"][0])
                 original.append(native_stats(gt, arr))
                 outputs[stem] = {"pred": arr.tolist(), "gt_native_original": gt.tolist(), "net_shape": list(pbatch["imgsz"]),
@@ -93,11 +100,14 @@ def run():
         "batch": 12, "workers_actual": 0, "workers_official": 4, "rect": True, "pad": .5,
         "workers_reason": "Read-only dataset subclass remains in-process; ordering/pixels/batches unchanged",
         "batch_shapes": shape_counts, "effective_validator_args": vars(validator.args),
+        "padding_only_predictions_omitted_from_original_export":padding_only,
         "dataset_unchanged": source_snapshot() == before}
     # Absolute framework defaults are retained only in the ignored run receipt.
     save(directory / "receipt.json", result)
     public = {k: v for k, v in result.items() if k != "effective_validator_args"}
     save(PUBLIC / "reference_reproduction.json", public)
+    # This small pointer avoids replacing any failed or successful attempt's evidence.
+    save(LOCAL/"reference_active.json",{"directory":directory.name})
     if not result["reproduced"] or not result["dataset_unchanged"]:
         raise RuntimeError("Reference reproduction/integrity gate failed; inspect preserved evidence")
     print({"native": native_result, "differences": differences, "seconds": seconds}, flush=True)
