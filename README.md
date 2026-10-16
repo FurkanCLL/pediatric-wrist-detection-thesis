@@ -2,14 +2,14 @@
 
 Implementation workspace for a new RTU Type 2 bachelor thesis study using the GRAZPEDWRI-DX pediatric wrist X-ray dataset, YOLOv8s, class-aware training, and adaptive local refinement.
 
-**Status:** The official standard YOLOv8s baseline completed 80 epochs and is preserved. Phase 3A Step 1 adds training-only class-aware design, 80-epoch simulations and bounded crop prototypes. Candidate A is recommended for student review; the class-aware policy is not approved, integrated or trained. The held-out test and final A-F comparison remain untouched. Formal supervisor alignment of the revised thesis scope is still pending.
+**Status:** Phase 3B is complete: baseline error analysis and two predefined SAHI variants are verified on all 3,088 validation images. Both SAHI variants recover targets but reduce overall/fracture AP and increase false positives and latency. The completed 80-epoch standard baseline is preserved. Candidate A remains proposed; no class-aware policy is approved, integrated or trained. Final adaptive inference and held-out A-F evaluation remain future work. Formal supervisor alignment of the revised thesis scope is still pending.
 
 ## Start here
 
 1. Read `AGENTS.md`, `docs/THESIS.md`, `docs/ROADMAP.md`, `docs/DECISIONS.md`.
 2. Install the pinned dependencies in the project Python environment.
-3. Read [the class-aware design and recommendation](docs/evidence/class_aware_design/CLASS_AWARE_DESIGN_REPORT.md), [baseline preservation](docs/evidence/class_aware_design/BASELINE_PRESERVATION_REPORT.md), [the frozen training protocol and original manual commands](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md), [the GPU feasibility report](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md), [dataset preparation](docs/evidence/dataset_preparation/DATASET_PREPARATION_REPORT.md), and the earlier [source audit](docs/evidence/dataset_audit/DATASET_AUDIT_REPORT.md).
-4. Review the proposed policy and private crop comparisons before approving production loader integration. Preserve the completed standard baseline; no class-aware training command is available in this step.
+3. Read [the validation error-analysis and SAHI findings](docs/evidence/error_analysis_sahi/ERROR_ANALYSIS_SAHI_REPORT.md), [the class-aware design and recommendation](docs/evidence/class_aware_design/CLASS_AWARE_DESIGN_REPORT.md), [baseline preservation](docs/evidence/class_aware_design/BASELINE_PRESERVATION_REPORT.md), [the frozen training protocol and original manual commands](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md), [the GPU feasibility report](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md), [dataset preparation](docs/evidence/dataset_preparation/DATASET_PREPARATION_REPORT.md), and the earlier [source audit](docs/evidence/dataset_audit/DATASET_AUDIT_REPORT.md).
+4. Review the proposed policy, private crop comparisons and inference findings before authorizing the next implementation step. Preserve the completed standard baseline; no class-aware training or final adaptive implementation is launched by Phase 3B.
 
 The previous repository and experiments are archived separately. Do not copy its historical A-F results into this project's experimental outcomes.
 
@@ -126,7 +126,7 @@ Outputs stay under ignored `outputs/training/standard_baseline/`. Existing runs 
 .\.venv\Scripts\wrist-train.exe resume --confirm-resume-standard-baseline --checkpoint last
 ```
 
-Resume restores the completed-epoch model/optimizer/EMA/schedule/scaler state into a new segment. Worker randomness and partial accumulation are not bitwise restored. The report explains verified predecessor/periodic fallback when the latest file is incomplete. Keep all segments and disclose actual successful/skipped updates in later comparisons. Class-aware sampling/cropping and the inference comparators remain future work.
+Resume restores the completed-epoch model/optimizer/EMA/schedule/scaler state into a new segment. Worker randomness and partial accumulation are not bitwise restored. The report explains verified predecessor/periodic fallback when the latest file is incomplete. Keep all segments and disclose actual successful/skipped updates in later comparisons. Class-aware production integration, final inference-protocol selection and adaptive refinement remain future work; the validation-only SAHI feasibility study is complete.
 
 ## Class-aware design: non-training analysis only
 
@@ -144,3 +144,33 @@ Source is isolated in `src/wrist_design/`; `configs/class_aware_candidates.json`
 ```
 
 Detailed draws, patient mappings and image comparisons stay in ignored `outputs/class_aware_design/`. Use a new prototype attempt name to retain previous figures; a new run needs a fresh technical visual review. Only aggregate evidence is tracked. The baseline lock and prepared dataset remain unchanged. Policy approval, production loader integration and any later class-aware training require a separate reviewed step.
+
+## Validation error analysis and SAHI feasibility
+
+Phase 3B uses the preserved epoch-22 EMA checkpoint and the frozen validation split only. Read the [error-analysis and SAHI report](docs/evidence/error_analysis_sahi/ERROR_ANALYSIS_SAHI_REPORT.md), [predefined comparison](configs/inference_feasibility.json), [native validation reproduction](docs/evidence/error_analysis_sahi/reference_reproduction.json) and [original-coordinate evaluation bridge](docs/evidence/error_analysis_sahi/evaluation_bridge.json). These are development findings from a validation-selected model, not final held-out A–F results.
+
+Install the additive inference lock after the existing CUDA environment; do not upgrade its pinned training packages:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-inference.txt
+```
+
+The completed-attempt commands below document the sequence. Inference output directories refuse reuse; do not repeat these GPU passes over successful existing evidence. Reproduction needs a deliberately separate preserved output namespace or fresh local state with the same frozen inputs. The original baseline directory is never an inference destination.
+
+```powershell
+.\.venv\Scripts\python.exe -m wrist_eval.reference
+.\.venv\Scripts\python.exe -m wrist_eval.feasibility pilot standard_serial
+.\.venv\Scripts\python.exe -m wrist_eval.feasibility pilot sahi_context
+.\.venv\Scripts\python.exe -m wrist_eval.feasibility pilot sahi_detail
+.\.venv\Scripts\python.exe -m wrist_eval.feasibility gate
+.\.venv\Scripts\python.exe -m wrist_eval.feasibility full standard_serial
+.\.venv\Scripts\python.exe -m wrist_eval.feasibility full sahi_context
+.\.venv\Scripts\python.exe -m wrist_eval.feasibility full sahi_detail
+.\.venv\Scripts\python.exe -m wrist_eval.bridge
+.\.venv\Scripts\python.exe -m wrist_eval.analyze
+.\.venv\Scripts\python.exe -m wrist_eval.bootstrap
+.\.venv\Scripts\python.exe -m wrist_eval.qualitative
+.\.venv\Scripts\python.exe -m wrist_eval.verify
+```
+
+`analyze`, `bootstrap` and `bridge` read saved predictions without new neural inference. `verify` includes only a nine-image deterministic prediction replay plus integrity checks; it is not a repeated full benchmark. `qualitative` writes protected, private overlays and requires actual visual inspection before its public receipt is marked reviewed. All medical images, patient/image identities, detailed predictions and raw timing logs remain under ignored `outputs/error_analysis_sahi/`. Only aggregate evidence is tracked. No command in this section trains a model, evaluates test images or implements the final adaptive system. Class-aware candidates A/B/C remain unapproved and unchanged.

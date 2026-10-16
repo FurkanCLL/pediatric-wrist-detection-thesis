@@ -1,0 +1,33 @@
+{
+  "recovery_partitions_valid": true,
+  "test_evaluation": false,
+  "variants": {
+    "sahi_context": {
+      "fn": 605,
+      "forward_passes": 15440,
+      "fp": 3209,
+      "images": 3088,
+      "objects": 7204,
+      "tp": 6599,
+      "valid_finite_outputs": true
+    },
+    "sahi_detail": {
+      "fn": 648,
+      "forward_passes": 30880,
+      "fp": 6328,
+      "images": 3088,
+      "objects": 7204,
+      "tp": 6556,
+      "valid_finite_outputs": true
+    },
+    "standard_serial": {
+      "fn": 737,
+      "forward_passes": 3088,
+      "fp": 884,
+      "images": 3088,
+      "objects": 7204,
+      "tp": 6467,
+      "valid_finite_outputs": true
+    }
+  }
+}

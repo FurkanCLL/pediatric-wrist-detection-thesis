@@ -1,0 +1,44 @@
+{
+  "bootstrap_defined_eight_class_replicates": 492,
+  "bootstrap_resamples_completed": 500,
+  "checkpoint_sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+  "config_sha256": "86ed8fd6450b77734e6cdea4eff5dec5eed59d5f0ea9790f0e37c507f9336c13",
+  "corrections_preserved": [
+    "padding-only export diagnosis",
+    "dependency metadata parsing correction",
+    "uncommitted size-table method-column ordering corrected before publication"
+  ],
+  "existing_gpu_experiments_repeated_after_interruption": false,
+  "final_review_date": "2026-10-17",
+  "full_validation_images_per_variant": 3088,
+  "implementation_revision": "8098012a6f1ae5bdea22b7ffaf4336323e3db310",
+  "implementation_source_hashes_match": true,
+  "measurements_date": "2026-10-16",
+  "phase": "3B",
+  "pip_check_passed": true,
+  "private_image_identity_scan_passed": true,
+  "protected_previous_source_config_evidence_unchanged": true,
+  "public_json_finite_and_parseable": true,
+  "qualitative_method_panels_reviewed": 42,
+  "qualitative_overlays_reviewed": 14,
+  "qualitative_unique_source_images": 12,
+  "quantitative_report_cells_checked": 715,
+  "quantitative_report_tables_checked": 14,
+  "receipts": [
+    "accounting_verification.json",
+    "determinism_replay.json",
+    "preservation_checks.json",
+    "implementation_provenance.json",
+    "qualitative_selection.json"
+  ],
+  "report_local_links_exist": true,
+  "report_sections": 18,
+  "scope": "Validation/development only; no training, held-out evaluation, candidate alteration or final adaptive implementation",
+  "tests": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -q",
+    "count": 110,
+    "new_focused_tests": 19,
+    "passed": true,
+    "seconds": 7.817
+  }
+}

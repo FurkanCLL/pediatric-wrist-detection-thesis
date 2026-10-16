@@ -1,0 +1,24 @@
+{
+  "checkpoint_sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+  "config_sha256": "86ed8fd6450b77734e6cdea4eff5dec5eed59d5f0ea9790f0e37c507f9336c13",
+  "implementation_revision": "8098012a6f1ae5bdea22b7ffaf4336323e3db310",
+  "normalized_source_sha256": {
+    "src/wrist_eval/__init__.py": "ad01eb20499511661ae6003373d30a29c6683e432b3f54cc66f1a0cae88f3d56",
+    "src/wrist_eval/analyze.py": "2e6761a93391ec7b19d331c0ac1bf2b87e82e88845526ae995db28bd5bacbc43",
+    "src/wrist_eval/bootstrap.py": "347f85843bad609fce3f769884e38a5a496ba20f6b18ed548e6fd40d77e46b41",
+    "src/wrist_eval/bridge.py": "f56a3f4d92b78cdad3fcbb62a21cf150c6a30266b299d5825166e64833f5b3a1",
+    "src/wrist_eval/common.py": "3cfe41a11db35934e591da3fdf0e51b152e8836401161d633e714980023a4820",
+    "src/wrist_eval/feasibility.py": "08b69137949e09507b7e2cee62542f7e056d91f32069bb5175b7532744be672f",
+    "src/wrist_eval/metrics.py": "a602d77bedd6517ad5324bb07cca52a458932052403c392998904f07feb95406",
+    "src/wrist_eval/provenance.py": "9f88142231571d76b38ad2abca4e8aa513aba8728e8852085af83707fee25657",
+    "src/wrist_eval/qualitative.py": "2cbdaf981c0683d65404461f143141892f4b4f1d14017ef39280299ca0fda74a",
+    "src/wrist_eval/reference.py": "cb181f9c3e0c11cd87aa3394ced8b1974bd1965a74f980a1a54d9ceb0c1cd413",
+    "src/wrist_eval/sliced.py": "80d9370321a991f11b37135da730978a3036b5fb9ef0498b625e4dce6d764ffc",
+    "src/wrist_eval/verify.py": "f9818b1f06040d1be6ca2a26ff625fcf0a95317ac088ab1ab99beda6c924a013"
+  },
+  "private_prediction_hashes": {
+    "sahi_context": "79f48d390c566c454cc248966dc09f05d24aefc927949ec5e7816af4e6a5eec1",
+    "sahi_detail": "0fad840f3605c6ac85f222f1dd0fd343ef953a51505bcac1a0ec36b6613e4a9d",
+    "standard_serial": "cb056711668c04ebe8a7736724e35d46c6092f5a6e8ac5a9becba9a53bd1bee6"
+  }
+}

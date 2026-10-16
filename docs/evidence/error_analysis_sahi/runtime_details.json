@@ -1,0 +1,80 @@
+{
+  "desktop_measurement_limit": "Chrome and Codex graphics processes remained present. Only this inference Python job was observed; a sampled GPU-engine counter had no other process above 2 percent. WDDM per-process memory was unavailable; this is not a dedicated-headless-GPU benchmark.",
+  "earlier_source_config_evidence_unchanged_since": "bd83049",
+  "frozen_journal_hash_matches": true,
+  "inspection_command": "from sahi.postprocess.backends import get_postprocess_backend, resolve_backend; print(get_postprocess_backend(), resolve_backend())",
+  "native_nms_signature": "(prediction, conf_thres: float = 0.25, iou_thres: float = 0.45, classes=None, agnostic: bool = False, multi_label: bool = False, max_det: int = 300, nc: int = 0, max_time_img: float = 0.05, max_nms: int = 30000, max_wh: int = 7680, rotated: bool = False, end2end: bool = False, return_idxs: bool = False)",
+  "new_gpu_forward_passes": 0,
+  "prepared_journal_sha256": "8764b9acd35b0fa8faecd0453b571d0e6d78a2f6363633eae0b508875ea752d4",
+  "requested_sahi_backend": "auto",
+  "resolved_sahi_backend": "torchvision",
+  "sahi_additional_source_sha256": {
+    "annotation.py": "718feec2f8cbade57ec9402df449a79352d7208ddd4fb28afc2e764ab55b191a",
+    "postprocess/_numpy_backend.py": "af546649a884904ee48b3a26dcd3826c2779aea6bfec8dd206eb69677899285d",
+    "postprocess/_torchvision_backend.py": "b2763569661a2ce20a6867f65ee129159b02cf56e677fc32913bd1e5530fae8a",
+    "postprocess/backends.py": "54aadbf2e529f49b45a505afae9ceec1af1adbc9785f9020085b43c7cd67cbdb",
+    "prediction.py": "8ca3b44b6901de9175caf17d73005fd3db30c9d1c21c8fe8c326006b36397cc1"
+  },
+  "sahi_backend_device": "cuda:0; torchvision IOU NMS returns kept indices to CPU and synchronizes",
+  "slice_geometry": {
+    "sahi_context": {
+      "adjacent_tile_overlap_fraction": {
+        "max": 0.5073170731707317,
+        "mean": 0.5023323074875677,
+        "median": 0.5021520803443329,
+        "min": 0.5007496251874063,
+        "n": 6176,
+        "p05": 0.5008695652173913,
+        "p95": 0.5045871559633027,
+        "p99": 0.5058823529411764
+      },
+      "global_pass_additional": true,
+      "image_count_by_slices": {
+        "4": 3088
+      },
+      "summed_tile_area_over_original_area": {
+        "max": 1.7917452830188678,
+        "mean": 1.7833210827902373,
+        "median": 1.7831993261189387,
+        "min": 1.7795886030006511,
+        "n": 3088,
+        "p05": 1.7806510753420703,
+        "p95": 1.7864809842926126,
+        "p99": 1.7879326891029437
+      }
+    },
+    "sahi_detail": {
+      "adjacent_tile_overlap_fraction": {
+        "max": 0.8116883116883117,
+        "mean": 0.5004154363648788,
+        "median": 0.5,
+        "min": 0.19463087248322147,
+        "n": 12352,
+        "p05": 0.19747899159663865,
+        "p95": 0.8049792531120332,
+        "p99": 0.8072916666666666
+      },
+      "global_pass_additional": true,
+      "image_count_by_slices": {
+        "9": 3088
+      },
+      "summed_tile_area_over_original_area": {
+        "max": 2.2579505300353357,
+        "mean": 2.25187287795462,
+        "median": 2.25,
+        "min": 2.25,
+        "n": 3088,
+        "p05": 2.25,
+        "p95": 2.2552204176334105,
+        "p99": 2.256267409470752
+      }
+    }
+  },
+  "ultralytics_additional_source_sha256": {
+    "data/base.py": "ce0f840911b282b1a96e15188af95b14721f18ae6d8363f543d4220476000838",
+    "data/dataset.py": "0a27c3981c946dab03a79e35583b867d69007153e0f53d5208e799cf49077404",
+    "models/yolo/detect/val.py": "c9f738b513ba3e59f19fbc7e97028e4e68b70b4846c6b96a1611e3f65b3322d7",
+    "utils/nms.py": "386cd0e3e38fddef5d434fbcfd58264bedfa37295534e9a2b7174a3436d4db62",
+    "utils/ops.py": "c66d0eff4c6da3ba53247bc235de84bbe6db6682829ecaecd333c136070441cb"
+  }
+}

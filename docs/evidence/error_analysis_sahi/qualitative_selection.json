@@ -1,0 +1,128 @@
+{
+  "cases": [
+    {
+      "case": 1,
+      "category": "correct_fracture",
+      "eligible_images": 1924,
+      "observation": "Global fracture match retained; detail adds a nearby partial prediction.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 2,
+      "category": "missed_fracture",
+      "eligible_images": 330,
+      "observation": "Annotated fracture remains unmatched in all three methods.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 3,
+      "category": "fracture_iou_50_to_75",
+      "eligible_images": 674,
+      "observation": "Same image as case 1; moderate-IoU match illustrates the localization category.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 4,
+      "category": "false_positive_fracture",
+      "eligible_images": 302,
+      "observation": "Fracture FP persists and local views add extra predictions.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 5,
+      "category": "small_missed_periosteal",
+      "eligible_images": 119,
+      "observation": "Context recovers small periosteal target with additional nearby FP.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 6,
+      "category": "multiple_nontext_annotations",
+      "eligible_images": 113,
+      "observation": "Global hardware match retained; slicing adds partial metal boxes.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 7,
+      "category": "missed_pronatorsign",
+      "eligible_images": 37,
+      "observation": "Pronator target remains unmatched; slicing adds fracture-class FP.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 8,
+      "category": "missed_bonelesion",
+      "eligible_images": 4,
+      "observation": "Bone-lesion target remains unmatched in all methods.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 9,
+      "category": "missed_softtissue",
+      "eligible_images": 51,
+      "observation": "Soft-tissue target remains unmatched; local metal fragments increase.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 10,
+      "category": "missed_boneanomaly",
+      "eligible_images": 21,
+      "observation": "Anomaly remains unmatched; detail adds fracture-class FP near it.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 11,
+      "category": "sahi_context_recovered",
+      "eligible_images": 143,
+      "observation": "Context recovers a text target; the annotated fracture remains missed.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 12,
+      "category": "sahi_context_lost",
+      "eligible_images": 16,
+      "observation": "Context loses a marginal global fracture match after union suppression.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 13,
+      "category": "sahi_detail_recovered",
+      "eligible_images": 96,
+      "observation": "Same image as case 11; detail recovers text and adds fracture-class FP.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    },
+    {
+      "case": 14,
+      "category": "sahi_detail_lost",
+      "eligible_images": 13,
+      "observation": "Detail loses a periosteal match while retaining fracture matches.",
+      "review": "Technical visual inspection complete; not clinical adjudication or student approval",
+      "selection": "first eligible in fixed SHA256 order"
+    }
+  ],
+  "limitations": "Representative diagnostic illustrations, not an exhaustive or clinical annotation review",
+  "operating_point": {
+    "confidence": 0.25,
+    "iou": 0.5
+  },
+  "private_only": true,
+  "reviewed_method_panels": 42,
+  "reviewed_on": "2026-10-17",
+  "reviewed_overlays": 14,
+  "reviewer": "Codex technical visual review",
+  "rule": "First eligible per declared category in SHA256(seed=42,purpose=qualitative,stem) order; duplicates between categories retained; no manual replacement",
+  "unique_source_images": 12
+}

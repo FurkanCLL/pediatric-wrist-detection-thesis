@@ -1,0 +1,18 @@
+{
+  "baseline_36_artifacts_unchanged": true,
+  "baseline_inventory_sha256": "6d50907df6da9163a68ac7de4b8abe59e7e70dc42cf391b8e985d6e1735d9de6",
+  "class_aware_candidates_unchanged": true,
+  "class_aware_config_sha256": "fb36c515662976eee1d35079dad0aeeabc6f5a7ba60a750118238b7594b76edb",
+  "frozen_sources_valid": true,
+  "frozen_training_protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+  "no_adaptive_pipeline_implemented": true,
+  "no_heldout_test_image_contents_opened": true,
+  "no_model_training": true,
+  "raw_prepared_stat_files": 121973,
+  "raw_prepared_stat_inventory_unchanged": true,
+  "validation_file_hashes": {
+    "all_sha256_match": true,
+    "images": 3088,
+    "labels": 3088
+  }
+}

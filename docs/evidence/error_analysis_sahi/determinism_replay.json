@@ -1,0 +1,21 @@
+{
+  "purpose": "prediction identity check, not a repeated performance benchmark",
+  "selection": "first three outcome-independent pilot selections",
+  "variants": {
+    "sahi_context": {
+      "images": 3,
+      "max_absolute_array_difference": 0.0,
+      "passed": true
+    },
+    "sahi_detail": {
+      "images": 3,
+      "max_absolute_array_difference": 0.0,
+      "passed": true
+    },
+    "standard_serial": {
+      "images": 3,
+      "max_absolute_array_difference": 0.0,
+      "passed": true
+    }
+  }
+}
