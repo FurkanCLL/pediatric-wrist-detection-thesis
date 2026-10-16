@@ -1,0 +1,75 @@
+{
+  "status": "technical checks and visual inspection completed; policy remains proposed",
+  "cases": 15,
+  "comparisons": 45,
+  "scope": "prepared training images only",
+  "categories": {
+    "class_fracture": 1,
+    "class_metal": 1,
+    "class_text": 1,
+    "fallback_no_small_eligible_target": 1,
+    "class_periostealreaction": 1,
+    "fallback_insufficient_zoom_with_context": 1,
+    "class_pronatorsign": 1,
+    "class_bonelesion": 1,
+    "fallback_bonelesion_coverage_protected": 1,
+    "class_softtissue": 1,
+    "class_boneanomaly": 1,
+    "accepted_periostealreaction": 1,
+    "accepted_border": 1,
+    "accepted_pronatorsign": 1,
+    "accepted_softtissue": 1,
+    "accepted_boneanomaly": 1,
+    "fallback_fracture_or_target_not_fully_retained": 1,
+    "fallback_partially_visible_annotation": 1,
+    "narrowest": 1,
+    "widest": 1,
+    "multiple_annotations": 1
+  },
+  "policies": {
+    "A": {
+      "no_small_eligible_target": 6,
+      "insufficient_zoom_with_context": 1,
+      "bonelesion_coverage_protected": 1,
+      "accepted": 5,
+      "fracture_or_target_not_fully_retained": 1,
+      "partially_visible_annotation": 1
+    },
+    "B": {
+      "no_small_eligible_target": 6,
+      "insufficient_zoom_with_context": 1,
+      "bonelesion_coverage_protected": 1,
+      "accepted": 4,
+      "fracture_or_target_not_fully_retained": 2,
+      "partially_visible_annotation": 1
+    },
+    "C": {
+      "no_small_eligible_target": 4,
+      "accepted": 5,
+      "insufficient_zoom_with_context": 1,
+      "bonelesion_coverage_protected": 1,
+      "partially_visible_annotation": 3,
+      "fracture_or_target_not_fully_retained": 1
+    }
+  },
+  "source_images_and_labels_unchanged": true,
+  "new_dataset_files_written": false,
+  "holdout_images_opened": 0,
+  "model_training_performed": false,
+  "prepared_yolo_label_roundtrip": "passed for every diagnostic source",
+  "repeat_execution_identical_pngs": 60,
+  "visual_review": {
+    "cases": 15,
+    "comparisons": 45,
+    "reviewer": "Codex technical visual inspection",
+    "clinical_review": false,
+    "student_policy_approval": false,
+    "observations": [
+      "Accepted crops retain the target and every source fracture box with aligned overlays.",
+      "Fallback comparisons preserve full-image pixels and all original annotations.",
+      "Narrow/wide views and overlapping labels retain source aspect without synthetic padding.",
+      "Tighter crops can remove hand or shaft context even when box rules pass; anatomical suitability needs student review.",
+      "Allowed non-fracture clipping remains subject to the 90 percent visibility rule; text and metal can restrict cropping."
+    ]
+  }
+}

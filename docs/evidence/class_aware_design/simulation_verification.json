@@ -1,0 +1,524 @@
+{
+  "status": "passed",
+  "configuration_sha256": "fb36c515662976eee1d35079dad0aeeabc6f5a7ba60a750118238b7594b76edb",
+  "frozen_baseline_protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+  "policies": {
+    "standard": {
+      "42": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 1.0
+        },
+        "fracture_object_ratio": {
+          "min": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 1.0
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      },
+      "1042": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 1.0
+        },
+        "fracture_object_ratio": {
+          "min": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 1.0
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      },
+      "2042": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 1.0
+        },
+        "fracture_object_ratio": {
+          "min": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 1.0
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      }
+    },
+    "A": {
+      "42": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 0.0,
+          "p05": 0.0,
+          "median": 1.0,
+          "p95": 3.0,
+          "p99": 3.2099999999999937,
+          "max": 4.0,
+          "mean": 1.4
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 87.0,
+          "p05": 92.85,
+          "median": 103.0,
+          "p95": 111.05,
+          "p99": 112.0,
+          "max": 112.0,
+          "mean": 102.2
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 0.9545454545454546,
+          "p05": 0.9545454545454546,
+          "median": 0.9848484848484849,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 0.98125
+        },
+        "fracture_object_ratio": {
+          "min": 0.9989534696506198,
+          "p05": 0.9995129608758654,
+          "median": 1.0006440186765415,
+          "p95": 1.0016180969248107,
+          "p99": 1.0020632748349703,
+          "max": 1.0022540653678957,
+          "mean": 1.0005866607631622
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      },
+      "1042": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 0.0,
+          "p05": 0.0,
+          "median": 1.0,
+          "p95": 2.049999999999997,
+          "p99": 3.2099999999999937,
+          "max": 4.0,
+          "mean": 1.325
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 90.0,
+          "p05": 94.0,
+          "median": 103.0,
+          "p95": 113.0,
+          "p99": 116.62999999999998,
+          "max": 119.0,
+          "mean": 102.625
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 0.9545454545454546,
+          "p05": 0.9696969696969697,
+          "median": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 0.9892045454545455
+        },
+        "fracture_object_ratio": {
+          "min": 0.998389953308646,
+          "p05": 0.9990339719851876,
+          "median": 1.00052326517469,
+          "p95": 1.001610046691354,
+          "p99": 1.0021904685235872,
+          "max": 1.0022540653678957,
+          "mean": 1.0005061584285946
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      },
+      "2042": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 0.0,
+          "p05": 0.0,
+          "median": 1.0,
+          "p95": 3.0,
+          "p99": 3.2099999999999937,
+          "max": 4.0,
+          "mean": 1.5
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 82.0,
+          "p05": 91.95,
+          "median": 103.5,
+          "p95": 113.0,
+          "p99": 114.21,
+          "max": 115.0,
+          "mean": 102.8125
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 0.9545454545454546,
+          "p05": 0.9696969696969697,
+          "median": 0.9848484848484849,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 0.9884469696969698
+        },
+        "fracture_object_ratio": {
+          "min": 0.9984704556432137,
+          "p05": 0.9991869264208663,
+          "median": 1.0002415070037032,
+          "p95": 1.001368539687651,
+          "p99": 1.0019827725004025,
+          "max": 1.002173563033328,
+          "mean": 1.0002475446787957
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      }
+    },
+    "B": {
+      "42": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 2.0,
+          "p05": 2.0,
+          "median": 3.0,
+          "p95": 4.0,
+          "p99": 4.0,
+          "max": 4.0,
+          "mean": 2.625
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 206.0,
+          "p05": 212.95,
+          "median": 224.0,
+          "p95": 234.14999999999998,
+          "p99": 240.63,
+          "max": 243.0,
+          "mean": 223.7625
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 0.9242424242424242,
+          "p05": 0.9393939393939394,
+          "median": 0.9696969696969697,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 0.965340909090909
+        },
+        "fracture_object_ratio": {
+          "min": 0.9982289486395105,
+          "p05": 0.9989494445338915,
+          "median": 1.0007647721783932,
+          "p95": 1.0023345677024633,
+          "p99": 1.002634841410401,
+          "max": 1.0034616003864112,
+          "mean": 1.0007456528739334
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      },
+      "1042": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 2.0,
+          "p05": 2.0,
+          "median": 2.0,
+          "p95": 4.0,
+          "p99": 4.0,
+          "max": 4.0,
+          "mean": 2.55
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 206.0,
+          "p05": 213.9,
+          "median": 225.0,
+          "p95": 238.1,
+          "p99": 243.04999999999995,
+          "max": 247.0,
+          "mean": 225.2
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 0.9242424242424242,
+          "p05": 0.9393939393939394,
+          "median": 0.9696969696969697,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 0.9738636363636364
+        },
+        "fracture_object_ratio": {
+          "min": 0.9980679439703751,
+          "p05": 0.9985429077443246,
+          "median": 1.000563516341974,
+          "p95": 1.0020930606987604,
+          "p99": 1.0024698116245372,
+          "max": 1.002978586379005,
+          "mean": 1.0005524472709708
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      },
+      "2042": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 2.0,
+          "p05": 2.0,
+          "median": 3.0,
+          "p95": 4.0,
+          "p99": 4.0,
+          "max": 4.0,
+          "mean": 2.6125
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 208.0,
+          "p05": 214.0,
+          "median": 225.0,
+          "p95": 237.05,
+          "p99": 239.83999999999997,
+          "max": 243.0,
+          "mean": 225.0875
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 0.9090909090909091,
+          "p05": 0.9386363636363637,
+          "median": 0.9696969696969697,
+          "p95": 1.0,
+          "p99": 1.0,
+          "max": 1.0,
+          "mean": 0.9714015151515152
+        },
+        "fracture_object_ratio": {
+          "min": 0.9971824182901304,
+          "p05": 0.9987884398647561,
+          "median": 1.0004830140074061,
+          "p95": 1.0025076477217838,
+          "p99": 1.0034736757365963,
+          "max": 1.0044276284012237,
+          "mean": 1.0005725728546129
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      }
+    },
+    "C": {
+      "42": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 117.0,
+          "p05": 120.9,
+          "median": 132.0,
+          "p95": 142.05,
+          "p99": 148.0,
+          "max": 148.0,
+          "mean": 131.7375
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 350.0,
+          "p05": 355.9,
+          "median": 372.0,
+          "p95": 391.1,
+          "p99": 399.46999999999997,
+          "max": 405.0,
+          "mean": 373.05
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 0.8636363636363636,
+          "p05": 0.8939393939393939,
+          "median": 0.9393939393939394,
+          "p95": 0.9848484848484849,
+          "p99": 0.9848484848484849,
+          "max": 0.9848484848484849,
+          "mean": 0.9384469696969695
+        },
+        "fracture_object_ratio": {
+          "min": 0.9966189019481565,
+          "p05": 0.9984664305264853,
+          "median": 1.001368539687651,
+          "p95": 1.0038681371759781,
+          "p99": 1.0050885525680244,
+          "max": 1.005152149412333,
+          "mean": 1.001297093865722
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      },
+      "1042": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 118.0,
+          "p05": 121.0,
+          "median": 130.5,
+          "p95": 141.0,
+          "p99": 146.0,
+          "max": 146.0,
+          "mean": 130.85
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 349.0,
+          "p05": 361.0,
+          "median": 374.0,
+          "p95": 386.0,
+          "p99": 389.63,
+          "max": 392.0,
+          "mean": 373.375
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 0.8636363636363636,
+          "p05": 0.8931818181818182,
+          "median": 0.9393939393939394,
+          "p95": 0.9848484848484849,
+          "p99": 0.9880303030303029,
+          "max": 1.0,
+          "mean": 0.937689393939394
+        },
+        "fracture_object_ratio": {
+          "min": 0.9966189019481565,
+          "p05": 0.99870391241346,
+          "median": 1.00104653034938,
+          "p95": 1.0030671389470294,
+          "p99": 1.0036395105458058,
+          "max": 1.0037031073901144,
+          "mean": 1.000993197552729
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      },
+      "2042": {
+        "epochs_checked": 80,
+        "draws_checked": 1124880,
+        "patients_at_least_double_baseline_per_epoch": {
+          "min": 114.0,
+          "p05": 120.9,
+          "median": 130.0,
+          "p95": 142.05,
+          "p99": 146.63,
+          "max": 149.0,
+          "mean": 130.525
+        },
+        "patients_over_1_25_baseline_per_epoch": {
+          "min": 350.0,
+          "p05": 353.95,
+          "median": 372.0,
+          "p95": 388.05,
+          "p99": 393.0999999999999,
+          "max": 401.0,
+          "mean": 371.625
+        },
+        "lesion_patient_cohort_draw_ratio": {
+          "min": 0.8636363636363636,
+          "p05": 0.8939393939393939,
+          "median": 0.9393939393939394,
+          "p95": 0.9848484848484849,
+          "p99": 0.9880303030303029,
+          "max": 1.0,
+          "mean": 0.9392045454545455
+        },
+        "fracture_object_ratio": {
+          "min": 0.9974239252938335,
+          "p05": 0.9989494445338915,
+          "median": 1.001408790854935,
+          "p95": 1.003626630172275,
+          "p99": 1.0045797778135566,
+          "max": 1.005152149412333,
+          "mean": 1.0013162131701818
+        },
+        "all_selected_parents_have_full_image_view": true,
+        "image_and_patient_order_independence": "boundary epochs reproduced with reversed records"
+      }
+    }
+  },
+  "epochs_checked": 960,
+  "draws_checked": 13498560,
+  "source_images_written": 0,
+  "test_images_opened": 0,
+  "model_training_performed": false
+}

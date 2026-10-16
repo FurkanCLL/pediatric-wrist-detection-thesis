@@ -1,0 +1,336 @@
+{
+  "scope": "unique eligible training parents; not draw-weighted simulation counts",
+  "policies": {
+    "A": {
+      "eligible_images": 2356,
+      "eligible_patients": 1262,
+      "eligible_per_class": {
+        "fracture": {
+          "images": 2161,
+          "patients": 1143
+        },
+        "metal": {
+          "images": 117,
+          "patients": 54
+        },
+        "text": {
+          "images": 2350,
+          "patients": 1259
+        },
+        "periostealreaction": {
+          "images": 1588,
+          "patients": 762
+        },
+        "pronatorsign": {
+          "images": 397,
+          "patients": 387
+        },
+        "bonelesion": {
+          "images": 0,
+          "patients": 0
+        },
+        "softtissue": {
+          "images": 307,
+          "patients": 282
+        },
+        "boneanomaly": {
+          "images": 147,
+          "patients": 67
+        }
+      },
+      "image_weight_range": [
+        1.0,
+        1.5
+      ],
+      "accepted_unique_crop_parents": 643,
+      "accepted_crop_target_classes": {
+        "periostealreaction": 611,
+        "boneanomaly": 26,
+        "softtissue": 4,
+        "pronatorsign": 2
+      },
+      "crop_outcomes": {
+        "no_small_eligible_target": 923,
+        "insufficient_zoom_with_context": 481,
+        "accepted": 643,
+        "partially_visible_annotation": 276,
+        "fracture_or_target_not_fully_retained": 33
+      },
+      "accepted_zoom": {
+        "min": 1.0533088235294117,
+        "p05": 1.0819713593616416,
+        "median": 1.2491166077738516,
+        "p95": 1.25,
+        "p99": 1.25,
+        "max": 1.25,
+        "mean": 1.2234289511787169
+      },
+      "target_short_before_768": {
+        "min": 4.276169265033408,
+        "p05": 9.353275362318842,
+        "median": 19.98048780487805,
+        "p95": 37.49367258118513,
+        "p99": 41.181904841028924,
+        "max": 42.10801963993453,
+        "mean": 21.274631504226278
+      },
+      "target_short_after_768": {
+        "min": 5.340751043115438,
+        "p05": 11.588796154686476,
+        "median": 24.597864768683273,
+        "p95": 44.40816326530612,
+        "p99": 44.440856219742706,
+        "max": 44.446837146702556,
+        "mean": 25.838103784782454
+      },
+      "retained_image_area_fraction": {
+        "min": 0.64,
+        "p05": 0.6401787729764592,
+        "median": 0.6411331589278104,
+        "p95": 0.854904855036694,
+        "p99": 0.8930200462184944,
+        "max": 0.9029904604443045,
+        "mean": 0.6728403638426289
+      },
+      "clipped_annotations": 27,
+      "omitted_objects": {
+        "fracture": 0,
+        "metal": 0,
+        "text": 374,
+        "periostealreaction": 0,
+        "pronatorsign": 0,
+        "bonelesion": 0,
+        "softtissue": 0,
+        "boneanomaly": 0
+      }
+    },
+    "B": {
+      "eligible_images": 2356,
+      "eligible_patients": 1262,
+      "eligible_per_class": {
+        "fracture": {
+          "images": 2161,
+          "patients": 1143
+        },
+        "metal": {
+          "images": 117,
+          "patients": 54
+        },
+        "text": {
+          "images": 2350,
+          "patients": 1259
+        },
+        "periostealreaction": {
+          "images": 1588,
+          "patients": 762
+        },
+        "pronatorsign": {
+          "images": 397,
+          "patients": 387
+        },
+        "bonelesion": {
+          "images": 0,
+          "patients": 0
+        },
+        "softtissue": {
+          "images": 307,
+          "patients": 282
+        },
+        "boneanomaly": {
+          "images": 147,
+          "patients": 67
+        }
+      },
+      "image_weight_range": [
+        1.0,
+        2.0
+      ],
+      "accepted_unique_crop_parents": 610,
+      "accepted_crop_target_classes": {
+        "periostealreaction": 562,
+        "softtissue": 10,
+        "boneanomaly": 34,
+        "pronatorsign": 4
+      },
+      "crop_outcomes": {
+        "no_small_eligible_target": 742,
+        "insufficient_zoom_with_context": 612,
+        "accepted": 610,
+        "fracture_or_target_not_fully_retained": 119,
+        "partially_visible_annotation": 273
+      },
+      "accepted_zoom": {
+        "min": 1.0533088235294117,
+        "p05": 1.0817063894523327,
+        "median": 1.427027027027027,
+        "p95": 1.4285714285714286,
+        "p99": 1.4285714285714286,
+        "max": 1.4285714285714286,
+        "mean": 1.3382590896788795
+      },
+      "target_short_before_768": {
+        "min": 6.233766233766234,
+        "p05": 10.067150402166968,
+        "median": 21.51468744575385,
+        "p95": 42.666666666666664,
+        "p99": 48.52111505560098,
+        "max": 50.285714285714285,
+        "mean": 23.20000185715594
+      },
+      "target_short_after_768": {
+        "min": 8.899188876013906,
+        "p05": 13.380372670807454,
+        "median": 28.628274026760845,
+        "p95": 53.29844424586299,
+        "p99": 53.333333333333336,
+        "max": 53.333333333333336,
+        "mean": 30.535665688517522
+      },
+      "retained_image_area_fraction": {
+        "min": 0.49,
+        "p05": 0.4902406254401179,
+        "median": 0.4914819749184662,
+        "p95": 0.8550270458860189,
+        "p99": 0.8950659537164934,
+        "max": 0.9029904604443045,
+        "mean": 0.5758599726226511
+      },
+      "clipped_annotations": 25,
+      "omitted_objects": {
+        "fracture": 0,
+        "metal": 0,
+        "text": 472,
+        "periostealreaction": 0,
+        "pronatorsign": 0,
+        "bonelesion": 0,
+        "softtissue": 0,
+        "boneanomaly": 0
+      }
+    },
+    "C": {
+      "eligible_images": 2356,
+      "eligible_patients": 1262,
+      "eligible_per_class": {
+        "fracture": {
+          "images": 2161,
+          "patients": 1143
+        },
+        "metal": {
+          "images": 117,
+          "patients": 54
+        },
+        "text": {
+          "images": 2350,
+          "patients": 1259
+        },
+        "periostealreaction": {
+          "images": 1588,
+          "patients": 762
+        },
+        "pronatorsign": {
+          "images": 397,
+          "patients": 387
+        },
+        "bonelesion": {
+          "images": 0,
+          "patients": 0
+        },
+        "softtissue": {
+          "images": 307,
+          "patients": 282
+        },
+        "boneanomaly": {
+          "images": 147,
+          "patients": 67
+        }
+      },
+      "image_weight_range": [
+        1.0,
+        2.27207782928703
+      ],
+      "accepted_unique_crop_parents": 861,
+      "accepted_crop_target_classes": {
+        "periostealreaction": 778,
+        "softtissue": 25,
+        "pronatorsign": 18,
+        "boneanomaly": 40
+      },
+      "crop_outcomes": {
+        "no_small_eligible_target": 631,
+        "accepted": 861,
+        "partially_visible_annotation": 296,
+        "fracture_or_target_not_fully_retained": 264,
+        "insufficient_zoom_with_context": 304
+      },
+      "accepted_zoom": {
+        "min": 1.052880075542965,
+        "p05": 1.094387755102041,
+        "median": 1.5617283950617284,
+        "p95": 1.6666666666666667,
+        "p99": 1.6666666666666667,
+        "max": 1.6666666666666667,
+        "mean": 1.4685959165593705
+      },
+      "target_short_before_768": {
+        "min": 4.987012987012987,
+        "p05": 11.335793357933579,
+        "median": 24.576,
+        "p95": 50.81127982646421,
+        "p99": 54.69685534591195,
+        "max": 56.02122015915119,
+        "mean": 26.926811157379394
+      },
+      "target_short_after_768": {
+        "min": 8.307692307692308,
+        "p05": 16.902338376891333,
+        "median": 36.898324022346365,
+        "p95": 59.239669421487605,
+        "p99": 59.25925925925926,
+        "max": 59.261730969760166,
+        "mean": 38.100122861811556
+      },
+      "retained_image_area_fraction": {
+        "min": 0.36,
+        "p05": 0.36024844720496896,
+        "median": 0.4104884246188594,
+        "p95": 0.8358995264824861,
+        "p99": 0.892568215819285,
+        "max": 0.9029558517021411,
+        "mean": 0.5001715074372465
+      },
+      "clipped_annotations": 34,
+      "omitted_objects": {
+        "fracture": 0,
+        "metal": 1,
+        "text": 736,
+        "periostealreaction": 0,
+        "pronatorsign": 0,
+        "bonelesion": 0,
+        "softtissue": 0,
+        "boneanomaly": 0
+      }
+    }
+  },
+  "bonelesion": {
+    "images_per_positive_patient": {
+      "min": 1.0,
+      "p05": 1.0,
+      "median": 2.0,
+      "p95": 4.75,
+      "p99": 6.549999999999999,
+      "max": 7.0,
+      "mean": 2.0
+    },
+    "objects_per_positive_patient": {
+      "min": 1.0,
+      "p05": 1.0,
+      "median": 2.0,
+      "p95": 5.5,
+      "p99": 9.099999999999998,
+      "max": 10.0,
+      "mean": 2.1875
+    },
+    "largest_patient_image_share": 0.21875,
+    "largest_patient_object_share": 0.2857142857142857
+  }
+}
