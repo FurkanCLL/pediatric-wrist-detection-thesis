@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "APPROVED_PHASE_3C2_EXECUTION",
+  "student_approved": true,
+  "execution_authorized": true,
+  "approval_date": "2026-10-17",
+  "authorization": "Direct student request: Phase 3C.2 Adaptive Refinement Implementation & Validation; approves CG-ALR v0.1 defaults, corrected V2, safeguards and evaluation gates.",
+  "authorization_normalized_sha256": "5ec6a00496f58b345219ac477d5ab39c683114f704f2cf9b0e55e17a6c536104",
+  "proposal_path": "configs/adaptive_refinement_proposed.json",
+  "proposal_canonical_sha256": "a2e96ff54fdee455aefcb698b8a49008572a22decdb535cc2e65cd6d73997cc6",
+  "historical_proposal_preserved": true,
+  "design_revision": "05f38a78709b2501f70819a5535ad48188663df2",
+  "design_report_normalized_sha256": "e55c54cb74434b5788a7e947917b0c1381b4ae2bafa6ac1d76b8cf2f901beebc",
+  "split": "val",
+  "variants": [
+    "V1",
+    "V2"
+  ],
+  "checkpoint": {
+    "path": "outputs/training/standard_baseline/weights/best.pt",
+    "sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b"
+  },
+  "pilot_images": 24,
+  "full_images": 3088,
+  "training_authorized": false,
+  "test_evaluation_authorized": false,
+  "further_optimization_authorized": false
+}

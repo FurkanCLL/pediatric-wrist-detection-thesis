@@ -1,0 +1,14 @@
+{
+  "command": "python -X faulthandler with unittest discover -s tests -v; tempfile.tempdir set to ignored outputs/phase3c2_test_tmp",
+  "gpu_model_inference_before_gate": false,
+  "implementation_source_sha256": {
+    "src/wrist_eval/adaptive.py": "482898228b8d0a9ba6d84a5cf298b12707dafa9c09766e8b11984166dcbeae5e",
+    "src/wrist_eval/adaptive_config.py": "7357d1fc5d1215f8d4743088b28435da32bfed2a07eb4ef46ad9f0ad3e631a7c",
+    "src/wrist_eval/adaptive_study.py": "62389e76002c466d1a62827c0c6eecb216f51a08d2a2ed2f90b639de63de077f"
+  },
+  "new_adaptive_tests": 36,
+  "passed": true,
+  "seconds": 10.874,
+  "temporary_directory_workaround": "Initial default-Windows-temp suite stalled/errored; both original logs preserved. Identical suite passed under workspace temporary root without source/protocol changes.",
+  "tests": 146
+}
