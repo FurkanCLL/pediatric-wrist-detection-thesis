@@ -1,0 +1,31 @@
+{
+  "added_packages": {
+    "click": "8.5.0",
+    "colorama": "0.4.6",
+    "fire": "0.7.1",
+    "sahi": "0.12.8",
+    "shapely": "2.2.0",
+    "termcolor": "3.3.0",
+    "tqdm": "4.70.1"
+  },
+  "cuda": "12.6",
+  "existing_package_changes": {},
+  "metadata_correction": "The initial receipt treated direct-URL CUDA wheels and pip's omitted freeze entry as additions. The reviewed pip install plan identifies the seven actual additions; initial receipt remains preserved.",
+  "sahi": "0.12.8",
+  "sahi_source_sha256": {
+    "models/base.py": "ba551f07e6002cacb1183db5515bffa5f6dd0acd0759dc8f32cb5c34bf4b68b2",
+    "models/ultralytics.py": "daac4f8a29545687216e4da86cfc59b478b76cb3d9ba8847c3b5c0e85cea631b",
+    "postprocess/combine.py": "f9017441e788d62370e2ac3c647aa5572a5c106f8b61bfa93bb5cafd806a4f2c",
+    "predict.py": "1e431b102c70af84545b3701531df1b56deba72b08989718d92631fe99f711aa",
+    "slicing.py": "18a75a080d2ef930a760ad2a7d6fc429d114c7c6dc573be0872fbc058ff868c7"
+  },
+  "sources": {
+    "api": "https://obss.github.io/sahi/api/",
+    "integration": "https://obss.github.io/sahi/models/ultralytics/",
+    "package": "https://pypi.org/project/sahi/0.12.8/",
+    "paper": "https://arxiv.org/abs/2202.06934",
+    "slicing": "https://obss.github.io/sahi/slicing/"
+  },
+  "torch": "2.14.1+cu126",
+  "ultralytics": "8.4.177"
+}

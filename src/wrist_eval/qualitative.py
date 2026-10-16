@@ -1,6 +1,8 @@
 """Reproducible private overlays; no medical pixels or identities enter public evidence."""
 
 import json
+import os
+from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from .common import CLASSES, LOCAL, PUBLIC, identity, image_path, save, validation_records
@@ -58,7 +60,8 @@ def run():
     preds={v:load_predictions(v) for v in ("standard_serial","sahi_context","sahi_detail")}
     selected=selections(rows,details,preds["standard_serial"],{v:p for v,p in preds.items() if v!="standard_serial"})
     directory=LOCAL/"qualitative";directory.mkdir(parents=True,exist_ok=False)
-    font=ImageFont.truetype("C:/Windows/Fonts/arial.ttf",13)
+    font_path=Path(os.environ.get("WINDIR","C:/Windows"))/"Fonts/arial.ttf"
+    font=ImageFont.truetype(str(font_path),13) if font_path.is_file() else ImageFont.load_default()
     receipt=[];private=[]
     for i,(category,row,eligible) in enumerate(selected,1):
         image=Image.open(image_path(row)).convert("RGB");gt=truth(row)

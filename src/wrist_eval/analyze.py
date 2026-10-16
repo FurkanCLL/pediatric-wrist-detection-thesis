@@ -72,7 +72,8 @@ def geometry(row,gt,index):
 
 def describe(rows,predictions,confidence=.25,threshold=.5):
     per_class={c:{"objects":0,"predictions":0,"tp":0,"fp":0,"fn":0,"gt_errors":Counter(),"fp_errors":Counter(),
-                   "tp_conf":[],"fp_conf":[],"all_conf":[],"matched_iou":[],"patients":set(),"images":set()} for c in CLASSES}
+                   "tp_conf":[],"fp_conf":[],"all_conf":[],"matched_iou":[],"patients":set(),"images":set(),
+                   "fn_candidate_presence":Counter()} for c in CLASSES}
     confusion=np.zeros((9,9),int)
     strata=defaultdict(lambda:{"objects":0,"tp":0,"patients":set(),"iou":[]})
     details={}
@@ -89,7 +90,14 @@ def describe(rows,predictions,confidence=.25,threshold=.5):
             v["objects"]+=1;v["patients"].add(row["patient_id"]);v["images"].add(row["filestem"])
             v["gt_errors"][reasons[gi]]+=1
             if g[gi]>=0:v["tp"]+=1;v["matched_iou"].append(float(matrix[gi,g[gi]]))
-            else:v["fn"]+=1
+            else:
+                v["fn"]+=1
+                # These are candidate-presence diagnostics, not extra matches or recovered detections.
+                same=pred[:,5]==box[4]
+                for floor in (.001,.05,.25):
+                    available=pred[:,4]>=floor
+                    v["fn_candidate_presence"][f"no_any_class_iou_ge_0.1_conf_{floor}"]+=int(not np.any((matrix[gi]>=.1)&available))
+                    v["fn_candidate_presence"][f"no_same_class_iou_ge_0.1_conf_{floor}"]+=int(not np.any((matrix[gi]>=.1)&available&same))
             geo=geometry(row,gt,gi);geometries.append(geo)
             for dimension in ("size","area","border","aspect","long_side","overlap_nontext","multiple_same_class","objects_per_image"):
                 key=(c,dimension,geo[dimension]);s=strata[key]
@@ -127,7 +135,7 @@ def compare(rows,a,b):
         for row in rows:
             gt=truth(row);pa=a[row["filestem"]];pb=b[row["filestem"]]
             pair=paired_recovery(gt,pa,pb,threshold=threshold)
-            low=pa[(pa[:,4]>=.05)&(pa[:,4]<.5)]
+            baseline_reasons=error_types(gt,pa,threshold=threshold)[3]
             for gi,g in enumerate(gt):
                 c=CLASSES[int(g[4])];size=str(size_bin(geometry(row,gt,gi)["short_768"]))
                 for key in ("both","recovered","lost","neither"):
@@ -137,12 +145,35 @@ def compare(rows,a,b):
                     same=pa[:,5]==g[4]
                     overlap=ious(g[None,:4],pa[:,:4])[0]
                     signals[c]["recovered"]+=1
+                    signals[c]["baseline_reason_"+baseline_reasons[gi]]+=1
                     signals[c]["any_same_class_iou_ge_0.1_at_0.001"]+=int(np.any(overlap[same]>=.1))
                     signals[c]["any_same_class_iou_ge_0.1_at_0.05"]+=int(np.any((overlap>=.1)&same&(pa[:,4]>=.05)))
+                    signals[c]["intermediate_confidence_same_class_nearby"]+=int(np.any((overlap>=.1)&same&(pa[:,4]>=.05)&(pa[:,4]<.5)))
+                    shorts=np.minimum(pa[:,2]-pa[:,0],pa[:,3]-pa[:,1])*768/max(row["height"],row["width"])
+                    signals[c]["small_same_class_prediction_nearby_at_0.05"]+=int(np.any((overlap>=.1)&same&(pa[:,4]>=.05)&(shorts<64)))
                     signals[c]["no_prediction_any_class_iou_ge_0.1_at_0.05"]+=int(not np.any((overlap>=.1)&(pa[:,4]>=.05)))
         result[str(threshold)]={"classes":classes,"size_changes":{c:dict(v) for c,v in sizes.items()},
                                "both_detected_iou_delta":{c:distribution(v) for c,v in deltas.items()},"recovered_first_pass_signals":signals}
     return result
+
+
+def compare_false_positives(rows,a,b):
+    # Spatial FP correspondence is separate from target recovery; it cannot claim extra ground-truth detections.
+    classes={c:Counter() for c in CLASSES}
+    for row in rows:
+        gt=truth(row);pa=a[row["filestem"]];pb=b[row["filestem"]]
+        _,ma,_=match(gt,pa);_,mb,_=match(gt,pb)
+        fa=pa[(ma<0)&(pa[:,4]>=.25)];fb=pb[(mb<0)&(pb[:,4]>=.25)]
+        targets=np.column_stack((fa[:,:4],fa[:,5]))
+        ga,pb_matches,_=match(targets,fb)
+        for c,name in enumerate(CLASSES):
+            sa=fa[:,5]==c;sb=fb[:,5]==c
+            classes[name]["standard_fp"]+=int(sa.sum());classes[name]["sahi_fp"]+=int(sb.sum())
+            classes[name]["shared_fp"]+=int(np.sum(sa&(ga>=0)))
+            classes[name]["removed_fp"]+=int(np.sum(sa&(ga<0)))
+            classes[name]["introduced_fp"]+=int(np.sum(sb&(pb_matches<0)))
+    return {"confidence":.25,"correspondence_iou":.5,"same_class":True,"classes":classes,
+            "interpretation":"One-to-one spatial correspondence between each method's unmatched predictions; not a clinical adjudication or an identity match for arbitrarily shifted boxes"}
 
 
 def run():
@@ -153,7 +184,7 @@ def run():
             "definitions":{"size_bins_short_768":["<16","16-<32","32-<64","64-<128",">=128"],
               "gt_error_priority":["TP","residual wrong-class IoU>=threshold","residual same-class low-confidence IoU>=threshold","residual same-class IoU>=.1","no residual candidate"],
               "descriptive_matching":"Confidence-ordered best available target, one-to-one, stable source-order ties",
-              "ap":"Pinned Ultralytics BaseValidator.match_predictions + ap_per_class, float32 IoU, 101-point trapezoidal envelope"},"variants":{},"comparisons":{}}
+            "ap":"Pinned Ultralytics BaseValidator.match_predictions + ap_per_class, float32 IoU, 101-point trapezoidal envelope"},"variants":{},"comparisons":{},"fp_comparisons":{}}
     for variant,pred in predictions.items():
         aps=ap_summary([native_stats(truth(r),pred[r["filestem"]]) for r in rows])
         points={}
@@ -165,6 +196,7 @@ def run():
         result["variants"][variant]={"ap":aps,"operating_points":points}
     for variant in ("sahi_context","sahi_detail"):
         result["comparisons"][variant]=compare(rows,predictions["standard_serial"],predictions[variant])
+        result["fp_comparisons"][variant]=compare_false_positives(rows,predictions["standard_serial"],predictions[variant])
     save(PUBLIC/"error_analysis.json",result)
     with (PUBLIC/"class_comparison.csv").open("w",newline="",encoding="utf-8") as stream:
         writer=csv.DictWriter(stream,fieldnames=["variant","class","ap50","ap75","ap50_95","tp","fp","fn","precision","recall","fp_per_image"])

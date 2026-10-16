@@ -113,6 +113,37 @@ class ErrorAnalysisTests(unittest.TestCase):
         self.assertEqual(fp.tolist(),["TP","duplicate","classification"])
         self.assertEqual(int(sum(g>=0)),int(sum(p>=0)))
 
+    def test_residual_candidates_are_consumed_once(self):
+        from wrist_eval.analyze import error_types
+        gt=np.array([[0,0,10,10,0],[0,0,10,10,0]],dtype=np.float32)
+        pred=np.array([[0,0,10,10,.2,0]],dtype=np.float32)
+        reasons=error_types(gt,pred)[3].tolist()
+        self.assertEqual(reasons.count("low_confidence"),1)
+        self.assertEqual(reasons.count("no_residual_candidate"),1)
+
+    def test_original_border_clipping_changes_iou(self):
+        gt=np.array([[0,0,10,10]],dtype=np.float32)
+        network_box=np.array([[-1,-2,11,12]],dtype=np.float32)
+        clipped=network_box.copy();clipped[:,:2]=np.maximum(clipped[:,:2],0);clipped[:,2:]=np.minimum(clipped[:,2:],10)
+        self.assertLess(ious(gt,network_box)[0,0],.75)
+        self.assertGreater(ious(gt,clipped)[0,0],.99)
+
+    def test_native_matching_translation_scale_invariance(self):
+        before=native_stats(self.gt,self.pred)["tp"]
+        gt=self.gt.copy();pred=self.pred.copy()
+        gt[:,:4]=gt[:,:4]*2+7;pred[:,:4]=pred[:,:4]*2+7
+        self.assertTrue(np.array_equal(before,native_stats(gt,pred)["tp"]))
+
+    def test_false_positive_correspondence(self):
+        from wrist_eval.analyze import compare_false_positives
+        row={"filestem":"synthetic","boxes":[]}
+        a={"synthetic":np.array([[0,0,10,10,.9,0],[20,0,30,10,.8,0]],dtype=np.float32)}
+        b={"synthetic":np.array([[0,0,10,10,.9,0],[40,0,50,10,.8,0]],dtype=np.float32)}
+        result=compare_false_positives([row],a,b)["classes"]["fracture"]
+        self.assertEqual(result["shared_fp"],1)
+        self.assertEqual(result["introduced_fp"],1)
+        self.assertEqual(result["removed_fp"],1)
+
     def test_pilot_is_outcome_independent(self):
         from wrist_eval.feasibility import pilot_rows
         rows=[{"filestem":f"synthetic{i}","patient_id":str(i),"width":500+i,"height":900,
