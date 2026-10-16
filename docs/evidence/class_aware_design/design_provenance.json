@@ -1,0 +1,69 @@
+{
+  "status": "proposed; student review required; not an official policy freeze",
+  "configuration_sha256": "fb36c515662976eee1d35079dad0aeeabc6f5a7ba60a750118238b7594b76edb",
+  "implementation_revision": "0db961ab621be7cbf7f763410e327eb19e8e76c1",
+  "source_sha256": {
+    "src/wrist_design/__init__.py": "fed95d3ef7e519ca242952b96c4313fbe85438e649b5b3a3d2ed5c005c910159",
+    "src/wrist_design/analyze.py": "0eb3049c4debc421b7433834ae83ed6ede73253ace4aa2c5a98d248de66c5f80",
+    "src/wrist_design/baseline.py": "668c5be0c91aa6263645c7193e80b5b249c55a4efe23d37fdb69c87fad95e9c1",
+    "src/wrist_design/common.py": "fa8473a23aab17531167d617967915d1ec270e04f1d75c266ac4cc0108cda904",
+    "src/wrist_design/crops.py": "eb49c9704f52c244e7ddf4585ba0c2c7ab9547143de4c89d6660913f2f0f0885",
+    "src/wrist_design/geometry.py": "780445b7adb9c0a53333b5df5abfe714d6bc0213db781b1ecc62cf3988fcf7f6",
+    "src/wrist_design/prototype.py": "891a32acda2a41ec6c1c41b47feb1022e2af3595ad9ff3cf23db807b72e05ef6",
+    "src/wrist_design/sampling.py": "7ec5a0b91f9233319a3e8ac6f96d1080880c52f796b5151de46eed43b30fb3d5",
+    "src/wrist_design/simulate.py": "726db8302188afa25971c2ababf6e6eb2c5ae622bcd251daff04bbffea037bf8",
+    "src/wrist_design/verify.py": "5ac6336f783e4372423af52e0a4cc043cc8f4ace334507ba7c32a74a9df8656c"
+  },
+  "test_source_sha256": "1a372c82e56b06b4774ed86b930e6d6b2bf7b4faeec04ec002027b38b1b078f8",
+  "baseline_protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+  "split_manifest_sha256": "ee49e4ae1810ac1fb9541261e2d8df43eb32b5ca827433e1f9f22c20bb3c9c49",
+  "training_records_container_sha256": "0cd3a72c83ad46ca32ebae1512131c0a4da034e455082d81b8c34a12f54c327c",
+  "data_preparation_policy_sha256": "e1c56fa84047c4feafb7dcb00eef0024673977d68b99c325b48cfc9c9d97c9c1",
+  "input_scope": "Only split=train records reach analysis/sampling/cropping. Frozen container hash verification reads metadata, not holdout images.",
+  "environment": {
+    "python": "3.12.5",
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "numpy": "2.3.5",
+      "opencv-python": "5.0.0.93",
+      "torch": "2.14.1+cu126",
+      "torchvision": "0.29.1+cu126",
+      "ultralytics": "8.4.177"
+    }
+  },
+  "official_seed": 42,
+  "analytical_seeds": [
+    42,
+    1042,
+    2042
+  ],
+  "epochs": 80,
+  "draws_per_epoch": 14061,
+  "training_performed": false,
+  "validation_policy_optimization": false,
+  "test_evaluation": false,
+  "draw_array_sha256": {
+    "standard_seed42": "af1adad3c38ee3c062d17244fb1bdb41b68f8d88d70a31bd6fdc4761155cae4c",
+    "standard_seed1042": "3319d440d0eeb2c1a4dbf13c838e7f4b3a175388eba904e0bf5af9b61af58f25",
+    "standard_seed2042": "04102781ac7df60f112800e452dfa7d7541dd3046a00cd1433b1183dc73a5362",
+    "A_seed42": "ce32d8f64471a68ba1acdaf75c15986f7a85177aaebae6f58027c528675e4817",
+    "A_seed1042": "b7ad065695a6682ca50d3511e81a36709e68ed8cbcb0b203bf63e88fb0b73fd6",
+    "A_seed2042": "7f4c4438a4b9ca0818c44ba1b5f2c8c5b04077d34bfb59173b1a14593527cd04",
+    "B_seed42": "0bd4ad487947d1972aedd8a320245a8c4486cf9ea767121294a3ae060c1ea407",
+    "B_seed1042": "0f9efa4ec74fadc292981bd20f4f532ddd35c6617d270ff576fd015aa4558288",
+    "B_seed2042": "69390b422710fc0b5f0c73ad738e6ff8a835194797d09ac812a433f1a07721b4",
+    "C_seed42": "5c8fecc4f11c200caf4cb0ed0a1d00e5d20c40ceffdb5092d5b436a05e1b748e",
+    "C_seed1042": "d2527e6d4e912149bf0d269b5bf5b3b44d47f1f5bb4c7ce3a0f8457485931b49",
+    "C_seed2042": "59b2b666fe2ee8d027903c19a69332058097fc7255110b0fd787882e1cc4bd07"
+  },
+  "aggregate_artifact_sha256": {
+    "baseline_preservation.json": "2e309c93c177099d21bdc68aa830fb298a54c7b5cf30be16712dcb5db3ddd763",
+    "epoch_exposures.csv": "b68400eb10b63e6a554c1a063e1a5473af81183a4ff6057f36eff9cdf505f5ea",
+    "policy_geometry.json": "888d0703b56f99086a7d01b4181167a123f0d99c7ba3bce018bb6bf43c3756cf",
+    "prototype_verification.json": "be73ecdef645a753b657955ec2af2913c7231071dce67c8a35987f92c65c4185",
+    "simulation_summary.json": "0ca840c88e77a4983dfa7130c0a14c7d0494e7301efeec0bccda02cafa6bbbc5",
+    "simulation_verification.json": "30127a592f20881f36d3e0edbb09b48567d9bcb74cdab5eae3fd68ba1e2813c8",
+    "training_analysis.json": "0447c9b0e1728811ba3a10fcd8f60e3a7a92284a888422f603b48ac9bc37e31e"
+  }
+}

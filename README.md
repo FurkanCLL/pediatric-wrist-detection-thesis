@@ -2,14 +2,14 @@
 
 Implementation workspace for a new RTU Type 2 bachelor thesis study using the GRAZPEDWRI-DX pediatric wrist X-ray dataset, YOLOv8s, class-aware training, and adaptive local refinement.
 
-**Status:** Phase 2B protocol freeze and baseline readiness are complete. The student-approved common protocol uses YOLOv8s, 768, batch 6, steady accumulation 4, AMP scale 128 and 80 epochs (approved before the first official run). Patient splits and prepared data are unchanged. Official training, A-F results and final test evaluation have not started. The 2 x 3 design remains subject to supervisor alignment for the formal thesis scope.
+**Status:** The official standard YOLOv8s baseline completed 80 epochs and is preserved. Phase 3A Step 1 adds training-only class-aware design, 80-epoch simulations and bounded crop prototypes. Candidate A is recommended for student review; the class-aware policy is not approved, integrated or trained. The held-out test and final A-F comparison remain untouched. Formal supervisor alignment of the revised thesis scope is still pending.
 
 ## Start here
 
 1. Read `AGENTS.md`, `docs/THESIS.md`, `docs/ROADMAP.md`, `docs/DECISIONS.md`.
 2. Install the pinned dependencies in the project Python environment.
-3. Read [the frozen training protocol and manual commands](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md), [the GPU feasibility report](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md), [dataset preparation](docs/evidence/dataset_preparation/DATASET_PREPARATION_REPORT.md), and the earlier [source audit](docs/evidence/dataset_audit/DATASET_AUDIT_REPORT.md).
-4. Review the readiness report, run preflight, and manually launch the standard baseline when ready. Codex has not invoked the confirmed training command.
+3. Read [the class-aware design and recommendation](docs/evidence/class_aware_design/CLASS_AWARE_DESIGN_REPORT.md), [baseline preservation](docs/evidence/class_aware_design/BASELINE_PRESERVATION_REPORT.md), [the frozen training protocol and original manual commands](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md), [the GPU feasibility report](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md), [dataset preparation](docs/evidence/dataset_preparation/DATASET_PREPARATION_REPORT.md), and the earlier [source audit](docs/evidence/dataset_audit/DATASET_AUDIT_REPORT.md).
+4. Review the proposed policy and private crop comparisons before approving production loader integration. Preserve the completed standard baseline; no class-aware training command is available in this step.
 
 The previous repository and experiments are archived separately. Do not copy its historical A-F results into this project's experimental outcomes.
 
@@ -103,9 +103,9 @@ The first benchmark stopped at the diagnostic overflow limit with the native 65,
 
 Mild intensity augmentation uses HSV value only, tested on equal grayscale channels; hue/saturation and optional Albumentations transforms are disabled. In this pinned framework a one-epoch run disables scheduler warmup, even when a longer candidate run requests it. The smoke receipt reports this actual behavior. Passing one epoch does not establish convergence or guarantee numerical stability throughout a longer run.
 
-## Official baseline: manual launch
+## Standard baseline: completed; original launch interface
 
-Read [the protocol report](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md) for the frozen identity, measured timing basis, AMP limits, checkpoint retention and resume limitations. No official training was started during preparation. The first run initializes from verified COCO weights. Expected cost is approximately 7 h 26 min, or 8 h 32 min with a 15% allowance; official checkpoint/monitoring overhead is unmeasured.
+The standard baseline is complete. Read [its preservation report](docs/evidence/class_aware_design/BASELINE_PRESERVATION_REPORT.md) for checkpoint identity and actual validation results. The [protocol report](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md) preserves the original readiness record and launch/recovery instructions below. A fresh start refuses the existing output directory; do not rename, delete or retrain the preserved baseline. This interface does not launch a class-aware run.
 
 From this repository root in PowerShell, first run the non-training check:
 
@@ -127,3 +127,20 @@ Outputs stay under ignored `outputs/training/standard_baseline/`. Existing runs 
 ```
 
 Resume restores the completed-epoch model/optimizer/EMA/schedule/scaler state into a new segment. Worker randomness and partial accumulation are not bitwise restored. The report explains verified predecessor/periodic fallback when the latest file is incomplete. Keep all segments and disclose actual successful/skipped updates in later comparisons. Class-aware sampling/cropping and the inference comparators remain future work.
+
+## Class-aware design: non-training analysis only
+
+The [design report](docs/evidence/class_aware_design/CLASS_AWARE_DESIGN_REPORT.md) compares three proposed hybrid policies. Each retains 14,061 draws and all 4,264 training patients per epoch. Candidate A requests 2% extra rare-class views, caps image/patient repetition, protects fracture-positive and negative exposure, and leaves bone lesion coverage-only. Conservative geometric crops apply only to additional draws; every selected parent retains a full-image view. Exposure gains are not model performance results.
+
+Source is isolated in `src/wrist_design/`; `configs/class_aware_candidates.json` remains proposed. Read the report before rerunning analysis. These commands need existing private frozen data/baseline outputs and never train a model:
+
+```powershell
+.\.venv\Scripts\python.exe -m wrist_design.baseline
+.\.venv\Scripts\python.exe -m wrist_design.analyze
+.\.venv\Scripts\python.exe -m wrist_design.simulate
+.\.venv\Scripts\python.exe -m wrist_design.geometry
+.\.venv\Scripts\python.exe -m wrist_design.verify
+.\.venv\Scripts\python.exe -m wrist_design.prototype --attempt visual_review_repeat
+```
+
+Detailed draws, patient mappings and image comparisons stay in ignored `outputs/class_aware_design/`. Use a new prototype attempt name to retain previous figures; a new run needs a fresh technical visual review. Only aggregate evidence is tracked. The baseline lock and prepared dataset remain unchanged. Policy approval, production loader integration and any later class-aware training require a separate reviewed step.
