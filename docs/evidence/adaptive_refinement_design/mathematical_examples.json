@@ -1,0 +1,271 @@
+{
+  "boost_cases": [
+    {
+      "local": 0.25,
+      "original": 0.05,
+      "updated": 0.15000000000000002
+    },
+    {
+      "local": 0.8,
+      "original": 0.149,
+      "updated": 0.249
+    },
+    {
+      "local": 0.25,
+      "original": 0.15,
+      "updated": 0.25
+    },
+    {
+      "local": 0.25,
+      "original": 0.2,
+      "updated": 0.25
+    },
+    {
+      "local": 0.6,
+      "original": 0.2,
+      "updated": 0.30000000000000004
+    },
+    {
+      "local": 0.9,
+      "original": 0.249,
+      "updated": 0.349
+    }
+  ],
+  "crop_cases": [
+    {
+      "crop": [
+        75,
+        125,
+        525,
+        875
+      ],
+      "expanded_integer_envelope": [
+        247,
+        447,
+        353,
+        553
+      ],
+      "height": 1000,
+      "ideal_zoom": 1.3333333333333333,
+      "skip_no_zoom": false,
+      "synthetic_box": [
+        250,
+        450,
+        350,
+        550
+      ],
+      "width": 600
+    },
+    {
+      "crop": [
+        0,
+        0,
+        450,
+        750
+      ],
+      "expanded_integer_envelope": [
+        0,
+        7,
+        63,
+        93
+      ],
+      "height": 1000,
+      "ideal_zoom": 1.3333333333333333,
+      "skip_no_zoom": false,
+      "synthetic_box": [
+        0,
+        10,
+        60,
+        90
+      ],
+      "width": 600
+    },
+    {
+      "crop": [
+        150,
+        250,
+        600,
+        1000
+      ],
+      "expanded_integer_envelope": [
+        537,
+        907,
+        600,
+        1000
+      ],
+      "height": 1000,
+      "ideal_zoom": 1.3333333333333333,
+      "skip_no_zoom": false,
+      "synthetic_box": [
+        540,
+        910,
+        600,
+        1000
+      ],
+      "width": 600
+    },
+    {
+      "crop": [
+        17,
+        28,
+        583,
+        972
+      ],
+      "expanded_integer_envelope": [
+        17,
+        97,
+        583,
+        903
+      ],
+      "height": 1000,
+      "ideal_zoom": 1.0593220338983051,
+      "skip_no_zoom": false,
+      "synthetic_box": [
+        20,
+        100,
+        580,
+        900
+      ],
+      "width": 600
+    },
+    {
+      "crop": [
+        0,
+        0,
+        600,
+        1000
+      ],
+      "expanded_integer_envelope": [
+        0,
+        0,
+        600,
+        1000
+      ],
+      "height": 1000,
+      "ideal_zoom": 1.0,
+      "skip_no_zoom": true,
+      "synthetic_box": [
+        0,
+        0,
+        600,
+        1000
+      ],
+      "width": 600
+    },
+    {
+      "crop": [
+        0,
+        0,
+        1,
+        1000
+      ],
+      "expanded_integer_envelope": [
+        0,
+        397,
+        1,
+        503
+      ],
+      "height": 1000,
+      "ideal_zoom": 1.0,
+      "skip_no_zoom": true,
+      "synthetic_box": [
+        0,
+        400,
+        1,
+        500
+      ],
+      "width": 1
+    },
+    {
+      "crop": [
+        1,
+        1,
+        5,
+        5
+      ],
+      "expanded_integer_envelope": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "height": 5,
+      "ideal_zoom": 1.25,
+      "skip_no_zoom": false,
+      "synthetic_box": [
+        2.4,
+        2.4,
+        2.6,
+        2.6
+      ],
+      "width": 5
+    },
+    {
+      "crop": [
+        140,
+        35,
+        891,
+        285
+      ],
+      "expanded_integer_envelope": [
+        427,
+        117,
+        603,
+        203
+      ],
+      "height": 333,
+      "ideal_zoom": 1.33288948069241,
+      "skip_no_zoom": false,
+      "synthetic_box": [
+        430,
+        120,
+        600,
+        200
+      ],
+      "width": 1001
+    }
+  ],
+  "purpose": "Synthetic arithmetic checks, not adaptive implementation or model results",
+  "score_cases": [
+    {
+      "Q": 0.7500000000000001,
+      "S": 0.6500000000000001,
+      "Z": 0.5,
+      "effective_short_side": 32,
+      "global_confidence": 0.2,
+      "reference": 64
+    },
+    {
+      "Q": 0.7500000000000001,
+      "S": 0.6500000000000001,
+      "Z": 0.5,
+      "effective_short_side": 16,
+      "global_confidence": 0.2,
+      "reference": 32
+    },
+    {
+      "Q": 0,
+      "S": 0.39375000000000004,
+      "Z": 0.984375,
+      "effective_short_side": 1,
+      "global_confidence": 0.05,
+      "reference": 64
+    },
+    {
+      "Q": 0.7500000000000001,
+      "S": 0.45000000000000007,
+      "Z": 0,
+      "effective_short_side": 64,
+      "global_confidence": 0.2,
+      "reference": 64
+    },
+    {
+      "Q": 0.995,
+      "S": 0.597,
+      "Z": 0,
+      "effective_short_side": 96,
+      "global_confidence": 0.249,
+      "reference": 64
+    }
+  ]
+}

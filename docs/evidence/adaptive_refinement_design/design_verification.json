@@ -1,0 +1,64 @@
+{
+  "activity": {
+    "dependencies_changed": false,
+    "existing_test_suite_rerun": false,
+    "gpu_experiments": 0,
+    "heldout_evaluations": 0,
+    "new_model_inference_calls": 0,
+    "production_algorithm_implemented": false,
+    "training_runs": 0
+  },
+  "checks": {
+    "approval_execution_flags_false": true,
+    "inherited_global_values_match": true,
+    "json_finite_unique_keys": true,
+    "local_links_resolve": true,
+    "phase3b_source_hashes_unchanged": true,
+    "protected_tracked_state_unchanged": true,
+    "public_identifiers_and_host_paths_absent": true,
+    "report_19_sections": true,
+    "score_and_boost_arithmetic": true,
+    "synthetic_crop_bounds": true,
+    "target_mapping_and_budget_consistent": true
+  },
+  "configuration_canonical_sha256": "007cf2310d6aa5490df2e963c91d6d55a0cd8652940044580190f9ee3f460cce",
+  "configuration_normalized_sha256": "9365905bd6afd7b59a6eeeb82d052e4f4edcfa8f31b0c9fd0d251076c5cdedc0",
+  "future_implementation_tests": "Planned in report section 15; not performed in this design phase",
+  "inspected_installed_source_sha256": {
+    "metrics.py": "e2f216964bb0d89ac26efecb4e0a76750b554d2e670a27e6ed4a8f42d998b2a0",
+    "ops.py": "c66d0eff4c6da3ba53247bc235de84bbe6db6682829ecaecd333c136070441cb",
+    "validator.py": "4fa6e43d3b090e50c563ab904e7af095348e5f8471374048adb60eee66452111"
+  },
+  "phase": "3C.1",
+  "preservation_limit": "Tracked source/config/evidence checked against pre-phase Git state. No checkpoint/data content re-audit; existing Phase 3B preservation receipts remain historical evidence. No phase write targets checkpoint or dataset files.",
+  "report_normalized_sha256": "ea1cb457db2806c6e1978a48b45b533cdcf73c76b4bce7a996bec5f3e4bf9308",
+  "review_date": "2026-10-17",
+  "reviewed_public_source_and_report_sha256": {
+    "docs/evidence/class_aware_design/BASELINE_PRESERVATION_REPORT.md": "36a001cb51e06dabf4a7837bf5f14d14a44cc5650894444e932c31c6c7e99f6a",
+    "docs/evidence/class_aware_design/CLASS_AWARE_DESIGN_REPORT.md": "acd509f97aa4a9255bdadf5965fd20a3250af261b2e0d0204724d71a5848741a",
+    "docs/evidence/dataset_audit/DATASET_AUDIT_REPORT.md": "0292b402ac2ffeca9bf5db29043f30ab5c563afc1bc278508274c2a445bab70e",
+    "docs/evidence/dataset_preparation/DATASET_PREPARATION_REPORT.md": "1640657ce60b1397d94f847324b5c5d58f966d99cc7e72fd90209673ebc20b18",
+    "docs/evidence/error_analysis_sahi/ERROR_ANALYSIS_SAHI_REPORT.md": "6e5f9ff1204fe91aab20d3ccbb6d0c55bf22ad9f8bb3e330a7f7c9c79385e5c4",
+    "docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md": "a62475b125bf6a273c436b436907b4f9e505f4d8243f565e9cddf2e35da5ecfc",
+    "src/wrist_eval/__init__.py": "ad01eb20499511661ae6003373d30a29c6683e432b3f54cc66f1a0cae88f3d56",
+    "src/wrist_eval/analyze.py": "2e6761a93391ec7b19d331c0ac1bf2b87e82e88845526ae995db28bd5bacbc43",
+    "src/wrist_eval/bootstrap.py": "347f85843bad609fce3f769884e38a5a496ba20f6b18ed548e6fd40d77e46b41",
+    "src/wrist_eval/bridge.py": "f56a3f4d92b78cdad3fcbb62a21cf150c6a30266b299d5825166e64833f5b3a1",
+    "src/wrist_eval/common.py": "3cfe41a11db35934e591da3fdf0e51b152e8836401161d633e714980023a4820",
+    "src/wrist_eval/feasibility.py": "08b69137949e09507b7e2cee62542f7e056d91f32069bb5175b7532744be672f",
+    "src/wrist_eval/metrics.py": "a602d77bedd6517ad5324bb07cca52a458932052403c392998904f07feb95406",
+    "src/wrist_eval/provenance.py": "9f88142231571d76b38ad2abca4e8aa513aba8728e8852085af83707fee25657",
+    "src/wrist_eval/qualitative.py": "2cbdaf981c0683d65404461f143141892f4b4f1d14017ef39280299ca0fda74a",
+    "src/wrist_eval/reference.py": "cb181f9c3e0c11cd87aa3394ced8b1974bd1965a74f980a1a54d9ceb0c1cd413",
+    "src/wrist_eval/sliced.py": "80d9370321a991f11b37135da730978a3036b5fb9ef0498b625e4dce6d764ffc",
+    "src/wrist_eval/verify.py": "f9818b1f06040d1be6ca2a26ff625fcf0a95317ac088ab1ab99beda6c924a013",
+    "tests/test_error_analysis.py": "df323a86ac9ab954c28985323dbbd077d73f65d5329a51d35a73ba4d1c80ac5c"
+  },
+  "source_review_revision": "a709747438977f071ede9995fe3e9efbb418f9b3",
+  "status": "PROPOSED_UNAPPROVED",
+  "synthetic_cases": {
+    "boost": 6,
+    "geometry": 8,
+    "scoring": 5
+  }
+}
