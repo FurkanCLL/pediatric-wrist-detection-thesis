@@ -1,0 +1,16 @@
+{
+  "command": "unittest discover -s tests -q; workspace tempfile root",
+  "config_sha256": "d1cbbb1c535aa82ed99ecfe623b912ee8c9c173c32e1abd71724654cc088cbf7",
+  "new_training_mining_tests": 11,
+  "passed": true,
+  "seconds": 5.267,
+  "source_sha256": {
+    "src/wrist_eval/sliced.py": "80d9370321a991f11b37135da730978a3036b5fb9ef0498b625e4dce6d764ffc",
+    "src/wrist_mining/common.py": "80764b607583c82fbb9598f1e5fbb036155360d6f09774102725d79c95198f58",
+    "src/wrist_mining/difficulty.py": "e7af5f5af9c35fdd9a7364ed2c017706687ddbbfa3b24886ab05299fdb6300ae",
+    "src/wrist_mining/inference.py": "578fa524029ab3153026e49c698da016a28fdebca052c940f991aa11e88dfe0d"
+  },
+  "test_log_sha256": "e6cfd66369a5a7d05e91e24cda537ba469f99f36a2bb1897d9f52cf61a61d216",
+  "tests": 163,
+  "training_inference_started": false
+}

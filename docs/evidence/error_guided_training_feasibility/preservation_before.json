@@ -1,0 +1,14 @@
+{
+  "all_baseline_hashes_match": true,
+  "all_stat_entries_match": true,
+  "baseline_files": 36,
+  "baseline_inventory_sha256": "6d50907df6da9163a68ac7de4b8abe59e7e70dc42cf391b8e985d6e1735d9de6",
+  "frozen_protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+  "historical_matrix_unchanged": true,
+  "no_validation_or_test_image_label_content_opened": true,
+  "official_training_performed": false,
+  "protected_pre_phase_source_config_evidence_unchanged": true,
+  "raw_prepared_stat_files": 121973,
+  "stage": "before",
+  "study_config_sha256": "fcb794dc495a1d8fe6efe5c6772c52fafac44b0af032bbe9ba147d1c5585f097"
+}

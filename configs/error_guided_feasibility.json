@@ -1,0 +1,62 @@
+{
+  "authoritative_prior_head": "042bbc92be71ccbd94d832bd028ec74f12ed75a5",
+  "authorization_normalized_sha256": "46a3ef25e413d2dc579a74e76825f766d55f4c96c7de6db3b537ae8e5c356992",
+  "checkpoints": {
+    "best.pt": {
+      "epoch": 22,
+      "sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b"
+    },
+    "epoch010.pt": {
+      "epoch": 10,
+      "sha256": "656abbcd4a28278d03c4f42e7f11ef4c9eb1e7cfe3decf941560d0dc6e9cf6a5"
+    },
+    "epoch040.pt": {
+      "epoch": 40,
+      "sha256": "7a26b5fe2bd19d24a824522d4f0c4facc1f21765cb35d5bacec64e5bf1d05cc9"
+    }
+  },
+  "heldout_evaluation_authorized": false,
+  "historical_matrix_change_authorized": false,
+  "images": 14061,
+  "mining": {
+    "confidence": 0.25,
+    "hard_positive": "Annotated object not matched at .50 or .75; not proof of annotation correctness",
+    "image_class_difficulty": "Mean object difficulty within class, zero for absent class; no FP contribution",
+    "inference": "Existing full-image adapter default shape; training dimensions only; unfused EMA, same precision/mapping/restoration",
+    "ious": [
+      0.5,
+      0.75
+    ],
+    "object_difficulty": "1 for unmatched at .50; otherwise .5 for unmatched at .75; otherwise 0",
+    "one_to_one_categories": "Reuse wrist_eval.analyze.error_types unchanged; TP, classification, low_confidence, localization, no_residual_candidate",
+    "potential_hard_negative": "Unmatched prediction >=.25; separately count >=.50; never a verified negative",
+    "retained_confidence": 0.001
+  },
+  "official_training_authorized": false,
+  "patients": 4264,
+  "phase": "4A diagnostic and sampler feasibility only",
+  "qualitative": {
+    "controls": "Two SHA-ordered all-correct clinical annotation cases",
+    "hard_positive": "One per clinical class, SHA ordered; no image reuse",
+    "maximum_cases": 24,
+    "potential_fp": "Up to two distinct-patient images per class, SHA ordered, >=.25 unmatched; no outcome-selected replacements",
+    "review": "Technical only; no clinical negative adjudication or relabeling"
+  },
+  "schema_version": 1,
+  "seed": 42,
+  "split": "train",
+  "stability": {
+    "class_ids": [
+      0,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "per_class_images": 32,
+    "rule": "Outcome-independent SHA-256 ordering, seed42; uniform pool union first32 each clinical class; epochs10 and40 chosen by time, not scores; no extra training",
+    "uniform_images": 1024
+  },
+  "student_authorized_training_inference": true
+}
