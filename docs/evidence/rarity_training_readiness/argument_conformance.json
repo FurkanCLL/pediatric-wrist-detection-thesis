@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "native_argument_difference_names": [
+    "data",
+    "epochs",
+    "name",
+    "project",
+    "save_dir"
+  ],
+  "only_learning_argument_difference": "diagnostic epochs2 versus official/baseline80; isolated output/data paths",
+  "same_coco_model_source": true,
+  "all_optimizer_amp_augmentation_seed_and_validation_arguments_match_baseline": true,
+  "no_D_E_F_or_test_evaluation": true
+}

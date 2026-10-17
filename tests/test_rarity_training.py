@@ -51,14 +51,15 @@ def synthetic_dataset(root):
 
 
 class RarityWorkerTests(unittest.TestCase):
-    def test_two_workers_actual_native_augmentations_replay_across_epoch_boundaries(self):
+    def test_two_workers_replay_three_native_epochs_across_two_boundaries(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             native, files, signatures = synthetic_dataset(root)
             dataset = IndexedDataset(native, files, signatures)
             # Two repeated sources and two omitted views give different ordered plans each epoch.
             plans = [np.array(list(range(14))+[0, 1], dtype=np.int32),
-                     np.array(list(range(2, 16))+[2, 3], dtype=np.int32)]
+                     np.array(list(range(2, 16))+[2, 3], dtype=np.int32),
+                     np.array(list(range(4, 16))+[0, 1, 4, 5], dtype=np.int32)]
             launches = []
             for launch in range(2):
                 loader = FiniteEpochLoader(dataset, batch_size=4, workers=2, pin_memory=False)

@@ -2,7 +2,7 @@
 
 Implementation workspace for a new RTU Type 2 bachelor thesis study using the GRAZPEDWRI-DX pediatric wrist X-ray dataset, YOLOv8s, class-aware training, and adaptive local refinement.
 
-**Status:** Phase 4A training-only error mining and sampler feasibility are complete. All 14,061 training images and two predefined checkpoint subsets are verified; 720 matched simulation epochs pass every coverage/repetition guardrail. Recommendation for student review: **SIMPLIFY — patient-aware rarity-only sampling**. The tested error component adds only 1.08% priority hard-positive exposure over rarity-only and has 0.750% source-frequency total variation versus rarity-only (ordered plans differ by 4.39%). Read the [feasibility report](docs/evidence/error_guided_training_feasibility/ERROR_GUIDED_TRAINING_FEASIBILITY_REPORT.md). No official training, new validation/test evaluation, production loader integration or historical A-F matrix change occurred. Baseline, prior negative SAHI/CG-ALR findings, frozen protocol/splits and A/B/C proposals remain preserved. Formal supervisor scope alignment remains pending.
+**Status:** Phase 4B rarity-only training integration and readiness verification are complete: **READY WITH DOCUMENTED LIMITATIONS**. All 240 plans match Phase 4A exactly; 187 tests and an isolated two-epoch real-data diagnostic pass, with 28,122 consumed draws, 1,725 successful updates and zero AMP skips. Actual epoch-specific batches, augmentations and checkpoint reloads are verified. Read the [readiness report](docs/evidence/rarity_training_readiness/RARITY_TRAINING_READINESS_REPORT.md) before the student's manual 80-epoch launch. The official rarity-only run has **not** started. The approved matrix remains Standard/Rarity-only x Standard/SAHI Context/CG-ALR V2. Baseline, frozen common protocol/data and previous negative inference evidence are preserved; D/E/F/test evaluation is not performed. Formal supervisor scope alignment remains pending.
 
 ## Start here
 
@@ -11,7 +11,7 @@ Implementation workspace for a new RTU Type 2 bachelor thesis study using the GR
 3. Read [the validation error-analysis and SAHI findings](docs/evidence/error_analysis_sahi/ERROR_ANALYSIS_SAHI_REPORT.md), [the class-aware design and recommendation](docs/evidence/class_aware_design/CLASS_AWARE_DESIGN_REPORT.md), [baseline preservation](docs/evidence/class_aware_design/BASELINE_PRESERVATION_REPORT.md), [the frozen training protocol and original manual commands](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md), [the GPU feasibility report](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md), [dataset preparation](docs/evidence/dataset_preparation/DATASET_PREPARATION_REPORT.md), and the earlier [source audit](docs/evidence/dataset_audit/DATASET_AUDIT_REPORT.md).
 4. Review [the adaptive validation findings](docs/evidence/adaptive_refinement_validation/ADAPTIVE_REFINEMENT_VALIDATION_REPORT.md) alongside [the historical design](docs/evidence/adaptive_refinement_design/ADAPTIVE_REFINEMENT_DESIGN_REPORT.md). `configs/adaptive_refinement_execution.json` records student approval for this completed validation study; the original proposed config retains its historical flags/hash. Further optimization, class-aware training and held-out evaluation require separate authorization.
 
-Current research decision: review [the Phase 4A report](docs/evidence/error_guided_training_feasibility/ERROR_GUIDED_TRAINING_FEASIBILITY_REPORT.md), [exact proposed sampler](docs/evidence/error_guided_training_feasibility/SAMPLER_PROPOSAL.md) and [future loader feasibility](docs/evidence/error_guided_training_feasibility/LOADER_FEASIBILITY.md). The new configuration is simulation-only; it does not supersede the historical matrix or authorize a model run.
+Historical feasibility decision: review [the Phase 4A report](docs/evidence/error_guided_training_feasibility/ERROR_GUIDED_TRAINING_FEASIBILITY_REPORT.md), [exact proposed sampler](docs/evidence/error_guided_training_feasibility/SAMPLER_PROPOSAL.md) and [future loader feasibility](docs/evidence/error_guided_training_feasibility/LOADER_FEASIBILITY.md). That Phase 4A configuration remains a historical simulation-only record. Phase 4B separately approves its rarity-only comparator and integration; the [readiness report](docs/evidence/rarity_training_readiness/RARITY_TRAINING_READINESS_REPORT.md) supplies the current manual-launch gate.
 
 The previous repository and experiments are archived separately. Do not copy its historical A-F results into this project's experimental outcomes.
 
@@ -214,4 +214,25 @@ Saved-evidence verification without new model inference:
 .\.venv\Scripts\python.exe -m wrist_mining.preservation after
 ```
 
-The pinned infinite loader requires a separately reviewed epoch-boundary/RNG integration; the prototype is not attached to the official trainer. Another 80-epoch model needs roughly 8.56 hours of baseline-equivalent train/validation work, plus overhead. Student approval must precede any integration/smoke, official training or experiment redesign. The final suite has 171 passing tests.
+Phase 4A ended with the isolated prototype, 171 tests and no training integration. Phase 4B subsequently approves and verifies a separate rarity-only finite-loader subclass, preserving the standard trainer and the original common protocol. The historical Phase 4A results and proposals remain unchanged.
+
+
+## Rarity-only training: manual launch ready
+
+The [Phase 4B readiness report](docs/evidence/rarity_training_readiness/RARITY_TRAINING_READINESS_REPORT.md) records exact source/policy identities, the finite lazy loader, actual batch/label/augmentation checks, two-epoch GPU health, checkpoint/recovery verification and remaining reproducibility limits. Diagnostic outputs stay in `outputs/rarity_training_readiness/diagnostics/two_epoch_01`. The future official output is `outputs/training/rarity_only`; existing runs cannot be overwritten.
+
+From the repository root, verify readiness without training:
+
+```powershell
+.\.venv\Scripts\python.exe -m wrist_rarity.launch preflight
+```
+
+The student can then start the official **80 epochs** manually:
+
+```powershell
+.\.venv\Scripts\python.exe -m wrist_rarity.launch start --confirm-rarity-only-80-epochs
+```
+
+Use `python -m wrist_rarity.launch status` or `monitor` from the same project environment for progress. The report gives confirmed resume commands and post-training checks. Prefer an uninterrupted comparison: finite workers have a documented epoch seed schedule, while recovery still discards pending gradients and resets native update cadence. Source plans replay, but resumed optimization is not bitwise identical.
+
+Reserve approximately **10–12 hours** and preferably **6 GiB free disk** for the future model. Current preflight reports 4.944 GiB free VRAM; diagnostic peak allocated/reserved VRAM is 1.905/2.395 GiB. No official fitting, D/E/F inference or held-out test evaluation is triggered by completing readiness.

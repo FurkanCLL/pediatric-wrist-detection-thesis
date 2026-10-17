@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "readiness": "READY WITH DOCUMENTED LIMITATIONS",
+  "all_required_completed_gates_pass": true,
+  "all_training_sources_match_pre_gpu_lock": true,
+  "condition_sha256": "802c3f295182b346eb2a809e262cf7309b4d6dcea40de188c2bc2b8ddc58f2d5",
+  "official_epochs": 80,
+  "official_output_directory_absent": true,
+  "official_training_started": false,
+  "test_image_label_files_opened": 0,
+  "image_id_inventory_privacy_scanned": 20327,
+  "no_medical_figures_patient_ids_or_image_records_published": true,
+  "only_authorized_new_sources_configs_evidence_and_README_changed": true,
+  "report_sha256": "b1277fb56329e008e54b439bbf6e67efe875377e7dacfa4399886c540f882e32",
+  "private_log_sha256": {
+    "phase4b_focused_tests_01.log": "5ba0ac2d0e3e2afe4c5dabccc0662a1cda537abbdb361a4ab213dc5f35ae0a46",
+    "phase4b_full_tests_01.log": "9beb0ae164ac4ff3af24a4d38d4def35c52c0fb3708fab262611b003316eccb2",
+    "phase4b_final_tests.log": "f9685700f4a98a303d4a88bea61d0052fa0c9349f8b5e84c66c506ad975ff87d",
+    "phase4b_plan_reconciliation.log": "978768ff206cda9892202bfa75245b94dac59ab715ddfce311b30dbd7c48bb9b",
+    "phase4b_diagnostic_preflight.log": "a653deaf61754e43a0004af6e0887e1c7b71845a5f34d34f259243a100eb03b0",
+    "phase4b_two_epoch_01.log": "a86277b7834e0af5756d95498a6a2527d0fb77b5318ad9d7018d993783f1064c",
+    "phase4b_smoke_verification.log": "809f45c30cbc4f5fe04242bf0a5db1f698835dd1d108f435f51b8f6e50d1c906",
+    "phase4b_recovery_verification.log": "be31b5932f9ef1dd88b8d4d4ef20a196c4e1ce074c17097385e569f411afed78",
+    "phase4b_official_preflight.log": "e587d4a457f6d1147cc9294be30022a24fe2b3fa33a7d7eab462a8fc05c4f5ad"
+  },
+  "aggregate_sha256": {
+    "argument_conformance.json": "28008953864b04c1e6977b7a487a9f9e863e1a968f3cfeb33f7fcaf717a09da9",
+    "authorization.json": "006d757f3147969227554181e0ec60f8c52750131016148341fb5380d00e2721",
+    "condition_lock.json": "902ae57ba5769f0460eedb7d13685699a6dc65b9d7b1d4d5de5615e402fdc6b4",
+    "final_tests.json": "b2d24ba3472db265002a82aa7c97520dc62ee9714037d8abeb9e50611634afbf",
+    "INTEGRATION_PROTOCOL.md": "82b476eecb0008a913a01ebf3f34c7defc27fa037e9dea2803cdad71dfe8625d",
+    "plan_reconciliation.json": "bfe81fba99cd1b4218b3269b360e99ab4850e2156eeb448c8f8244180803ce7e",
+    "preflight.json": "752810069799f25e90022b0d3c4119a9739fd7407995ce14daca59a06aed016a",
+    "preservation_after.json": "d28df8eabfdaa11e718efd65d2aa72ead64dbf804aa04d86cf1c5f52c8bad324",
+    "preservation_before.json": "f3f3a46514b0c0fa68a2fbe2400d8dd83a211fb765918609aca034e75ee9856b",
+    "pre_gpu_tests.json": "81cc759ce2ecc524352556d8a010d4a417aefedf46211d8a95093e63e2e53bbd",
+    "RARITY_TRAINING_READINESS_REPORT.md": "b1277fb56329e008e54b439bbf6e67efe875377e7dacfa4399886c540f882e32",
+    "readiness.json": "76e1a66371074cf0b704959059fb286a827378e0bc7189a09cc5a4566ca60a4c",
+    "recovery_verification.json": "9f95a9d8c1947fc82b11b015e25088d33039cea7f891aca2434f1474887c98ad",
+    "smoke_verification.json": "0498bac29fc2c22f4b179a689486e6446eeed7e959d16ccf661f450eb472058e",
+    "worker_seed_schedule.json": "6418067f744345a499f0b8d87de00bb76126504476897d4110b27b81c40e706b"
+  }
+}

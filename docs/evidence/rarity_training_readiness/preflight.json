@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "diagnostic_only": false,
+  "training_epochs": 80,
+  "common_protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+  "condition_sha256": "802c3f295182b346eb2a809e262cf7309b4d6dcea40de188c2bc2b8ddc58f2d5",
+  "environment": {
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "numpy": "2.3.5",
+      "opencv-python": "5.0.0.93",
+      "torch": "2.14.1+cu126",
+      "torchvision": "0.29.1+cu126",
+      "ultralytics": "8.4.177"
+    },
+    "python": "3.12.5",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "cuda_build": "12.6",
+    "free_vram_gib": 4.9443359375,
+    "total_vram_gib": 5.99658203125,
+    "allocated_after_probe_bytes": 0
+  },
+  "free_disk_gib": 93.90729904174805,
+  "images": {
+    "train": 14061,
+    "val": 3088
+  },
+  "test_files_opened": 0,
+  "first_plan": {
+    "draws": 14061,
+    "unique_images": 13436,
+    "replacements": 625,
+    "patients": 4264,
+    "fracture_draws": 9307,
+    "no_fracture_box_draws": 4754,
+    "lesion_cohort_views_once": 66,
+    "plan_sha256": "d6bd5ec04427f54f6acaa8344ba291dd0ec2fcd82184d7d05783826fa0c71785"
+  },
+  "seconds": 59.33649929999956,
+  "output": "outputs/training/rarity_only",
+  "training_started": false
+}

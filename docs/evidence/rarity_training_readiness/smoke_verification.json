@@ -1,0 +1,278 @@
+{
+  "passed": true,
+  "diagnostic_only": true,
+  "condition_sha256": "802c3f295182b346eb2a809e262cf7309b4d6dcea40de188c2bc2b8ddc58f2d5",
+  "epochs": [
+    {
+      "epoch": 1,
+      "draws": 14061,
+      "batches": 2344,
+      "plan_sha256": "d6bd5ec04427f54f6acaa8344ba291dd0ec2fcd82184d7d05783826fa0c71785",
+      "consumed_indices_exact_match": true,
+      "source_labels_checked_each_draw": true,
+      "workers": [
+        0,
+        1
+      ],
+      "worker_seeds": [
+        2856275267261631669,
+        2856275267261631670
+      ],
+      "repeated_sources": 625,
+      "different_augmented_pairs": 625,
+      "identical_augmented_pairs": 0,
+      "consumption_log_sha256": "68e669f04a05f8182b4247f27e51614c2ee3cd3d061c6a6de882e32702e542a6",
+      "unique_images": 13436,
+      "replacements": 625,
+      "patients": 4264,
+      "fracture_draws": 9307,
+      "no_fracture_box_draws": 4754,
+      "lesion_cohort_views_once": 66,
+      "optimizer_epoch": {
+        "attempts": 1139,
+        "successful": 1139,
+        "skipped": 0
+      },
+      "scale_start": 128.0,
+      "scale_end": 128.0,
+      "accumulation_values": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "training_seconds": 469.76058139999805,
+      "training_memory": {
+        "peak_allocated_gib": 1.9050841331481934,
+        "peak_reserved_gib": 1.9921875
+      },
+      "finite_live_and_ema": true
+    },
+    {
+      "epoch": 2,
+      "draws": 14061,
+      "batches": 2344,
+      "plan_sha256": "37692b0284a3bd4161b8cfead3d0ef6d2df730ae35ae1a71eec6181f0eeabc75",
+      "consumed_indices_exact_match": true,
+      "source_labels_checked_each_draw": true,
+      "workers": [
+        0,
+        1
+      ],
+      "worker_seeds": [
+        4675628385502143460,
+        4675628385502143461
+      ],
+      "repeated_sources": 625,
+      "different_augmented_pairs": 625,
+      "identical_augmented_pairs": 0,
+      "consumption_log_sha256": "d6465d5a84ab2e5e8cdb504773498857564fe214104f5e990e196b7dafa4134d",
+      "unique_images": 13436,
+      "replacements": 625,
+      "patients": 4264,
+      "fracture_draws": 9307,
+      "no_fracture_box_draws": 4754,
+      "lesion_cohort_views_once": 66,
+      "optimizer_epoch": {
+        "attempts": 586,
+        "successful": 586,
+        "skipped": 0
+      },
+      "scale_start": 128.0,
+      "scale_end": 128.0,
+      "accumulation_values": [
+        4
+      ],
+      "training_seconds": 401.17439550000563,
+      "training_memory": {
+        "peak_allocated_gib": 1.9051060676574707,
+        "peak_reserved_gib": 2.39453125
+      },
+      "finite_live_and_ema": true
+    }
+  ],
+  "accounting": {
+    "attempts": 1725,
+    "successful": 1725,
+    "skipped": 0,
+    "consecutive": 0,
+    "recent": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "validation_runs": [
+    {
+      "trainer_integrated": true,
+      "seconds": 41.279601599999296,
+      "images": 3088,
+      "batches": 258,
+      "batch": 12,
+      "workers": 4,
+      "rect": true,
+      "augmentation": false,
+      "peak_allocated_gib": 0.7284331321716309,
+      "peak_reserved_gib": 2.39453125
+    },
+    {
+      "trainer_integrated": true,
+      "seconds": 27.7663984000028,
+      "images": 3088,
+      "batches": 258,
+      "batch": 12,
+      "workers": 4,
+      "rect": true,
+      "augmentation": false,
+      "peak_allocated_gib": 0.7284326553344727,
+      "peak_reserved_gib": 2.39453125
+    }
+  ],
+  "wall_seconds": 997.3671262999997,
+  "telemetry": {
+    "samples": 926,
+    "utilization_percent": {
+      "mean": 51.5377969762419,
+      "max": 100.0
+    },
+    "device_memory_mib": {
+      "mean": 2514.6673866090714,
+      "max": 2861.0
+    },
+    "power_w": {
+      "mean": 44.214222462203026,
+      "max": 74.26
+    },
+    "temperature_c": {
+      "mean": 62.54427645788337,
+      "max": 70.0
+    },
+    "clock_mhz": {
+      "mean": 2377.8725701943845,
+      "max": 2580.0
+    }
+  },
+  "checkpoints": [
+    {
+      "name": "last.pt",
+      "completed_epoch": 2,
+      "sha256": "39f3484cd030a895554d811f4c632cd996f714e743b0d65f58d8c8639969201e",
+      "fp32_model_state_finite": true,
+      "optimizer_state_finite": true,
+      "best_snapshot_only": false,
+      "cuda_synthetic_forward_passed": true
+    },
+    {
+      "name": "best.pt",
+      "completed_epoch": 2,
+      "sha256": "39f3484cd030a895554d811f4c632cd996f714e743b0d65f58d8c8639969201e",
+      "fp32_model_state_finite": true,
+      "optimizer_state_finite": true,
+      "best_snapshot_only": false,
+      "cuda_synthetic_forward_passed": true
+    }
+  ],
+  "all_actual_consumed_batches_reconciled": true,
+  "no_stale_epoch_indices": true,
+  "validation_loader_unchanged": true,
+  "official_80_epoch_training_started": false,
+  "test_files_opened": 0,
+  "diagnostic_metrics_not_thesis_results": true
+}

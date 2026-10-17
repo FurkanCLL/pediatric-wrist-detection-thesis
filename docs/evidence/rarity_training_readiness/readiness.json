@@ -1,0 +1,16 @@
+{
+  "status": "READY WITH DOCUMENTED LIMITATIONS",
+  "all_required_gates_pass": true,
+  "condition_sha256": "802c3f295182b346eb2a809e262cf7309b4d6dcea40de188c2bc2b8ddc58f2d5",
+  "common_protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+  "tests": 187,
+  "official_epochs": 80,
+  "diagnostic_epochs_verified": 2,
+  "actual_consumed_training_draws": 28122,
+  "official_training_started": false,
+  "official_output_directory_absent": true,
+  "test_files_opened": 0,
+  "D_E_F_evaluation_performed": false,
+  "manual_start_command": ".\\.venv\\Scripts\\python.exe -m wrist_rarity.launch start --confirm-rarity-only-80-epochs",
+  "report_sha256": "b1277fb56329e008e54b439bbf6e67efe875377e7dacfa4399886c540f882e32"
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "tests": 187,
+  "new_rarity_tests": 16,
+  "seconds": 31.692,
+  "condition_sha256": "802c3f295182b346eb2a809e262cf7309b4d6dcea40de188c2bc2b8ddc58f2d5",
+  "three_consecutive_native_worker_epochs_two_launches_replay": true,
+  "training_source_unchanged_since_pre_gpu_gate": true,
+  "test_source_sha256": "ad8d81df7ab6d737e5d8cf8423b7a178c159c0e98aa2a6ef1f5afb59f2fa5769",
+  "log_sha256": "f9685700f4a98a303d4a88bea61d0052fa0c9349f8b5e84c66c506ad975ff87d",
+  "no_real_model_fitting_in_tests": true
+}
