@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "tests": 187,
+  "new_rarity_tests": 16,
+  "seconds": 19.393,
+  "condition_sha256": "802c3f295182b346eb2a809e262cf7309b4d6dcea40de188c2bc2b8ddc58f2d5",
+  "private_log_sha256": "9beb0ae164ac4ff3af24a4d38d4def35c52c0fb3708fab262611b003316eccb2",
+  "two_workers_native_transforms_two_epochs_two_launches_exact_replay": true,
+  "no_real_model_fitting_in_tests": true,
+  "pip_check": "No broken requirements found",
+  "initial_fixture_error_preserved": "Initial focused run used the wrong optimizer-budget result key; corrected test only before the passing full suite. No GPU run had started."
+}

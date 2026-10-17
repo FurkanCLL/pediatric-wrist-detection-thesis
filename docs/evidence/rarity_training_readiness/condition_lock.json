@@ -1,0 +1,22 @@
+{
+  "config_sha256": "921ca5e6f782da92fb6d7c64923df590f74b53e3053018f9c8f5e57111c5cea2",
+  "common_protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+  "source_sha256": {
+    "src/wrist_rarity/__init__.py": "858002c300ddf133406055a577069d739658151454eb7072cec98ea791790680",
+    "src/wrist_rarity/policy.py": "58953ebaa35f4a315519f73803029ea57196993a7f20465dd5043fa317499d30",
+    "src/wrist_rarity/data.py": "36bc2ee66084d0b9125639be455278c310e8ef621d2eed4335526fd71362437b",
+    "src/wrist_rarity/protocol.py": "de5065b9a2a765008e85af6f0e4b0a3547817600947d9268ae128a0cf3f05c44",
+    "src/wrist_rarity/trainer.py": "6252e2339effe20d56a587f3dbc31356e66c2817ec6610a68e326afd504faacb",
+    "src/wrist_rarity/launch.py": "fd96afb650cd9a0c630fc8cf4244aa49a1c43eca7fcfc30f9f714aad62340d09",
+    "src/wrist_rarity/verify.py": "7af0a07e22eb2d2b39b59acbcbd2fbfc28964810312d9b8ce4ce3b512107d5a5",
+    "src/wrist_mining/sampling.py": "caa80124e191736b2228030827deab8857953f9f2b1e7b102c87df720552788f",
+    "src/wrist_design/sampling.py": "7ec5a0b91f9233319a3e8ac6f96d1080880c52f796b5151de46eed43b30fb3d5",
+    "src/wrist_design/common.py": "fa8473a23aab17531167d617967915d1ec270e04f1d75c266ac4cc0108cda904"
+  },
+  "extra_framework_sha256": {
+    "data/base.py": "ce0f840911b282b1a96e15188af95b14721f18ae6d8363f543d4220476000838",
+    "data/dataset.py": "0a27c3981c946dab03a79e35583b867d69007153e0f53d5208e799cf49077404"
+  },
+  "sampler_proposal_sha256": "c7d09a95f1d3242cbf32127880d7c51bf0ff295974c4fb70304cd5f8ff2283f2",
+  "official_epochs": 80
+}

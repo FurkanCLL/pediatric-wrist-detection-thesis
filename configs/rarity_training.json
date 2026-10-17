@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "condition": "patient_aware_rarity_only",
+  "status": "student-approved Phase 4B; official launch remains manual",
+  "common_protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+  "phase4a_sampler_proposal_sha256": "c7d09a95f1d3242cbf32127880d7c51bf0ff295974c4fb70304cd5f8ff2283f2",
+  "policy": "rarity_only first result of unchanged MatchedPopulation.paired; zero difficulty placeholder; no mining inputs",
+  "official_epochs": 80,
+  "diagnostic_epochs": 2,
+  "seed": 42,
+  "source_draws": 14061,
+  "realized_replacements": 625,
+  "loader": "finite lazy iterator; two newly seeded workers per epoch; prefetch four batches per worker",
+  "official_output": "outputs/training/rarity_only",
+  "diagnostic_output_parent": "outputs/rarity_training_readiness/diagnostics",
+  "automatic_official_launch": false,
+  "test_access": false,
+  "matrix": "Standard and Rarity-only YOLOv8s, each with Standard / SAHI Context / CG-ALR V2",
+  "student_authorization_text_sha256": "3edb85ad717d5a1859a49cbf22ef1cbcedbdc35808869483eb3a97e738e01977"
+}

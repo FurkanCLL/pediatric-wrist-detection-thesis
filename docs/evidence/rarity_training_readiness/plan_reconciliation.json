@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "all240_exact_match_phase4a": true,
+  "epochs": 80,
+  "seeds": [
+    42,
+    1042,
+    2042
+  ],
+  "all_sampling_guardrails_pass": true,
+  "no_mining_predictions_or_features_loaded": true,
+  "condition_sha256": "802c3f295182b346eb2a809e262cf7309b4d6dcea40de188c2bc2b8ddc58f2d5",
+  "all_plan_hashes_sha256": "f62b7eb23f4d90af1c34ac425eba09904ebd27564bb1677297fc3a7d950a05c4",
+  "official_training_started": false
+}
