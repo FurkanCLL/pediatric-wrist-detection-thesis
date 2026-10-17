@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "images_per_condition": 3088,
+  "patients": 914,
+  "AP_recomputed_conditions": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "all_3088_F_global_rows_bitwise_equal_D": true,
+  "all_3088_F_fusion_invariants_and_offline_replays_pass": true,
+  "all_2000_historical_ABCD_AP_replicates_exact": true,
+  "bootstrap_memberships_contrasts_interactions_intervals_checked": 500,
+  "AP_bootstrap_recomputed_replicates": [
+    0,
+    1,
+    249,
+    499
+  ],
+  "preservation_after": {
+    "passed": true,
+    "stage": "after",
+    "protected_private_files": 699,
+    "protected_private_inventory_sha256": "79558d9c8adf81982d5fe7bf7a57f2b34f644ae7268b6d16dcace8ba71abbeab",
+    "data_stat_entries": 121973,
+    "data_stat_inventory_sha256": "84601ecf4c83b72f9ed8542936ef6621ffce619cb0f748eeb58567736a427b8a",
+    "earlier_source_configs_reports_unchanged": true
+  },
+  "no_training_optimization_or_test": true
+}

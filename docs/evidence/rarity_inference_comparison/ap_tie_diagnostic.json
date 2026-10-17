@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "images": 3088,
+  "unchanged_classes": {
+    "metal": {
+      "prediction_rows": 452,
+      "all_image_rows_and_native_TP_flags_identical": true,
+      "sorted_confidences_bitwise_equal": true,
+      "reordered_equal_confidence_positions": 6,
+      "ranked_TP_flag_entries_differing_across_10_IoUs": 16,
+      "reported_AP_delta_F_minus_D": {
+        "ap50": 0.00031325067983889454,
+        "ap75": 0.0,
+        "ap50_95": 7.000920496991192e-05
+      }
+    },
+    "text": {
+      "prediction_rows": 5801,
+      "all_image_rows_and_native_TP_flags_identical": true,
+      "sorted_confidences_bitwise_equal": true,
+      "reordered_equal_confidence_positions": 2264,
+      "ranked_TP_flag_entries_differing_across_10_IoUs": 4190,
+      "reported_AP_delta_F_minus_D": {
+        "ap50": -3.6624664151441166e-06,
+        "ap75": 3.369960333965416e-05,
+        "ap50_95": 8.217167724033914e-08
+      }
+    },
+    "pronatorsign": {
+      "prediction_rows": 1199,
+      "all_image_rows_and_native_TP_flags_identical": true,
+      "sorted_confidences_bitwise_equal": true,
+      "reordered_equal_confidence_positions": 70,
+      "ranked_TP_flag_entries_differing_across_10_IoUs": 50,
+      "reported_AP_delta_F_minus_D": {
+        "ap50": 0.00021677436788158921,
+        "ap75": 1.8527142175095435e-05,
+        "ap50_95": 6.741016186065374e-05
+      }
+    },
+    "bonelesion": {
+      "prediction_rows": 82,
+      "all_image_rows_and_native_TP_flags_identical": true,
+      "sorted_confidences_bitwise_equal": true,
+      "reordered_equal_confidence_positions": 0,
+      "ranked_TP_flag_entries_differing_across_10_IoUs": 0,
+      "reported_AP_delta_F_minus_D": {
+        "ap50": 0.0,
+        "ap75": 0.0,
+        "ap50_95": 0.0
+      }
+    },
+    "softtissue": {
+      "prediction_rows": 2110,
+      "all_image_rows_and_native_TP_flags_identical": true,
+      "sorted_confidences_bitwise_equal": true,
+      "reordered_equal_confidence_positions": 138,
+      "ranked_TP_flag_entries_differing_across_10_IoUs": 64,
+      "reported_AP_delta_F_minus_D": {
+        "ap50": 0.0017311790500004753,
+        "ap75": 0.0007619047619047553,
+        "ap50_95": 0.0006567902304362994
+      }
+    },
+    "boneanomaly": {
+      "prediction_rows": 753,
+      "all_image_rows_and_native_TP_flags_identical": true,
+      "sorted_confidences_bitwise_equal": true,
+      "reordered_equal_confidence_positions": 4,
+      "ranked_TP_flag_entries_differing_across_10_IoUs": 0,
+      "reported_AP_delta_F_minus_D": {
+        "ap50": 0.0,
+        "ap75": 0.0,
+        "ap50_95": 0.0
+      }
+    }
+  },
+  "cause_verified": "Pinned ap_per_class uses np.argsort(-conf), default unstable ordering. Identical rows/TP flags receive different within-equal-confidence rankings after global row reordering.",
+  "evaluator_source_sha256": "59204642211c14980124289dd63d5c5aca8b408ecd8723cf6953018302e0c106",
+  "diagnostic_script_sha256": "e234b2395f66c6e5fe4797c40e64878108a44abcd2fbd406df2f7543274c2182",
+  "no_evaluator_or_predictions_changed": true,
+  "no_alternative_AP_or_method_selection": true
+}

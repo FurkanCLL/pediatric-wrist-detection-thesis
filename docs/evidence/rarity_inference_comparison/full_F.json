@@ -1,0 +1,149 @@
+{
+  "passed": true,
+  "condition": "F",
+  "stage": "full",
+  "images": 3088,
+  "patients": 914,
+  "checkpoint_sha256": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e",
+  "source_identity": {
+    "configs/rarity_adaptive_execution.json": "491cd14dece28f105c2d587cfec20b9c71abde80d648b9de51f014849d071168",
+    "configs/rarity_sahi_execution.json": "e7a16fe032a2006aad62f826d39365827dc3829808ebbe0ca18d4e4e3d9eb8ae",
+    "src/wrist_inference_comparison/__init__.py": "8a024aff85874e437fefa6a2ecfb6757a6e162865d60692b24f6cd98b04708d6",
+    "src/wrist_inference_comparison/analysis.py": "16cac4fa5bb0981777ecf70295fb6b37d37ba0a06c2238b9713046ef618ec01a",
+    "src/wrist_inference_comparison/checks.py": "ea3ae1a94b28e68333c088c6d5252f7af58710612e9214acbeaf1ea21bba6833",
+    "src/wrist_inference_comparison/common.py": "92c9b43eaa267a7d7cd77fa80900b077499efbab5ecfc67021288b1e750b116d",
+    "src/wrist_inference_comparison/export.py": "2dceb124be02d55e97f9eca51ad0b13b0d7c6db31564448991ccba6f12740430",
+    "src/wrist_inference_comparison/run.py": "fb96acb933ca8c1e171d08a9c1db86e4b0cc892b07f131d822ba81f9cc056d84"
+  },
+  "execution_manifest_sha256": "e20a420fef6249945aeeb98c992acbcc29ccde675ac8fb8a6e3456ad388a1c42",
+  "prediction_file_sha256": "821623cb193a1f4ca6bb0155b09b7999365e521f9f66a775392f898b9babc457",
+  "timing": {
+    "e2e_seconds": {
+      "n": 3088,
+      "mean": 0.06703664290817525,
+      "min": 0.015264100002241321,
+      "max": 0.27028180001070723,
+      "median": 0.05886229999305215,
+      "p05": 0.01959486499836203,
+      "p95": 0.13979446000157614,
+      "p99": 0.17503077800603936
+    },
+    "decode_seconds": {
+      "n": 3088,
+      "mean": 0.013990298704632649,
+      "min": 0.0027560000016819686,
+      "max": 0.042285700008505955,
+      "median": 0.014155450000544079,
+      "p05": 0.005095620004431112,
+      "p95": 0.024112885006616108,
+      "p99": 0.029521641990868385
+    },
+    "paired_global_e2e_seconds": {
+      "n": 3088,
+      "mean": 0.051919925777070094,
+      "min": 0.014619800000218675,
+      "max": 0.16285930000594817,
+      "median": 0.05524814999807859,
+      "p05": 0.01849209999854793,
+      "p95": 0.08353429999406214,
+      "p99": 0.09925048001241533
+    },
+    "gpu_forward_ms": {
+      "n": 3088,
+      "mean": 38.81467517978787,
+      "min": 7.299071788787842,
+      "max": 196.4339141845703,
+      "median": 32.24740791320801,
+      "p05": 9.245900869369507,
+      "p95": 87.60898418426513,
+      "p99": 111.77179533004771
+    },
+    "forward_passes": {
+      "n": 3088,
+      "mean": 1.393458549222798,
+      "min": 1.0,
+      "max": 3.0,
+      "median": 1.0,
+      "p05": 1.0,
+      "p95": 3.0,
+      "p99": 3.0
+    },
+    "global_gpu_forward_ms": {
+      "n": 3088,
+      "mean": 28.655647767022483,
+      "min": 7.299071788787842,
+      "max": 92.82867431640625,
+      "median": 30.088704109191895,
+      "p05": 8.8743314743042,
+      "p95": 49.26336078643796,
+      "p99": 66.0669759368897
+    },
+    "planning_seconds": {
+      "n": 3088,
+      "mean": 0.00028939002591972887,
+      "min": 5.099999543745071e-05,
+      "max": 0.003150299991830252,
+      "median": 0.0002340499995625578,
+      "p05": 6.0635005502263085e-05,
+      "p95": 0.0007518500060541552,
+      "p99": 0.0014228070067474634
+    },
+    "fusion_seconds": {
+      "n": 3088,
+      "mean": 0.0008915474740950824,
+      "min": 9.449999197386205e-05,
+      "max": 0.019354300005943514,
+      "median": 0.000484350006445311,
+      "p05": 0.00010559999427641741,
+      "p95": 0.003128359995025675,
+      "p99": 0.006219427991454727
+    },
+    "allocated_peak_bytes": {
+      "n": 3088,
+      "mean": 67375697.57512954,
+      "min": 55390720.0,
+      "max": 82949632.0,
+      "median": 66643968.0,
+      "p05": 59835904.0,
+      "p95": 75355648.0,
+      "p99": 82908672.0
+    },
+    "reserved_peak_bytes": {
+      "n": 3088,
+      "mean": 118967874.32124352,
+      "min": 88080384.0,
+      "max": 119537664.0,
+      "median": 119537664.0,
+      "p05": 119537664.0,
+      "p95": 119537664.0,
+      "p99": 119537664.0
+    },
+    "throughput_images_per_second": 14.917214774161193
+  },
+  "loop_wall_seconds_including_export_checks": 215.83362010000565,
+  "model_load_verification_seconds": 2.740664699987974,
+  "warmup_seconds": 0.8010877000051551,
+  "pilot_ap_not_calculated": false,
+  "pilot_replay_images": 0,
+  "in_memory_model_state_unchanged": true,
+  "no_training_or_test": true,
+  "physical_model_calls": 4303,
+  "global_exact_to_D": true,
+  "roi_count_images": {
+    "0": 2121,
+    "1": 719,
+    "2": 248
+  },
+  "diagnostics": {
+    "rois": 1215,
+    "calls": 4303,
+    "eligible_local_evidence": 2004,
+    "matches": 1883,
+    "mutable_matches": 429,
+    "protected_matches": 1454,
+    "confidence_updates": 429,
+    "geometry_changes": 90,
+    "collision_vetoes": 26
+  },
+  "bundles_sha256": "9f6f6f2a85a905c9500b11e3dd788463ca42d2aaf5487e26cc20063603fb401e"
+}

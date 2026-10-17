@@ -2,7 +2,7 @@
 
 Implementation workspace for a new RTU Type 2 bachelor thesis study using the GRAZPEDWRI-DX pediatric wrist X-ray dataset, YOLOv8s, class-aware training, and adaptive local refinement.
 
-**Status:** Phase 4D / Experiment D is complete and verified: **mixed validation result**. Common original-coordinate mAP50–95 is 0.33386896 for A and 0.33755131 for rarity-only D (+0.368 percentage points; paired 95% interval −3.157 to +2.481 points). Fracture AP50–95 declines by 0.770 points, while periosteal-reaction AP improves. At confidence 0.25 / IoU 0.50, D adds 51 TP and 132 unmatched predictions. Read the [comparison report](docs/evidence/rarity_comparison/RARITY_COMPARISON_REPORT.md). All 208 tests and final artifact/preservation checks pass. **E/F and held-out test evaluation remain pending; no next phase is authorized.** Formal supervisor scope alignment remains pending.
+**Status:** Phase 4E is complete and verified; the six-condition validation matrix is available. Rarity-only SAHI Context (E) reaches mAP50–95 0.28873574; frozen CG-ALR V2 (F) reaches 0.33769342 versus D's 0.33755131. **Neither demonstrates improvement under the predefined criteria:** E reduces overall/fracture AP; F's tiny overall change is uncertain and exceeds both FP limits. Read the [Phase 4E report](docs/evidence/rarity_inference_comparison/RARITY_INFERENCE_COMPARISON_REPORT.md) and [six-condition table](docs/evidence/rarity_inference_comparison/six_condition_matrix.csv). All 223 pre-inference tests and saved-output/preservation/publication checks pass. **Stop for student review: no final method selection, Phase 5A synthesis, further training or held-out evaluation is authorized.** Formal supervisor scope alignment remains pending.
 
 ## Start here
 
@@ -236,7 +236,7 @@ Existing audit directories and receipts refuse replacement. The completed Phase 
 .\.venv\Scripts\python.exe -c "import pathlib,tempfile,unittest;tempfile.tempdir=str(pathlib.Path('outputs/phase3c2_test_tmp').resolve());unittest.main(module=None,argv=['unittest','discover','-s','tests','-q'])"
 ```
 
-Phase 4C ended with GO for Phase 4D review. Trainer-native validation scores support checkpoint selection and retain that label. No D/E/F inference or held-out evaluation occurred during Phase 4C. The student subsequently authorized Experiment D only, completed below; E/F remain pending.
+Phase 4C ended with GO for Phase 4D review. Trainer-native validation scores support checkpoint selection and retain that label. No D/E/F inference or held-out evaluation occurred during Phase 4C. The student subsequently authorized D, then E/F in separate phases documented below.
 
 ## Standard versus rarity-only: Experiment D complete
 
@@ -246,4 +246,14 @@ A predictions are reused after hash, membership and AP checks. The approved 24-i
 
 The primary point gain is uncertain, and fracture AP50–95 regresses. Periosteal-reaction AP and some operating recall improve with additional unmatched predictions. This is a mixed finding, not a demonstrated overall gain with fracture preservation. Measured D end-to-end latency is 59.74 ms/image (16.74 images/s), with separate-session timing limitations. No new A GPU inference, training, tiled/adaptive inference or test access occurred.
 
-Stop for student review of Experiment D. Experiments E/F, CG-ALR changes, further training and held-out evaluation require separate authorization. The report gives deliberate new-attempt reproduction commands; preserve successful outputs rather than rerunning into their directories.
+Phase 4D stopped for student review before E/F. The later Phase 4E authorization and results follow below. The historical report gives deliberate new-attempt reproduction commands; preserve successful outputs rather than rerunning into their directories.
+
+## Rarity-only SAHI Context and CG-ALR V2: Phase 4E complete
+
+The [Phase 4E report](docs/evidence/rarity_inference_comparison/RARITY_INFERENCE_COMPARISON_REPORT.md), [aggregate results](docs/evidence/rarity_inference_comparison/results.json), [paired AP intervals](docs/evidence/rarity_inference_comparison/paired_AP_contrasts.csv) and [verification](docs/evidence/rarity_inference_comparison/verification.json) complete the requested validation matrix. Additive manifests reuse the unchanged historical numerical methods with rarity epoch-26 best; the original standard-bound manifests remain untouched. Implementation commit `2d91748` precedes GPU execution.
+
+E/F pass their original 24-image technical pilots and full 3,088-image runs, with 15,440/4,303 calls. Every F global array equals saved D bit-for-bit; all frozen fusion invariants and offline replays pass. A/B/C/D inference is reused, and all 2,000 historical bootstrap AP replicates reproduce exactly. All 699 protected private artifacts and 121,973 data stat entries remain unchanged.
+
+E-D mAP50–95 changes by −4.8816 percentage points (paired 95% −5.8201 to −3.7134); F-D changes by +0.0142 points (−0.0215 to +0.0264). At confidence .25 / IoU .50, E adds 129 TP / 2,632 unmatched predictions; F adds 34 / 136. F fails both original scientific success paths. The report separately documents fracture AP, the required cross-training comparisons/interactions, measured costs and the verified equal-confidence AP ordering effect for unchanged classes. The common evaluator and historical results remain unchanged.
+
+Private predictions, patient/image linkage, coordinates and logs stay ignored. Public CSV/JSON contains aggregate evidence only. No training, optimization, held-out contents, final algorithm selection or Phase 5A synthesis occurs. Stop after Phase 4E for student review.

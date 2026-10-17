@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "artifacts_sha256": {
+    "ap_tie_diagnostic.json": "757d71f7570a20392324ecad0e5e9f8a2702ab8164c9c6b6b7ada3a7f50f8e3d",
+    "automated_tests.json": "f451a7d8ef6699b72174c230c6ff9e7318f92dc2f30ab011ff893920cbfbf47b",
+    "full_E.json": "92071c03b3a2cec10fd21abe34b6dfaf5c581111ab82375c2b4740d01e3f5576",
+    "full_F.json": "72c0614222eb3603d9c874381c919c67d70bb45395e0bdc4f7e03c067eda31dd",
+    "operating_points.csv": "2b06b97e1648695c81191f84cdcf3265f8371dba9d0beb39d8956089d2058611",
+    "paired_AP_contrasts.csv": "95b662c47e7d92b210a46f64b3c8dd0d27468b22d6cf1a90d38bc755ccff5b49",
+    "per_class_AP.csv": "5eb5055553068a91aff54c5be688f30e137e86df3ec44b6f793730dc697fb988",
+    "pilot_E.json": "14fd20b7a7ca9322a85949bff5ee41c5893a6c4e2a2e7328403ea75a6e0d66bf",
+    "pilot_F.json": "6c3429ea4cdadd204f1c2591fdff18923dbc863e27342a647499cb0f45441685",
+    "preflight.json": "e2b91622533de62f534ef7e9e4109d95da6449677f36437e92ed36341e40b4ee",
+    "preservation.json": "91748993c4c1c9401aad330661ebf80421b2cab09f25759f36ded2b4c2f6d1ce",
+    "results.json": "a63f475d768234d8df9508afb53840a6a16ee0658a8bedf6f43d8cbdd2bb1c0a",
+    "six_condition_matrix.csv": "e1d0edb4aa174f407a671d6284cf901e675e90d92ba3bed40dcd8f554142d006",
+    "verification.json": "6cc1e866209443182b22ddf0b7ff349e589003ceb4a7f25c9d68da55650e828b"
+  },
+  "matrix_rows": 6,
+  "class_AP_rows": 48,
+  "class_operating_rows": 288,
+  "AP_contrast_rows": 162,
+  "private_patient_ids_images_boxes_and_predictions_excluded": true,
+  "results_identity": "22085f1a95a20d589340cb77555bd1176275b22a162fdf744e1068b2df79d3fc"
+}
