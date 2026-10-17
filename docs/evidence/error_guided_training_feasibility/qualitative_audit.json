@@ -1,0 +1,254 @@
+{
+  "absent_categories": [],
+  "all_24_figures_inspected_in_six_review_sheets": true,
+  "cases": [
+    {
+      "case": 1,
+      "category": "potential_fp_fracture",
+      "class": "fracture",
+      "descriptive_reason": "background_or_unannotated",
+      "eligible_images": 676,
+      "review": "Cast-obscured image; unannotated model region cannot be certified negative from this technical review.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 2,
+      "category": "potential_fp_fracture",
+      "class": "fracture",
+      "descriptive_reason": "localization",
+      "eligible_images": 676,
+      "review": "Prediction and annotated fracture occupy the same region with different extents; localization failure is not a verified background negative.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 3,
+      "category": "potential_fp_metal",
+      "class": "metal",
+      "descriptive_reason": "duplicate",
+      "eligible_images": 73,
+      "review": "Long hardware prediction overlaps annotated hardware components; grouping/extent and duplicate semantics matter.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 4,
+      "category": "potential_fp_metal",
+      "class": "metal",
+      "descriptive_reason": "duplicate",
+      "eligible_images": 73,
+      "review": "Large hardware prediction overlaps multiple annotated components; unsuitable as an automatically verified negative.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 5,
+      "category": "potential_fp_text",
+      "class": "text",
+      "descriptive_reason": "localization",
+      "eligible_images": 542,
+      "review": "Tiny text-marker prediction has extent disagreement with its annotation; a localization issue.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 6,
+      "category": "potential_fp_text",
+      "class": "text",
+      "descriptive_reason": "background_or_unannotated",
+      "eligible_images": 542,
+      "review": "Image-edge bright stripe is predicted as text; apparent border-related false alarm, not a clinical negative-image label.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 7,
+      "category": "potential_fp_periostealreaction",
+      "class": "periostealreaction",
+      "descriptive_reason": "duplicate",
+      "eligible_images": 792,
+      "review": "Overlapping periosteal predictions explain the same narrow annotation; one-to-one matching leaves a duplicate.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 8,
+      "category": "potential_fp_periostealreaction",
+      "class": "periostealreaction",
+      "descriptive_reason": "background_or_unannotated",
+      "eligible_images": 792,
+      "review": "Unannotated cortical strip near an annotated region; expert review is needed to decide whether an annotation is missing.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 9,
+      "category": "potential_fp_pronatorsign",
+      "class": "pronatorsign",
+      "descriptive_reason": "background_or_unannotated",
+      "eligible_images": 166,
+      "review": "Long unannotated pronator-region prediction; true/false clinical status is unresolved.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 10,
+      "category": "potential_fp_pronatorsign",
+      "class": "pronatorsign",
+      "descriptive_reason": "background_or_unannotated",
+      "eligible_images": 166,
+      "review": "Long unannotated pronator-region prediction near an existing annotated finding; true/false status is unresolved.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 11,
+      "category": "potential_fp_bonelesion",
+      "class": "bonelesion",
+      "descriptive_reason": "classification",
+      "eligible_images": 7,
+      "review": "Bone-lesion prediction overlaps a bone-anomaly annotation; class taxonomy disagreement is not background.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 12,
+      "category": "potential_fp_bonelesion",
+      "class": "bonelesion",
+      "descriptive_reason": "classification",
+      "eligible_images": 7,
+      "review": "Bone-lesion prediction overlaps a bone-anomaly annotation; category/extent interpretation requires expert review.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 13,
+      "category": "potential_fp_softtissue",
+      "class": "softtissue",
+      "descriptive_reason": "background_or_unannotated",
+      "eligible_images": 40,
+      "review": "Soft-tissue prediction lacks a matching class annotation; medical absence cannot be established.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 14,
+      "category": "potential_fp_softtissue",
+      "class": "softtissue",
+      "descriptive_reason": "background_or_unannotated",
+      "eligible_images": 40,
+      "review": "Soft-tissue prediction lacks a matching class annotation near an annotated region; medical absence cannot be established.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 15,
+      "category": "potential_fp_boneanomaly",
+      "class": "boneanomaly",
+      "descriptive_reason": "background_or_unannotated",
+      "eligible_images": 19,
+      "review": "Bone-anomaly prediction is unannotated near hardware; technical inspection cannot establish label completeness.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 16,
+      "category": "potential_fp_boneanomaly",
+      "class": "boneanomaly",
+      "descriptive_reason": "localization",
+      "eligible_images": 19,
+      "review": "Prediction spans adjacent annotated anomaly regions; extent/granularity disagreement, not a verified negative.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 17,
+      "category": "hard_positive_fracture",
+      "class": "fracture",
+      "descriptive_reason": "TP",
+      "eligible_images": 1625,
+      "review": "Annotated fracture matched at .50 but not .75; strict localization is the difficulty source.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 18,
+      "category": "hard_positive_periostealreaction",
+      "class": "periostealreaction",
+      "descriptive_reason": "TP",
+      "eligible_images": 1229,
+      "review": "Annotated periosteal target matched at .50 but not .75; narrow-box extent drives difficulty.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 19,
+      "category": "hard_positive_pronatorsign",
+      "class": "pronatorsign",
+      "descriptive_reason": "TP",
+      "eligible_images": 249,
+      "review": "Annotated pronator target matched at .50 but not .75; strict localization drives difficulty.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 20,
+      "category": "hard_positive_bonelesion",
+      "class": "bonelesion",
+      "descriptive_reason": "TP",
+      "eligible_images": 11,
+      "review": "Annotated small bone-lesion target matched at .50 but not .75; cohort remains excluded from bonuses.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 21,
+      "category": "hard_positive_softtissue",
+      "class": "softtissue",
+      "descriptive_reason": "low_confidence",
+      "eligible_images": 265,
+      "review": "Annotated soft-tissue box has insufficient-confidence explanation; no clinical re-adjudication.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 22,
+      "category": "hard_positive_boneanomaly",
+      "class": "boneanomaly",
+      "descriptive_reason": "low_confidence",
+      "eligible_images": 102,
+      "review": "Annotated anomaly near hardware has insufficient-confidence explanation; annotation semantics need caution.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 23,
+      "category": "correct_clinical_control",
+      "class": "fracture",
+      "descriptive_reason": "TP",
+      "eligible_images": 6400,
+      "review": "Annotated clinical target and prediction align with IoU above .75; positive control, not a healthy image.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    },
+    {
+      "case": 24,
+      "category": "correct_clinical_control",
+      "class": "fracture",
+      "descriptive_reason": "TP",
+      "eligible_images": 6400,
+      "review": "Annotated clinical target and prediction align with IoU above .75; positive control, not a healthy image.",
+      "source_uncertainty_mark": false,
+      "verified_clinical_negative": false
+    }
+  ],
+  "clinical_adjudication": false,
+  "images_private": true,
+  "pool_reliability_not_estimated": "Class-balanced bounded technical audit is not expert adjudication or a prevalence estimate.",
+  "recommendation": "Exclude all potential-FP-derived difficulty/negative sampling from the initial proposal; no verified clinical-negative pool exists. Retain source labels unchanged.",
+  "selection": "Predefined hash ordering; no hand-picked replacements",
+  "selection_sha256": "e465c847dbab4edf0bb3813d83cd759840068e1b5c94843443c2aae99962caa4",
+  "technical_review_completed": true,
+  "verified_negative_pool_size": 0
+}

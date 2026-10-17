@@ -1,0 +1,144 @@
+{
+  "comparisons": {
+    "epoch010.pt_versus_best": {
+      "classes": {
+        "boneanomaly": {
+          "agreement": 0.7272727272727273,
+          "annotations": 44,
+          "best_hard": 31,
+          "hard_jaccard": 0.7209302325581395,
+          "other_hard": 43
+        },
+        "bonelesion": {
+          "agreement": 0.37142857142857144,
+          "annotations": 35,
+          "best_hard": 11,
+          "hard_jaccard": 0.3333333333333333,
+          "other_hard": 33
+        },
+        "fracture": {
+          "agreement": 0.7926701570680629,
+          "annotations": 955,
+          "best_hard": 124,
+          "hard_jaccard": 0.36538461538461536,
+          "other_hard": 302
+        },
+        "metal": {
+          "agreement": 0.803921568627451,
+          "annotations": 51,
+          "best_hard": 8,
+          "hard_jaccard": 0.4444444444444444,
+          "other_hard": 18
+        },
+        "periostealreaction": {
+          "agreement": 0.7597402597402597,
+          "annotations": 154,
+          "best_hard": 112,
+          "hard_jaccard": 0.7516778523489933,
+          "other_hard": 149
+        },
+        "pronatorsign": {
+          "agreement": 0.6857142857142857,
+          "annotations": 35,
+          "best_hard": 24,
+          "hard_jaccard": 0.6857142857142857,
+          "other_hard": 35
+        },
+        "softtissue": {
+          "agreement": 0.9090909090909091,
+          "annotations": 33,
+          "best_hard": 27,
+          "hard_jaccard": 0.9,
+          "other_hard": 30
+        },
+        "text": {
+          "agreement": 0.9535628502802241,
+          "annotations": 1249,
+          "best_hard": 158,
+          "hard_jaccard": 0.7170731707317073,
+          "other_hard": 194
+        }
+      },
+      "positive_difficulty_jaccard": 0.5928753180661578,
+      "spearman": 0.7422932050844256,
+      "top_decile_jaccard": 0.379746835443038,
+      "top_decile_ties": {
+        "best.pt": 96,
+        "epoch010.pt": 193,
+        "epoch040.pt": 67
+      }
+    },
+    "epoch040.pt_versus_best": {
+      "classes": {
+        "boneanomaly": {
+          "agreement": 0.5454545454545454,
+          "annotations": 44,
+          "best_hard": 31,
+          "hard_jaccard": 0.3548387096774194,
+          "other_hard": 11
+        },
+        "bonelesion": {
+          "agreement": 0.8285714285714286,
+          "annotations": 35,
+          "best_hard": 11,
+          "hard_jaccard": 0.45454545454545453,
+          "other_hard": 5
+        },
+        "fracture": {
+          "agreement": 0.9162303664921466,
+          "annotations": 955,
+          "best_hard": 124,
+          "hard_jaccard": 0.3798449612403101,
+          "other_hard": 54
+        },
+        "metal": {
+          "agreement": 0.9803921568627451,
+          "annotations": 51,
+          "best_hard": 8,
+          "hard_jaccard": 0.8888888888888888,
+          "other_hard": 9
+        },
+        "periostealreaction": {
+          "agreement": 0.7402597402597403,
+          "annotations": 154,
+          "best_hard": 112,
+          "hard_jaccard": 0.6551724137931034,
+          "other_hard": 80
+        },
+        "pronatorsign": {
+          "agreement": 0.7428571428571429,
+          "annotations": 35,
+          "best_hard": 24,
+          "hard_jaccard": 0.625,
+          "other_hard": 15
+        },
+        "softtissue": {
+          "agreement": 0.7272727272727273,
+          "annotations": 33,
+          "best_hard": 27,
+          "hard_jaccard": 0.6666666666666666,
+          "other_hard": 18
+        },
+        "text": {
+          "agreement": 0.9727782225780625,
+          "annotations": 1249,
+          "best_hard": 158,
+          "hard_jaccard": 0.7951807228915663,
+          "other_hard": 140
+        }
+      },
+      "positive_difficulty_jaccard": 0.5726141078838174,
+      "spearman": 0.720894955049444,
+      "top_decile_jaccard": 0.4342105263157895,
+      "top_decile_ties": {
+        "best.pt": 96,
+        "epoch010.pt": 193,
+        "epoch040.pt": 67
+      }
+    }
+  },
+  "images": 1087,
+  "patients": 918,
+  "same_training_trajectory_not_independent_models": true,
+  "sampling": "1024 hash-uniform plus up to32/class; not population-weighted; includes bone-lesion diagnostic cases"
+}

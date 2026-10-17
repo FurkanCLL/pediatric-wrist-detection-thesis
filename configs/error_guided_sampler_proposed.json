@@ -1,0 +1,42 @@
+{
+  "augmentation_and_full_image_geometry_unchanged": true,
+  "class_aware_candidates_canonical_sha256": "fb36c515662976eee1d35079dad0aeeabc6f5a7ba60a750118238b7594b76edb",
+  "coverage_skeleton": "Existing Candidate-B patient/status anchors, rare/empty-image protection plus all lesion-patient images; no cropping; common restored coverage and realized per-status extras for both policies",
+  "difficulty_weight": 0.5,
+  "epochs": 80,
+  "feature_content_sha256": "6cfd57c56455150491a3cf00dfed1a737727096da7b506e1da0bcaa77a3ad22b",
+  "hard_negative_weight": 0,
+  "historical_matrix_changed": false,
+  "inference_checkpoint_sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+  "maximum_image_draws": 2,
+  "mining_config_canonical_sha256": "d1cbbb1c535aa82ed99ecfe623b912ee8c9c173c32e1abd71724654cc088cbf7",
+  "mining_prediction_sha256": "7415e46e4a02fe86f5d90fdaedb8e3389dc317379921842281926d83d3f57f3b",
+  "no_expected_ap_gain_claim": true,
+  "no_production_training_integration": true,
+  "object_difficulty": "1 if FN at confidence.25/IoU.50, otherwise .5 if FN at IoU.75, otherwise0; existing one-to-one matcher",
+  "official_seed_unchanged": 42,
+  "official_training_authorized": false,
+  "paired_randomness": "Same per-image uniforms and capacity-feasible allocator for both weights; alpha0 exact equality tested; extra-image set is the relevant overlap, not shared coverage",
+  "patient_cap_formula": "min(3,ceil(.5*N_p)); all bone-lesion-patient extras zero; ceil permits singleton2x, not a strict50% relative cap",
+  "patient_extra_absolute": 3,
+  "patient_extra_fraction": 0.5,
+  "policies": [
+    "standard",
+    "rarity_only",
+    "paeg_cat"
+  ],
+  "reason": "Training diagnostics find1208 eligible hard images without rarity priority,1261 hard fracture objects in those images, Spearman.654; bounded equal weighting tests additional information without a parameter search. All potential negatives excluded after technical audit.",
+  "released_uncertainty_flag_in_weights": false,
+  "replacement_fraction": 0.05,
+  "requested_integer_budget": 702,
+  "schema_version": 1,
+  "seeds": [
+    42,
+    1042,
+    2042
+  ],
+  "simulations_authorized": true,
+  "status": "PROPOSED_SIMULATION_ONLY",
+  "unique_stratum_minimum": 0.95,
+  "weight_formula": "R_i=max capped Candidate-B class weights/2; D_i=max mean object difficulty over classes0,3,4,6,7; W_rarity=R_i; W_error=.5*R_i+.5*D_i"
+}

@@ -1,0 +1,40 @@
+{
+  "all_original_coordinate_outputs_valid": true,
+  "all_training_images_and_labels_sha_verified": true,
+  "checkpoint": "epoch040.pt",
+  "checkpoint_sha256": "7a26b5fe2bd19d24a824522d4f0c4facc1f21765cb35d5bacec64e5bf1d05cc9",
+  "completed_epoch": 40,
+  "config_sha256": "d1cbbb1c535aa82ed99ecfe623b912ee8c9c173c32e1abd71724654cc088cbf7",
+  "exact_replay_calls": 3,
+  "git_revision": "b6ad1056e0a7e166920ebbfc3a9b2b32f969bdc4",
+  "global_shape_policy": "Existing per-view half-stride shape from training image dimensions only; no validation shape profile",
+  "images": 1087,
+  "loop_seconds_including_export_hashing_and_replay": 22.435444899994764,
+  "model_load_seconds": 1.765830399999686,
+  "no_training_or_holdout_evaluation": true,
+  "normalized_source_sha256": {
+    "src/wrist_eval/sliced.py": "80d9370321a991f11b37135da730978a3036b5fb9ef0498b625e4dce6d764ffc",
+    "src/wrist_mining/common.py": "80764b607583c82fbb9598f1e5fbb036155360d6f09774102725d79c95198f58",
+    "src/wrist_mining/difficulty.py": "e7af5f5af9c35fdd9a7364ed2c017706687ddbbfa3b24886ab05299fdb6300ae",
+    "src/wrist_mining/inference.py": "578fa524029ab3153026e49c698da016a28fdebca052c940f991aa11e88dfe0d"
+  },
+  "numerical_convention": "Pinned Phase 3B adapter, unfused FP32 EMA, FP16 input/CUDA autocast; 768, .001 pool, NMS .7, max_det 300",
+  "patients": 918,
+  "peak_allocated_bytes": 82949632,
+  "peak_reserved_bytes": 117440512,
+  "physical_image_calls": 1087,
+  "predictions_sha256": "e606c01ef16f2ffececc8a54f0ec1b61ea1fa09853e24449a4b1a739bd95b910",
+  "selection_sha256": "fa64982e7154f630dfa657b0e718b42e9fe7fd9d30785e63b1c626459f0c94c3",
+  "split": "train",
+  "timing_decode_to_original_outputs_excluding_file_read_hash": {
+    "max": 0.048057199994218536,
+    "mean": 0.01897456274161063,
+    "median": 0.018497400000342168,
+    "min": 0.012864600001194049,
+    "n": 1087,
+    "p05": 0.014906150002934737,
+    "p95": 0.02445562999710092,
+    "p99": 0.028655241996457335
+  },
+  "warmup_calls": 3
+}

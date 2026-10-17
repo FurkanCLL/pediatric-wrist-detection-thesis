@@ -1,0 +1,11 @@
+{
+  "before_full_simulations": true,
+  "capacity_feasibility_checked_against_exhaustive_small_cases": true,
+  "log_sha256": "7168daa27217e3a7c4b7cadfc4262d1cbc9ca30d3a464f59fc8848ed0405e8b4",
+  "new_mining_tests": 11,
+  "new_sampler_and_analysis_tests": 8,
+  "passed": true,
+  "seconds": 4.325,
+  "tests": 171,
+  "zero_difficulty_control_exactly_equal": true
+}

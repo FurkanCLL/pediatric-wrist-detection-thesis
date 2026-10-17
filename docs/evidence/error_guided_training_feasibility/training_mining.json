@@ -1,0 +1,692 @@
+{
+  "all_annotation_patient_concentration": {
+    "effective_patients": 1861.603578474023,
+    "gini": 0.5022574815315062,
+    "max_patient_share": 0.003346414772900125,
+    "patients_nonzero": 4264,
+    "top_10_percent_share": 0.3796659669617596,
+    "top_1_percent_share": 0.06583310516868973,
+    "total": 32871.0
+  },
+  "all_hard_positive_patient_concentration": {
+    "effective_patients": 1136.583570248829,
+    "gini": 0.7012889022030189,
+    "max_patient_share": 0.005402068220404383,
+    "patients_nonzero": 2283,
+    "top_10_percent_share": 0.49714462108350055,
+    "top_1_percent_share": 0.10310233060657509,
+    "total": 6479.0
+  },
+  "annotations": 32871,
+  "classes": {
+    "boneanomaly": {
+      "annotations": 205,
+      "hard_positive_fraction": 0.6390243902439025,
+      "hard_positive_objects": 131,
+      "images": 147,
+      "operating": {
+        "0.5": {
+          "fn": 107,
+          "gt_reasons": {
+            "TP": 98,
+            "classification": 5,
+            "localization": 1,
+            "low_confidence": 91,
+            "no_residual_candidate": 10
+          },
+          "potential_fp": 34,
+          "precision": 0.7424242424242424,
+          "recall": 0.47804878048780486,
+          "tp": 98
+        },
+        "0.75": {
+          "fn": 131,
+          "gt_reasons": {
+            "TP": 74,
+            "classification": 5,
+            "localization": 21,
+            "low_confidence": 59,
+            "no_residual_candidate": 46
+          },
+          "potential_fp": 58,
+          "precision": 0.5606060606060606,
+          "recall": 0.36097560975609755,
+          "tp": 74
+        }
+      },
+      "patients": 67,
+      "potential_fp_categories": {
+        "background_or_unannotated": 5,
+        "classification": 1,
+        "duplicate": 7,
+        "localization": 21
+      },
+      "potential_fp_ge_0.50": 2
+    },
+    "bonelesion": {
+      "annotations": 35,
+      "hard_positive_fraction": 0.3142857142857143,
+      "hard_positive_objects": 11,
+      "images": 32,
+      "operating": {
+        "0.5": {
+          "fn": 7,
+          "gt_reasons": {
+            "TP": 28,
+            "classification": 1,
+            "low_confidence": 4,
+            "no_residual_candidate": 2
+          },
+          "potential_fp": 7,
+          "precision": 0.8,
+          "recall": 0.8,
+          "tp": 28
+        },
+        "0.75": {
+          "fn": 11,
+          "gt_reasons": {
+            "TP": 24,
+            "localization": 4,
+            "low_confidence": 3,
+            "no_residual_candidate": 4
+          },
+          "potential_fp": 11,
+          "precision": 0.6857142857142857,
+          "recall": 0.6857142857142857,
+          "tp": 24
+        }
+      },
+      "patients": 16,
+      "potential_fp_categories": {
+        "background_or_unannotated": 1,
+        "classification": 6
+      },
+      "potential_fp_ge_0.50": 1
+    },
+    "fracture": {
+      "annotations": 12422,
+      "hard_positive_fraction": 0.1373369827725004,
+      "hard_positive_objects": 1706,
+      "images": 9307,
+      "operating": {
+        "0.5": {
+          "fn": 446,
+          "gt_reasons": {
+            "TP": 11976,
+            "classification": 1,
+            "localization": 21,
+            "low_confidence": 409,
+            "no_residual_candidate": 15
+          },
+          "potential_fp": 705,
+          "precision": 0.9444050153773361,
+          "recall": 0.9640959587828047,
+          "tp": 11976
+        },
+        "0.75": {
+          "fn": 1706,
+          "gt_reasons": {
+            "TP": 10716,
+            "classification": 1,
+            "localization": 1185,
+            "low_confidence": 402,
+            "no_residual_candidate": 118
+          },
+          "potential_fp": 1965,
+          "precision": 0.8450437662644902,
+          "recall": 0.8626630172274996,
+          "tp": 10716
+        }
+      },
+      "patients": 2511,
+      "potential_fp_categories": {
+        "background_or_unannotated": 444,
+        "classification": 8,
+        "duplicate": 126,
+        "localization": 127
+      },
+      "potential_fp_ge_0.50": 197
+    },
+    "metal": {
+      "annotations": 600,
+      "hard_positive_fraction": 0.14166666666666666,
+      "hard_positive_objects": 85,
+      "images": 518,
+      "operating": {
+        "0.5": {
+          "fn": 23,
+          "gt_reasons": {
+            "TP": 577,
+            "localization": 8,
+            "low_confidence": 12,
+            "no_residual_candidate": 3
+          },
+          "potential_fp": 99,
+          "precision": 0.8535502958579881,
+          "recall": 0.9616666666666667,
+          "tp": 577
+        },
+        "0.75": {
+          "fn": 85,
+          "gt_reasons": {
+            "TP": 515,
+            "localization": 69,
+            "low_confidence": 9,
+            "no_residual_candidate": 7
+          },
+          "potential_fp": 161,
+          "precision": 0.7618343195266272,
+          "recall": 0.8583333333333333,
+          "tp": 515
+        }
+      },
+      "patients": 109,
+      "potential_fp_categories": {
+        "background_or_unannotated": 3,
+        "classification": 2,
+        "duplicate": 50,
+        "localization": 44
+      },
+      "potential_fp_ge_0.50": 30
+    },
+    "periostealreaction": {
+      "annotations": 2497,
+      "hard_positive_fraction": 0.7024429315178213,
+      "hard_positive_objects": 1754,
+      "images": 1590,
+      "operating": {
+        "0.5": {
+          "fn": 868,
+          "gt_reasons": {
+            "TP": 1629,
+            "localization": 22,
+            "low_confidence": 790,
+            "no_residual_candidate": 56
+          },
+          "potential_fp": 1025,
+          "precision": 0.6137905048982668,
+          "recall": 0.6523828594313176,
+          "tp": 1629
+        },
+        "0.75": {
+          "fn": 1754,
+          "gt_reasons": {
+            "TP": 743,
+            "localization": 680,
+            "low_confidence": 716,
+            "no_residual_candidate": 358
+          },
+          "potential_fp": 1911,
+          "precision": 0.27995478522984174,
+          "recall": 0.2975570684821786,
+          "tp": 743
+        }
+      },
+      "patients": 763,
+      "potential_fp_categories": {
+        "background_or_unannotated": 353,
+        "classification": 1,
+        "duplicate": 279,
+        "localization": 392
+      },
+      "potential_fp_ge_0.50": 37
+    },
+    "pronatorsign": {
+      "annotations": 400,
+      "hard_positive_fraction": 0.625,
+      "hard_positive_objects": 250,
+      "images": 399,
+      "operating": {
+        "0.5": {
+          "fn": 127,
+          "gt_reasons": {
+            "TP": 273,
+            "classification": 1,
+            "low_confidence": 125,
+            "no_residual_candidate": 1
+          },
+          "potential_fp": 171,
+          "precision": 0.6148648648648649,
+          "recall": 0.6825,
+          "tp": 273
+        },
+        "0.75": {
+          "fn": 250,
+          "gt_reasons": {
+            "TP": 150,
+            "classification": 1,
+            "localization": 82,
+            "low_confidence": 121,
+            "no_residual_candidate": 46
+          },
+          "potential_fp": 294,
+          "precision": 0.33783783783783783,
+          "recall": 0.375,
+          "tp": 150
+        }
+      },
+      "patients": 389,
+      "potential_fp_categories": {
+        "background_or_unannotated": 140,
+        "classification": 4,
+        "duplicate": 18,
+        "localization": 9
+      },
+      "potential_fp_ge_0.50": 7
+    },
+    "softtissue": {
+      "annotations": 324,
+      "hard_positive_fraction": 0.8549382716049383,
+      "hard_positive_objects": 277,
+      "images": 308,
+      "operating": {
+        "0.5": {
+          "fn": 261,
+          "gt_reasons": {
+            "TP": 63,
+            "classification": 3,
+            "low_confidence": 257,
+            "no_residual_candidate": 1
+          },
+          "potential_fp": 44,
+          "precision": 0.5887850467289719,
+          "recall": 0.19444444444444445,
+          "tp": 63
+        },
+        "0.75": {
+          "fn": 277,
+          "gt_reasons": {
+            "TP": 47,
+            "classification": 1,
+            "localization": 9,
+            "low_confidence": 185,
+            "no_residual_candidate": 82
+          },
+          "potential_fp": 60,
+          "precision": 0.4392523364485981,
+          "recall": 0.14506172839506173,
+          "tp": 47
+        }
+      },
+      "patients": 283,
+      "potential_fp_categories": {
+        "background_or_unannotated": 33,
+        "classification": 2,
+        "duplicate": 4,
+        "localization": 5
+      },
+      "potential_fp_ge_0.50": 4
+    },
+    "text": {
+      "annotations": 16388,
+      "hard_positive_fraction": 0.1382108860141567,
+      "hard_positive_objects": 2265,
+      "images": 14030,
+      "operating": {
+        "0.5": {
+          "fn": 199,
+          "gt_reasons": {
+            "TP": 16189,
+            "classification": 1,
+            "localization": 66,
+            "low_confidence": 110,
+            "no_residual_candidate": 22
+          },
+          "potential_fp": 685,
+          "precision": 0.9594050017778831,
+          "recall": 0.9878569685135465,
+          "tp": 16189
+        },
+        "0.75": {
+          "fn": 2265,
+          "gt_reasons": {
+            "TP": 14123,
+            "localization": 2068,
+            "low_confidence": 154,
+            "no_residual_candidate": 43
+          },
+          "potential_fp": 2751,
+          "precision": 0.8369681166291336,
+          "recall": 0.8617891139858433,
+          "tp": 14123
+        }
+      },
+      "patients": 4264,
+      "potential_fp_categories": {
+        "background_or_unannotated": 152,
+        "classification": 12,
+        "duplicate": 170,
+        "localization": 351
+      },
+      "potential_fp_ge_0.50": 255
+    }
+  },
+  "clinical_hard_positive_patient_concentration": {
+    "effective_patients": 848.9998998698308,
+    "gini": 0.7829697014981134,
+    "max_patient_share": 0.007770762506070908,
+    "patients_nonzero": 1583,
+    "top_10_percent_share": 0.5791646430305973,
+    "top_1_percent_share": 0.12408936376881982,
+    "total": 4118.0
+  },
+  "difficulty": {
+    "formula": "max class-mean object score over 0,3,4,6,7; 16 bone-lesion patients excluded from bonus priority",
+    "hard_images_with_rarity_priority": 1879,
+    "hard_images_without_rarity_priority": 1208,
+    "hard_objects_without_rarity_priority": [
+      1273,
+      69,
+      1830,
+      3,
+      0,
+      11,
+      1,
+      0
+    ],
+    "hard_objects_without_rarity_priority_in_error_eligible_images": [
+      1261,
+      16,
+      191,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "image_distribution": {
+      "max": 1.0,
+      "mean": 0.1383945292788903,
+      "median": 0.0,
+      "min": 0.0,
+      "n": 14061,
+      "p05": 0.0,
+      "p95": 1.0,
+      "p99": 1.0
+    },
+    "nonzero_images": 3087,
+    "nonzero_patients": 1579,
+    "spearman_with_rarity": 0.6541543796613523
+  },
+  "images": 14061,
+  "in_sample_limitation": {
+    "checkpoint_selection_used_validation": true,
+    "independent_out_of_fold_predictions": false,
+    "nominal_prior_image_presentations": 309342,
+    "patients_seen_during_fitting": 4264,
+    "selected_checkpoint_completed_epochs": 22,
+    "training_diagnostic_ap_is_not_reported_as_generalization": true,
+    "training_overlap_fraction": 1.0
+  },
+  "patient_concentration": {
+    "boneanomaly": {
+      "all_annotations": {
+        "effective_patients": 29.65772759350741,
+        "gini": 0.9919450418706814,
+        "max_patient_share": 0.08292682926829269,
+        "patients_nonzero": 67,
+        "top_10_percent_share": 1.0,
+        "top_1_percent_share": 0.8829268292682927,
+        "total": 205.0
+      },
+      "hard_fraction_among_class_positive_patients": {
+        "max": 1.0,
+        "mean": 0.7620517590886335,
+        "median": 1.0,
+        "min": 0.0,
+        "n": 67,
+        "p05": 0.0,
+        "p95": 1.0,
+        "p99": 1.0
+      },
+      "hard_positive": {
+        "effective_patients": 30.05429071803853,
+        "gini": 0.9914802428999041,
+        "max_patient_share": 0.0916030534351145,
+        "patients_nonzero": 61,
+        "top_10_percent_share": 1.0,
+        "top_1_percent_share": 0.8625954198473282,
+        "total": 131.0
+      }
+    },
+    "bonelesion": {
+      "all_annotations": {
+        "effective_patients": 8.112582781456954,
+        "gini": 0.9976480836236934,
+        "max_patient_share": 0.2857142857142857,
+        "patients_nonzero": 16,
+        "top_10_percent_share": 1.0,
+        "top_1_percent_share": 1.0,
+        "total": 35.0
+      },
+      "hard_fraction_among_class_positive_patients": {
+        "max": 1.0,
+        "mean": 0.3875,
+        "median": 0.35,
+        "min": 0.0,
+        "n": 16,
+        "p05": 0.0,
+        "p95": 1.0,
+        "p99": 1.0
+      },
+      "hard_positive": {
+        "effective_patients": 8.066666666666666,
+        "gini": 0.9981877878219343,
+        "max_patient_share": 0.18181818181818182,
+        "patients_nonzero": 9,
+        "top_10_percent_share": 1.0,
+        "top_1_percent_share": 1.0,
+        "total": 11.0
+      }
+    },
+    "fracture": {
+      "all_annotations": {
+        "effective_patients": 1355.6074428084478,
+        "gini": 0.6760257175506872,
+        "max_patient_share": 0.0040251167283851235,
+        "patients_nonzero": 2511,
+        "top_10_percent_share": 0.45668974400257606,
+        "top_1_percent_share": 0.07752374818869748,
+        "total": 12422.0
+      },
+      "hard_fraction_among_class_positive_patients": {
+        "max": 1.0,
+        "mean": 0.1461858730999137,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 2511,
+        "p05": 0.0,
+        "p95": 0.5857142857142856,
+        "p99": 1.0
+      },
+      "hard_positive": {
+        "effective_patients": 685.4536033914272,
+        "gini": 0.8308343359382733,
+        "max_patient_share": 0.005861664712778429,
+        "patients_nonzero": 1028,
+        "top_10_percent_share": 0.6477139507620164,
+        "top_1_percent_share": 0.14361078546307152,
+        "total": 1706.0
+      }
+    },
+    "metal": {
+      "all_annotations": {
+        "effective_patients": 67.01414743112434,
+        "gini": 0.9842245153220763,
+        "max_patient_share": 0.04833333333333333,
+        "patients_nonzero": 109,
+        "top_10_percent_share": 1.0,
+        "top_1_percent_share": 0.6733333333333333,
+        "total": 600.0
+      },
+      "hard_fraction_among_class_positive_patients": {
+        "max": 1.0,
+        "mean": 0.15413596128187565,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 109,
+        "p05": 0.0,
+        "p95": 0.6545454545454543,
+        "p99": 1.0
+      },
+      "hard_positive": {
+        "effective_patients": 29.251012145748987,
+        "gini": 0.993452709413972,
+        "max_patient_share": 0.08235294117647059,
+        "patients_nonzero": 41,
+        "top_10_percent_share": 1.0,
+        "top_1_percent_share": 1.0,
+        "total": 85.0
+      }
+    },
+    "periostealreaction": {
+      "all_annotations": {
+        "effective_patients": 471.4562570888469,
+        "gini": 0.8880789217229532,
+        "max_patient_share": 0.00961153384060873,
+        "patients_nonzero": 763,
+        "top_10_percent_share": 0.8013616339607529,
+        "top_1_percent_share": 0.18582298758510213,
+        "total": 2497.0
+      },
+      "hard_fraction_among_class_positive_patients": {
+        "max": 1.0,
+        "mean": 0.6909931644773335,
+        "median": 0.75,
+        "min": 0.0,
+        "n": 763,
+        "p05": 0.0,
+        "p95": 1.0,
+        "p99": 1.0
+      },
+      "hard_positive": {
+        "effective_patients": 419.6012002182215,
+        "gini": 0.8996180801427347,
+        "max_patient_share": 0.012542759407069556,
+        "patients_nonzero": 670,
+        "top_10_percent_share": 0.8500570125427594,
+        "top_1_percent_share": 0.19954389965792474,
+        "total": 1754.0
+      }
+    },
+    "pronatorsign": {
+      "all_annotations": {
+        "effective_patients": 377.35849056603774,
+        "gini": 0.911220684803002,
+        "max_patient_share": 0.0075,
+        "patients_nonzero": 389,
+        "top_10_percent_share": 1.0,
+        "top_1_percent_share": 0.135,
+        "total": 400.0
+      },
+      "hard_fraction_among_class_positive_patients": {
+        "max": 1.0,
+        "mean": 0.6276778063410454,
+        "median": 1.0,
+        "min": 0.0,
+        "n": 389,
+        "p05": 0.0,
+        "p95": 1.0,
+        "p99": 1.0
+      },
+      "hard_positive": {
+        "effective_patients": 242.24806201550388,
+        "gini": 0.9432157598499062,
+        "max_patient_share": 0.008,
+        "patients_nonzero": 246,
+        "top_10_percent_share": 1.0,
+        "top_1_percent_share": 0.188,
+        "total": 250.0
+      }
+    },
+    "softtissue": {
+      "all_annotations": {
+        "effective_patients": 251.13875598086125,
+        "gini": 0.9411162647951266,
+        "max_patient_share": 0.009259259259259259,
+        "patients_nonzero": 283,
+        "top_10_percent_share": 1.0,
+        "top_1_percent_share": 0.25925925925925924,
+        "total": 324.0
+      },
+      "hard_fraction_among_class_positive_patients": {
+        "max": 1.0,
+        "mean": 0.8527679623085983,
+        "median": 1.0,
+        "min": 0.0,
+        "n": 283,
+        "p05": 0.0,
+        "p95": 1.0,
+        "p99": 1.0
+      },
+      "hard_positive": {
+        "effective_patients": 219.85386819484242,
+        "gini": 0.9485026178365088,
+        "max_patient_share": 0.010830324909747292,
+        "patients_nonzero": 245,
+        "top_10_percent_share": 1.0,
+        "top_1_percent_share": 0.27075812274368233,
+        "total": 277.0
+      }
+    },
+    "text": {
+      "all_annotations": {
+        "effective_patients": 2609.1647301130843,
+        "gini": 0.356961902064431,
+        "max_patient_share": 0.002196729314132292,
+        "patients_nonzero": 4264,
+        "top_10_percent_share": 0.29423968757627533,
+        "top_1_percent_share": 0.04802294361728094,
+        "total": 16388.0
+      },
+      "hard_fraction_among_class_positive_patients": {
+        "max": 1.0,
+        "mean": 0.12020011532884843,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 4264,
+        "p05": 0.0,
+        "p95": 0.5,
+        "p99": 1.0
+      },
+      "hard_positive": {
+        "effective_patients": 875.3156457942331,
+        "gini": 0.7785670058687342,
+        "max_patient_share": 0.006181015452538631,
+        "patients_nonzero": 1357,
+        "top_10_percent_share": 0.5593818984547462,
+        "top_1_percent_share": 0.12273730684326711,
+        "total": 2265.0
+      }
+    }
+  },
+  "patient_difficulty_mean": {
+    "max": 1.0,
+    "mean": 0.11496974710880374,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 4264,
+    "p05": 0.0,
+    "p95": 0.5,
+    "p99": 0.75
+  },
+  "patients": 4264,
+  "potential_fp_images": 2170,
+  "potential_fp_patient_concentration": {
+    "effective_patients": 779.7662601626016,
+    "gini": 0.804922243821161,
+    "max_patient_share": 0.006137184115523465,
+    "patients_nonzero": 1313,
+    "top_10_percent_share": 0.6050541516245488,
+    "top_1_percent_share": 0.1328519855595668,
+    "total": 2770.0
+  },
+  "released_uncertainty_flag": {
+    "all_training_images": 360,
+    "hard_images": 52,
+    "interpretation": "Only 1 marks uncertainty; blank is unmarked/missing, not confirmed certainty. Image-level flags are not box-quality adjudication and never change sampling weights",
+    "potential_fp_images": 28,
+    "unmarked_or_missing_images": 13701
+  },
+  "scope": "Training-only in-sample difficulty, not generalization or verified clinical errors"
+}
