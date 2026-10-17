@@ -1,0 +1,91 @@
+{
+  "comparisons": {
+    "V1_minus_sahi_context": {
+      "fp_count_ratio": {
+        "lower": 0.3085767596550744,
+        "median": 0.32920587297763565,
+        "replicates_present": 500,
+        "upper": 0.3499249954513588
+      },
+      "fracture_fp_count_ratio": {
+        "lower": 0.22305357117745497,
+        "median": 0.25,
+        "replicates_present": 500,
+        "upper": 0.2761826811898746
+      }
+    },
+    "V1_minus_standard_serial": {
+      "fp_count_ratio": {
+        "lower": 1.159041192649081,
+        "median": 1.1917489257611673,
+        "replicates_present": 500,
+        "upper": 1.2275457946336428
+      },
+      "fracture_fp_count_ratio": {
+        "lower": 1.1221346003134798,
+        "median": 1.1623654123654124,
+        "replicates_present": 500,
+        "upper": 1.2128946417276587
+      }
+    },
+    "V2_minus_V1": {
+      "fp_count_ratio": {
+        "lower": 1.0,
+        "median": 1.0,
+        "replicates_present": 500,
+        "upper": 1.0
+      },
+      "fracture_fp_count_ratio": {
+        "lower": 1.0,
+        "median": 1.0,
+        "replicates_present": 500,
+        "upper": 1.0
+      }
+    },
+    "V2_minus_sahi_context": {
+      "fp_count_ratio": {
+        "lower": 0.3085767596550744,
+        "median": 0.32920587297763565,
+        "replicates_present": 500,
+        "upper": 0.3499249954513588
+      },
+      "fracture_fp_count_ratio": {
+        "lower": 0.22305357117745497,
+        "median": 0.25,
+        "replicates_present": 500,
+        "upper": 0.2761826811898746
+      }
+    },
+    "V2_minus_standard_serial": {
+      "fp_count_ratio": {
+        "lower": 1.159041192649081,
+        "median": 1.1917489257611673,
+        "replicates_present": 500,
+        "upper": 1.2275457946336428
+      },
+      "fracture_fp_count_ratio": {
+        "lower": 1.1221346003134798,
+        "median": 1.1623654123654124,
+        "replicates_present": 500,
+        "upper": 1.2128946417276587
+      }
+    },
+    "sahi_context_minus_standard_serial": {
+      "fp_count_ratio": {
+        "lower": 3.382063708008984,
+        "median": 3.6242473021040578,
+        "replicates_present": 500,
+        "upper": 3.88037168560606
+      },
+      "fracture_fp_count_ratio": {
+        "lower": 4.146561528418956,
+        "median": 4.668072479822757,
+        "replicates_present": 500,
+        "upper": 5.264346273024616
+      }
+    }
+  },
+  "method": "Ratios from the same sealed paired patient resamples; no AP recomputation",
+  "replicates": 500,
+  "seed": 314159
+}

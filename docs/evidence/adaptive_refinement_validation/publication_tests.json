@@ -1,0 +1,13 @@
+{
+  "log_sha256": "e30c449d407a18c0ec63205451a856e48b62ca53f73b546119005606ea9cac56",
+  "passed": true,
+  "pip_check": "No broken requirements found",
+  "post_analysis_diagnostics_verified_at_runtime": [
+    "all non-target native streams equal; class-isolated AP equal",
+    "accepted V2 geometry includes both positive and negative IoU changes",
+    "FP ratio intervals reuse the same sealed patient resamples"
+  ],
+  "seconds": 9.606,
+  "tests": 152,
+  "workspace_temp_directory": true
+}

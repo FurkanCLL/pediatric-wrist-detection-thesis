@@ -10,7 +10,7 @@ from .common import CLASSES, save, validation_records
 from .adaptive_study import LOCAL, PUBLIC
 from .adaptive_evidence import active_records
 from .analyze import load_predictions, truth, describe, compare, compare_false_positives
-from .metrics import ap_summary, native_stats, match, distribution
+from .metrics import ap_summary, native_stats, match, distribution, ious
 from .bootstrap import patient_groups, resample_indices, interval
 
 METHODS = ("standard_serial", "sahi_context", "V1", "V2")
@@ -191,10 +191,94 @@ def bootstrap():
     save(PUBLIC/"patient_bootstrap.json", result)
 
 
+def fp_uncertainty():
+    # Equal paired image counts cancel in each FP/image ratio; reuse sealed resamples.
+    samples = json.loads((LOCAL/"bootstrap_replicates.json").read_text())
+    result = {"replicates": len(samples), "seed": 314159,
+              "method": "Ratios from the same sealed paired patient resamples; no AP recomputation",
+              "comparisons": {}}
+    for other, base in PAIRS:
+        result["comparisons"][other+"_minus_"+base] = {
+            key.replace("_per_image", "_count_ratio"): interval([
+                s[other]["operating"][key]/s[base]["operating"][key]
+                for s in samples if s[base]["operating"][key] > 0])
+            for key in ("fp_per_image", "fracture_fp_per_image")}
+    save(PUBLIC/"fp_ratio_uncertainty.json", result)
+
+
+def geometry_analysis():
+    # This post-hoc GT diagnostic never enters inference, selection or matching.
+    _, records = active_records("full")
+    rows = {r["filestem"]: r for r in validation_records()}
+    changes = {c: [] for c in ("fracture", "periostealreaction")}
+    counts = Counter()
+    for item in records:
+        accepted = [g for g in item["variants"]["V2"]["diagnostics"]["geometry"] if g["reason"] == "accepted"]
+        if not accepted:
+            continue
+        gt = truth(rows[item["stem"]])
+        original = np.asarray(item["global"], dtype=np.float32).reshape(-1, 6)
+        output = np.asarray(item["variants"]["V2"]["pred"], dtype=np.float32).reshape(-1, 6)
+        ids = item["variants"]["V2"]["diagnostics"]["output_global_ids"]
+        inverse = {g: i for i, g in enumerate(ids)}
+        for change in accepted:
+            g = change["global_id"]
+            same = gt[gt[:, 4] == original[g, 5]]
+            before = float(ious(np.asarray(change["before"])[None], same[:, :4]).max()) if len(same) else 0.
+            after = float(ious(np.asarray(change["after"])[None], same[:, :4]).max()) if len(same) else 0.
+            changes[CLASSES[int(original[g, 5])]].append(after-before)
+            counts["improved" if after > before else "worsened" if after < before else "equal"] += 1
+            counts["updated_score_below_0.25"] += int(output[inverse[g], 4] < .25)
+    save(PUBLIC/"geometry_diagnostics.json", {
+        "definition": "Best same-class annotated-box IoU before/after each accepted V2 blend; zero when no same-class annotation exists; descriptive, no one-to-one TP claim",
+        "counts": counts, "iou_delta_by_class": {c: distribution(v) for c, v in changes.items()},
+        "not_used_for_algorithm_selection_or_tuning": True})
+
+
+def tie_diagnostics():
+    # The frozen evaluator sorts every class together with NumPy's default unstable argsort.
+    from ultralytics.utils.metrics import ap_per_class
+    stored = json.loads((LOCAL/"native_stats.json").read_text())
+    joined = {m: {k: np.concatenate([np.asarray(s[k], dtype=bool if k == "tp" else np.float32).reshape(
+        (-1, 10) if k == "tp" else (-1,)) for s in items])
+        for k in ("tp", "conf", "pred_cls", "target_cls")} for m, items in stored.items()}
+    result = {"frozen_evaluator_unchanged": True, "nontarget_classes": {}}
+    base = joined["standard_serial"]
+    for variant in ("V1", "V2"):
+        candidate = joined[variant]
+        classes = {}
+        for c in (1, 2, 4, 5, 6, 7):
+            a = {k: v[base["target_cls" if k == "target_cls" else "pred_cls"] == c] for k, v in base.items()}
+            b = {k: v[candidate["target_cls" if k == "target_cls" else "pred_cls"] == c] for k, v in candidate.items()}
+            if not all(np.array_equal(a[k], b[k]) for k in a):
+                raise ValueError("Non-target native TP/confidence/class stream differs")
+            isolated_equal = np.array_equal(ap_per_class(**a)[5], ap_per_class(**b)[5])
+            ordered = []
+            for stream in (base, candidate):
+                ids = np.argsort(-stream["conf"])
+                ids = ids[stream["pred_cls"][ids] == c]
+                ordered.append((stream["conf"][ids], stream["tp"][ids]))
+            if not np.array_equal(ordered[0][0], ordered[1][0]):
+                raise ValueError("Non-target sorted confidence values differ")
+            classes[CLASSES[c]] = {"native_tp_conf_class_stream_bitwise_equal": True,
+                "class_isolated_ap_bitwise_equal": isolated_equal,
+                "tp_rows_differing_after_full_stream_unstable_sort": int(np.any(ordered[0][1] != ordered[1][1], axis=1).sum())}
+        result["nontarget_classes"][variant] = classes
+    result["interpretation"] = "Tiny non-target AP drift is caused by equal-confidence TP/FP order changes in the all-class unstable sort; class-isolated inputs/AP are identical. It is not a detector change. Keep the common pinned evaluator and report this numerical limitation."
+    save(PUBLIC/"confidence_tie_diagnostics.json", result)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("action", choices=["analyze", "bootstrap"])
-    if parser.parse_args().action == "analyze":
+    parser.add_argument("action", choices=["analyze", "bootstrap", "fp_uncertainty", "geometry", "ties"])
+    action = parser.parse_args().action
+    if action == "analyze":
         analyze()
-    else:
+    elif action == "bootstrap":
         bootstrap()
+    elif action == "fp_uncertainty":
+        fp_uncertainty()
+    elif action == "geometry":
+        geometry_analysis()
+    else:
+        tie_diagnostics()

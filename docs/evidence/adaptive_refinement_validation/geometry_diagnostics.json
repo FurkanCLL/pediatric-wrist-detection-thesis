@@ -1,0 +1,32 @@
+{
+  "counts": {
+    "equal": 18,
+    "improved": 29,
+    "updated_score_below_0.25": 35,
+    "worsened": 17
+  },
+  "definition": "Best same-class annotated-box IoU before/after each accepted V2 blend; zero when no same-class annotation exists; descriptive, no one-to-one TP claim",
+  "iou_delta_by_class": {
+    "fracture": {
+      "max": 0.084494646219755,
+      "mean": 0.00541517149749117,
+      "median": 0.0,
+      "min": -0.03475746016867143,
+      "n": 56,
+      "p05": -0.016215085767019105,
+      "p95": 0.03589033330204375,
+      "p99": 0.06778790595106904
+    },
+    "periostealreaction": {
+      "max": 0.039190086766103194,
+      "mean": 0.014866684007792924,
+      "median": 0.019788756451005862,
+      "min": -0.007586929451887603,
+      "n": 8,
+      "p05": -0.006595509667918428,
+      "p95": 0.036245058723342306,
+      "p99": 0.038601081157551016
+    }
+  },
+  "not_used_for_algorithm_selection_or_tuning": true
+}

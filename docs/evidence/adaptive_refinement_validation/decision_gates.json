@@ -1,0 +1,46 @@
+{
+  "no_new_optimization_cycle": true,
+  "recommendation": "Retain standard accuracy/cost default; preserve negative/inconclusive adaptive findings",
+  "recommended_variant": null,
+  "timing_caveat": "Final timing uses complete standalone paths. The <=2x gate uses contemporaneous decode+verified-global-output wall time from the already-required global call, with identical baseline predictions and no extra model pass. Historical standard ratios remain descriptive.",
+  "variants": {
+    "V1": {
+      "checks": {
+        "all_class_fp_ratio": false,
+        "fracture_ap_points_preserved": true,
+        "fracture_fp_ratio": false,
+        "fracture_interval_tolerance": true,
+        "mean_latency_ratio": true,
+        "overall_map50_95_interval_positive": false,
+        "overall_map50_95_positive": false,
+        "overall_map50_nondecreasing": false
+      },
+      "fp_count_ratio": 1.1934389140271493,
+      "fracture_fp_count_ratio": 1.1647398843930636,
+      "historical_standard_latency_ratio": 0.9377123162566369,
+      "mean_latency_ratio": 1.3054263628182283,
+      "passes": false,
+      "primary_success": false,
+      "secondary_tradeoff_success": false
+    },
+    "V2": {
+      "checks": {
+        "all_class_fp_ratio": false,
+        "fracture_ap_points_preserved": true,
+        "fracture_fp_ratio": false,
+        "fracture_interval_tolerance": true,
+        "mean_latency_ratio": true,
+        "overall_map50_95_interval_positive": false,
+        "overall_map50_95_positive": false,
+        "overall_map50_nondecreasing": false
+      },
+      "fp_count_ratio": 1.1934389140271493,
+      "fracture_fp_count_ratio": 1.1647398843930636,
+      "historical_standard_latency_ratio": 0.9760962152203023,
+      "mean_latency_ratio": 1.3217019861442076,
+      "passes": false,
+      "primary_success": false,
+      "secondary_tradeoff_success": false
+    }
+  }
+}

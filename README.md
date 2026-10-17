@@ -2,14 +2,14 @@
 
 Implementation workspace for a new RTU Type 2 bachelor thesis study using the GRAZPEDWRI-DX pediatric wrist X-ray dataset, YOLOv8s, class-aware training, and adaptive local refinement.
 
-**Status:** Phase 3C.1 design is complete: CG-ALR has an explicit unapproved specification and proposed configuration. No adaptive implementation or inference has run. Phase 3B's verified SAHI comparisons remain preserved as negative development evidence. The completed 80-epoch standard baseline is preserved; class-aware Candidate A remains proposed and untrained. Student review precedes Phase 3C.2. Final adaptive inference and held-out A-F evaluation remain future work. Formal supervisor alignment of the revised thesis scope is still pending.
+**Status:** Phase 3C.2 implementation and validation are complete. Student-approved CG-ALR V1/V2 passed technical verification on the preserved baseline, but neither meets the predefined accuracy/false-positive success gates. Their mAP50-95 is 0.33374752/0.33375909 versus standard 0.33386896 and SAHI Context 0.29314538. Both recover 38 objects while adding 171 false positives at confidence .25 / IoU .50. Read the [validation report](docs/evidence/adaptive_refinement_validation/ADAPTIVE_REFINEMENT_VALIDATION_REPORT.md) before deciding next steps. Standard remains the current accuracy/cost default. Class-aware Candidate A remains proposed and untrained; the final common adaptive method and held-out six-condition evaluation remain open. Formal supervisor alignment is pending.
 
 ## Start here
 
 1. Read `AGENTS.md`, `docs/THESIS.md`, `docs/ROADMAP.md`, `docs/DECISIONS.md`.
 2. Install the pinned dependencies in the project Python environment.
 3. Read [the validation error-analysis and SAHI findings](docs/evidence/error_analysis_sahi/ERROR_ANALYSIS_SAHI_REPORT.md), [the class-aware design and recommendation](docs/evidence/class_aware_design/CLASS_AWARE_DESIGN_REPORT.md), [baseline preservation](docs/evidence/class_aware_design/BASELINE_PRESERVATION_REPORT.md), [the frozen training protocol and original manual commands](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md), [the GPU feasibility report](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md), [dataset preparation](docs/evidence/dataset_preparation/DATASET_PREPARATION_REPORT.md), and the earlier [source audit](docs/evidence/dataset_audit/DATASET_AUDIT_REPORT.md).
-4. Review [the proposed adaptive-refinement specification](docs/evidence/adaptive_refinement_design/ADAPTIVE_REFINEMENT_DESIGN_REPORT.md), the class-aware policy, private crop comparisons and inference findings before authorizing the next implementation step. Preserve the completed standard baseline. Neither the proposed configuration nor this documentation authorizes adaptive execution or class-aware training.
+4. Review [the adaptive validation findings](docs/evidence/adaptive_refinement_validation/ADAPTIVE_REFINEMENT_VALIDATION_REPORT.md) alongside [the historical design](docs/evidence/adaptive_refinement_design/ADAPTIVE_REFINEMENT_DESIGN_REPORT.md). `configs/adaptive_refinement_execution.json` records student approval for this completed validation study; the original proposed config retains its historical flags/hash. Further optimization, class-aware training and held-out evaluation require separate authorization.
 
 The previous repository and experiments are archived separately. Do not copy its historical A-F results into this project's experimental outcomes.
 
@@ -179,4 +179,21 @@ The completed-attempt commands below document the sequence. Inference output dir
 
 Read [the CG-ALR technical specification](docs/evidence/adaptive_refinement_design/ADAPTIVE_REFINEMENT_DESIGN_REPORT.md), [proposed parameters](configs/adaptive_refinement_proposed.json) and [design checks](docs/evidence/adaptive_refinement_design/design_verification.json). The proposal selects weak fracture/periosteal predictions, plans at most two broad local views and permits anchored confirmation or guarded coordinate blending. V1/V2 are development alternatives; one common adaptive rule must eventually serve both checkpoints in the existing A-F matrix.
 
-The configuration is explicitly unapproved and has no production consumer or launch command. Phase 3C.1 performed source review and lightweight synthetic arithmetic/configuration checks only, with zero model inference, GPU experiments or training. The report identifies the V2 correction, protected matching, inherited-duplicate limitation and success/stopping rules requiring student approval. Do not automatically proceed to Phase 3C.2 or treat recorded hashes as a protocol freeze.
+The proposed configuration and design report retain their original Phase 3C.1 unapproved status as historical records. The student subsequently approved Phase 3C.2 through the separate execution manifest. The implementation consumes the preserved specification only after checking that approval and its hash. The completed validation findings below supersede the old implementation-status narrative; final inference selection remains open.
+
+
+## Adaptive refinement: completed validation
+
+The isolated CG-ALR core retains global rows and uses the same loaded checkpoint for zero to two local views. V1 confirms weak target scores; V2 adds guarded coordinate blending. Global outputs match preserved standard predictions exactly on all 3,088 validation images. Both use 1.416 model calls/image on average. The full comparison, 500 patient-bootstrap resamples, actual standalone timing, private technical figure reviews and preservation receipts are under `docs/evidence/adaptive_refinement_validation/`. The final suite passes 152 tests.
+
+Private prediction bundles, radiographs, overlays and timing records remain in ignored `outputs/adaptive_refinement/`. Preserve completed attempts rather than repeating inference. Offline verification of saved evidence:
+
+```powershell
+.\.venv\Scripts\python.exe -m wrist_eval.adaptive_validation accounting
+.\.venv\Scripts\python.exe -m wrist_eval.adaptive_analysis fp_uncertainty
+.\.venv\Scripts\python.exe -m wrist_eval.adaptive_analysis geometry
+.\.venv\Scripts\python.exe -m wrist_eval.adaptive_analysis ties
+.\.venv\Scripts\python.exe -m wrist_eval.adaptive_validation decisions
+```
+
+The report records original pilot/full/timing commands, immutable source identities, all eight class metrics, operating points and uncertainty. No algorithm adjustment or next training/test phase is authorized by this completed study. The small V2-over-V1 numerical gain cannot override their negative standard comparison and excess false positives.

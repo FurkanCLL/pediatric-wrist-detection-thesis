@@ -1,0 +1,70 @@
+{
+  "frozen_evaluator_unchanged": true,
+  "interpretation": "Tiny non-target AP drift is caused by equal-confidence TP/FP order changes in the all-class unstable sort; class-isolated inputs/AP are identical. It is not a detector change. Keep the common pinned evaluator and report this numerical limitation.",
+  "nontarget_classes": {
+    "V1": {
+      "boneanomaly": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 4
+      },
+      "bonelesion": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 0
+      },
+      "metal": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 12
+      },
+      "pronatorsign": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 44
+      },
+      "softtissue": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 30
+      },
+      "text": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 2575
+      }
+    },
+    "V2": {
+      "boneanomaly": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 4
+      },
+      "bonelesion": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 0
+      },
+      "metal": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 12
+      },
+      "pronatorsign": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 44
+      },
+      "softtissue": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 30
+      },
+      "text": {
+        "class_isolated_ap_bitwise_equal": true,
+        "native_tp_conf_class_stream_bitwise_equal": true,
+        "tp_rows_differing_after_full_stream_unstable_sort": 2575
+      }
+    }
+  }
+}
