@@ -109,6 +109,7 @@ def pilot_gate():
     cfg, manifest = approved_settings()
     summary = json.loads((PUBLIC/"pilot_summary.json").read_text())
     visuals = json.loads((PUBLIC/"pilot_qualitative.json").read_text())
+    geometry = json.loads((PUBLIC/"pilot_geometry.json").read_text())
     limits = cfg["phase_3c2_plan"]["proposed_success"]
     checks = {"images": summary["images"] == 24, "global_reference_exact": summary["global_reference_exact"],
         "source_identity": summary["implementation_source_sha256"] == source_identity(),
@@ -117,7 +118,8 @@ def pilot_gate():
         "allocated_memory": summary["allocated_peak_bytes"]/2**30 <= limits["pilot_peak_allocated_gib_max"],
         "time_budget": all(t["mean"]*3088 <= limits["projected_full_run_seconds_per_variant_max"] for t in summary["timing"].values()),
         "pass_budget": 1 <= summary["mean_passes"] <= 3,
-        "visual_review": bool(visuals["cases"]) and all(c["review"] == "technically reviewed" for c in visuals["cases"])}
+        "visual_review": bool(visuals["cases"]) and all(c["review"] == "technically reviewed" for c in visuals["cases"]),
+        "crop_visual_review": geometry["source_pixels_match"] and all(c["review"] == "technically reviewed" for c in geometry["cases"])}
     result = {"passed": all(checks.values()), "checks": checks, "implementation_source_sha256": source_identity(),
               "execution_manifest_sha256": identity(manifest), "no_ap_based_configuration_changes": True}
     save(PUBLIC/"pilot_gate.json", result)
@@ -126,13 +128,58 @@ def pilot_gate():
     print(result, flush=True)
 
 
+# Show actual selected pixel crops separately from final-prediction overlays.
+def pilot_geometry():
+    from PIL import Image, ImageDraw, ImageFont
+    from .common import image_path
+    directory, records = active_records("pilot")
+    destination = directory/"geometry"
+    destination.mkdir(exist_ok=False)
+    by_stem = {r["filestem"]: r for r in validation_records()}
+    font = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", 13)
+    cases = []
+    for case, count in enumerate((1, 2), 1):
+        index = next(i for i, r in enumerate(records) if len(r["plan"]["rois"]) == count)
+        record = records[index]
+        source = Image.open(image_path(by_stem[record["stem"]])).convert("RGB")
+        panels = [(source, "Global image; cyan ROI boundaries", None)]
+        for roi, view in zip(record["plan"]["rois"], record["local_views"]):
+            x1, y1, x2, y2 = roi["box"]
+            crop = source.crop((x1, y1, x2, y2))
+            if not np.array_equal(np.asarray(crop), np.asarray(source)[y1:y2, x1:x2]):
+                raise ValueError("Visualized crop differs from source pixels")
+            panels.append((crop, f"ROI {roi['id']}; local target boxes before fusion", view))
+        sheet = Image.new("RGB", (1560, 1020), "#101418")
+        for column, (image, title, view) in enumerate(panels):
+            scale = min(500/image.width, 900/image.height)
+            image_resized = image.resize((round(image.width*scale), round(image.height*scale)))
+            ox, oy = column*520+(520-image_resized.width)//2, 75
+            sheet.paste(image_resized, (ox, oy))
+            draw = ImageDraw.Draw(sheet)
+            draw.text((column*520+10, 12), title, fill="white", font=font)
+            if view is None:
+                boxes = [(roi["box"], "#42ddff", f"ROI {roi['id']}") for roi in record["plan"]["rois"]]
+            else:
+                boxes = [(p[:4], "#ff9b36", f"c{int(p[5])} {p[4]:.2f}") for p in view["predictions"] if p[4] >= .25 and p[5] in (0, 3)]
+            for box, color, label in boxes:
+                coords = [ox+box[0]*scale, oy+box[1]*scale, ox+box[2]*scale, oy+box[3]*scale]
+                draw.rectangle(coords, outline=color, width=2)
+                draw.text((coords[0], max(50, coords[1]-14)), label, fill=color, font=font, stroke_width=1, stroke_fill="black")
+        sheet.save(destination/f"case_{case:02d}_rois_{count}.png")
+        cases.append({"case": case, "pilot_ordinal": index+1, "rois": count, "review": "pending technical visual inspection"})
+    save(PUBLIC/"pilot_geometry.json", {"cases": cases, "source_pixels_match": True,
+         "purpose": "Technical crop-boundary, source-pixel and local-coordinate inspection; no new inference"})
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("action", choices=["preserve_before", "preserve_after", "pilot_figures", "pilot_gate"])
+    parser.add_argument("action", choices=["preserve_before", "preserve_after", "pilot_figures", "pilot_geometry", "pilot_gate"])
     action = parser.parse_args().action
     if action.startswith("preserve_"):
         preservation(action.split("_")[1])
     elif action == "pilot_figures":
         pilot_figures()
+    elif action == "pilot_geometry":
+        pilot_geometry()
     else:
         pilot_gate()

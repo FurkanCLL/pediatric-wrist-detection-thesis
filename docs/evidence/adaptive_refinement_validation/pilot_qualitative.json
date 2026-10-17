@@ -1,0 +1,61 @@
+{
+  "absent_or_already_selected": [
+    {
+      "category": "geometry_update",
+      "eligible_images": 0
+    },
+    {
+      "category": "geometry_veto",
+      "eligible_images": 1
+    }
+  ],
+  "cases": [
+    {
+      "case": 1,
+      "category": "roi_count_0",
+      "observation": "No local view; final predictions unchanged.",
+      "pilot_ordinal": 1,
+      "review": "technically reviewed"
+    },
+    {
+      "case": 2,
+      "category": "roi_count_1",
+      "observation": "One broad ROI; protected global fracture fields remain unchanged.",
+      "pilot_ordinal": 2,
+      "review": "technically reviewed"
+    },
+    {
+      "case": 3,
+      "category": "roi_count_2",
+      "observation": "Two overlapping but distinct valid ROIs; global detections retained.",
+      "pilot_ordinal": 5,
+      "review": "technically reviewed"
+    },
+    {
+      "case": 4,
+      "category": "confidence_update",
+      "observation": "A weak periosteal prediction crosses .25 as an annotation-relative FP; geometry remains guarded.",
+      "pilot_ordinal": 7,
+      "review": "technically reviewed"
+    },
+    {
+      "case": 5,
+      "category": "protected_match",
+      "observation": "Protected global matches consume local evidence; existing FP remain.",
+      "pilot_ordinal": 9,
+      "review": "technically reviewed"
+    },
+    {
+      "case": 6,
+      "category": "pilot_order_coverage",
+      "observation": "No-refinement reference retains original geometry and scores.",
+      "pilot_ordinal": 3,
+      "review": "technically reviewed"
+    }
+  ],
+  "clinical_review": false,
+  "images_private": true,
+  "review_date": "2026-10-17",
+  "reviewer": "Codex technical inspection, not clinical adjudication",
+  "selection": "First unused predefined pilot image per diagnostic category, then pilot order to six; no AP-based selection"
+}

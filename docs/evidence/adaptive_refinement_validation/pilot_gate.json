@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "allocated_memory": true,
+    "crop_visual_review": true,
+    "global_reference_exact": true,
+    "images": true,
+    "pass_budget": true,
+    "proposal_identity": true,
+    "replay_exact": true,
+    "source_identity": true,
+    "time_budget": true,
+    "visual_review": true
+  },
+  "execution_manifest_sha256": "713f3d695be8b1c92ced9d11552528c8a1700017dcf730e542dba3fb2738702b",
+  "implementation_source_sha256": {
+    "src/wrist_eval/adaptive.py": "482898228b8d0a9ba6d84a5cf298b12707dafa9c09766e8b11984166dcbeae5e",
+    "src/wrist_eval/adaptive_config.py": "7357d1fc5d1215f8d4743088b28435da32bfed2a07eb4ef46ad9f0ad3e631a7c",
+    "src/wrist_eval/adaptive_study.py": "62389e76002c466d1a62827c0c6eecb216f51a08d2a2ed2f90b639de63de077f"
+  },
+  "no_ap_based_configuration_changes": true,
+  "passed": true
+}

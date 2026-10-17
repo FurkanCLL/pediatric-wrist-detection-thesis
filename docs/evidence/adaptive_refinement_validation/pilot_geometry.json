@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "case": 1,
+      "observation": "ROI boundaries, source-pixel crops and local-coordinate boxes align; anatomical-context adequacy is not clinically certified.",
+      "pilot_ordinal": 2,
+      "review": "technically reviewed",
+      "rois": 1
+    },
+    {
+      "case": 2,
+      "observation": "ROI boundaries, source-pixel crops and local-coordinate boxes align; anatomical-context adequacy is not clinically certified.",
+      "pilot_ordinal": 5,
+      "review": "technically reviewed",
+      "rois": 2
+    }
+  ],
+  "purpose": "Technical crop-boundary, source-pixel and local-coordinate inspection; no new inference",
+  "review_date": "2026-10-17",
+  "reviewer": "Codex technical inspection, not clinical adjudication",
+  "source_pixels_match": true
+}

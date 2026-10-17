@@ -1,0 +1,106 @@
+{
+  "allocated_peak_bytes": 83314176,
+  "attempt": "pilot_01",
+  "bundles_sha256": "120a5fbbbac376fdb70e3c4f0e4631d50201aa1e6dda9d54010c4458ba5aa3c8",
+  "checkpoint_sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+  "deterministic_replay": [
+    {
+      "exact": true,
+      "image_ordinal": 1,
+      "passes": 1
+    },
+    {
+      "exact": true,
+      "image_ordinal": 2,
+      "passes": 2
+    },
+    {
+      "exact": true,
+      "image_ordinal": 3,
+      "passes": 1
+    }
+  ],
+  "execution_manifest_sha256": "713f3d695be8b1c92ced9d11552528c8a1700017dcf730e542dba3fb2738702b",
+  "extra_calibration_passes": 18,
+  "extra_replay_passes": 4,
+  "git_revision": "c397328e1341129a93788089a9b112d6a21b6aa9",
+  "global_reference_exact": true,
+  "images": 24,
+  "implementation_source_sha256": {
+    "src/wrist_eval/adaptive.py": "482898228b8d0a9ba6d84a5cf298b12707dafa9c09766e8b11984166dcbeae5e",
+    "src/wrist_eval/adaptive_config.py": "7357d1fc5d1215f8d4743088b28435da32bfed2a07eb4ef46ad9f0ad3e631a7c",
+    "src/wrist_eval/adaptive_study.py": "62389e76002c466d1a62827c0c6eecb216f51a08d2a2ed2f90b639de63de077f"
+  },
+  "joint_wall_seconds": {
+    "max": 0.2028796999984479,
+    "mean": 0.10058907083324205,
+    "median": 0.08467030000065279,
+    "min": 0.0390503999988141,
+    "n": 24,
+    "p05": 0.04283202499973413,
+    "p95": 0.1702897599972857,
+    "p99": 0.1956047999981456
+  },
+  "loop_wall_seconds_including_export": 2.459310899997945,
+  "mean_passes": 1.5416666666666667,
+  "model_load_seconds": 2.5094198000006145,
+  "no_test_evaluation": true,
+  "no_training": true,
+  "proposal_sha256": "a2e96ff54fdee455aefcb698b8a49008572a22decdb535cc2e65cd6d73997cc6",
+  "reserved_peak_bytes": 121634816,
+  "roi_count_images": {
+    "0": 15,
+    "1": 5,
+    "2": 4
+  },
+  "shape_profile_sha256": "cebc48530898e8c74ac0c355487264a7dbb3ca671e8942a2216531137d43770f",
+  "stage": "pilot",
+  "standalone_calibration": {
+    "V1": {
+      "max": 0.11588680000204477,
+      "mean": 0.0700349833338502,
+      "median": 0.05096075000074052,
+      "min": 0.04320870000083232,
+      "n": 6,
+      "p05": 0.04464495000047464,
+      "p95": 0.11447490000136895,
+      "p99": 0.1156044200019096
+    },
+    "V2": {
+      "max": 0.1119671999986167,
+      "mean": 0.06543861666553615,
+      "median": 0.05076204999932088,
+      "min": 0.04182559999753721,
+      "n": 6,
+      "p05": 0.042120999997678155,
+      "p95": 0.10755229999904259,
+      "p99": 0.11108421999870188
+    }
+  },
+  "standalone_calibration_images_per_variant": 6,
+  "synthetic_warmup_seconds": 1.1697049000031257,
+  "timing": {
+    "V1": {
+      "max": 0.20112449999942328,
+      "mean": 0.09907465833324143,
+      "median": 0.08337480000045616,
+      "min": 0.038652499999443535,
+      "n": 24,
+      "p05": 0.042428305000612454,
+      "p95": 0.16407812000161356,
+      "p99": 0.19263623500002722
+    },
+    "V2": {
+      "max": 0.20120749999841792,
+      "mean": 0.09907030833346653,
+      "median": 0.08340010000028997,
+      "min": 0.03870689999894239,
+      "n": 24,
+      "p05": 0.04235914500022773,
+      "p95": 0.1653030449986545,
+      "p99": 0.19299486699845145
+    }
+  },
+  "timing_definition": "Per-variant composed decode + all shared global/planning/local work + own fusion; no division of GPU cost",
+  "total_passes": 37
+}
