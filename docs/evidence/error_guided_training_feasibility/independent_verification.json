@@ -1,0 +1,17 @@
+{
+  "all_16_lesion_patients_every_view_exactly_once_per_epoch": true,
+  "all_classes_exposure_reconciles_against_saved_draw_indices": true,
+  "all_outputs_original_coordinate_valid": true,
+  "all_simulated_draws_checked": 10123920,
+  "all_simulated_epochs_checked": 720,
+  "missed50_and_priority_exposure_reconciles": true,
+  "no_new_gpu_work": true,
+  "no_per_epoch_guardrail_failure": true,
+  "paired_budget_and_coverage_match_every_epoch": true,
+  "passed": true,
+  "shared_coverage_positions_match_every_paired_epoch": true,
+  "source_frequency_total_variation_reconciles": true,
+  "stability_images_per_checkpoint": 1087,
+  "training_feature_replay_images": 32,
+  "training_predictions": 14061
+}

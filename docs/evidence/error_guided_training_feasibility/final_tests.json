@@ -1,0 +1,11 @@
+{
+  "log_sha256": "9dc396728d77cebcc78c40d479d90bb80080c323266b8a478c22f630d040fe3b",
+  "new_sampler_analysis_tests": 8,
+  "new_training_mining_tests": 11,
+  "no_real_model_training_in_tests": true,
+  "passed": true,
+  "pip_check": "No broken requirements found",
+  "seconds": 4.172,
+  "tests": 171,
+  "workspace_temp_directory_workaround_reused": true
+}

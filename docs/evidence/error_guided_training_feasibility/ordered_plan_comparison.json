@@ -1,0 +1,24 @@
+{
+  "different_ordered_positions": {
+    "max": 624.0,
+    "mean": 617.6041666666666,
+    "median": 618.0,
+    "min": 603.0,
+    "n": 240,
+    "p05": 611.0,
+    "p95": 623.0,
+    "p99": 624.0
+  },
+  "different_position_fraction": {
+    "max": 0.04437806699381267,
+    "mean": 0.04392320366024228,
+    "median": 0.04395135481117986,
+    "min": 0.042884574354597825,
+    "n": 240,
+    "p05": 0.04345352393144158,
+    "p95": 0.044306948296707206,
+    "p99": 0.04437806699381267
+  },
+  "interpretation": "Ordered positions differ beyond source-frequency total variation because changed weighted ranking also reorders common bonus images. Shared coverage positions match. This is not an AP or gradient-effect estimate.",
+  "paired_epochs": 240
+}

@@ -2,7 +2,7 @@
 
 Implementation workspace for a new RTU Type 2 bachelor thesis study using the GRAZPEDWRI-DX pediatric wrist X-ray dataset, YOLOv8s, class-aware training, and adaptive local refinement.
 
-**Status:** Phase 3C.2 implementation and validation are complete. Student-approved CG-ALR V1/V2 passed technical verification on the preserved baseline, but neither meets the predefined accuracy/false-positive success gates. Their mAP50-95 is 0.33374752/0.33375909 versus standard 0.33386896 and SAHI Context 0.29314538. Both recover 38 objects while adding 171 false positives at confidence .25 / IoU .50. Read the [validation report](docs/evidence/adaptive_refinement_validation/ADAPTIVE_REFINEMENT_VALIDATION_REPORT.md) before deciding next steps. Standard remains the current accuracy/cost default. Class-aware Candidate A remains proposed and untrained; the final common adaptive method and held-out six-condition evaluation remain open. Formal supervisor alignment is pending.
+**Status:** Phase 4A training-only error mining and sampler feasibility are complete. All 14,061 training images and two predefined checkpoint subsets are verified; 720 matched simulation epochs pass every coverage/repetition guardrail. Recommendation for student review: **SIMPLIFY — patient-aware rarity-only sampling**. The tested error component adds only 1.08% priority hard-positive exposure over rarity-only and has 0.750% source-frequency total variation versus rarity-only (ordered plans differ by 4.39%). Read the [feasibility report](docs/evidence/error_guided_training_feasibility/ERROR_GUIDED_TRAINING_FEASIBILITY_REPORT.md). No official training, new validation/test evaluation, production loader integration or historical A-F matrix change occurred. Baseline, prior negative SAHI/CG-ALR findings, frozen protocol/splits and A/B/C proposals remain preserved. Formal supervisor scope alignment remains pending.
 
 ## Start here
 
@@ -10,6 +10,8 @@ Implementation workspace for a new RTU Type 2 bachelor thesis study using the GR
 2. Install the pinned dependencies in the project Python environment.
 3. Read [the validation error-analysis and SAHI findings](docs/evidence/error_analysis_sahi/ERROR_ANALYSIS_SAHI_REPORT.md), [the class-aware design and recommendation](docs/evidence/class_aware_design/CLASS_AWARE_DESIGN_REPORT.md), [baseline preservation](docs/evidence/class_aware_design/BASELINE_PRESERVATION_REPORT.md), [the frozen training protocol and original manual commands](docs/evidence/training_protocol/TRAINING_PROTOCOL_REPORT.md), [the GPU feasibility report](docs/evidence/gpu_feasibility/GPU_FEASIBILITY_REPORT.md), [dataset preparation](docs/evidence/dataset_preparation/DATASET_PREPARATION_REPORT.md), and the earlier [source audit](docs/evidence/dataset_audit/DATASET_AUDIT_REPORT.md).
 4. Review [the adaptive validation findings](docs/evidence/adaptive_refinement_validation/ADAPTIVE_REFINEMENT_VALIDATION_REPORT.md) alongside [the historical design](docs/evidence/adaptive_refinement_design/ADAPTIVE_REFINEMENT_DESIGN_REPORT.md). `configs/adaptive_refinement_execution.json` records student approval for this completed validation study; the original proposed config retains its historical flags/hash. Further optimization, class-aware training and held-out evaluation require separate authorization.
+
+Current research decision: review [the Phase 4A report](docs/evidence/error_guided_training_feasibility/ERROR_GUIDED_TRAINING_FEASIBILITY_REPORT.md), [exact proposed sampler](docs/evidence/error_guided_training_feasibility/SAMPLER_PROPOSAL.md) and [future loader feasibility](docs/evidence/error_guided_training_feasibility/LOADER_FEASIBILITY.md). The new configuration is simulation-only; it does not supersede the historical matrix or authorize a model run.
 
 The previous repository and experiments are archived separately. Do not copy its historical A-F results into this project's experimental outcomes.
 
@@ -197,3 +199,19 @@ Private prediction bundles, radiographs, overlays and timing records remain in i
 ```
 
 The report records original pilot/full/timing commands, immutable source identities, all eight class metrics, operating points and uncertainty. No algorithm adjustment or next training/test phase is authorized by this completed study. The small V2-over-V1 numerical gain cannot override their negative standard comparison and excess false positives.
+
+
+## Training-only error-guided feasibility: completed
+
+`src/wrist_mining/` isolates the Phase 4A training-only inference, difficulty analysis, private technical audit and matched full-image sampler prototype. Potential unmatched predictions never become verified negative labels or sampling rewards. All existing model outputs are retained under ignored `outputs/error_guided_training_feasibility/`; no successful GPU pass needs repeating.
+
+The standard, rarity-only and PAEG-CAT simulations use the same 14,061 epoch draw budget and original labels, with all 4,264 patients, >=95% distinct images in each fracture stratum, image/patient caps and every view of the 16 lesion patients exactly once. Both candidates realize 625 extra draws per epoch. The [report](docs/evidence/error_guided_training_feasibility/ERROR_GUIDED_TRAINING_FEASIBILITY_REPORT.md) explains the 702 requested versus 625 realized replacements, teacher/ranking limitations, all class/patient exposure distributions and the SIMPLIFY recommendation.
+
+Saved-evidence verification without new model inference:
+
+```powershell
+.\.venv\Scripts\python.exe -m wrist_mining.verify
+.\.venv\Scripts\python.exe -m wrist_mining.preservation after
+```
+
+The pinned infinite loader requires a separately reviewed epoch-boundary/RNG integration; the prototype is not attached to the official trainer. Another 80-epoch model needs roughly 8.56 hours of baseline-equivalent train/validation work, plus overhead. Student approval must precede any integration/smoke, official training or experiment redesign. The final suite has 171 passing tests.

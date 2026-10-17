@@ -1,0 +1,55 @@
+{
+  "different_bonus_images_mean": 105.425,
+  "effect_sizes": {
+    "clinical_hard_positive_exposure": {
+      "paeg_mean": 4777.45,
+      "paeg_minus_rarity": 51.02916666666624,
+      "paeg_relative_percent_vs_rarity": 1.0796577043411082,
+      "rarity_mean": 4726.420833333334,
+      "standard_mean": 4118.0
+    },
+    "clinical_missed50_exposure": {
+      "paeg_mean": 2225.554166666667,
+      "paeg_minus_rarity": 41.17500000000018,
+      "paeg_relative_percent_vs_rarity": 1.8849749452075626,
+      "rarity_mean": 2184.3791666666666,
+      "standard_mean": 1809.0
+    },
+    "hard_positive_exposure": {
+      "paeg_mean": 7157.208333333333,
+      "paeg_minus_rarity": 50.504166666666606,
+      "paeg_relative_percent_vs_rarity": 0.7106552556887191,
+      "rarity_mean": 7106.704166666666,
+      "standard_mean": 6479.0
+    },
+    "potential_fp_exposure": {
+      "paeg_mean": 2939.3708333333334,
+      "paeg_minus_rarity": -10.058333333333394,
+      "paeg_relative_percent_vs_rarity": -0.34102644155719064,
+      "rarity_mean": 2949.429166666667,
+      "standard_mean": 2770.0
+    },
+    "source_uncertainty_mark_exposure": {
+      "paeg_mean": 381.7708333333333,
+      "paeg_minus_rarity": 1.662499999999966,
+      "paeg_relative_percent_vs_rarity": 0.43737530967047356,
+      "rarity_mean": 380.10833333333335,
+      "standard_mean": 360.0
+    }
+  },
+  "epoch_csv_sha256": "4489765bf58a9b7bad932a2e07b2072353de5fc878d436c392ae6f80fdd54244",
+  "formula": "Equal-weight mean over240 seed/epoch allocations; relative change100*(PAEG_mean/rarity_mean-1); variability is simulation variability, not an independent performance CI",
+  "go_paeg_cat": "Not justified in the tested form: incremental hard-positive exposure about 1%, source-frequency total variation 0.75% (ordered plans differ 4.39%), moderate in-sample checkpoint stability and unresolved annotation noise.",
+  "historical_matrix_changed": false,
+  "no_expected_map_improvement_claim": true,
+  "official_training_authorized": false,
+  "ordered_position_difference_count_mean": 617.6041666666666,
+  "ordered_position_difference_fraction_mean": 0.04392320366024228,
+  "preferred_future_comparison_for_student_review": "Preserved standard versus full-image patient-aware rarity-only sampling; no automatic redesign/freeze",
+  "recommendation": "SIMPLIFY \u2014 Rarity-only",
+  "redesign": "Not required by sampler feasibility, since rarity exposure is substantial and all guardrails pass. Reconsider only through a separately approved scope if contribution/clinical rationale requires it.",
+  "simplify_rarity_only": "Preferred: material rare-class exposure shifts with matched diversity/compute and no teacher-difficulty dependency; AP benefit remains unmeasured.",
+  "stop_after_report": true,
+  "total_variation_unit": "Normalized source-image frequency, not ordered positions",
+  "whole_epoch_total_variation_mean": 0.007497688642344072
+}

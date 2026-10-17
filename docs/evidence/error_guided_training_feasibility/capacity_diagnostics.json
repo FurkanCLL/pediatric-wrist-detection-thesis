@@ -1,0 +1,32 @@
+{
+  "interpretation": "No-fracture-box rarity pool195 images/138 patients has only160 cap-safe bonus slots. Both candidates intentionally share this625 realized budget; no guardrail was relaxed.",
+  "lesion_patients": 16,
+  "rarity_pool": {
+    "fracture_positive": {
+      "eligible_images": 2161,
+      "eligible_patients": 1143,
+      "patient_capped_extra_capacity": 1849
+    },
+    "no_fracture_box": {
+      "eligible_images": 195,
+      "eligible_patients": 138,
+      "patient_capped_extra_capacity": 160
+    }
+  },
+  "realized_by_stratum": {
+    "fracture_positive": 465,
+    "no_fracture_box": 160
+  },
+  "requested_by_stratum": {
+    "fracture_positive": 465,
+    "no_fracture_box": 237
+  },
+  "restored_unique_no_fracture_views": 77,
+  "rounded_five_percent": 703,
+  "strict_95_percent_integer_max": 702,
+  "training_strata": {
+    "fracture_positive": 9307,
+    "no_fracture_box": 4754
+  },
+  "whole_lesion_cohort_images": 66
+}
