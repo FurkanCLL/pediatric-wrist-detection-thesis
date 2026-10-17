@@ -1,0 +1,15 @@
+{
+  "scope": "Phase 4D validation-only A versus D; standard full-image inference only",
+  "baseline_checkpoint_sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+  "rarity_checkpoint_sha256": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e",
+  "common_inference_config_sha256": "86ed8fd6450b77734e6cdea4eff5dec5eed59d5f0ea9790f0e37c507f9336c13",
+  "baseline_predictions_sha256": "cb056711668c04ebe8a7736724e35d46c6092f5a6e8ac5a9becba9a53bd1bee6",
+  "validation_images": 3088,
+  "validation_patients": 914,
+  "pilot_images": 24,
+  "bootstrap_replicates": 500,
+  "bootstrap_seed": 314159,
+  "training": false,
+  "test_evaluation": false,
+  "sliced_or_adaptive_inference": false
+}
