@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "images_per_condition": 3088,
+  "patients": 914,
+  "prediction_membership_geometry_and_timing_passed": true,
+  "AP_recomputed_both_conditions": true,
+  "operating_counts_independently_reconciled": true,
+  "recovery_partitions_reconciled": true,
+  "bootstrap_memberships_differences_and_intervals_checked": 500,
+  "AP_bootstrap_replicates_recomputed": [
+    0,
+    1,
+    249,
+    499
+  ],
+  "preservation_after": {
+    "passed": true,
+    "stage": "after",
+    "protected_private_files": 674,
+    "protected_private_inventory_sha256": "608073323cfeff23cb12d8e66244178a294c230ece285f2971e11d0048822196",
+    "data_stat_entries": 121973,
+    "data_stat_inventory_sha256": "84601ecf4c83b72f9ed8542936ef6621ffce619cb0f748eeb58567736a427b8a",
+    "earlier_source_configs_public_evidence_unchanged": true
+  },
+  "new_A_GPU_inference": false,
+  "test_evaluation": false,
+  "all_500_A_bootstrap_results_match_prior_evidence": true,
+  "tests": {
+    "passed": true,
+    "full_suite": 208,
+    "focused_new_tests": 11,
+    "pre_inference_seconds": 46.121
+  },
+  "private_artifact_sha256": {
+    "manifest.json": "d56559ad39f5265d91f860bbab7c9c11f5554c4ac24a66136d0c1fdcf1f50974",
+    "protected_inventory_before.json": "7ef887810edb991086491fe9b2a1c6e3c124505f30d2c6dfe2aefc8305d8e42c",
+    "pilot/summary.json": "9638b71dc35fdffa5a3b6ce9282b034c28b767800e142a60c97fcd11aa0a9125",
+    "full/summary.json": "472f56ad34282d87bb9e92cd4f4b9ddb833bc6b4d6518e01fac38b689ac37d3d",
+    "analysis/comparison.json": "7d23e430f518a5bb4290a07052dce3c8271137a1f1c9f65ed0eda57bf9b6dc34",
+    "bootstrap/summary.json": "3b56f8cce38b6eac1a0cbe3b95cde01db109fb57c1ee0016e950ea7408bfd1f1",
+    "bootstrap/replicates.jsonl": "ce3ba6e0deb55caf413b48402b4fc23acfe4fb5f018e41212fad6725c742f3df",
+    "verification.json": "bdc0782a793a9f350fef0ab6566490e54e6514b204832d8cff81cc7aec0604ad"
+  }
+}

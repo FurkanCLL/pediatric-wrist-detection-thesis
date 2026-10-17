@@ -1,0 +1,80 @@
+{
+  "configuration": {
+    "scope": "Phase 4D validation-only A versus D; standard full-image inference only",
+    "baseline_checkpoint_sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+    "rarity_checkpoint_sha256": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e",
+    "common_inference_config_sha256": "86ed8fd6450b77734e6cdea4eff5dec5eed59d5f0ea9790f0e37c507f9336c13",
+    "baseline_predictions_sha256": "cb056711668c04ebe8a7736724e35d46c6092f5a6e8ac5a9becba9a53bd1bee6",
+    "validation_images": 3088,
+    "validation_patients": 914,
+    "pilot_images": 24,
+    "bootstrap_replicates": 500,
+    "bootstrap_seed": 314159,
+    "training": false,
+    "test_evaluation": false,
+    "sliced_or_adaptive_inference": false
+  },
+  "source_identity": {
+    "configs/rarity_comparison.json": "9e30efac8eab2a13dcc7877a7205f98f27257d05738c90d992569bbff98533e6",
+    "src/wrist_compare/__init__.py": "77757f3380e77554ecc67508c4631f0ab5c327dae1a9cb4ad0012b095e0cf27d",
+    "src/wrist_compare/analysis.py": "b7e9b89fadc1ca76a1aaf4d917d813eba5371c391051c894714cb30fea7473d3",
+    "src/wrist_compare/common.py": "5e75523793ede1fa1bac18e78a8c25cacad49a24edd87f8d0198db02100a201c",
+    "src/wrist_compare/infer.py": "7e4fa50bce5e47dc452f72b4ba59d03b1a503803ba186329e331dde9e019b51d"
+  },
+  "implementation_revision": "0d6ece885aab10779f487637e442b57c194f8cd5",
+  "checkpoints": {
+    "A": {
+      "condition": "A",
+      "sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+      "epoch": 22,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "pretrained_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a"
+    },
+    "D": {
+      "condition": "D",
+      "sha256": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e",
+      "epoch": 26,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "pretrained_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a"
+    }
+  },
+  "validation_membership_sha256": "d6123801714defcaf61e5e339370e7af86f555b643f2d7ee628a79ea36b07f13",
+  "pilot_selection_sha256": "e04968dcb1a971f562ce1d5b3d3d6b0a49388d2eea59d8db1da286f8c96acc2d",
+  "environment": {
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "numpy": "2.3.5",
+      "opencv-python": "5.0.0.93",
+      "torch": "2.14.1+cu126",
+      "torchvision": "0.29.1+cu126",
+      "ultralytics": "8.4.177"
+    },
+    "python": "3.12.5",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "cuda_build": "12.6",
+    "free_vram_gib": 4.9443359375,
+    "total_vram_gib": 5.99658203125,
+    "allocated_after_probe_bytes": 0
+  },
+  "prepared_validation_bytes": {
+    "images": 3088,
+    "labels": 3088,
+    "all_sha256_match": true
+  },
+  "preservation_before": {
+    "passed": true,
+    "stage": "before",
+    "protected_private_files": 674,
+    "protected_private_inventory_sha256": "608073323cfeff23cb12d8e66244178a294c230ece285f2971e11d0048822196",
+    "data_stat_entries": 121973,
+    "data_stat_inventory_sha256": "84601ecf4c83b72f9ed8542936ef6621ffce619cb0f748eeb58567736a427b8a",
+    "earlier_source_configs_public_evidence_unchanged": true
+  },
+  "A_common_metrics_reproduced": {
+    "map50": 0.5990053502165638,
+    "map75": 0.3022774500603698,
+    "map50_95": 0.3338689615778595
+  },
+  "passed": true
+}

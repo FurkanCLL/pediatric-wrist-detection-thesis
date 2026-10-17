@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "replicates_exactly_equal_preserved_A_bootstrap": 500,
+  "prior_bootstrap_file_sha256": "dcceee50c3f3053de1893f0b5166945355af3148d572ab409cc5dafc65a58097",
+  "no_new_inference": true
+}

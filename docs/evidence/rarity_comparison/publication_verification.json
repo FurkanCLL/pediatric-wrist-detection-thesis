@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "source_fingerprint_matches_pre_inference_manifest": true,
+  "CSV_rows_verified": {
+    "overall": 3,
+    "per_class_metrics": 24,
+    "operating_points": 108
+  },
+  "FP_correspondence_reconciled_all_classes": true,
+  "aggregate_JSON_privacy_field_check_passed": true,
+  "report_overall_metric_values_match_source": true,
+  "published_file_sha256": {
+    "comparison_summary.json": "b7e727e95bffd9517299a2c4583e7065da4b7408593ea95e4b0ebabe38c034d0",
+    "full_D.json": "472f56ad34282d87bb9e92cd4f4b9ddb833bc6b4d6518e01fac38b689ac37d3d",
+    "IMPLEMENTATION_PROTOCOL.md": "b02aad9ffb37dd161fcb3052044d023174ead924c8459d3d575dc33ae15b6277",
+    "operating_points.csv": "145ac9e066b81f25a46283043efddf9ca441f9d8e42d12dd9177c6b43f39f34a",
+    "overall_metrics.csv": "bec39bec9505f0a4cf108d0085a2dd01f54eb16a54249780501b0a218fc42d0c",
+    "patient_bootstrap.json": "3b56f8cce38b6eac1a0cbe3b95cde01db109fb57c1ee0016e950ea7408bfd1f1",
+    "per_class_metrics.csv": "d92a54b4b3e670a0aade1618dc224aa16d912e8a49e2e6c6d7fc5a2ae6461926",
+    "pilot.json": "9638b71dc35fdffa5a3b6ce9282b034c28b767800e142a60c97fcd11aa0a9125",
+    "pre_gpu_tests.json": "5340801582fd31fb7cbcfce2876ee1edf70e97262e4c59bd16972abdd6d247ba",
+    "preflight.json": "821baead374c4d00647629d3b3050605db7c611525c05d46a26c3a9a5f236c70",
+    "preservation.json": "b4ef3cc3335ca9f798538892ee561f5330d3e1b4de2dde874ffd8a272b795a7b",
+    "prior_A_bootstrap_reproduction.json": "2f2f3368a6eddcc78f9d15701576ca4788c52e72f571d01b7c516d13fa92ccec",
+    "RARITY_COMPARISON_REPORT.md": "822dd498e0cee6e6f36a00d1406c9e0483021d6565382def385d1033b40222f4",
+    "verification.json": "9ee202c0035e6c15c89a6fcf32534362c54da1f5ec56a376b2da31ff01859c6b"
+  }
+}

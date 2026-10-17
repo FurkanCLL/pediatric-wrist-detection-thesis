@@ -1,0 +1,20 @@
+{
+  "before": {
+    "passed": true,
+    "stage": "before",
+    "protected_private_files": 674,
+    "protected_private_inventory_sha256": "608073323cfeff23cb12d8e66244178a294c230ece285f2971e11d0048822196",
+    "data_stat_entries": 121973,
+    "data_stat_inventory_sha256": "84601ecf4c83b72f9ed8542936ef6621ffce619cb0f748eeb58567736a427b8a",
+    "earlier_source_configs_public_evidence_unchanged": true
+  },
+  "after": {
+    "passed": true,
+    "stage": "after",
+    "protected_private_files": 674,
+    "protected_private_inventory_sha256": "608073323cfeff23cb12d8e66244178a294c230ece285f2971e11d0048822196",
+    "data_stat_entries": 121973,
+    "data_stat_inventory_sha256": "84601ecf4c83b72f9ed8542936ef6621ffce619cb0f748eeb58567736a427b8a",
+    "earlier_source_configs_public_evidence_unchanged": true
+  }
+}

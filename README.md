@@ -2,7 +2,7 @@
 
 Implementation workspace for a new RTU Type 2 bachelor thesis study using the GRAZPEDWRI-DX pediatric wrist X-ray dataset, YOLOv8s, class-aware training, and adaptive local refinement.
 
-**Status:** Official rarity-only training and Phase 4C integrity verification are complete: **PASS / GO for Phase 4D review**. The uninterrupted 80-epoch run took 9 h 16 min 39 s; epoch 26 is the verified best checkpoint (trainer-native mAP50 0.61319, mAP50-95 0.33669). All actual sampling receipts, 47,433 optimizer attempts (47,415 successful, 18 recovered AMP skips), 12 checkpoint pairs and 197 tests pass. Read the [completion report](docs/evidence/rarity_training_completion/RARITY_TRAINING_COMPLETION_REPORT.md). The approved matrix remains Standard/Rarity-only x Standard/SAHI Context/CG-ALR V2. **D/E/F common-evaluator results and held-out test evaluation remain pending.** No Phase 4D work has started; formal supervisor scope alignment remains pending.
+**Status:** Phase 4D / Experiment D is complete and verified: **mixed validation result**. Common original-coordinate mAP50–95 is 0.33386896 for A and 0.33755131 for rarity-only D (+0.368 percentage points; paired 95% interval −3.157 to +2.481 points). Fracture AP50–95 declines by 0.770 points, while periosteal-reaction AP improves. At confidence 0.25 / IoU 0.50, D adds 51 TP and 132 unmatched predictions. Read the [comparison report](docs/evidence/rarity_comparison/RARITY_COMPARISON_REPORT.md). All 208 tests and final artifact/preservation checks pass. **E/F and held-out test evaluation remain pending; no next phase is authorized.** Formal supervisor scope alignment remains pending.
 
 ## Start here
 
@@ -236,4 +236,14 @@ Existing audit directories and receipts refuse replacement. The completed Phase 
 .\.venv\Scripts\python.exe -c "import pathlib,tempfile,unittest;tempfile.tempdir=str(pathlib.Path('outputs/phase3c2_test_tmp').resolve());unittest.main(module=None,argv=['unittest','discover','-s','tests','-q'])"
 ```
 
-**GO for Phase 4D review. D/E/F common original-coordinate evaluation is still pending.** Trainer-native validation scores support checkpoint selection and must retain that label. No D/E/F evaluator was built or run, and no new validation inference or held-out evaluation occurred during Phase 4C. The student reviews these findings before authorizing the next phase.
+Phase 4C ended with GO for Phase 4D review. Trainer-native validation scores support checkpoint selection and retain that label. No D/E/F inference or held-out evaluation occurred during Phase 4C. The student subsequently authorized Experiment D only, completed below; E/F remain pending.
+
+## Standard versus rarity-only: Experiment D complete
+
+The [Phase 4D report](docs/evidence/rarity_comparison/RARITY_COMPARISON_REPORT.md), [numeric comparison](docs/evidence/rarity_comparison/comparison_summary.json), [paired patient uncertainty](docs/evidence/rarity_comparison/patient_bootstrap.json) and [verification receipt](docs/evidence/rarity_comparison/verification.json) document A versus D under the preserved standard full-image inference path and common original-coordinate evaluator.
+
+A predictions are reused after hash, membership and AP checks. The approved 24-image technical D pilot and one full 3,088-image D pass succeed without tuning or changing model state. All 500 A bootstrap results reproduce prior evidence; all paired memberships and intervals reconcile. Before/after hashes retain all 674 protected private artifacts, previous source/config/evidence and 121,973 raw/prepared stat entries. Private predictions, patient linkage, detailed errors and bootstrap records remain under ignored `outputs/rarity_comparison/study_01/`.
+
+The primary point gain is uncertain, and fracture AP50–95 regresses. Periosteal-reaction AP and some operating recall improve with additional unmatched predictions. This is a mixed finding, not a demonstrated overall gain with fracture preservation. Measured D end-to-end latency is 59.74 ms/image (16.74 images/s), with separate-session timing limitations. No new A GPU inference, training, tiled/adaptive inference or test access occurred.
+
+Stop for student review of Experiment D. Experiments E/F, CG-ALR changes, further training and held-out evaluation require separate authorization. The report gives deliberate new-attempt reproduction commands; preserve successful outputs rather than rerunning into their directories.

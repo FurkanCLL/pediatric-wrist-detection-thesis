@@ -1,0 +1,858 @@
+{
+  "replicates": 500,
+  "seed": 314159,
+  "patients": 914,
+  "unit": "patient with all views/examinations",
+  "method": "paired percentile 95% interval; conditional class presence; overall requires all eight classes",
+  "class_presence_replicates": {
+    "fracture": 500,
+    "metal": 500,
+    "text": 500,
+    "periostealreaction": 500,
+    "pronatorsign": 500,
+    "bonelesion": 492,
+    "softtissue": 500,
+    "boneanomaly": 500,
+    "overall": 492
+  },
+  "seconds": 43.985164700003224,
+  "replicates_sha256": "ce3ba6e0deb55caf413b48402b4fc23acfe4fb5f018e41212fad6725c742f3df",
+  "intervals": {
+    "A": {
+      "fracture": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.9213564711935744,
+          "lower": 0.9076766153145879,
+          "upper": 0.9335898989872121
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.5347428168842276,
+          "lower": 0.5035596585743112,
+          "upper": 0.5630559454518438
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.5203853303035821,
+          "lower": 0.5056216686776864,
+          "upper": 0.5343124230953182
+        }
+      },
+      "metal": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.8941120732513523,
+          "lower": 0.8008350750009476,
+          "upper": 0.9545820397316351
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.5614383951533354,
+          "lower": 0.36759165575255326,
+          "upper": 0.7409791682807692
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.5803814391269124,
+          "lower": 0.4788313693403926,
+          "upper": 0.669612288143813
+        }
+      },
+      "text": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.9887554854769092,
+          "lower": 0.9840533456792786,
+          "upper": 0.9916311718655001
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.8236456716704761,
+          "lower": 0.8027866793323111,
+          "upper": 0.8409543090528083
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.697208286006223,
+          "lower": 0.6859065440365983,
+          "upper": 0.7078192314404883
+        }
+      },
+      "periostealreaction": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.5654777067905377,
+          "lower": 0.5193790671312871,
+          "upper": 0.6089180744766803
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.10170280330618342,
+          "lower": 0.08075503900397116,
+          "upper": 0.1311042853260045
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.21324051494039786,
+          "lower": 0.19322857471649355,
+          "upper": 0.2361018433525829
+        }
+      },
+      "pronatorsign": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.5830311259687828,
+          "lower": 0.4671784880512058,
+          "upper": 0.6712180996424807
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.13511011377429138,
+          "lower": 0.07006193807694754,
+          "upper": 0.21895373219273442
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.24556300855176033,
+          "lower": 0.18819333479673667,
+          "upper": 0.3024386995866049
+        }
+      },
+      "bonelesion": {
+        "ap50": {
+          "replicates_present": 492,
+          "median": 0.44309090909090904,
+          "lower": 0.0,
+          "upper": 0.995
+        },
+        "ap75": {
+          "replicates_present": 492,
+          "median": 0.195,
+          "lower": 0.0,
+          "upper": 0.995
+        },
+        "ap50_95": {
+          "replicates_present": 492,
+          "median": 0.2473846153846154,
+          "lower": 0.0,
+          "upper": 0.6965
+        }
+      },
+      "softtissue": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.30829247464253445,
+          "lower": 0.1988904063202543,
+          "upper": 0.40662276382275886
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.06357086595058375,
+          "lower": 0.024864862838743056,
+          "upper": 0.1256115649556996
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.13406655636724227,
+          "lower": 0.08360363976765871,
+          "upper": 0.18766004361182304
+        }
+      },
+      "boneanomaly": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.13464085498895512,
+          "lower": 0.0008861400690129813,
+          "upper": 0.30554056514547073
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.018520350564315006,
+          "lower": 0.00046597715748055997,
+          "upper": 0.05369196959555773
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.05899655068586113,
+          "lower": 0.00039146582974333884,
+          "upper": 0.14018309246054897
+        }
+      },
+      "overall": {
+        "map50": {
+          "replicates_present": 492,
+          "median": 0.6046317651663673,
+          "lower": 0.5370329038377716,
+          "upper": 0.6851827227344723
+        },
+        "map75": {
+          "replicates_present": 492,
+          "median": 0.30180548140990615,
+          "lower": 0.2605903825992393,
+          "upper": 0.40542451318230993
+        },
+        "map50_95": {
+          "replicates_present": 492,
+          "median": 0.3393593936227845,
+          "lower": 0.29766664004213944,
+          "upper": 0.3954328740932758
+        }
+      }
+    },
+    "D": {
+      "fracture": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.9169422756142094,
+          "lower": 0.9040851929988802,
+          "upper": 0.9302704995820487
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.5252924108776228,
+          "lower": 0.4961881027886597,
+          "upper": 0.5575062123830614
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.5120772330730979,
+          "lower": 0.4974460222988995,
+          "upper": 0.527196398948233
+        }
+      },
+      "metal": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.9101075961112997,
+          "lower": 0.8365654362654302,
+          "upper": 0.9607697491153379
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.615913441183079,
+          "lower": 0.44455313209799013,
+          "upper": 0.7518274563379626
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.5894500798681162,
+          "lower": 0.49561308926671976,
+          "upper": 0.6715492196241648
+        }
+      },
+      "text": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.9895521403199377,
+          "lower": 0.9866977536755845,
+          "upper": 0.9916604432305547
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.8305353653673508,
+          "lower": 0.8141362443505589,
+          "upper": 0.8500293920100287
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.705457573741956,
+          "lower": 0.6947842479743872,
+          "upper": 0.7155216556342779
+        }
+      },
+      "periostealreaction": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.5885388343582403,
+          "lower": 0.5388896533472666,
+          "upper": 0.6356480688772385
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.1420408426371545,
+          "lower": 0.1100210237965677,
+          "upper": 0.17778673654274904
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.23622355307938941,
+          "lower": 0.21110850216215804,
+          "upper": 0.26417258662927157
+        }
+      },
+      "pronatorsign": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.560640883974061,
+          "lower": 0.44453636210112807,
+          "upper": 0.6475072667000498
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.10420184709955627,
+          "lower": 0.04784959459919285,
+          "upper": 0.18739310171040605
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.24992148303868067,
+          "lower": 0.19320811531128373,
+          "upper": 0.29847736720755924
+        }
+      },
+      "bonelesion": {
+        "ap50": {
+          "replicates_present": 492,
+          "median": 0.46519223750957994,
+          "lower": 0.0,
+          "upper": 0.995
+        },
+        "ap75": {
+          "replicates_present": 492,
+          "median": 0.195,
+          "lower": 0.0,
+          "upper": 0.995
+        },
+        "ap50_95": {
+          "replicates_present": 492,
+          "median": 0.22026214689265539,
+          "lower": 0.0,
+          "upper": 0.597
+        }
+      },
+      "softtissue": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.34205187365335554,
+          "lower": 0.22568531641806283,
+          "upper": 0.4536144515500444
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.10993081815563614,
+          "lower": 0.038241803892065336,
+          "upper": 0.19418909111227012
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.1638339766277915,
+          "lower": 0.09428464524146406,
+          "upper": 0.23130959320017805
+        }
+      },
+      "boneanomaly": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.19828572063561062,
+          "lower": 0.006869685654151674,
+          "upper": 0.3996351656495417
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.016565427310221932,
+          "lower": 0.0011997523662777901,
+          "upper": 0.07296837121212121
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.06024144315595707,
+          "lower": 0.0018058550219941347,
+          "upper": 0.14073885646904308
+        }
+      },
+      "overall": {
+        "map50": {
+          "replicates_present": 492,
+          "median": 0.6191087476533834,
+          "lower": 0.5552019674640651,
+          "upper": 0.6924016648092454
+        },
+        "map75": {
+          "replicates_present": 492,
+          "median": 0.31631298698164734,
+          "lower": 0.27720559062614697,
+          "upper": 0.41793688097426146
+        },
+        "map50_95": {
+          "replicates_present": 492,
+          "median": 0.34171398500336164,
+          "lower": 0.3081763309100489,
+          "upper": 0.38969013124820145
+        }
+      }
+    },
+    "D_minus_A": {
+      "fracture": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": -0.003675345262280305,
+          "lower": -0.009727329928049038,
+          "upper": 0.0018857782006986923
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": -0.008670895356067854,
+          "lower": -0.027919221305416488,
+          "upper": 0.009452328247614113
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": -0.007448342182444445,
+          "lower": -0.014016703266053154,
+          "upper": -0.0024764522983152563
+        }
+      },
+      "metal": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.013194077177499819,
+          "lower": -0.01762319044120386,
+          "upper": 0.05883957988040624
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.04598825216254937,
+          "lower": -0.025700841076199497,
+          "upper": 0.14092382949759175
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.009742725196807744,
+          "lower": -0.02261311178173436,
+          "upper": 0.03887562911097712
+        }
+      },
+      "text": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.0006498914218477925,
+          "lower": -0.0006529203044493808,
+          "upper": 0.002783489286484372
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.009147650800083729,
+          "lower": 0.0008115485885036273,
+          "upper": 0.018612691147442306
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.008503245360427902,
+          "lower": 0.005248341788679928,
+          "upper": 0.0114272562462492
+        }
+      },
+      "periostealreaction": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.02299579243368216,
+          "lower": -0.010882401265103408,
+          "upper": 0.05266264671386905
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.04115071255848943,
+          "lower": 0.015181382116025917,
+          "upper": 0.06782399018973802
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.022412305085755715,
+          "lower": 0.007977587136862965,
+          "upper": 0.03606078530751221
+        }
+      },
+      "pronatorsign": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": -0.023883949701499957,
+          "lower": -0.10374327662453618,
+          "upper": 0.06131507040549162
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": -0.03115104720727739,
+          "lower": -0.09291375006829783,
+          "upper": 0.03913138643052515
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.0030113263829674164,
+          "lower": -0.03747413868646496,
+          "upper": 0.04009109958124553
+        }
+      },
+      "bonelesion": {
+        "ap50": {
+          "replicates_present": 492,
+          "median": 0.0016140591434709584,
+          "lower": -0.3739687499999999,
+          "upper": 0.1819230213386462
+        },
+        "ap75": {
+          "replicates_present": 492,
+          "median": 0.0,
+          "lower": -0.995,
+          "upper": 0.995
+        },
+        "ap50_95": {
+          "replicates_present": 492,
+          "median": -0.01705541267243396,
+          "lower": -0.36483333333333334,
+          "upper": 0.09950000000000003
+        }
+      },
+      "softtissue": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.03221206942717342,
+          "lower": -0.04160841284076598,
+          "upper": 0.10934240099063719
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.046380448785284474,
+          "lower": -0.014410782697845076,
+          "upper": 0.11892590834510092
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.030773352849709362,
+          "lower": -0.013664611619201936,
+          "upper": 0.07413281510233123
+        }
+      },
+      "boneanomaly": {
+        "ap50": {
+          "replicates_present": 500,
+          "median": 0.05980963718162595,
+          "lower": -0.038122402836653566,
+          "upper": 0.20001704095316694
+        },
+        "ap75": {
+          "replicates_present": 500,
+          "median": 0.0009720712378924224,
+          "lower": -0.04485799163903707,
+          "upper": 0.06088052331302861
+        },
+        "ap50_95": {
+          "replicates_present": 500,
+          "median": 0.0020501479686353074,
+          "lower": -0.06718695843555642,
+          "upper": 0.07859411580616307
+        }
+      },
+      "overall": {
+        "map50": {
+          "replicates_present": 492,
+          "median": 0.015232292996717245,
+          "lower": -0.03234057816098703,
+          "upper": 0.0466806915069493
+        },
+        "map75": {
+          "replicates_present": 492,
+          "median": 0.012385323316682711,
+          "lower": -0.10774462686936208,
+          "upper": 0.13500120907693505
+        },
+        "map50_95": {
+          "replicates_present": 492,
+          "median": 0.00627557738773038,
+          "lower": -0.03157321934635083,
+          "upper": 0.024811650038139652
+        }
+      }
+    },
+    "operating_D_minus_A": {
+      "fracture": {
+        "tp": {
+          "replicates_present": 500,
+          "median": -10.0,
+          "lower": -34.525,
+          "upper": 15.0
+        },
+        "fp": {
+          "replicates_present": 500,
+          "median": 19.0,
+          "lower": -15.524999999999999,
+          "upper": 57.049999999999955
+        },
+        "fn": {
+          "replicates_present": 500,
+          "median": 10.0,
+          "lower": -15.0,
+          "upper": 34.52499999999998
+        },
+        "recall": {
+          "replicates_present": 500,
+          "median": -0.0035299793433354876,
+          "lower": -0.012065748531033373,
+          "upper": 0.005519592339632861
+        },
+        "precision": {
+          "replicates_present": 500,
+          "median": -0.006425679464041767,
+          "lower": -0.018104986825473207,
+          "upper": 0.004399111500445049
+        }
+      },
+      "metal": {
+        "tp": {
+          "replicates_present": 500,
+          "median": 3.0,
+          "lower": 0.0,
+          "upper": 6.524999999999977
+        },
+        "fp": {
+          "replicates_present": 500,
+          "median": 0.0,
+          "lower": -9.0,
+          "upper": 13.0
+        },
+        "fn": {
+          "replicates_present": 500,
+          "median": -3.0,
+          "lower": -6.524999999999999,
+          "upper": 0.0
+        },
+        "recall": {
+          "replicates_present": 500,
+          "median": 0.02941176470588236,
+          "lower": 0.0,
+          "upper": 0.06607476635514016
+        },
+        "precision": {
+          "replicates_present": 500,
+          "median": 0.007627666451195836,
+          "lower": -0.07014227346617727,
+          "upper": 0.08252189438250816
+        }
+      },
+      "text": {
+        "tp": {
+          "replicates_present": 500,
+          "median": -1.0,
+          "lower": -10.0,
+          "upper": 8.0
+        },
+        "fp": {
+          "replicates_present": 500,
+          "median": -21.5,
+          "lower": -44.0,
+          "upper": -1.0
+        },
+        "fn": {
+          "replicates_present": 500,
+          "median": 1.0,
+          "lower": -8.0,
+          "upper": 10.0
+        },
+        "recall": {
+          "replicates_present": 500,
+          "median": -0.0002715916064768842,
+          "lower": -0.0027705308610457362,
+          "upper": 0.002249914986832857
+        },
+        "precision": {
+          "replicates_present": 500,
+          "median": 0.005552630351837284,
+          "lower": 0.0002505397899552758,
+          "upper": 0.011192390430591512
+        }
+      },
+      "periostealreaction": {
+        "tp": {
+          "replicates_present": 500,
+          "median": 35.0,
+          "lower": 19.475,
+          "upper": 53.0
+        },
+        "fp": {
+          "replicates_present": 500,
+          "median": 32.0,
+          "lower": 2.0,
+          "upper": 66.52499999999998
+        },
+        "fn": {
+          "replicates_present": 500,
+          "median": -35.0,
+          "lower": -53.0,
+          "upper": -19.475000000000023
+        },
+        "recall": {
+          "replicates_present": 500,
+          "median": 0.07060935939965862,
+          "lower": 0.03923187889004153,
+          "upper": 0.1060281152617253
+        },
+        "precision": {
+          "replicates_present": 500,
+          "median": 0.0014173888133918178,
+          "lower": -0.0296091670362071,
+          "upper": 0.031707414597061195
+        }
+      },
+      "pronatorsign": {
+        "tp": {
+          "replicates_present": 500,
+          "median": 9.0,
+          "lower": 1.0,
+          "upper": 18.0
+        },
+        "fp": {
+          "replicates_present": 500,
+          "median": 40.0,
+          "lower": 25.0,
+          "upper": 54.0
+        },
+        "fn": {
+          "replicates_present": 500,
+          "median": -9.0,
+          "lower": -18.0,
+          "upper": -1.0
+        },
+        "recall": {
+          "replicates_present": 500,
+          "median": 0.11235955056179778,
+          "lower": 0.012345679012345734,
+          "upper": 0.2098392461197338
+        },
+        "precision": {
+          "replicates_present": 500,
+          "median": -0.1438686950358412,
+          "lower": -0.23245655310872704,
+          "upper": -0.06480158257085808
+        }
+      },
+      "bonelesion": {
+        "tp": {
+          "replicates_present": 500,
+          "median": 1.0,
+          "lower": 0.0,
+          "upper": 3.0
+        },
+        "fp": {
+          "replicates_present": 500,
+          "median": 1.0,
+          "lower": 0.0,
+          "upper": 3.0
+        },
+        "fn": {
+          "replicates_present": 500,
+          "median": -1.0,
+          "lower": -3.0,
+          "upper": 0.0
+        },
+        "recall": {
+          "replicates_present": 492,
+          "median": 0.19999999999999996,
+          "lower": 0.0,
+          "upper": 1.0
+        },
+        "precision": {
+          "replicates_present": 326,
+          "median": -0.25,
+          "lower": -0.6666666666666667,
+          "upper": 0.0
+        }
+      },
+      "softtissue": {
+        "tp": {
+          "replicates_present": 500,
+          "median": 10.0,
+          "lower": 4.0,
+          "upper": 18.0
+        },
+        "fp": {
+          "replicates_present": 500,
+          "median": 51.0,
+          "lower": 36.0,
+          "upper": 66.0
+        },
+        "fn": {
+          "replicates_present": 500,
+          "median": -10.0,
+          "lower": -18.0,
+          "upper": -4.0
+        },
+        "recall": {
+          "replicates_present": 500,
+          "median": 0.14110105580693816,
+          "lower": 0.054767267267267244,
+          "upper": 0.23017023959646907
+        },
+        "precision": {
+          "replicates_present": 500,
+          "median": -0.33937529861442906,
+          "lower": -0.5073448619504529,
+          "upper": -0.20111791700946116
+        }
+      },
+      "boneanomaly": {
+        "tp": {
+          "replicates_present": 500,
+          "median": 4.0,
+          "lower": 0.0,
+          "upper": 9.0
+        },
+        "fp": {
+          "replicates_present": 500,
+          "median": 9.0,
+          "lower": 2.0,
+          "upper": 18.0
+        },
+        "fn": {
+          "replicates_present": 500,
+          "median": -4.0,
+          "lower": -9.0,
+          "upper": 0.0
+        },
+        "recall": {
+          "replicates_present": 500,
+          "median": 0.10762548262548263,
+          "lower": 0.0,
+          "upper": 0.21145833333333322
+        },
+        "precision": {
+          "replicates_present": 464,
+          "median": -0.19943181818181815,
+          "lower": -0.5714285714285714,
+          "upper": 0.3333333333333333
+        }
+      },
+      "overall": {
+        "tp": {
+          "replicates_present": 500,
+          "median": 51.0,
+          "lower": 17.0,
+          "upper": 88.0
+        },
+        "fp": {
+          "replicates_present": 500,
+          "median": 131.0,
+          "lower": 65.475,
+          "upper": 197.52499999999998
+        },
+        "fn": {
+          "replicates_present": 500,
+          "median": -51.0,
+          "lower": -88.0,
+          "upper": -17.0
+        },
+        "recall": {
+          "replicates_present": 500,
+          "median": 0.007102787546993283,
+          "lower": 0.0023417005868081736,
+          "upper": 0.012317168922998296
+        },
+        "precision": {
+          "replicates_present": 500,
+          "median": -0.014334412710852174,
+          "lower": -0.021904671378748634,
+          "upper": -0.006880494163984598
+        }
+      }
+    }
+  }
+}
