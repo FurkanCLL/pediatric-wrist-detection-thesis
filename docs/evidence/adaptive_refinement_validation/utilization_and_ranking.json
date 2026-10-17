@@ -1,0 +1,132 @@
+{
+  "candidate_exclusions": {
+    "confidence_outside_band": 25272,
+    "nontarget_class": 14650
+  },
+  "eligible_anchor_counts": {
+    "fracture": 827,
+    "periostealreaction": 2046
+  },
+  "local_evidence_decisions": {
+    "artificial_boundary": 85,
+    "eligible": 2665,
+    "local_union_suppressed": 658,
+    "low_local_confidence": 27923,
+    "nontarget_class": 5229
+  },
+  "nontarget_prediction_fields_and_within_class_order_unchanged": {
+    "V1_boneanomaly": true,
+    "V1_bonelesion": true,
+    "V1_metal": true,
+    "V1_pronatorsign": true,
+    "V1_softtissue": true,
+    "V1_text": true,
+    "V2_boneanomaly": true,
+    "V2_bonelesion": true,
+    "V2_metal": true,
+    "V2_pronatorsign": true,
+    "V2_softtissue": true,
+    "V2_text": true
+  },
+  "roi_count_images": {
+    "0": 2074,
+    "1": 743,
+    "2": 271
+  },
+  "selection_decisions": {
+    "budget_exhausted": 76,
+    "coalesced": 1512,
+    "selected": 1285
+  },
+  "timing_stages": {
+    "common_seconds": {
+      "max": 0.37428910000016913,
+      "mean": 0.05366578225393258,
+      "median": 0.04473454999970272,
+      "min": 0.01074990000051912,
+      "n": 3088,
+      "p05": 0.014156464999359741,
+      "p95": 0.11952903000055812,
+      "p99": 0.1438999530018555
+    },
+    "decode_seconds": {
+      "max": 0.036842800000158604,
+      "mean": 0.013403044624342116,
+      "median": 0.01319350000085251,
+      "min": 0.0026073000008182134,
+      "n": 3088,
+      "p05": 0.00527267000052234,
+      "p95": 0.02274465499831422,
+      "p99": 0.02857154199715297
+    },
+    "gpu_forward_ms": {
+      "max": 175.71215629577637,
+      "mean": 38.974360592315854,
+      "median": 33.12691259384155,
+      "min": 7.412735939025879,
+      "n": 3088,
+      "p05": 9.945905685424805,
+      "p95": 85.29216022491451,
+      "p99": 101.6156169319153
+    },
+    "nms_restore_seconds": {
+      "max": 0.03049299999838695,
+      "mean": 0.006190434488346254,
+      "median": 0.005230200000369223,
+      "min": 0.001223399998707464,
+      "n": 3088,
+      "p05": 0.001431734999823675,
+      "p95": 0.013740710001547989,
+      "p99": 0.017507097000197976
+    },
+    "planning_seconds": {
+      "max": 0.0028696000008494593,
+      "mean": 0.0003190045013376937,
+      "median": 0.00025069999901461415,
+      "min": 4.819999958272092e-05,
+      "n": 3088,
+      "p05": 5.9335000696592036e-05,
+      "p95": 0.0008635550006147239,
+      "p99": 0.0016065689990136945
+    },
+    "preprocess_seconds": {
+      "max": 0.028579699999681907,
+      "mean": 0.005774272085489269,
+      "median": 0.004867450001256657,
+      "min": 0.000887399997736793,
+      "n": 3088,
+      "p05": 0.001742905000355677,
+      "p95": 0.013122555001973521,
+      "p99": 0.017413237997097906
+    }
+  },
+  "variants": {
+    "V1": {
+      "crossed_0.25": 209,
+      "crossed_0.25_fp": 171,
+      "crossed_0.25_tp": 38,
+      "images": 3088,
+      "images_with_any_update": 360,
+      "images_with_score_update": 360,
+      "matched_mutable": 459,
+      "protected_matches": 1448,
+      "score_before_below_0.15": 250,
+      "score_updates": 459
+    },
+    "V2": {
+      "crossed_0.25": 209,
+      "crossed_0.25_fp": 171,
+      "crossed_0.25_tp": 38,
+      "geometry_accepted": 64,
+      "geometry_collision_veto": 18,
+      "images": 3088,
+      "images_with_any_update": 360,
+      "images_with_geometry_update": 64,
+      "images_with_score_update": 360,
+      "matched_mutable": 459,
+      "protected_matches": 1448,
+      "score_before_below_0.15": 250,
+      "score_updates": 459
+    }
+  }
+}

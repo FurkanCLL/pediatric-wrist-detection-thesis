@@ -1,0 +1,49 @@
+{
+  "absent_or_already_selected": [
+    {
+      "category": "v1_lost_target",
+      "eligible_images": 0
+    },
+    {
+      "category": "v2_lost_target",
+      "eligible_images": 0
+    }
+  ],
+  "cases": [
+    {
+      "case": 1,
+      "category": "v2_geometry_update",
+      "eligible_images": 64,
+      "review": "Technical inspection completed: displayed original-coordinate boxes align with the radiograph; the selected low-score geometry update is below the fixed 0.25 overlay threshold, so this figure alone does not demonstrate the blended box."
+    },
+    {
+      "case": 2,
+      "category": "v2_collision_veto",
+      "eligible_images": 18,
+      "review": "Technical inspection completed: collision-veto case preserves existing global fracture/periosteal boxes in their original coordinates."
+    },
+    {
+      "case": 3,
+      "category": "v1_recovered_target",
+      "eligible_images": 37,
+      "review": "Technical inspection completed: an annotated fracture miss becomes a matched detection around score 0.29 and IoU 0.79; V1/V2 geometry is visually consistent."
+    },
+    {
+      "case": 4,
+      "category": "promoted_false_positive",
+      "eligible_images": 152,
+      "review": "Technical inspection completed: promoted periosteal evidence near the shaft is an annotation-relative false positive; existing target boxes remain aligned."
+    },
+    {
+      "case": 5,
+      "category": "roi_without_update",
+      "eligible_images": 654,
+      "review": "Technical inspection completed: local views are used but the annotated fracture miss persists and final predictions do not change."
+    }
+  ],
+  "clinical_review": false,
+  "limitations": "Technical coordinate/overlay review only; no clinical adjudication. Fixed display threshold hides changes below 0.25.",
+  "private_images": true,
+  "selection": "First unused frozen-order image per predefined diagnostic category; no manual replacement",
+  "technically_reviewed": true
+}

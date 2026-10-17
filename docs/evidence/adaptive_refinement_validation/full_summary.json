@@ -1,0 +1,64 @@
+{
+  "allocated_peak_bytes": 82949632,
+  "attempt": "full_01",
+  "bundles_sha256": "f9a48a7181df0192ca9f873fd44c5eebc6034580a232c8e457ab8578629d1575",
+  "checkpoint_sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+  "execution_manifest_sha256": "713f3d695be8b1c92ced9d11552528c8a1700017dcf730e542dba3fb2738702b",
+  "git_revision": "5d288abdc688abf52916de2a3deb5e9cf15a9f17",
+  "global_reference_exact": true,
+  "images": 3088,
+  "implementation_source_sha256": {
+    "src/wrist_eval/adaptive.py": "482898228b8d0a9ba6d84a5cf298b12707dafa9c09766e8b11984166dcbeae5e",
+    "src/wrist_eval/adaptive_config.py": "7357d1fc5d1215f8d4743088b28435da32bfed2a07eb4ef46ad9f0ad3e631a7c",
+    "src/wrist_eval/adaptive_study.py": "62389e76002c466d1a62827c0c6eecb216f51a08d2a2ed2f90b639de63de077f"
+  },
+  "joint_wall_seconds": {
+    "max": 0.40944970000055037,
+    "mean": 0.06900834306992024,
+    "median": 0.0604236499984836,
+    "min": 0.015928699998767115,
+    "n": 3088,
+    "p05": 0.020740635001311604,
+    "p95": 0.14248320499937106,
+    "p99": 0.1711604990018532
+  },
+  "loop_wall_seconds_including_export": 216.80672520000007,
+  "mean_passes": 1.4161269430051813,
+  "model_load_seconds": 1.3789758999992046,
+  "no_test_evaluation": true,
+  "no_training": true,
+  "proposal_sha256": "a2e96ff54fdee455aefcb698b8a49008572a22decdb535cc2e65cd6d73997cc6",
+  "reserved_peak_bytes": 119537664,
+  "roi_count_images": {
+    "0": 2074,
+    "1": 743,
+    "2": 271
+  },
+  "shape_profile_sha256": "cebc48530898e8c74ac0c355487264a7dbb3ca671e8942a2216531137d43770f",
+  "stage": "full",
+  "synthetic_warmup_seconds": 0.3820008000002417,
+  "timing": {
+    "V1": {
+      "max": 0.39855800000441377,
+      "mean": 0.06801520550521989,
+      "median": 0.05987424999875657,
+      "min": 0.015822199995454866,
+      "n": 3088,
+      "p05": 0.020596325002770755,
+      "p95": 0.13855874000055332,
+      "p99": 0.16677540199925717
+    },
+    "V2": {
+      "max": 0.399010700002691,
+      "mean": 0.06798719572542336,
+      "median": 0.0598193000023457,
+      "min": 0.01563019999593962,
+      "n": 3088,
+      "p05": 0.02057214000251406,
+      "p95": 0.13832417999947205,
+      "p99": 0.16660253899677632
+    }
+  },
+  "timing_definition": "Per-variant composed decode + all shared global/planning/local work + own fusion; no division of GPU cost",
+  "total_passes": 4373
+}

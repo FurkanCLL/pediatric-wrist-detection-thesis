@@ -1,0 +1,15 @@
+{
+  "all_global_membership_and_protected_fields_preserved": true,
+  "all_global_predictions_exact": true,
+  "all_outputs_finite_valid": true,
+  "full_bundle_sha256": "f9a48a7181df0192ca9f873fd44c5eebc6034580a232c8e457ab8578629d1575",
+  "images": 3088,
+  "no_training_or_test_evaluation": true,
+  "one_to_one_evidence_assignment": true,
+  "physical_full_run_model_calls": 4373,
+  "same_view_bundle_for_both_variants": true,
+  "score_caps_and_confidence_0_50_invariant": true,
+  "v1_coordinates_unchanged": true,
+  "v1_v2_scores_and_class_ids_identical": true,
+  "v2_collision_bound": true
+}

@@ -171,9 +171,67 @@ def pilot_geometry():
          "purpose": "Technical crop-boundary, source-pixel and local-coordinate inspection; no new inference"})
 
 
+def full_figures():
+    from PIL import Image, ImageFont
+    from .common import image_path
+    from .analyze import truth
+    from .metrics import paired_recovery, match
+    from .qualitative import draw_panel
+    directory, records = active_records("full")
+    destination = directory/"qualitative"
+    destination.mkdir(exist_ok=False)
+    rows = {r["filestem"]: r for r in validation_records()}
+    categories = {name: [] for name in ("v2_geometry_update", "v2_collision_veto", "v1_recovered_target",
+                                       "v1_lost_target", "v2_lost_target", "promoted_false_positive", "roi_without_update")}
+    for i, record in enumerate(records):
+        a = record["variants"]["V1"]["diagnostics"]
+        b = record["variants"]["V2"]["diagnostics"]
+        original = np.asarray(record["global"], dtype=np.float32).reshape(-1, 6)
+        v1 = np.asarray(record["variants"]["V1"]["pred"], dtype=np.float32).reshape(-1, 6)
+        v2 = np.asarray(record["variants"]["V2"]["pred"], dtype=np.float32).reshape(-1, 6)
+        gt = truth(rows[record["stem"]])
+        first, second = paired_recovery(gt, original, v1), paired_recovery(gt, original, v2)
+        _, assignments, _ = match(gt, v1)
+        inverse = {g: j for j, g in enumerate(a["output_global_ids"])}
+        flags = {"v2_geometry_update": any(g["reason"] == "accepted" for g in b["geometry"]),
+            "v2_collision_veto": any(g["reason"] == "collision_veto" for g in b["geometry"]),
+            "v1_recovered_target": bool(first["recovered"].any()), "v1_lost_target": bool(first["lost"].any()),
+            "v2_lost_target": bool(second["lost"].any()),
+            "promoted_false_positive": any(c["before"] < .25 <= c["after"] and assignments[inverse[c["global_id"]]] < 0 for c in a["score_changes"]),
+            "roi_without_update": bool(record["plan"]["rois"]) and not a["score_changes"]}
+        for name, eligible in flags.items():
+            if eligible:
+                categories[name].append(i)
+    selected, used, absent = [], set(), []
+    for name, indices in categories.items():
+        index = next((i for i in indices if i not in used), None)
+        if index is None:
+            absent.append({"category": name, "eligible_images": len(indices)})
+        else:
+            selected.append((name, index))
+            used.add(index)
+    font = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", 13)
+    cases = []
+    for case, (category, index) in enumerate(selected, 1):
+        record = records[index]
+        row = rows[record["stem"]]
+        image = Image.open(image_path(row)).convert("RGB")
+        sheet = Image.new("RGB", (1560, 1020), "black")
+        arrays = [np.asarray(record["global"], dtype=np.float32).reshape(-1, 6)] + [
+            np.asarray(record["variants"][v]["pred"], dtype=np.float32).reshape(-1, 6) for v in ("V1", "V2")]
+        for panel, (name, values) in enumerate(zip(("standard global", "CG-ALR V1", "CG-ALR V2"), arrays)):
+            sheet.paste(draw_panel(image, truth(row), values, name, font), (panel*520, 0))
+        sheet.save(destination/f"case_{case:02d}_{category}.png")
+        cases.append({"case": case, "category": category, "eligible_images": len(categories[category]),
+                      "review": "pending technical visual inspection"})
+    save(PUBLIC/"full_qualitative.json", {"cases": cases, "absent_or_already_selected": absent,
+         "selection": "First unused frozen-order image per predefined diagnostic category; no manual replacement",
+         "private_images": True, "clinical_review": False})
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("action", choices=["preserve_before", "preserve_after", "pilot_figures", "pilot_geometry", "pilot_gate"])
+    parser.add_argument("action", choices=["preserve_before", "preserve_after", "pilot_figures", "pilot_geometry", "pilot_gate", "full_figures"])
     action = parser.parse_args().action
     if action.startswith("preserve_"):
         preservation(action.split("_")[1])
@@ -181,5 +239,7 @@ if __name__ == "__main__":
         pilot_figures()
     elif action == "pilot_geometry":
         pilot_geometry()
+    elif action == "full_figures":
+        full_figures()
     else:
         pilot_gate()

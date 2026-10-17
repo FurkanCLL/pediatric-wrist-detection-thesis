@@ -1,0 +1,19 @@
+{
+  "all_baseline_hashes_unchanged": true,
+  "baseline_artifacts": 36,
+  "baseline_inventory_sha256": "6d50907df6da9163a68ac7de4b8abe59e7e70dc42cf391b8e985d6e1735d9de6",
+  "execution_manifest_sha256": "713f3d695be8b1c92ced9d11552528c8a1700017dcf730e542dba3fb2738702b",
+  "frozen_training_protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+  "no_test_image_or_label_contents_opened": true,
+  "no_training": true,
+  "previous_source_config_evidence_unchanged": true,
+  "proposal_sha256": "a2e96ff54fdee455aefcb698b8a49008572a22decdb535cc2e65cd6d73997cc6",
+  "raw_prepared_stat_files": 121973,
+  "raw_prepared_stat_inventory_unchanged": true,
+  "stage": "after",
+  "validation_sha256": {
+    "all_sha256_match": true,
+    "images": 3088,
+    "labels": 3088
+  }
+}

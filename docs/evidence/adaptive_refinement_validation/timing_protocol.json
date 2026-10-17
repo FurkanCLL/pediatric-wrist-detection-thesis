@@ -1,0 +1,20 @@
+{
+  "status": "approved_design_timing_fallback",
+  "basis": "Approved CG-ALR design section 16: measure separate complete paths if composed timing does not faithfully describe standalone execution. Student Phase 3C.2 requires full standalone-path cost.",
+  "same_first_six_pilot_images": {
+    "V1": {
+      "composed_ms": 115.75200000030843,
+      "standalone_ms": 70.0349833338502
+    },
+    "V2": {
+      "composed_ms": 115.63211666665059,
+      "standalone_ms": 65.43861666553614
+    }
+  },
+  "interpretation": "Large sequence/warm-shape/device-state differences; exact contributors not isolated. Original timings are preserved as diagnostics.",
+  "action": "Measure V1 and V2 complete standalone paths on all 3088 validation images; assert sealed adaptive and original global predictions bitwise identical, with no algorithm changes.",
+  "paired_control": "Time decode plus the already-required global view through valid original-coordinate outputs, before ROI planning. This contemporaneous one-pass control costs no additional model calls and supplies the predefined paired-standard <=2x gate. Preserve historical standard/SAHI timings separately.",
+  "accuracy_results_sealed_before_timing_fallback": true,
+  "no_new_parameters_or_variants": true,
+  "no_hyperparameter_search": true
+}

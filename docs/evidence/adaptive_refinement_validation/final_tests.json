@@ -1,0 +1,12 @@
+{
+  "command": "python unittest discover -s tests -q, with tempfile.tempdir=outputs/phase3c2_test_tmp",
+  "log_sha256": "3271aaa3b0b84d02eb0dec2478c38956a54b01d7bf74602c8c52a40a76cdbd34",
+  "new_adaptive_algorithm_tests": 36,
+  "new_analysis_gate_tests": 6,
+  "new_timing_driver": "Compile-checked; uses the already-tested single-variant callback path and asserts identity against all sealed outputs at runtime",
+  "passed": true,
+  "pip_check": "No broken requirements found",
+  "pre_gpu_gate_preserved": "automated_tests.json; 146 tests before pilot",
+  "seconds": 6.667,
+  "tests": 152
+}
