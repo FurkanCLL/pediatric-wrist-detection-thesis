@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "phase": "4E",
+  "student_approved": true,
+  "split": "val",
+  "images": 3088,
+  "patients": 914,
+  "pilot_images": 24,
+  "checkpoint": {
+    "path": "outputs/training/rarity_only/weights/best.pt",
+    "sha256": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e",
+    "epoch": 26
+  },
+  "D_predictions_sha256": "b653b3d5e1df5ca227b29588e6085bb115d8530c99e934495d6e1d630a2b661d",
+  "training_authorized": false,
+  "test_authorized": false,
+  "optimization_authorized": false,
+  "bootstrap": {
+    "replicates": 500,
+    "seed": 314159
+  },
+  "authorization_text_sha256": "770ebf427b2b61cfcb5f29766f84f472346a950da4b078959f89acc1fbab1e85",
+  "experiment": "E",
+  "variant": "sahi_context",
+  "historical_config_path": "configs/inference_feasibility.json",
+  "historical_config_sha256": "86ed8fd6450b77734e6cdea4eff5dec5eed59d5f0ea9790f0e37c507f9336c13",
+  "fixed_calls_per_image": 5,
+  "fixed_slices_per_image": 4
+}

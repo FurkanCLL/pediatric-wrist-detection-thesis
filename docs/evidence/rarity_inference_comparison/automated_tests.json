@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "tests": 223,
+  "focused_EF_tests": 15,
+  "seconds": 45.115,
+  "scope": "Complete unittest discovery; synthetic E/F contracts; no model inference",
+  "source_identity": {
+    "configs/rarity_adaptive_execution.json": "491cd14dece28f105c2d587cfec20b9c71abde80d648b9de51f014849d071168",
+    "configs/rarity_sahi_execution.json": "e7a16fe032a2006aad62f826d39365827dc3829808ebbe0ca18d4e4e3d9eb8ae",
+    "src/wrist_inference_comparison/__init__.py": "8a024aff85874e437fefa6a2ecfb6757a6e162865d60692b24f6cd98b04708d6",
+    "src/wrist_inference_comparison/analysis.py": "16cac4fa5bb0981777ecf70295fb6b37d37ba0a06c2238b9713046ef618ec01a",
+    "src/wrist_inference_comparison/checks.py": "ea3ae1a94b28e68333c088c6d5252f7af58710612e9214acbeaf1ea21bba6833",
+    "src/wrist_inference_comparison/common.py": "92c9b43eaa267a7d7cd77fa80900b077499efbab5ecfc67021288b1e750b116d",
+    "src/wrist_inference_comparison/export.py": "2dceb124be02d55e97f9eca51ad0b13b0d7c6db31564448991ccba6f12740430",
+    "src/wrist_inference_comparison/run.py": "fb96acb933ca8c1e171d08a9c1db86e4b0cc892b07f131d822ba81f9cc056d84"
+  },
+  "test_source_sha256": "df698361a68b276b8cd689f56d2d840a9e0579aa23430dd54d4fe3cd154496c7",
+  "private_log_sha256": "0cfb473cfa519b237f00fde760bfe563e81b71c2def04d911b3acd606b64beb6",
+  "historical_ABCD_saved_AP_reproduced": true,
+  "historical_first_bootstrap_replicate_ABCD_exact": true
+}

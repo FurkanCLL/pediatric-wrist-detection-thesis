@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "phase": "4E",
+  "student_approved": true,
+  "split": "val",
+  "images": 3088,
+  "patients": 914,
+  "pilot_images": 24,
+  "checkpoint": {
+    "path": "outputs/training/rarity_only/weights/best.pt",
+    "sha256": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e",
+    "epoch": 26
+  },
+  "D_predictions_sha256": "b653b3d5e1df5ca227b29588e6085bb115d8530c99e934495d6e1d630a2b661d",
+  "training_authorized": false,
+  "test_authorized": false,
+  "optimization_authorized": false,
+  "bootstrap": {
+    "replicates": 500,
+    "seed": 314159
+  },
+  "authorization_text_sha256": "770ebf427b2b61cfcb5f29766f84f472346a950da4b078959f89acc1fbab1e85",
+  "experiment": "F",
+  "variant": "V2",
+  "historical_proposal_path": "configs/adaptive_refinement_proposed.json",
+  "historical_proposal_sha256": "a2e96ff54fdee455aefcb698b8a49008572a22decdb535cc2e65cd6d73997cc6",
+  "historical_execution_path": "configs/adaptive_refinement_execution.json",
+  "historical_execution_sha256": "713f3d695be8b1c92ced9d11552528c8a1700017dcf730e542dba3fb2738702b",
+  "historical_source_sha256": {
+    "src/wrist_eval/adaptive.py": "482898228b8d0a9ba6d84a5cf298b12707dafa9c09766e8b11984166dcbeae5e",
+    "src/wrist_eval/adaptive_config.py": "7357d1fc5d1215f8d4743088b28435da32bfed2a07eb4ef46ad9f0ad3e631a7c",
+    "src/wrist_eval/adaptive_study.py": "62389e76002c466d1a62827c0c6eecb216f51a08d2a2ed2f90b639de63de077f"
+  },
+  "maximum_local_rois": 2,
+  "maximum_calls_per_image": 3,
+  "global_comparison": "bitwise equality to saved D; stop on discrepancy"
+}
