@@ -65,17 +65,16 @@ def overall_map50(result):
 
 
 def classwise_ap50(result):
-    # Compare inference methods on the same standard-training checkpoint only.
-    methods = result['conditions']; ids = list('ABC')
-    fig, axes = plt.subplots(2, 4, figsize=(11.8, 6.3), layout='constrained', sharey=True)
-    for i, ax in enumerate(axes.flat):
-        bars(ax, ids, [methods[c]['AP'][CLASSES[i]]['ap50'] for c in ids],
-            'AP50' if i % 4 == 0 else '', LABELS[i], 1.03)
-        ax.set_yticks([0, .25, .5, .75, 1])
-    return {'name': 'classwise_ap50', 'description': 'Eight class-wise AP50 panels, standard-training A-C only, common zero-to-one scale',
+    # Show class-specific baseline performance, with no inference-method comparison.
+    values = {name: result['conditions']['A']['AP'][name]['ap50'] for name in CLASSES}
+    labels = ['Fracture', 'Metal', 'Text', 'Periosteal\nreaction', 'Pronator\nsign', 'Bone\nlesion', 'Soft\ntissue', 'Bone\nanomaly']
+    fig, ax = plt.subplots(figsize=(9.2, 4.3), layout='constrained')
+    bars(ax, labels, list(values.values()), 'AP50', 'Class-wise AP50 · Experiment A', 1.1, lambda x: f'{x:.3f}')
+    ax.set_yticks([0, .25, .5, .75, 1])
+    return {'name': 'classwise_ap50', 'description': 'Class-specific AP50 for Experiment A only: standard training and standard inference',
         'files': save(fig, 'results/classwise_ap50_all_classes.png', True),
-        'plot_values': {name: {c: methods[c]['AP'][name]['ap50'] for c in ids} for name in CLASSES},
-        'sources': ['docs/evidence/rarity_inference_comparison/results.json'], 'experiments': ids}
+        'plot_values': values,
+        'sources': ['docs/evidence/rarity_inference_comparison/results.json'], 'experiments': ['A']}
 
 
 def charts(result, counts, ap_only=False):

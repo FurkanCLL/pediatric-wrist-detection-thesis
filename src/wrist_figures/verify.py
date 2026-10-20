@@ -50,10 +50,10 @@ def verify():
                     require(image.convert('RGB').getpixel((0, 0)) == (255, 255, 255), 'Figure margins must be white')
     chart = {entry['name']: entry for entry in entries if 'plot_values' in entry}
     # Enforce the requested scopes independently of figure ordering in the manifest.
-    require(chart['classwise_ap50']['experiments'] == list('ABC'), 'Class-wise chart must use standard-training A-C only')
+    require(chart['classwise_ap50']['experiments'] == ['A'], 'Class-wise chart must use Experiment A only')
     require(set(chart['classwise_ap50']['plot_values']) == set(counts), 'Class-wise chart must include all eight classes')
-    require(all(list(values) == list('ABC') for values in chart['classwise_ap50']['plot_values'].values()),
-        'Rarity-only conditions entered the class-wise chart')
+    require(all(chart['classwise_ap50']['plot_values'][name] == result['conditions']['A']['AP'][name]['ap50'] for name in counts),
+        'Class-wise chart differs from Experiment A AP50')
     require(chart['overall_map50']['experiments'] == list('ABCDEF')
         and list(chart['overall_map50']['plot_values']) == list('ABCDEF'), 'Overall mAP50 must include A-F')
     require(chart['class_distribution']['plot_values'] == counts, 'Class chart differs from the 47,436-object census')
@@ -62,8 +62,6 @@ def verify():
         require(chart['overall_map50']['plot_values'][c] == data['AP']['overall']['map50'], 'Overall mAP50 chart differs')
         require(chart['fracture_ap50']['plot_values'][c] == data['AP']['fracture']['ap50'], 'Fracture chart AP differs')
         require(chart['false_positives']['plot_values'][c] == data['operating_points']['conf0.25_iou0.5']['total_fp'], 'FP chart differs')
-        if c in 'ABC':
-            require(all(chart['classwise_ap50']['plot_values'][name][c] == data['AP'][name]['ap50'] for name in counts), 'Class-wise AP differs')
     for c in 'DEF':
         source = result['conditions'][c]['source']
         require(chart['inference_cost']['plot_values']['latency_ms'][c] == source['timing']['e2e_seconds']['mean']*1000,

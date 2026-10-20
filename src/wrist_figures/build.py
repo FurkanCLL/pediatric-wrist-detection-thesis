@@ -9,7 +9,7 @@ from .verify import capture_preservation
 from . import render
 
 
-def update_ap_charts():
+def update_ap_charts(classwise_only=False):
     # Read published aggregates only; no image, prediction or model access is needed.
     result, counts = aggregates()
     manifest_path = FIGURES/'manifests/source_manifest.json'
@@ -19,7 +19,8 @@ def update_ap_charts():
     for entry in manifest['figures']:
         for path, expected in entry['file_sha256'].items():
             require(sha(ROOT/path) == expected, 'Existing figure export changed: '+path)
-    updates = render.charts(result, counts, ap_only=True)
+    # The single-figure correction must not re-export the overall mAP50 chart.
+    updates = [render.classwise_ap50(result)] if classwise_only else render.charts(result, counts, ap_only=True)
     by_name = {entry['name']: entry for entry in updates}
     entries = [by_name.pop(entry['name'], entry) for entry in manifest['figures']]
     entries.extend(by_name.values())
@@ -41,7 +42,8 @@ def update_ap_charts():
         'figures': [entry['name'] for entry in updates]}
     write_json(receipt_path, receipt)
     require('torch' not in sys.modules, 'The figure builder must not import the model runtime')
-    print('Exported class-wise A-C AP50 and overall A-F mAP50 only; verify and review before publication', flush=True)
+    scope = 'class-wise Experiment A AP50 only' if classwise_only else 'class-wise Experiment A AP50 and overall A-F mAP50'
+    print(f'Exported {scope}; verify and review before publication', flush=True)
 
 
 def build():

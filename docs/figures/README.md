@@ -17,7 +17,7 @@ Each candidate uses the same existing 8-bit image crop twice. The left panel dra
 |---|---|
 | Overall A–F mAP50–95 | [PNG](results/overall_performance_map50_95.png) · [SVG](results/overall_performance_map50_95.svg) |
 | Overall A–F mAP50 | [PNG](results/overall_performance_map50.png) · [SVG](results/overall_performance_map50.svg) |
-| AP50 for all eight classes, standard-training A–C only | [PNG](results/classwise_ap50_all_classes.png) · [SVG](results/classwise_ap50_all_classes.svg) |
+| Class-specific AP50 for Experiment A only | [PNG](results/classwise_ap50_all_classes.png) · [SVG](results/classwise_ap50_all_classes.svg) |
 | Fracture AP50 | [PNG](results/fracture_ap50_comparison.png) · [SVG](results/fracture_ap50_comparison.svg) |
 | Recorded latency and model calls | [PNG](results/inference_cost_comparison.png) · [SVG](results/inference_cost_comparison.svg) |
 | False positives at confidence .25 / IoU .50 | [PNG](results/false_positives_comparison.png) · [SVG](results/false_positives_comparison.svg) |
@@ -48,6 +48,6 @@ Public indexes use the original image's SHA-256 as its identifier. Exact origina
 
 With the local data and saved results present, run `python -m wrist_figures`, then `python -m wrist_figures.verify`. This reads existing artifacts and renders figures. It does not load a model, run training/inference, modify the experiments or open held-out image/label/prediction files.
 
-To update only the class-wise A–C AP50 and overall A–F mAP50 charts, use `python -m wrist_figures --ap-charts-only`. Other figure files are preserved. mAP50 and mAP50–95 remain separate figures.
+The class-wise chart has one bar per class and uses only Experiment A (standard training + standard inference). Update this figure alone with `python -m wrist_figures --classwise-only`. The `--ap-charts-only` option also exports overall A–F mAP50. mAP50 and mAP50–95 remain separate figures.
 
 Image source: Eszter Nagy, Michael Janisch, Franko Hrzic, Erich Sorantin and Sebastian Tschauner, [GRAZPEDWRI-DX v2](https://doi.org/10.6084/m9.figshare.14825193.v2), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Attribution follows the project's cached official release metadata. These exports add crops, text redaction and annotation/prediction overlays to the project's prepared images. Original dataset files remain unchanged.

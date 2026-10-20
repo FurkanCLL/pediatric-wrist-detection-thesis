@@ -18,9 +18,9 @@
   "public_identities": "Original image SHA256 only; exact paths are in ignored private_sources.json",
   "visual_review": {
     "passed": true,
-    "updated_png_figures_inspected": 2,
-    "unchanged_previously_reviewed_png_figures": 28,
-    "checks": "Readable eight-panel A-C chart and A-F mAP50 chart; white backgrounds, matching style, no clipped labels"
+    "updated_png_figures_inspected": 1,
+    "unchanged_previously_reviewed_png_figures": 29,
+    "checks": "One axis, eight class labels and eight Experiment A bars; readable values, white background, no clipping"
   },
   "prior_build_verification": {
     "revision": "9ca72f061da158996d1e4897883eaaecc2dbb10c",
@@ -38,45 +38,84 @@
       "private_log_sha256": "60192a1e60593b5f40f1e83d73f8126ef1c71c4c8e9449ae0738b442519bc615"
     }
   },
-  "svg_files_well_formed": 7,
-  "renderer_sources_match_manifest": true,
-  "ap_chart_update": {
+  "previous_ap_chart_revision": {
+    "revision": "5dd3f5501ee5d6a3076ebd3f1fa3b0f5945404df",
+    "ap_chart_update": {
+      "passed": true,
+      "classwise_conditions": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classwise_classes": [
+        "fracture",
+        "metal",
+        "text",
+        "periostealreaction",
+        "pronatorsign",
+        "bonelesion",
+        "softtissue",
+        "boneanomaly"
+      ],
+      "classwise_values_cross_checked_against_per_class_AP_csv": 24,
+      "overall_map50_conditions": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "overall_map50_values_cross_checked_against_six_condition_matrix_csv": 6,
+      "actual_bar_heights_and_axis_labels_match_sources": true,
+      "updated_or_new_exports": [
+        "docs/figures/results/classwise_ap50_all_classes.png",
+        "docs/figures/results/classwise_ap50_all_classes.svg",
+        "docs/figures/results/overall_performance_map50.png",
+        "docs/figures/results/overall_performance_map50.svg"
+      ],
+      "other_figure_exports_unchanged_sha256": 33,
+      "other_tracked_files_unchanged_sha256": 350,
+      "root_readme_unchanged_sha256": "72fd39cc709e44cbcec0442289c2c5f84c32983164c83e1e6a2a1989e026fe06",
+      "experimental_results_unchanged": true,
+      "focused_tests": {
+        "passed": true,
+        "tests": 6
+      },
+      "model_loads": 0,
+      "model_forwards": 0
+    },
+    "visual_review": {
+      "passed": true,
+      "updated_png_figures_inspected": 2,
+      "unchanged_previously_reviewed_png_figures": 28,
+      "checks": "Readable eight-panel A-C chart and A-F mAP50 chart; white backgrounds, matching style, no clipped labels"
+    }
+  },
+  "classwise_A_correction": {
     "passed": true,
-    "classwise_conditions": [
-      "A",
-      "B",
-      "C"
+    "experiments": [
+      "A"
     ],
-    "classwise_classes": [
-      "fracture",
-      "metal",
-      "text",
-      "periostealreaction",
-      "pronatorsign",
-      "bonelesion",
-      "softtissue",
-      "boneanomaly"
-    ],
-    "classwise_values_cross_checked_against_per_class_AP_csv": 24,
-    "overall_map50_conditions": [
-      "A",
-      "B",
-      "C",
-      "D",
-      "E",
-      "F"
-    ],
-    "overall_map50_values_cross_checked_against_six_condition_matrix_csv": 6,
-    "actual_bar_heights_and_axis_labels_match_sources": true,
-    "updated_or_new_exports": [
-      "docs/figures/results/classwise_ap50_all_classes.png",
-      "docs/figures/results/classwise_ap50_all_classes.svg",
-      "docs/figures/results/overall_performance_map50.png",
-      "docs/figures/results/overall_performance_map50.svg"
-    ],
-    "other_figure_exports_unchanged_sha256": 33,
-    "other_tracked_files_unchanged_sha256": 350,
-    "root_readme_unchanged_sha256": "72fd39cc709e44cbcec0442289c2c5f84c32983164c83e1e6a2a1989e026fe06",
+    "source": "docs/evidence/rarity_inference_comparison/results.json",
+    "source_sha256": "a63f475d768234d8df9508afb53840a6a16ee0658a8bedf6f43d8cbdd2bb1c0a",
+    "cross_check": "docs/evidence/rarity_inference_comparison/per_class_AP.csv",
+    "eight_ap50_values": {
+      "fracture": 0.9211749881566161,
+      "metal": 0.8904090055215443,
+      "text": 0.9887444362696545,
+      "periostealreaction": 0.5659956617744871,
+      "pronatorsign": 0.571072158738556,
+      "bonelesion": 0.415,
+      "softtissue": 0.2960362128392201,
+      "boneanomaly": 0.14361033843243276
+    },
+    "one_axis_eight_bars_verified": true,
+    "png_dpi": 300,
+    "svg_bar_count": 8,
+    "other_figure_exports_unchanged_sha256": 35,
+    "other_tracked_files_unchanged_sha256": 353,
+    "root_readme_unchanged": true,
     "experimental_results_unchanged": true,
     "focused_tests": {
       "passed": true,
@@ -85,5 +124,5 @@
     "model_loads": 0,
     "model_forwards": 0
   },
-  "figure_index_local_links_checked": 22
+  "renderer_sources_match_manifest": true
 }
