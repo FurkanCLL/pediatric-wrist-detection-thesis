@@ -1,8 +1,8 @@
 {
   "passed": true,
-  "figures": 29,
-  "png_files": 29,
-  "svg_files": 6,
+  "figures": 30,
+  "png_files": 30,
+  "svg_files": 7,
   "unique_conversion_images": 20,
   "qualitative_images": 3,
   "real_source_polygons_only": true,
@@ -18,26 +18,72 @@
   "public_identities": "Original image SHA256 only; exact paths are in ignored private_sources.json",
   "visual_review": {
     "passed": true,
-    "png_figures_inspected": 29,
-    "review_method": "All six charts and three qualitative PNGs individually; twenty conversion PNGs in five four-image review sheets, with example_01 also inspected individually",
-    "checks": "White margins, readable labels, no clipped polygon envelopes, consistent overlays, no visible patient-identifying text",
-    "qualitative_label_collisions_corrected": true
+    "updated_png_figures_inspected": 2,
+    "unchanged_previously_reviewed_png_figures": 28,
+    "checks": "Readable eight-panel A-C chart and A-F mAP50 chart; white backgrounds, matching style, no clipped labels"
   },
-  "svg_files_well_formed": 6,
-  "readme_links_checked": 30,
-  "readme_lines_before": 259,
-  "readme_lines_after": 54,
-  "automated_tests": {
-    "passed": true,
-    "tests": 229,
-    "seconds": 48.594,
-    "private_log_sha256": "60192a1e60593b5f40f1e83d73f8126ef1c71c4c8e9449ae0738b442519bc615"
+  "prior_build_verification": {
+    "revision": "9ca72f061da158996d1e4897883eaaecc2dbb10c",
+    "visual_review": {
+      "passed": true,
+      "png_figures_inspected": 29,
+      "review_method": "All six charts and three qualitative PNGs individually; twenty conversion PNGs in five four-image review sheets, with example_01 also inspected individually",
+      "checks": "White margins, readable labels, no clipped polygon envelopes, consistent overlays, no visible patient-identifying text",
+      "qualitative_label_collisions_corrected": true
+    },
+    "automated_tests": {
+      "passed": true,
+      "tests": 229,
+      "seconds": 48.594,
+      "private_log_sha256": "60192a1e60593b5f40f1e83d73f8126ef1c71c4c8e9449ae0738b442519bc615"
+    }
   },
+  "svg_files_well_formed": 7,
   "renderer_sources_match_manifest": true,
-  "svg_formatting_check": {
-    "files": 6,
-    "xml_content_unchanged": true,
-    "png_files_unchanged": true,
-    "focused_tests_after_formatting": 6
-  }
+  "ap_chart_update": {
+    "passed": true,
+    "classwise_conditions": [
+      "A",
+      "B",
+      "C"
+    ],
+    "classwise_classes": [
+      "fracture",
+      "metal",
+      "text",
+      "periostealreaction",
+      "pronatorsign",
+      "bonelesion",
+      "softtissue",
+      "boneanomaly"
+    ],
+    "classwise_values_cross_checked_against_per_class_AP_csv": 24,
+    "overall_map50_conditions": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "overall_map50_values_cross_checked_against_six_condition_matrix_csv": 6,
+    "actual_bar_heights_and_axis_labels_match_sources": true,
+    "updated_or_new_exports": [
+      "docs/figures/results/classwise_ap50_all_classes.png",
+      "docs/figures/results/classwise_ap50_all_classes.svg",
+      "docs/figures/results/overall_performance_map50.png",
+      "docs/figures/results/overall_performance_map50.svg"
+    ],
+    "other_figure_exports_unchanged_sha256": 33,
+    "other_tracked_files_unchanged_sha256": 350,
+    "root_readme_unchanged_sha256": "72fd39cc709e44cbcec0442289c2c5f84c32983164c83e1e6a2a1989e026fe06",
+    "experimental_results_unchanged": true,
+    "focused_tests": {
+      "passed": true,
+      "tests": 6
+    },
+    "model_loads": 0,
+    "model_forwards": 0
+  },
+  "figure_index_local_links_checked": 22
 }

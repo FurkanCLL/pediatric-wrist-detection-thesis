@@ -31,7 +31,7 @@
     },
     {
       "name": "overall_performance",
-      "description": "Validation mAP50–95",
+      "description": "Validation mAP50\u201395",
       "files": [
         "docs/figures/results/overall_performance_map50_95.png",
         "docs/figures/results/overall_performance_map50_95.svg"
@@ -93,7 +93,7 @@
     },
     {
       "name": "false_positives",
-      "description": "False positives · confidence 0.25 / IoU 0.50",
+      "description": "False positives \u00b7 confidence 0.25 / IoU 0.50",
       "files": [
         "docs/figures/results/false_positives_comparison.png",
         "docs/figures/results/false_positives_comparison.svg"
@@ -124,7 +124,7 @@
     },
     {
       "name": "classwise_ap50",
-      "description": "Eight class-wise AP50 panels, common zero-to-one scale",
+      "description": "Eight class-wise AP50 panels, standard-training A-C only, common zero-to-one scale",
       "files": [
         "docs/figures/results/classwise_ap50_all_classes.png",
         "docs/figures/results/classwise_ap50_all_classes.svg"
@@ -133,66 +133,42 @@
         "fracture": {
           "A": 0.9211749881566161,
           "B": 0.8671450846086618,
-          "C": 0.9213265566751297,
-          "D": 0.9161981484232591,
-          "E": 0.8545447614774533,
-          "F": 0.9166180303170075
+          "C": 0.9213265566751297
         },
         "metal": {
           "A": 0.8904090055215443,
           "B": 0.6362966718054408,
-          "C": 0.8904748297441474,
-          "D": 0.9056396112535366,
-          "E": 0.6415991487094285,
-          "F": 0.9059528619333755
+          "C": 0.8904748297441474
         },
         "text": {
           "A": 0.9887444362696545,
           "B": 0.9721543861183488,
-          "C": 0.9887580075399289,
-          "D": 0.9896189194717966,
-          "E": 0.9666275021623022,
-          "F": 0.9896152570053814
+          "C": 0.9887580075399289
         },
         "periostealreaction": {
           "A": 0.5659956617744871,
           "B": 0.4471989702025926,
-          "C": 0.5632677204269201,
-          "D": 0.5861597839490469,
-          "E": 0.4346573740733786,
-          "F": 0.585384867153619
+          "C": 0.5632677204269201
         },
         "pronatorsign": {
           "A": 0.571072158738556,
           "B": 0.5385803451838699,
-          "C": 0.5706839975149037,
-          "D": 0.5484368804546237,
-          "E": 0.47440898485034405,
-          "F": 0.5486536548225053
+          "C": 0.5706839975149037
         },
         "bonelesion": {
           "A": 0.415,
           "B": 0.4028947368421052,
-          "C": 0.415,
-          "D": 0.41318181818181815,
-          "E": 0.3714671361502348,
-          "F": 0.41318181818181815
+          "C": 0.415
         },
         "softtissue": {
           "A": 0.2960362128392201,
           "B": 0.257744624182642,
-          "C": 0.295759217274893,
-          "D": 0.337790395796156,
-          "E": 0.31622607132320907,
-          "F": 0.33952157484615647
+          "C": 0.295759217274893
         },
         "boneanomaly": {
           "A": 0.14361033843243276,
           "B": 0.08412921268610729,
-          "C": 0.14368463790307445,
-          "D": 0.1977348567311224,
-          "E": 0.08381441311121371,
-          "F": 0.1977348567311224
+          "C": 0.14368463790307445
         }
       },
       "sources": [
@@ -201,14 +177,11 @@
       "experiments": [
         "A",
         "B",
-        "C",
-        "D",
-        "E",
-        "F"
+        "C"
       ],
       "file_sha256": {
-        "docs/figures/results/classwise_ap50_all_classes.png": "318a870d2385378ca24c65cfd64115506a188f85878177be97eb7a49363c6f96",
-        "docs/figures/results/classwise_ap50_all_classes.svg": "4c735555256e6d59871c20eca3e1da7f3d7cba1f87f708d8fceb44b1a3107349"
+        "docs/figures/results/classwise_ap50_all_classes.png": "4961d296414389210b7bdba9eee3542b10114e333e42668ba8cecfde0e621294",
+        "docs/figures/results/classwise_ap50_all_classes.svg": "8c1dda3235e9f9ad83e26d5eb84f95c3cc5a4b94479b203459aa97495eb7e2e2"
       }
     },
     {
@@ -847,6 +820,37 @@
       "file_sha256": {
         "docs/figures/results/qualitative_example_03.png": "1171fed21952a1dca4addb5222a114dea96a177124956e2f191962feeb1eb6dd"
       }
+    },
+    {
+      "name": "overall_map50",
+      "description": "Validation mAP50",
+      "files": [
+        "docs/figures/results/overall_performance_map50.png",
+        "docs/figures/results/overall_performance_map50.svg"
+      ],
+      "plot_values": {
+        "A": 0.5990053502165638,
+        "B": 0.525768003953721,
+        "C": 0.5986193708848746,
+        "D": 0.6118450517826699,
+        "E": 0.5179181739821955,
+        "F": 0.6120828651238732
+      },
+      "sources": [
+        "docs/evidence/rarity_inference_comparison/results.json"
+      ],
+      "experiments": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "file_sha256": {
+        "docs/figures/results/overall_performance_map50.png": "f7ab0cc120e0e9be57283e609d69efd648e80e0d85760e123f370b88ff904610",
+        "docs/figures/results/overall_performance_map50.svg": "53059216ea0ba96da8117f724222230560e834ad4ee24ddcb991778ebff0a39a"
+      }
     }
   ],
   "source_files_sha256": {
@@ -871,12 +875,12 @@
   },
   "renderer_source_sha256": {
     "src/wrist_figures/__init__.py": "8a361164bce04340e8ae08447a4aef421fb4aa59bc4b584046a4be7e17b43126",
-    "src/wrist_figures/__main__.py": "4935a5cf65f5e7551c9521ccd522f62452cb387b46891a94b06d279c11508bd5",
-    "src/wrist_figures/build.py": "3e7572298ecbcc2d5a9c19a2bb7865b81f61f18a0cbdf210c302c110149d4e13",
-    "src/wrist_figures/data.py": "383595b9442258bbd6d2d7f77b83b2882da8c0cf0883ca082f5d18bd07283542",
-    "src/wrist_figures/render.py": "0fa5b9c3e6c37aac7722fbc7a963447f4dfd33a1fd7c3438821b2d08eeb8ef46",
+    "src/wrist_figures/__main__.py": "e2064d4d5462a915f108ecb01ea9797ba6881193b77c2a3861a9fe87704f0a5f",
+    "src/wrist_figures/build.py": "9dc84380b442a791af05858ded97bda127981a3919410558377cadccf02a1f7f",
+    "src/wrist_figures/data.py": "6c2376b5ce3e71d9eb58e10aa1545c5b6f1a8a5cf46017cfcc09da7b8abf333c",
+    "src/wrist_figures/render.py": "823566666bd36ef425ef29601eafbb1a8c1c76cc4d5616e451aea1bda5eaa00b",
     "src/wrist_figures/select.py": "120e1c48e9249cc17ff2328c172128b5e3174ca792db41a960ad0c9cc4d9f269",
-    "src/wrist_figures/verify.py": "2a55f3f79aa2c5a9e0b9a33e279808bbb0338f25d71f88b0ad9559fb227e2ee1"
+    "src/wrist_figures/verify.py": "71ab885da5d425aaa4d46b10058f82bcff2e11fb7619dbbbb92b25e1fd673898"
   },
   "rendering": {
     "matplotlib": "3.11.2",

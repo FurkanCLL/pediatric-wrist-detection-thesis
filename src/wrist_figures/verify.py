@@ -36,7 +36,7 @@ def verify():
     result, counts = aggregates()
     manifest = read(FIGURES/'manifests/source_manifest.json')
     entries = manifest['figures']
-    require(len(entries) == 29, 'Expected six charts, twenty conversion and three qualitative figures')
+    require(len(entries) == 30, 'Expected seven charts, twenty conversion and three qualitative figures')
     for path, expected in manifest['source_files_sha256'].items():
         require(sha(ROOT/path) == expected, 'Figure source changed: '+path)
     for entry in entries:
@@ -48,13 +48,22 @@ def verify():
                     require(min(image.size) >= 900 and image.info.get('dpi', (0,))[0] >= 299, 'Insufficient PNG export resolution')
                     require(not image.getexif(), 'Source EXIF must not enter figure exports')
                     require(image.convert('RGB').getpixel((0, 0)) == (255, 255, 255), 'Figure margins must be white')
-    chart = {entry['name']: entry for entry in entries[:6]}
+    chart = {entry['name']: entry for entry in entries if 'plot_values' in entry}
+    # Enforce the requested scopes independently of figure ordering in the manifest.
+    require(chart['classwise_ap50']['experiments'] == list('ABC'), 'Class-wise chart must use standard-training A-C only')
+    require(set(chart['classwise_ap50']['plot_values']) == set(counts), 'Class-wise chart must include all eight classes')
+    require(all(list(values) == list('ABC') for values in chart['classwise_ap50']['plot_values'].values()),
+        'Rarity-only conditions entered the class-wise chart')
+    require(chart['overall_map50']['experiments'] == list('ABCDEF')
+        and list(chart['overall_map50']['plot_values']) == list('ABCDEF'), 'Overall mAP50 must include A-F')
     require(chart['class_distribution']['plot_values'] == counts, 'Class chart differs from the 47,436-object census')
     for c, data in result['conditions'].items():
         require(chart['overall_performance']['plot_values'][c] == data['AP']['overall']['map50_95'], 'Overall chart AP differs')
+        require(chart['overall_map50']['plot_values'][c] == data['AP']['overall']['map50'], 'Overall mAP50 chart differs')
         require(chart['fracture_ap50']['plot_values'][c] == data['AP']['fracture']['ap50'], 'Fracture chart AP differs')
         require(chart['false_positives']['plot_values'][c] == data['operating_points']['conf0.25_iou0.5']['total_fp'], 'FP chart differs')
-        require(all(chart['classwise_ap50']['plot_values'][name][c] == data['AP'][name]['ap50'] for name in counts), 'Class-wise AP differs')
+        if c in 'ABC':
+            require(all(chart['classwise_ap50']['plot_values'][name][c] == data['AP'][name]['ap50'] for name in counts), 'Class-wise AP differs')
     for c in 'DEF':
         source = result['conditions'][c]['source']
         require(chart['inference_cost']['plot_values']['latency_ms'][c] == source['timing']['e2e_seconds']['mean']*1000,
@@ -96,7 +105,7 @@ def verify():
     # Original source/label bytes are verified again after rendering; no test image/label is opened.
     public = (FIGURES/'manifests/source_manifest.json').read_text(encoding='utf-8')
     require(all(item['stem'] not in public for item in private) and 'patient_id' not in public, 'Private identity entered public manifest')
-    write_json(FIGURES/'manifests/verification.json', {'passed': True, 'figures': 29, 'png_files': 29, 'svg_files': 6,
+    write_json(FIGURES/'manifests/verification.json', {'passed': True, 'figures': 30, 'png_files': 30, 'svg_files': 7,
         'unique_conversion_images': 20, 'qualitative_images': 3, 'real_source_polygons_only': True,
         'converted_label_roundtrip_max_delta_pixels': max_delta, 'matching_source_hashes': len(manifest['source_files_sha256']),
         'historical_tracked_files_unchanged': len(before['tracked'])-len(permitted),

@@ -65,6 +65,7 @@ def aggregates():
     for row in matrix:
         value = result['conditions'][row['experiment']]
         require(float(row['map50_95']) == value['AP']['overall']['map50_95'], 'Matrix AP differs')
+        require(float(row['map50']) == value['AP']['overall']['map50'], 'Matrix mAP50 differs')
         require(int(row['fp']) == value['operating_points']['conf0.25_iou0.5']['total_fp'], 'Matrix FP differs')
     counts = {name: 0 for name in CLASSES}
     for row in csv_rows(ROOT/'docs/evidence/dataset_preparation/class_distribution.csv'):

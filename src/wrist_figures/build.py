@@ -9,6 +9,41 @@ from .verify import capture_preservation
 from . import render
 
 
+def update_ap_charts():
+    # Read published aggregates only; no image, prediction or model access is needed.
+    result, counts = aggregates()
+    manifest_path = FIGURES/'manifests/source_manifest.json'
+    manifest = read(manifest_path)
+    for path, expected in manifest['source_files_sha256'].items():
+        require(sha(ROOT/path) == expected, 'Existing figure source changed: '+path)
+    for entry in manifest['figures']:
+        for path, expected in entry['file_sha256'].items():
+            require(sha(ROOT/path) == expected, 'Existing figure export changed: '+path)
+    updates = render.charts(result, counts, ap_only=True)
+    by_name = {entry['name']: entry for entry in updates}
+    entries = [by_name.pop(entry['name'], entry) for entry in manifest['figures']]
+    entries.extend(by_name.values())
+    for entry in updates:
+        entry['file_sha256'] = {path: sha(ROOT/path) for path in entry['files']}
+    manifest['figures'] = entries
+    manifest['renderer_source_sha256'] = {path.relative_to(ROOT).as_posix(): sha(path)
+        for path in sorted(Path(__file__).parent.glob('*.py'))}
+    write_json(manifest_path, manifest)
+    write_csv(FIGURES/'manifests/figures.csv', [{'filename': path, 'description': entry['description'],
+        'experiments': ';'.join(entry['experiments']), 'source_image_id': entry.get('image_id', ''),
+        'data_sources': ';'.join(entry['sources']), 'sha256': entry['file_sha256'][path]}
+        for entry in entries for path in entry['files']])
+    # The old review cannot attest to newly exported charts; keep it as history.
+    receipt_path = FIGURES/'manifests/verification.json'
+    receipt = read(receipt_path)
+    receipt['passed'] = False
+    receipt['ap_chart_update'] = {'status': 'pending verification and visual review',
+        'figures': [entry['name'] for entry in updates]}
+    write_json(receipt_path, receipt)
+    require('torch' not in sys.modules, 'The figure builder must not import the model runtime')
+    print('Exported class-wise A-C AP50 and overall A-F mAP50 only; verify and review before publication', flush=True)
+
+
 def build():
     capture_preservation()
     result, counts = aggregates()

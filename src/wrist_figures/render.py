@@ -51,7 +51,37 @@ def bars(ax, labels, values, ylabel, title, upper=None, value_format=None):
             ax.text(i, value+offset, value_format(value), ha='center', va='bottom', fontsize=8)
 
 
-def charts(result, counts):
+def overall_map50(result):
+    # Match the existing mAP50-95 layout, using the distinct saved IoU-0.50 metric.
+    ids = list('ABCDEF')
+    values = [result['conditions'][c]['AP']['overall']['map50'] for c in ids]
+    fig, ax = plt.subplots(figsize=(6.8, 4.), layout='constrained')
+    bars(ax, ids, values, 'mAP50', 'Validation mAP50', .7, lambda x: f'{x:.4f}')
+    ax.set_xlabel('Experiment')
+    return {'name': 'overall_map50', 'description': 'Validation mAP50',
+        'files': save(fig, 'results/overall_performance_map50.png', True),
+        'plot_values': dict(zip(ids, values)),
+        'sources': ['docs/evidence/rarity_inference_comparison/results.json'], 'experiments': ids}
+
+
+def classwise_ap50(result):
+    # Compare inference methods on the same standard-training checkpoint only.
+    methods = result['conditions']; ids = list('ABC')
+    fig, axes = plt.subplots(2, 4, figsize=(11.8, 6.3), layout='constrained', sharey=True)
+    for i, ax in enumerate(axes.flat):
+        bars(ax, ids, [methods[c]['AP'][CLASSES[i]]['ap50'] for c in ids],
+            'AP50' if i % 4 == 0 else '', LABELS[i], 1.03)
+        ax.set_yticks([0, .25, .5, .75, 1])
+    return {'name': 'classwise_ap50', 'description': 'Eight class-wise AP50 panels, standard-training A-C only, common zero-to-one scale',
+        'files': save(fig, 'results/classwise_ap50_all_classes.png', True),
+        'plot_values': {name: {c: methods[c]['AP'][name]['ap50'] for c in ids} for name in CLASSES},
+        'sources': ['docs/evidence/rarity_inference_comparison/results.json'], 'experiments': ids}
+
+
+def charts(result, counts, ap_only=False):
+    # A targeted export preserves every unrelated existing figure byte-for-byte.
+    if ap_only:
+        return [classwise_ap50(result), overall_map50(result)]
     entries = []
     fig, ax = plt.subplots(figsize=(9.2, 4.3), layout='constrained')
     wrapped = ['Fracture', 'Metal', 'Text', 'Periosteal\nreaction', 'Pronator\nsign', 'Bone\nlesion', 'Soft\ntissue', 'Bone\nanomaly']
@@ -73,14 +103,7 @@ def charts(result, counts):
         ax.set_xlabel('Experiment')
         entries.append({'name': name, 'description': title, 'files': save(fig, 'results/'+relative, True),
             'plot_values': dict(zip(ids, values)), 'sources': ['docs/evidence/rarity_inference_comparison/results.json'], 'experiments': ids})
-    fig, axes = plt.subplots(2, 4, figsize=(11.8, 6.3), layout='constrained', sharey=True)
-    for i, ax in enumerate(axes.flat):
-        bars(ax, ids, [methods[c]['AP'][CLASSES[i]]['ap50'] for c in ids], 'AP50' if i % 4 == 0 else '', LABELS[i], 1.03)
-        ax.set_yticks([0, .25, .5, .75, 1])
-    entries.append({'name': 'classwise_ap50', 'description': 'Eight class-wise AP50 panels, common zero-to-one scale',
-        'files': save(fig, 'results/classwise_ap50_all_classes.png', True),
-        'plot_values': {name: {c: methods[c]['AP'][name]['ap50'] for c in ids} for name in CLASSES},
-        'sources': ['docs/evidence/rarity_inference_comparison/results.json'], 'experiments': ids})
+    entries.extend([overall_map50(result), classwise_ap50(result)])
     ids = list('DEF'); labels = ['Standard', 'SAHI\nContext', 'CG-ALR V2']
     latency = [methods[c]['source']['timing']['e2e_seconds']['mean']*1000 for c in ids]
     calls = [methods[c]['source']['mean_passes'] for c in ids]
