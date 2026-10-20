@@ -1,0 +1,4 @@
+filename,source_image_id,experiments,training,confidence,selection_matching_iou,reason,notes
+docs/figures/results/qualitative_example_01.png,sha256:006abeb55a01bdda32cc604c071a3ac945f48b610587bee2c92dfbb10e50e3d7,D;E;F,rarity-only,0.25,0.5,SAHI has at least two extra annotation-relative unmatched non-text predictions,Same display crop across methods; text masked and not overlaid
+docs/figures/results/qualitative_example_02.png,sha256:2d8cc1ad1265ca32373a9a6105efdb65be1cdd77840b047e02f2a37c963acd9b,D;E;F,rarity-only,0.25,0.5,A saved target is matched by F but not D at confidence .25 / IoU .50,Same display crop across methods; text masked and not overlaid
+docs/figures/results/qualitative_example_03.png,sha256:001cd5b8a56d96696ba4ae210903df0f250bb96011b43bf6ece5e70d47fc2e62,D;E;F,rarity-only,0.25,0.5,All three saved methods match the visible annotated targets,Same display crop across methods; text masked and not overlaid

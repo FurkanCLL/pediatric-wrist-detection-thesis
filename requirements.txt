@@ -9,3 +9,6 @@ PyYAML==6.0.3
 
 # Validation-only slicing; existing training packages stay pinned above.
 sahi==0.12.8
+
+# Static thesis figures; this version is already installed in the project environment.
+matplotlib==3.11.2

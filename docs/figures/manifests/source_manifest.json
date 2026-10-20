@@ -1,0 +1,900 @@
+{
+  "created": "2026-10-20",
+  "scope": "Presentation of existing evidence only; no training, inference, evaluation study or parameter search",
+  "figures": [
+    {
+      "name": "class_distribution",
+      "description": "Dataset-wide counts of the eight project classes (47,436 annotations)",
+      "files": [
+        "docs/figures/thesis/class_distribution_chart.png",
+        "docs/figures/thesis/class_distribution_chart.svg"
+      ],
+      "plot_values": {
+        "fracture": 18090,
+        "metal": 819,
+        "text": 23722,
+        "periostealreaction": 3453,
+        "pronatorsign": 567,
+        "bonelesion": 45,
+        "softtissue": 464,
+        "boneanomaly": 276
+      },
+      "sources": [
+        "docs/evidence/dataset_preparation/class_distribution.csv",
+        "docs/evidence/dataset_audit/class_statistics.csv"
+      ],
+      "experiments": [],
+      "file_sha256": {
+        "docs/figures/thesis/class_distribution_chart.png": "88fa07157e619fd15d1392f243c349e19e5334b545e9384946b52ab4e42bcfb1",
+        "docs/figures/thesis/class_distribution_chart.svg": "dd01ec6390ff371005769231403321d2b4de1e09ff36ac96070ad61e968e08ae"
+      }
+    },
+    {
+      "name": "overall_performance",
+      "description": "Validation mAP50–95",
+      "files": [
+        "docs/figures/results/overall_performance_map50_95.png",
+        "docs/figures/results/overall_performance_map50_95.svg"
+      ],
+      "plot_values": {
+        "A": 0.3338689615778595,
+        "B": 0.29314538164306425,
+        "C": 0.3337590926926633,
+        "D": 0.3375513149323472,
+        "E": 0.2887357393479532,
+        "F": 0.337693418650345
+      },
+      "sources": [
+        "docs/evidence/rarity_inference_comparison/results.json"
+      ],
+      "experiments": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "file_sha256": {
+        "docs/figures/results/overall_performance_map50_95.png": "b44faa5423c24e5fc699b3604ec85957ce58599af1da5a07495a7e344a62d50b",
+        "docs/figures/results/overall_performance_map50_95.svg": "2ed66d75b1ed4b3a29a7c2394997fe73de7b6f34fb51ee6b4c4c85d9acef4283"
+      }
+    },
+    {
+      "name": "fracture_ap50",
+      "description": "Fracture AP50",
+      "files": [
+        "docs/figures/results/fracture_ap50_comparison.png",
+        "docs/figures/results/fracture_ap50_comparison.svg"
+      ],
+      "plot_values": {
+        "A": 0.9211749881566161,
+        "B": 0.8671450846086618,
+        "C": 0.9213265566751297,
+        "D": 0.9161981484232591,
+        "E": 0.8545447614774533,
+        "F": 0.9166180303170075
+      },
+      "sources": [
+        "docs/evidence/rarity_inference_comparison/results.json"
+      ],
+      "experiments": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "file_sha256": {
+        "docs/figures/results/fracture_ap50_comparison.png": "3367091c34f6ce43923b68b52542b966ae6d7d1cab7c8a39594f8b7700837af6",
+        "docs/figures/results/fracture_ap50_comparison.svg": "71df977e9b5d760d3622f96ef83466e005c338368dd1b735a49814100cb30cb4"
+      }
+    },
+    {
+      "name": "false_positives",
+      "description": "False positives · confidence 0.25 / IoU 0.50",
+      "files": [
+        "docs/figures/results/false_positives_comparison.png",
+        "docs/figures/results/false_positives_comparison.svg"
+      ],
+      "plot_values": {
+        "A": 884,
+        "B": 3209,
+        "C": 1055,
+        "D": 1016,
+        "E": 3648,
+        "F": 1152
+      },
+      "sources": [
+        "docs/evidence/rarity_inference_comparison/results.json"
+      ],
+      "experiments": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "file_sha256": {
+        "docs/figures/results/false_positives_comparison.png": "278f611c43821dbd7ec769c9d8a009e2f3edc57ed9464a7de873ab630f6051f2",
+        "docs/figures/results/false_positives_comparison.svg": "affcc4de61937bef3d8a817f9b943a73244cbe00428c3d804c635423c3d8d223"
+      }
+    },
+    {
+      "name": "classwise_ap50",
+      "description": "Eight class-wise AP50 panels, common zero-to-one scale",
+      "files": [
+        "docs/figures/results/classwise_ap50_all_classes.png",
+        "docs/figures/results/classwise_ap50_all_classes.svg"
+      ],
+      "plot_values": {
+        "fracture": {
+          "A": 0.9211749881566161,
+          "B": 0.8671450846086618,
+          "C": 0.9213265566751297,
+          "D": 0.9161981484232591,
+          "E": 0.8545447614774533,
+          "F": 0.9166180303170075
+        },
+        "metal": {
+          "A": 0.8904090055215443,
+          "B": 0.6362966718054408,
+          "C": 0.8904748297441474,
+          "D": 0.9056396112535366,
+          "E": 0.6415991487094285,
+          "F": 0.9059528619333755
+        },
+        "text": {
+          "A": 0.9887444362696545,
+          "B": 0.9721543861183488,
+          "C": 0.9887580075399289,
+          "D": 0.9896189194717966,
+          "E": 0.9666275021623022,
+          "F": 0.9896152570053814
+        },
+        "periostealreaction": {
+          "A": 0.5659956617744871,
+          "B": 0.4471989702025926,
+          "C": 0.5632677204269201,
+          "D": 0.5861597839490469,
+          "E": 0.4346573740733786,
+          "F": 0.585384867153619
+        },
+        "pronatorsign": {
+          "A": 0.571072158738556,
+          "B": 0.5385803451838699,
+          "C": 0.5706839975149037,
+          "D": 0.5484368804546237,
+          "E": 0.47440898485034405,
+          "F": 0.5486536548225053
+        },
+        "bonelesion": {
+          "A": 0.415,
+          "B": 0.4028947368421052,
+          "C": 0.415,
+          "D": 0.41318181818181815,
+          "E": 0.3714671361502348,
+          "F": 0.41318181818181815
+        },
+        "softtissue": {
+          "A": 0.2960362128392201,
+          "B": 0.257744624182642,
+          "C": 0.295759217274893,
+          "D": 0.337790395796156,
+          "E": 0.31622607132320907,
+          "F": 0.33952157484615647
+        },
+        "boneanomaly": {
+          "A": 0.14361033843243276,
+          "B": 0.08412921268610729,
+          "C": 0.14368463790307445,
+          "D": 0.1977348567311224,
+          "E": 0.08381441311121371,
+          "F": 0.1977348567311224
+        }
+      },
+      "sources": [
+        "docs/evidence/rarity_inference_comparison/results.json"
+      ],
+      "experiments": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "file_sha256": {
+        "docs/figures/results/classwise_ap50_all_classes.png": "318a870d2385378ca24c65cfd64115506a188f85878177be97eb7a49363c6f96",
+        "docs/figures/results/classwise_ap50_all_classes.svg": "4c735555256e6d59871c20eca3e1da7f3d7cba1f87f708d8fceb44b1a3107349"
+      }
+    },
+    {
+      "name": "inference_cost",
+      "description": "Method-level recorded latency and actual mean model calls, D/E/F only; sessions are not controlled",
+      "files": [
+        "docs/figures/results/inference_cost_comparison.png",
+        "docs/figures/results/inference_cost_comparison.svg"
+      ],
+      "plot_values": {
+        "latency_ms": {
+          "D": 59.73909715022542,
+          "E": 221.1421140867866,
+          "F": 67.03664290817525
+        },
+        "model_calls": {
+          "D": 1,
+          "E": 5.0,
+          "F": 1.393458549222798
+        }
+      },
+      "sources": [
+        "docs/evidence/rarity_inference_comparison/results.json",
+        "docs/evidence/rarity_comparison/full_D.json",
+        "docs/evidence/rarity_inference_comparison/full_E.json",
+        "docs/evidence/rarity_inference_comparison/full_F.json"
+      ],
+      "experiments": [
+        "D",
+        "E",
+        "F"
+      ],
+      "file_sha256": {
+        "docs/figures/results/inference_cost_comparison.png": "a47794128a306018ec568304a41e5c788249590fa34439ba94cc7099f37ea0a9",
+        "docs/figures/results/inference_cost_comparison.svg": "3fbba12635e82d9d155bd0d8bfb8c10cc5d60123df08e914a32b52d643ba9e64"
+      }
+    },
+    {
+      "name": "annotation_conversion_01",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_01.png"
+      ],
+      "image_id": "sha256:78b3b44e682af0e30d9a00fde91aa4dfe66d80dfeefb43017c6a5a263d165450",
+      "classes": [
+        "bonelesion"
+      ],
+      "annotations_shown": 1,
+      "source_target_annotations": 3,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "13eef054ebf943fbd881c9264a0e293a80b9e51f4e014e0b749779cec13c59e3",
+      "prepared_image_sha256": "49a56243eb21a6bd98962337410b2d7a0d8d03d50a55b26f97b43e9157ef1c01",
+      "prepared_label_sha256": "a1abed88be8e1318be0dc9efd4320bba46a4dc9a50f8e9de962bf6a2f61dd6f0",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_01.png": "f437d3a2c265f34a73a24ee7155ffc58d57f88e696afb7dbe3ae48a9c25adb58"
+      }
+    },
+    {
+      "name": "annotation_conversion_02",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_02.png"
+      ],
+      "image_id": "sha256:b84b7b54321fcb253c25c2404acdd76d78b4076cc90fee8b23a4f869602d1fd2",
+      "classes": [
+        "bonelesion"
+      ],
+      "annotations_shown": 1,
+      "source_target_annotations": 2,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "55f7c08c12253e4f1278c5e0704af3a2d8970269021cac06e9ce903449c4f151",
+      "prepared_image_sha256": "745a792523395d3791482a09ba690f977a04cce310123a6ca6711b7fb8df0bf2",
+      "prepared_label_sha256": "9f36b8ca1d348745468149d497c9b096892ad4017cad1aa53c85266914a97407",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_02.png": "ce724f9544e80dd1edc81c8c81c4a561d93aee56645273a8a0c71e64b2d4dfc4"
+      }
+    },
+    {
+      "name": "annotation_conversion_03",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_03.png"
+      ],
+      "image_id": "sha256:aea240d8e24fa6f50ea61e6525be15adaa0aa682bc0d6b08ea57db8cfeb6ed38",
+      "classes": [
+        "bonelesion"
+      ],
+      "annotations_shown": 1,
+      "source_target_annotations": 3,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "9ba891f3fe89994736155a38a7cbff3aa47ec1a7ea9105d31b9ef9cd42280918",
+      "prepared_image_sha256": "b64ee72253b40eb86c3132d2750fd884122bedcdc2fd2f555d04b1f251f02809",
+      "prepared_label_sha256": "4f076e4fd4263ea572d72c938b265fcbbbdb2e2f48d7d4cff1e5b4b1022cf51b",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_03.png": "dbc8810d3c16a2d47a52c00b514208a24c423cf96eb4c0b65944f615ddb9bb86"
+      }
+    },
+    {
+      "name": "annotation_conversion_04",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_04.png"
+      ],
+      "image_id": "sha256:0c8a95b50f5086e87a13ac887defabb82111ee2d711010efaaa9e77f79e1fc23",
+      "classes": [
+        "bonelesion"
+      ],
+      "annotations_shown": 1,
+      "source_target_annotations": 4,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "696e20297862ab256242c82760281bcd186fb5f9f128d767878ad77132a6601e",
+      "prepared_image_sha256": "50bb58be20f9ea60e7ce90360ff260610c0f3998d2e2191cfb29de892081ad06",
+      "prepared_label_sha256": "89c2e6f3f2a83d0c79f20b76c8f8cb0012b6b160e3552805386a64654e38d466",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_04.png": "ad5b8b4244fabf9922eb145eaea8bb9610c9e8ba4a0ea4dd4ca47c0e7cb46439"
+      }
+    },
+    {
+      "name": "annotation_conversion_05",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_05.png"
+      ],
+      "image_id": "sha256:358d8b6490f20b1a13e3d77989be110cb861668596a06b9cc65c429ba64264f4",
+      "classes": [
+        "bonelesion"
+      ],
+      "annotations_shown": 1,
+      "source_target_annotations": 4,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "a2666baf885f26f16eb0dab52b701fd0359502553c9f0d69fce46a6cffd41155",
+      "prepared_image_sha256": "23e35e77a77b7e7d1b4762f04527877d0dca5cabbdf33848808d4337f5837ee1",
+      "prepared_label_sha256": "4894d2497e8a2b99f40d260742b53a604e54759fa9717f1aa3ebb1be0960ce7d",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_05.png": "e9cd515e4ee99fac006c68a0f3dd5eb0e9e508ef4a56a1f497d331dbfefbf0c9"
+      }
+    },
+    {
+      "name": "annotation_conversion_06",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_06.png"
+      ],
+      "image_id": "sha256:74d6cb63f8b26cc78c520dd134df29614d33be2290bf075f5cd09ec7a479596b",
+      "classes": [
+        "bonelesion"
+      ],
+      "annotations_shown": 1,
+      "source_target_annotations": 3,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "457c0d6295ae8a48cad857195d2afb61d691b8b8eddd4667290ce30b2f5299a8",
+      "prepared_image_sha256": "107664219170534fcd6a9c7f8a27bec93be05adae19f644d230b163276c19ce1",
+      "prepared_label_sha256": "a99b45fa5457f2db5ba6fb9524f3a415ec528027a3f08a9542fbf1890a5d7b22",
+      "redacted_text_regions": 2,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_06.png": "f2cde7a151fb91174162f49aa81777407e744e14b62dbbfa109ab6d09d9fafc5"
+      }
+    },
+    {
+      "name": "annotation_conversion_07",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_07.png"
+      ],
+      "image_id": "sha256:f7cc3c36325c4e45c108d0870df9da53a178ed438f8eb3bcf70bbbe8580acf95",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 2,
+      "source_target_annotations": 5,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "30f1ddac31f4001a7164eeaf7bdb736714a9e8eaab812b0a5c1140500e6ef0ab",
+      "prepared_image_sha256": "582ffc0701fae0cbb2aed70b02d31acd1d0a72f4fb3b6c0f42df592376ead001",
+      "prepared_label_sha256": "e720a4a3538b4744d30849743747339fcb122496690f386ec76b560869b62237",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_07.png": "b080c8da2e3a8c0fe45a2e97f8da4eb520b178a9e7531113c4a82f611ae4e561"
+      }
+    },
+    {
+      "name": "annotation_conversion_08",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_08.png"
+      ],
+      "image_id": "sha256:43600e97784ba677439502764b0e10c5dfeb75cfc87e1af820ebc2924c85b54c",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 2,
+      "source_target_annotations": 5,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "f3c97726fe599498d036c66add8a04e9c2e393ad44038d1094ef839e244b5b56",
+      "prepared_image_sha256": "907b5affa17998364891d0220c5f1fa29052f1df86ccaaaa648fbe17ef030388",
+      "prepared_label_sha256": "e5d76ee12af09b23c23077507a997a6bb2687a171c8c4e6746ecfce6fea37a58",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_08.png": "6390a6371e4026233005ecc7f4d19a9c2f6f0b69c7b64eaae0c60f7a4604be68"
+      }
+    },
+    {
+      "name": "annotation_conversion_09",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_09.png"
+      ],
+      "image_id": "sha256:c77a06501e59397557da5157b171de9051db6208453c9793d1e73e527fad1c56",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 1,
+      "source_target_annotations": 3,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "41c2eae6d5406fa9d1dfe7e3921346ed617da5fe601cfb2a5235b8442c28cfc1",
+      "prepared_image_sha256": "4f32cd172f6b1a3368b9f5601f155c13b884f0d1c1d645df834b22bcd324d05d",
+      "prepared_label_sha256": "af5a902eb87199f01e45a03d4bae99913ed30f1ee798f914ce15e56ee06ed9a7",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_09.png": "9072adc9fe7635435677bac36c7d86cf80e1227c2592b73f75e805f27a39c1cd"
+      }
+    },
+    {
+      "name": "annotation_conversion_10",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_10.png"
+      ],
+      "image_id": "sha256:ab9ef563c96e63ae82603fdf3c8236a1838d24a1b55425dd9c9b3643cf679d63",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 2,
+      "source_target_annotations": 5,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "5c13408d0184437aad2292d0f55f67771b6e48cff47d03384f43c212a1674042",
+      "prepared_image_sha256": "5975b9ca3c14814221abd31da4eb73cf66ffe7e3ab2b421085f9c3d3650956d6",
+      "prepared_label_sha256": "d7eea771ae201c8f92db47a1c60124711ca6ea2b302a0eb0a959585fc4b21e7a",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_10.png": "9bba99b2091e4983b0c8d5b405c7f9bb68944ab86dd0b6b88a869fe43cd9c1f9"
+      }
+    },
+    {
+      "name": "annotation_conversion_11",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_11.png"
+      ],
+      "image_id": "sha256:bbdc228e6bae7a8681f9cfbfd8b832d7c2c30e4fbd607ae251667cfad05e4d19",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 1,
+      "source_target_annotations": 4,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "58c0b10386e4b71e4bc0ddc6db8fa80da8c756deddb5a746ea618d5b25f7b999",
+      "prepared_image_sha256": "6e219e87c3b7f7911bcb6fd8d6de18c55b8b96f7e6d4346f70afa04ac9a63bd8",
+      "prepared_label_sha256": "aecf338eb0767636551cd8e6b3ed7f0180483c4f01f5c74847e3bef05fbfec91",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_11.png": "e4368ec8f6bd97d66cb3dfbab2a05bea05a67b8fef0134083959dc8c151b24fa"
+      }
+    },
+    {
+      "name": "annotation_conversion_12",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_12.png"
+      ],
+      "image_id": "sha256:e1bb6813eec37f5c3eb838396ad4131c7bb99c31b97c92b5f5ba3918f956e457",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 2,
+      "source_target_annotations": 6,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "0a0f61839e30ddc8ce662663cadb4fe1ef88dbfc042d606c6974839a15cde618",
+      "prepared_image_sha256": "ea3ccd06a42436300d5c5ab2632938b94dc2c126a48e0cd27089cf32078bfdde",
+      "prepared_label_sha256": "838f793f24e512ee9a11ea16a161756933c2262c72aa8385ae5c1620ee56e355",
+      "redacted_text_regions": 2,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_12.png": "7392a08d8e001e570a5174e1c7fb8c2005e65e287a22cd360d473bca3efce9d3"
+      }
+    },
+    {
+      "name": "annotation_conversion_13",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_13.png"
+      ],
+      "image_id": "sha256:7169d387e6e381d8f199f5d92ecaaa634f8d968954cc445521b27ad2076b1b87",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 2,
+      "source_target_annotations": 4,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "e3ba4208b8c66b55c58faa77af9dbc620212e08d92d9454b8ffcf03d4f22b869",
+      "prepared_image_sha256": "fdd54d11b524278a4f1bf72efc2fb70964500f3ab991ccfff00315494465b988",
+      "prepared_label_sha256": "dd7f5e7bd3c4b9a6033c1577a2e192bb6d12d14f38eabff3947997f7df520cd1",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_13.png": "d4d3e5f6eb3020c7c6301f0bb86a20a1d7fd3328bdec3645b46aab9396f5196d"
+      }
+    },
+    {
+      "name": "annotation_conversion_14",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_14.png"
+      ],
+      "image_id": "sha256:db3409f48ed7e18f31eb297871cea452d7771702c9ca2da55c582f8c9af5ca0f",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 2,
+      "source_target_annotations": 5,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "bbe731d6cc4b9ca81fb76af490ec5b0636ff60b98028d7aed744c3b990c2b01d",
+      "prepared_image_sha256": "df99f184be0ead05f35e5d274f63858730d85e1b324ef2cebce6196ba79fcb79",
+      "prepared_label_sha256": "35b4d62b2d8fa5ec11bd87a320e260d7a43153f807393615ec96f5b186cc29bd",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_14.png": "74f88d34a9fa2115de3f5a6a1205497be550b61eb041906b8fc98c1d3fc33168"
+      }
+    },
+    {
+      "name": "annotation_conversion_15",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_15.png"
+      ],
+      "image_id": "sha256:9af1ea582d18fc6ae0f30be56c85e38c22e8f2305216cf13fbe0d5ab2cad0246",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 2,
+      "source_target_annotations": 5,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "1cb902881907f961ff7796f583e7dfde5aaeed728087efd908ea9603509ea8f3",
+      "prepared_image_sha256": "15347cd8e61819e34b7434737cc7b5c5e63f6890517994f0b7fdba590d7e63f0",
+      "prepared_label_sha256": "b561e5ee36389aa4b9dd8fea51332da0472b9e572404914dc143f4fbcf0f4284",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_15.png": "443627fc933f0ac2220e653722c4183a2143020fb998aa62996d98e2306982c3"
+      }
+    },
+    {
+      "name": "annotation_conversion_16",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_16.png"
+      ],
+      "image_id": "sha256:514f5033a61227cdc95108b6522b14febae5e1651eabaff6f42cf16a6bc51e76",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 2,
+      "source_target_annotations": 6,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "f478a9cea4dbb7cf7bc78630d123833306cfb5917adc7e6e20bc72b280575d23",
+      "prepared_image_sha256": "58a2ee125ecc02ec5e9fa48ac8d3a7d1faabba61810855a097664d65df9b247a",
+      "prepared_label_sha256": "ff0e4792275e0b78531e86179c9769622242d9e99e3f8d991f97634479935944",
+      "redacted_text_regions": 2,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_16.png": "a5d84e95b6dc92790d9eca8f49e4696c49e091a2018bc7a415aa4d5964c9cf3a"
+      }
+    },
+    {
+      "name": "annotation_conversion_17",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_17.png"
+      ],
+      "image_id": "sha256:61a6c426a79817a6e31f829115432129894d75b377e00a53e5e1149ffd7e542c",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 2,
+      "source_target_annotations": 6,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "50d15557ac0bd255e95583d05f7693fab35111c212a6af2c1defcf457be95203",
+      "prepared_image_sha256": "97352750187d07e40b7bb45c70037981bcf122c6e25806b33ee0907fd4f16cea",
+      "prepared_label_sha256": "84f99d6a47241767112fd62534b2df66f43a4e84218d52d9a72fd84306d2322f",
+      "redacted_text_regions": 2,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_17.png": "6b7ba5fa85728895ea58fdb12e79029340d2a3d1bed959e45fb3656b46755395"
+      }
+    },
+    {
+      "name": "annotation_conversion_18",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_18.png"
+      ],
+      "image_id": "sha256:83938ecc18a3dd22120b0842ba2d19c2c6c0c0b4bd68a91ddb1e916fd520524a",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 1,
+      "source_target_annotations": 3,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "00f2e52f8ef6173d706d6823a66f7bd5cf113edb46931fd4eebc4e1459cd91a8",
+      "prepared_image_sha256": "ccbb8f9705526d0e70419adb02a9e8d7e9d9851b0e9da76f74aec2ae00fdd228",
+      "prepared_label_sha256": "dd370bccbc1ffa4b66d29669598007380043f10414d5195b753a9c17e8c12285",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_18.png": "8860a9a395ca21da86ec13365f227f32faaf5d5c20df572ebf248e6c00c924b0"
+      }
+    },
+    {
+      "name": "annotation_conversion_19",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_19.png"
+      ],
+      "image_id": "sha256:d7d231a099c6a2f1e5af3e5e275fd78beb004a9ac6e8fcad5de14146f791977a",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 1,
+      "source_target_annotations": 3,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "8d8c4ef03cb54e2fd3d21c4c0347ad7e6a474c68f2abdc58b30c96f732ff1190",
+      "prepared_image_sha256": "3343ec52abb705c75841d7c6f1b19f56ff0c6a9421e424a8fb133bfa0126bb85",
+      "prepared_label_sha256": "38c02cc3f26f55ebe28744548b982780348710c7a57bcc24fb061678c47f9cb0",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_19.png": "e03024c6be44370000255126f8bee9f54ee4f93cd400b577c53ad0bbfddf47cd"
+      }
+    },
+    {
+      "name": "annotation_conversion_20",
+      "description": "Original source polygons and actual converted YOLO boxes on the same training-image crop",
+      "files": [
+        "docs/figures/thesis/annotation_conversion_candidates/example_20.png"
+      ],
+      "image_id": "sha256:0b462089ddd0e27c2524b6ac6043a2b2ecd428ab125d9e4e7f417b0c5d88ba6c",
+      "classes": [
+        "periostealreaction"
+      ],
+      "annotations_shown": 1,
+      "source_target_annotations": 3,
+      "experiments": [],
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/dataset_preparation/completed.sqlite"
+      ],
+      "source_annotation_sha256": "150c7c776665749c0e8420b6e40332c9556d856de48882b658f1332273a603fc",
+      "prepared_image_sha256": "826f9cec11c13d59154e215517258ca38c394f73dbab42e5b612b0da22be1681",
+      "prepared_label_sha256": "97ac0fddab9298c696d742b5cdf9bd2f3b0b31a54281b7dcb9ae5536f862acc4",
+      "redacted_text_regions": 1,
+      "file_sha256": {
+        "docs/figures/thesis/annotation_conversion_candidates/example_20.png": "fa9236a23157120e12c9b42f426361f924e306735c85512176964d191883d0cf"
+      }
+    },
+    {
+      "name": "qualitative_01",
+      "description": "SAHI has at least two extra annotation-relative unmatched non-text predictions",
+      "files": [
+        "docs/figures/results/qualitative_example_01.png"
+      ],
+      "image_id": "sha256:006abeb55a01bdda32cc604c071a3ac945f48b610587bee2c92dfbb10e50e3d7",
+      "experiments": [
+        "D",
+        "E",
+        "F"
+      ],
+      "training": "rarity-only",
+      "display_confidence": 0.25,
+      "matching_iou_for_selection": 0.5,
+      "text_class_omitted_from_display": true,
+      "displayed_predictions": {
+        "D": 2,
+        "E": 6,
+        "F": 3
+      },
+      "redacted_text_regions": 1,
+      "prepared_image_sha256": "a54e4204aa3c6bf6478e03204e787a10ecf2c6be8bb0cc79a43f80bb20a4a85f",
+      "prepared_label_sha256": "ef50f555bcd4c8046bdcd950d5230c17e262c8b5fda703c92c01a9d0577780df",
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/rarity_comparison/study_01/full/predictions.jsonl",
+        "outputs/rarity_inference_comparison/study_01/full_E/predictions.jsonl",
+        "outputs/rarity_inference_comparison/study_01/full_F/predictions.jsonl"
+      ],
+      "file_sha256": {
+        "docs/figures/results/qualitative_example_01.png": "48528af6476b42b607ba315795c4d861ff6c3707c8296ef2f4480f282af4c3fa"
+      }
+    },
+    {
+      "name": "qualitative_02",
+      "description": "A saved target is matched by F but not D at confidence .25 / IoU .50",
+      "files": [
+        "docs/figures/results/qualitative_example_02.png"
+      ],
+      "image_id": "sha256:2d8cc1ad1265ca32373a9a6105efdb65be1cdd77840b047e02f2a37c963acd9b",
+      "experiments": [
+        "D",
+        "E",
+        "F"
+      ],
+      "training": "rarity-only",
+      "display_confidence": 0.25,
+      "matching_iou_for_selection": 0.5,
+      "text_class_omitted_from_display": true,
+      "displayed_predictions": {
+        "D": 2,
+        "E": 4,
+        "F": 4
+      },
+      "redacted_text_regions": 1,
+      "prepared_image_sha256": "73c754fe4b2a6150aec6fbc9af493556b424f7b292ec3685c0660c899d7ec4f3",
+      "prepared_label_sha256": "5fcf0755059853e8e430a73b75f094a48ff9848adb293550b9815fcdc1917233",
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/rarity_comparison/study_01/full/predictions.jsonl",
+        "outputs/rarity_inference_comparison/study_01/full_E/predictions.jsonl",
+        "outputs/rarity_inference_comparison/study_01/full_F/predictions.jsonl"
+      ],
+      "file_sha256": {
+        "docs/figures/results/qualitative_example_02.png": "c71b5740ff8d22a2b7b2e65f600792bdeb3a2b9e9af20f52a783c64f6ad2ff08"
+      }
+    },
+    {
+      "name": "qualitative_03",
+      "description": "All three saved methods match the visible annotated targets",
+      "files": [
+        "docs/figures/results/qualitative_example_03.png"
+      ],
+      "image_id": "sha256:001cd5b8a56d96696ba4ae210903df0f250bb96011b43bf6ece5e70d47fc2e62",
+      "experiments": [
+        "D",
+        "E",
+        "F"
+      ],
+      "training": "rarity-only",
+      "display_confidence": 0.25,
+      "matching_iou_for_selection": 0.5,
+      "text_class_omitted_from_display": true,
+      "displayed_predictions": {
+        "D": 1,
+        "E": 2,
+        "F": 1
+      },
+      "redacted_text_regions": 1,
+      "prepared_image_sha256": "4b43b1874f6fee6d53007454c06f01a3684191f8c643b3202cfd7ee7315ae4d2",
+      "prepared_label_sha256": "ab3349a719cde247b45a72ceda70210948ac0997251a55df5ef7ab2fa9c28f53",
+      "sources": [
+        "outputs/dataset_preparation/source_records.jsonl",
+        "outputs/rarity_comparison/study_01/full/predictions.jsonl",
+        "outputs/rarity_inference_comparison/study_01/full_E/predictions.jsonl",
+        "outputs/rarity_inference_comparison/study_01/full_F/predictions.jsonl"
+      ],
+      "file_sha256": {
+        "docs/figures/results/qualitative_example_03.png": "1171fed21952a1dca4addb5222a114dea96a177124956e2f191962feeb1eb6dd"
+      }
+    }
+  ],
+  "source_files_sha256": {
+    "docs/evidence/dataset_audit/class_statistics.csv": "aaf965c6bdeb34d95c89dd4fec9dea4a8d2bac55b2f224dd0c6db72ca5c0c505",
+    "docs/evidence/dataset_audit/source_release.json": "d4285d93f7f237b0cad019146ec7e0838fb8d40edeb001412b45254b6c021a31",
+    "docs/evidence/dataset_preparation/class_distribution.csv": "f71073398896a6a347235d478a5413376c7b7a0362f3c0e5e7b4e023bfaf804a",
+    "docs/evidence/rarity_comparison/full_D.json": "472f56ad34282d87bb9e92cd4f4b9ddb833bc6b4d6518e01fac38b689ac37d3d",
+    "docs/evidence/rarity_inference_comparison/full_E.json": "92071c03b3a2cec10fd21abe34b6dfaf5c581111ab82375c2b4740d01e3f5576",
+    "docs/evidence/rarity_inference_comparison/full_F.json": "72c0614222eb3603d9c874381c919c67d70bb45395e0bdc4f7e03c067eda31dd",
+    "docs/evidence/rarity_inference_comparison/per_class_AP.csv": "5eb5055553068a91aff54c5be688f30e137e86df3ec44b6f793730dc697fb988",
+    "docs/evidence/rarity_inference_comparison/results.json": "a63f475d768234d8df9508afb53840a6a16ee0658a8bedf6f43d8cbdd2bb1c0a",
+    "docs/evidence/rarity_inference_comparison/six_condition_matrix.csv": "e1d0edb4aa174f407a671d6284cf901e675e90d92ba3bed40dcd8f554142d006",
+    "outputs/dataset_preparation/completed.sqlite": "8764b9acd35b0fa8faecd0453b571d0e6d78a2f6363633eae0b508875ea752d4",
+    "outputs/dataset_preparation/freeze.json": "90d0ce0fd578263acbf7283c1890c64ccbbbc4b703ed961ebb2875ae4640e67a",
+    "outputs/dataset_preparation/source_records.jsonl": "0cd3a72c83ad46ca32ebae1512131c0a4da034e455082d81b8c34a12f54c327c",
+    "outputs/rarity_comparison/study_01/analysis/D_details.json": "96905ab64fc8583fff85e11ce12c99cd3d6b81db51aa35daff4070d97d31be4b",
+    "outputs/rarity_comparison/study_01/full/predictions.jsonl": "b653b3d5e1df5ca227b29588e6085bb115d8530c99e934495d6e1d630a2b661d",
+    "outputs/rarity_inference_comparison/study_01/analysis/E_details.json": "382677bef3a525dd55012cf390ce3d8ba83fe12a28cdd73e2976833c6e3a7d5b",
+    "outputs/rarity_inference_comparison/study_01/analysis/F_details.json": "3a59d8b71dc6e6f0215bff347bbe4d8e9054046d5f28590aaca1eaafaa220a33",
+    "outputs/rarity_inference_comparison/study_01/full_E/predictions.jsonl": "c7932bbe4ab78222a5c3381c2dc3fb88d52d8224db72de5df9d1b117631d873e",
+    "outputs/rarity_inference_comparison/study_01/full_F/predictions.jsonl": "821623cb193a1f4ca6bb0155b09b7999365e521f9f66a775392f898b9babc457"
+  },
+  "renderer_source_sha256": {
+    "src/wrist_figures/__init__.py": "8a361164bce04340e8ae08447a4aef421fb4aa59bc4b584046a4be7e17b43126",
+    "src/wrist_figures/__main__.py": "4935a5cf65f5e7551c9521ccd522f62452cb387b46891a94b06d279c11508bd5",
+    "src/wrist_figures/build.py": "3e7572298ecbcc2d5a9c19a2bb7865b81f61f18a0cbdf210c302c110149d4e13",
+    "src/wrist_figures/data.py": "383595b9442258bbd6d2d7f77b83b2882da8c0cf0883ca082f5d18bd07283542",
+    "src/wrist_figures/render.py": "0fa5b9c3e6c37aac7722fbc7a963447f4dfd33a1fd7c3438821b2d08eeb8ef46",
+    "src/wrist_figures/select.py": "120e1c48e9249cc17ff2328c172128b5e3174ca792db41a960ad0c9cc4d9f269",
+    "src/wrist_figures/verify.py": "2a55f3f79aa2c5a9e0b9a33e279808bbb0338f25d71f88b0ad9559fb227e2ee1"
+  },
+  "rendering": {
+    "matplotlib": "3.11.2",
+    "png_dpi": 300,
+    "chart_svg_exports": true,
+    "conversion_images": "existing lossless 8-bit prepared training PNGs, no contrast adjustment",
+    "qualitative_images": "existing validation PNGs and preserved rarity D/E/F predictions",
+    "redaction": "all annotated text rectangles expanded and blanked in export copies; original pixels/labels unchanged",
+    "qualitative_filter": "confidence >= .25; text class omitted in all panels; same post-hoc display crop for D/E/F"
+  },
+  "limitations": [
+    "Only periostealreaction and bonelesion have source polygons; other classes are source rectangles",
+    "Cases are selected after annotation/prediction inspection for illustration, not a representative performance sample",
+    "Latency uses D/E/F recorded means from separate sessions; no controlled speedup is claimed",
+    "AP bars are point estimates; paired uncertainty and equal-confidence ordering caveats remain in the Phase 4E report"
+  ],
+  "private_exact_source_index": "outputs/thesis_figures/build_01/private_sources.json",
+  "model_loads": 0,
+  "model_forwards": 0,
+  "heldout_image_label_prediction_files_opened": 0
+}
