@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "independently_reproduced_operating_totals": {
+    "A": {
+      "tp": 6467,
+      "fp": 884,
+      "fn": 737
+    },
+    "B": {
+      "tp": 6599,
+      "fp": 3209,
+      "fn": 605
+    },
+    "D": {
+      "tp": 6518,
+      "fp": 1016,
+      "fn": 686
+    },
+    "E": {
+      "tp": 6647,
+      "fp": 3648,
+      "fn": 557
+    },
+    "F": {
+      "tp": 6552,
+      "fp": 1152,
+      "fn": 652
+    },
+    "C": {
+      "tp": 6505,
+      "fp": 1055,
+      "fn": 699
+    }
+  },
+  "paired_AP_intervals_reused_not_recomputed": true,
+  "independent_feature_separation_rank_check": true,
+  "all_C_F_recovery_FP_and_ROI_partitions_reconciled": true,
+  "all_nested_oracle_bounds_reconcile": true,
+  "public_identifiers_and_report_links_checked": true,
+  "protected_tracked_files_unchanged": 363,
+  "protected_private_files_unchanged": 515,
+  "checkpoint_protection": "size and mtime only; checkpoint files never opened",
+  "model_loads": 0,
+  "model_forwards": 0,
+  "heldout_image_label_prediction_files_opened": 0,
+  "source_manifest_sha256": "e19bc0a33a3b70de5a0181e13e183b700ed50bbd2d8740824afccaf7a8bb0bb7",
+  "analysis_source_sha256": {
+    "src/wrist_analysis/__init__.py": "0e5373b878a3a2a9d7a5507b8174cbed593398a80e6121f47d4534197cac6ef1",
+    "src/wrist_analysis/__main__.py": "f0ce444e3eff9dcd769be3980ba3d51011f420401d7f8562be81d23e68175a29",
+    "src/wrist_analysis/calculations.py": "48aa92c6d4e3fa0b76fc9b7f342088f0390b630e3dd638e7f01351297660aa2b",
+    "src/wrist_analysis/errors.py": "d06d63a71183c52a2e1f4b9028133aa0631b9ef800e5e95ac03e53b84e4c2527",
+    "src/wrist_analysis/evidence.py": "f82f57255a0e0928ae5e85e0a6197387b1f92b20ab4282ea5ac9dc043db7b355",
+    "src/wrist_analysis/mechanism.py": "b7baf7ee231d75d82effa48904bb6635b65f169a35a0e44cce76887954d9d64f",
+    "src/wrist_analysis/reports.py": "2982bf26a23d3c36c15546ea3bc332bc576e187ca747cdc93338565f92a85289",
+    "src/wrist_analysis/synthesis.py": "d6580b51f3fba8d2b2d8eba468bfb7c89225a2fc62467903d141dde2e2cc0115",
+    "src/wrist_analysis/verify.py": "5828ea97f3741f9210cb2ed622843d9e25ec366f337ba89b93f8827b5c76b2c4"
+  },
+  "public_artifacts_sha256": {
+    "CG_ALR_V2_DIAGNOSTICS.md": "216fa9d83204355b6c33ab09ab70c02d6b30a1d035fa51e46cf9ade77d0d9c4a",
+    "error_categories.json": "b2635c9a60554d359aacbe978b3eac123eb4555ddc534e07941504a301a25ef5",
+    "error_strata.csv": "113a1b594f783490b8ecd885a4ab6873e14ee9a0a56c74ccdefeb9d9acf6333d",
+    "map_components.csv": "1e463861ed85eb6222c81192ec7cd7ff474e05d96fe4e39669a8af6d4b0427b3",
+    "paired_AP_contrasts.csv": "6cbcbe57d7bbc175dac069ed3bc99e7201533a97238078b38ed1073b702b8b18",
+    "PHASE_5A_ANALYSIS_REPORT.md": "a977d588ae1af7627c0f3e32d792ec8084045de5658911a86bef9ce8da08f2f9",
+    "recovery.csv": "3bf2f777696c97ef7473ec53db283b28c4a820666591c9456174d60a46a429b6",
+    "six_condition_summary.csv": "2051aabdfa7eafae44a79ea152e330b55b4f9a8b5f6a89882d90b542fed1c4ca",
+    "source_manifest.json": "e19bc0a33a3b70de5a0181e13e183b700ed50bbd2d8740824afccaf7a8bb0bb7",
+    "v2_mechanism.json": "7b3074530204c7ac23fd4268b53131b57f019841072564e7875d506122776fe8",
+    "V3_FEASIBILITY_AND_RECOMMENDATIONS.md": "3ddced30fdbc8c1ae0a2a5f4958f6a9fe6d80fb3de715b33bccf46e653565534",
+    "automated_tests.json": "d46de41600c158eb587acdf91d54399d3a4cb2e051028cb1df6d35be29d7d6ec"
+  },
+  "automated_tests": {
+    "passed": true,
+    "tests": 239,
+    "new_diagnostic_tests": 10,
+    "seconds": 44.956,
+    "command": "python -c \"import pathlib,tempfile,unittest;tempfile.tempdir=str(pathlib.Path('outputs/phase3c2_test_tmp').resolve());unittest.main(module=None,argv=['unittest','discover','-s','tests','-q'])\"",
+    "private_log_sha256": "927b6a498f32c43c60d171f076cf302fd290a6b5b3d1f7c50767c4fb357d9fd0",
+    "includes_exhaustive_512_small_bipartite_graph_checks": true,
+    "frozen_training_inference_and_metrics_sources_unchanged": true,
+    "new_model_or_gpu_inference": false
+  }
+}

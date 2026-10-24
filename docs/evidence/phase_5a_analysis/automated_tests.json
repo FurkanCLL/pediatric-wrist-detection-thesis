@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "tests": 239,
+  "new_diagnostic_tests": 10,
+  "seconds": 44.956,
+  "command": "python -c \"import pathlib,tempfile,unittest;tempfile.tempdir=str(pathlib.Path('outputs/phase3c2_test_tmp').resolve());unittest.main(module=None,argv=['unittest','discover','-s','tests','-q'])\"",
+  "private_log_sha256": "927b6a498f32c43c60d171f076cf302fd290a6b5b3d1f7c50767c4fb357d9fd0",
+  "includes_exhaustive_512_small_bipartite_graph_checks": true,
+  "frozen_training_inference_and_metrics_sources_unchanged": true,
+  "new_model_or_gpu_inference": false
+}

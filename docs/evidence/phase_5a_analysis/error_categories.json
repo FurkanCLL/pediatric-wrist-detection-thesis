@@ -1,0 +1,1010 @@
+[
+  {
+    "experiment": "A",
+    "class": "fracture",
+    "objects": 2808,
+    "patients": 538,
+    "images": 2082,
+    "tp": 2463,
+    "fp": 346,
+    "fn": 345,
+    "gt_errors": {
+      "low_confidence": 269,
+      "no_residual_candidate": 56,
+      "TP": 2463,
+      "localization": 19,
+      "classification": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 180,
+      "localization": 111,
+      "duplicate": 50,
+      "classification": 5
+    }
+  },
+  {
+    "experiment": "A",
+    "class": "metal",
+    "objects": 96,
+    "patients": 24,
+    "images": 88,
+    "tp": 86,
+    "fp": 25,
+    "fn": 10,
+    "gt_errors": {
+      "TP": 86,
+      "low_confidence": 4,
+      "localization": 4,
+      "classification": 1,
+      "no_residual_candidate": 1
+    },
+    "fp_errors": {
+      "duplicate": 15,
+      "localization": 8,
+      "background_or_unannotated": 1,
+      "classification": 1
+    }
+  },
+  {
+    "experiment": "A",
+    "class": "text",
+    "objects": 3611,
+    "patients": 913,
+    "images": 3075,
+    "tp": 3552,
+    "fp": 171,
+    "fn": 59,
+    "gt_errors": {
+      "TP": 3552,
+      "localization": 19,
+      "low_confidence": 34,
+      "no_residual_candidate": 6
+    },
+    "fp_errors": {
+      "background_or_unannotated": 42,
+      "localization": 98,
+      "duplicate": 27,
+      "classification": 4
+    }
+  },
+  {
+    "experiment": "A",
+    "class": "periostealreaction",
+    "objects": 493,
+    "patients": 163,
+    "images": 316,
+    "tp": 298,
+    "fp": 295,
+    "fn": 195,
+    "gt_errors": {
+      "no_residual_candidate": 15,
+      "low_confidence": 172,
+      "TP": 298,
+      "localization": 8
+    },
+    "fp_errors": {
+      "duplicate": 64,
+      "background_or_unannotated": 130,
+      "localization": 101
+    }
+  },
+  {
+    "experiment": "A",
+    "class": "pronatorsign",
+    "objects": 83,
+    "patients": 83,
+    "images": 83,
+    "tp": 46,
+    "fp": 35,
+    "fn": 37,
+    "gt_errors": {
+      "low_confidence": 33,
+      "TP": 46,
+      "no_residual_candidate": 2,
+      "classification": 1,
+      "localization": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 26,
+      "duplicate": 6,
+      "localization": 3
+    }
+  },
+  {
+    "experiment": "A",
+    "class": "bonelesion",
+    "objects": 5,
+    "patients": 4,
+    "images": 5,
+    "tp": 1,
+    "fp": 0,
+    "fn": 4,
+    "gt_errors": {
+      "low_confidence": 2,
+      "no_residual_candidate": 2,
+      "TP": 1
+    },
+    "fp_errors": {}
+  },
+  {
+    "experiment": "A",
+    "class": "softtissue",
+    "objects": 72,
+    "patients": 61,
+    "images": 67,
+    "tp": 17,
+    "fp": 9,
+    "fn": 55,
+    "gt_errors": {
+      "low_confidence": 47,
+      "no_residual_candidate": 8,
+      "TP": 17
+    },
+    "fp_errors": {
+      "background_or_unannotated": 7,
+      "classification": 1,
+      "duplicate": 1
+    }
+  },
+  {
+    "experiment": "A",
+    "class": "boneanomaly",
+    "objects": 36,
+    "patients": 14,
+    "images": 21,
+    "tp": 4,
+    "fp": 3,
+    "fn": 32,
+    "gt_errors": {
+      "classification": 5,
+      "low_confidence": 12,
+      "TP": 4,
+      "no_residual_candidate": 15
+    },
+    "fp_errors": {
+      "localization": 1,
+      "background_or_unannotated": 2
+    }
+  },
+  {
+    "experiment": "B",
+    "class": "fracture",
+    "objects": 2808,
+    "patients": 538,
+    "images": 2082,
+    "tp": 2540,
+    "fp": 1613,
+    "fn": 268,
+    "gt_errors": {
+      "low_confidence": 221,
+      "no_residual_candidate": 33,
+      "TP": 2540,
+      "localization": 13,
+      "classification": 1
+    },
+    "fp_errors": {
+      "localization": 523,
+      "duplicate": 641,
+      "background_or_unannotated": 439,
+      "classification": 10
+    }
+  },
+  {
+    "experiment": "B",
+    "class": "metal",
+    "objects": 96,
+    "patients": 24,
+    "images": 88,
+    "tp": 89,
+    "fp": 213,
+    "fn": 7,
+    "gt_errors": {
+      "TP": 89,
+      "localization": 3,
+      "low_confidence": 2,
+      "classification": 1,
+      "no_residual_candidate": 1
+    },
+    "fp_errors": {
+      "duplicate": 67,
+      "localization": 99,
+      "background_or_unannotated": 17,
+      "classification": 30
+    }
+  },
+  {
+    "experiment": "B",
+    "class": "text",
+    "objects": 3611,
+    "patients": 913,
+    "images": 3075,
+    "tp": 3564,
+    "fp": 516,
+    "fn": 47,
+    "gt_errors": {
+      "TP": 3564,
+      "low_confidence": 27,
+      "localization": 15,
+      "no_residual_candidate": 4,
+      "classification": 1
+    },
+    "fp_errors": {
+      "localization": 321,
+      "duplicate": 91,
+      "background_or_unannotated": 100,
+      "classification": 4
+    }
+  },
+  {
+    "experiment": "B",
+    "class": "periostealreaction",
+    "objects": 493,
+    "patients": 163,
+    "images": 316,
+    "tp": 336,
+    "fp": 786,
+    "fn": 157,
+    "gt_errors": {
+      "no_residual_candidate": 7,
+      "low_confidence": 149,
+      "TP": 336,
+      "localization": 1
+    },
+    "fp_errors": {
+      "localization": 285,
+      "background_or_unannotated": 311,
+      "duplicate": 190
+    }
+  },
+  {
+    "experiment": "B",
+    "class": "pronatorsign",
+    "objects": 83,
+    "patients": 83,
+    "images": 83,
+    "tp": 48,
+    "fp": 53,
+    "fn": 35,
+    "gt_errors": {
+      "low_confidence": 33,
+      "TP": 48,
+      "classification": 1,
+      "localization": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 36,
+      "duplicate": 13,
+      "localization": 4
+    }
+  },
+  {
+    "experiment": "B",
+    "class": "bonelesion",
+    "objects": 5,
+    "patients": 4,
+    "images": 5,
+    "tp": 1,
+    "fp": 0,
+    "fn": 4,
+    "gt_errors": {
+      "low_confidence": 2,
+      "no_residual_candidate": 2,
+      "TP": 1
+    },
+    "fp_errors": {}
+  },
+  {
+    "experiment": "B",
+    "class": "softtissue",
+    "objects": 72,
+    "patients": 61,
+    "images": 67,
+    "tp": 17,
+    "fp": 17,
+    "fn": 55,
+    "gt_errors": {
+      "low_confidence": 51,
+      "no_residual_candidate": 4,
+      "TP": 17
+    },
+    "fp_errors": {
+      "background_or_unannotated": 14,
+      "classification": 1,
+      "duplicate": 2
+    }
+  },
+  {
+    "experiment": "B",
+    "class": "boneanomaly",
+    "objects": 36,
+    "patients": 14,
+    "images": 21,
+    "tp": 4,
+    "fp": 11,
+    "fn": 32,
+    "gt_errors": {
+      "classification": 6,
+      "low_confidence": 12,
+      "TP": 4,
+      "no_residual_candidate": 14
+    },
+    "fp_errors": {
+      "background_or_unannotated": 9,
+      "localization": 1,
+      "classification": 1
+    }
+  },
+  {
+    "experiment": "D",
+    "class": "fracture",
+    "objects": 2808,
+    "patients": 538,
+    "images": 2082,
+    "tp": 2453,
+    "fp": 365,
+    "fn": 355,
+    "gt_errors": {
+      "low_confidence": 264,
+      "no_residual_candidate": 63,
+      "TP": 2453,
+      "localization": 27,
+      "classification": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 209,
+      "localization": 114,
+      "duplicate": 38,
+      "classification": 4
+    }
+  },
+  {
+    "experiment": "D",
+    "class": "metal",
+    "objects": 96,
+    "patients": 24,
+    "images": 88,
+    "tp": 89,
+    "fp": 25,
+    "fn": 7,
+    "gt_errors": {
+      "TP": 89,
+      "low_confidence": 1,
+      "localization": 2,
+      "no_residual_candidate": 3,
+      "classification": 1
+    },
+    "fp_errors": {
+      "duplicate": 8,
+      "localization": 14,
+      "background_or_unannotated": 2,
+      "classification": 1
+    }
+  },
+  {
+    "experiment": "D",
+    "class": "text",
+    "objects": 3611,
+    "patients": 913,
+    "images": 3075,
+    "tp": 3551,
+    "fp": 150,
+    "fn": 60,
+    "gt_errors": {
+      "TP": 3551,
+      "localization": 16,
+      "low_confidence": 38,
+      "no_residual_candidate": 6
+    },
+    "fp_errors": {
+      "background_or_unannotated": 37,
+      "duplicate": 21,
+      "localization": 88,
+      "classification": 4
+    }
+  },
+  {
+    "experiment": "D",
+    "class": "periostealreaction",
+    "objects": 493,
+    "patients": 163,
+    "images": 316,
+    "tp": 333,
+    "fp": 328,
+    "fn": 160,
+    "gt_errors": {
+      "no_residual_candidate": 21,
+      "localization": 5,
+      "low_confidence": 134,
+      "TP": 333
+    },
+    "fp_errors": {
+      "localization": 93,
+      "background_or_unannotated": 184,
+      "duplicate": 51
+    }
+  },
+  {
+    "experiment": "D",
+    "class": "pronatorsign",
+    "objects": 83,
+    "patients": 83,
+    "images": 83,
+    "tp": 55,
+    "fp": 75,
+    "fn": 28,
+    "gt_errors": {
+      "low_confidence": 26,
+      "TP": 55,
+      "no_residual_candidate": 1,
+      "localization": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 69,
+      "localization": 2,
+      "duplicate": 4
+    }
+  },
+  {
+    "experiment": "D",
+    "class": "bonelesion",
+    "objects": 5,
+    "patients": 4,
+    "images": 5,
+    "tp": 2,
+    "fp": 1,
+    "fn": 3,
+    "gt_errors": {
+      "TP": 2,
+      "low_confidence": 2,
+      "no_residual_candidate": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 1
+    }
+  },
+  {
+    "experiment": "D",
+    "class": "softtissue",
+    "objects": 72,
+    "patients": 61,
+    "images": 67,
+    "tp": 27,
+    "fp": 60,
+    "fn": 45,
+    "gt_errors": {
+      "low_confidence": 35,
+      "no_residual_candidate": 10,
+      "TP": 27
+    },
+    "fp_errors": {
+      "background_or_unannotated": 59,
+      "duplicate": 1
+    }
+  },
+  {
+    "experiment": "D",
+    "class": "boneanomaly",
+    "objects": 36,
+    "patients": 14,
+    "images": 21,
+    "tp": 8,
+    "fp": 12,
+    "fn": 28,
+    "gt_errors": {
+      "TP": 8,
+      "low_confidence": 10,
+      "classification": 2,
+      "no_residual_candidate": 16
+    },
+    "fp_errors": {
+      "background_or_unannotated": 8,
+      "duplicate": 1,
+      "localization": 3
+    }
+  },
+  {
+    "experiment": "E",
+    "class": "fracture",
+    "objects": 2808,
+    "patients": 538,
+    "images": 2082,
+    "tp": 2525,
+    "fp": 1706,
+    "fn": 283,
+    "gt_errors": {
+      "low_confidence": 229,
+      "TP": 2525,
+      "no_residual_candidate": 29,
+      "localization": 23,
+      "classification": 2
+    },
+    "fp_errors": {
+      "background_or_unannotated": 511,
+      "localization": 590,
+      "duplicate": 598,
+      "classification": 7
+    }
+  },
+  {
+    "experiment": "E",
+    "class": "metal",
+    "objects": 96,
+    "patients": 24,
+    "images": 88,
+    "tp": 91,
+    "fp": 223,
+    "fn": 5,
+    "gt_errors": {
+      "TP": 91,
+      "localization": 1,
+      "low_confidence": 1,
+      "classification": 1,
+      "no_residual_candidate": 2
+    },
+    "fp_errors": {
+      "duplicate": 75,
+      "localization": 95,
+      "background_or_unannotated": 16,
+      "classification": 37
+    }
+  },
+  {
+    "experiment": "E",
+    "class": "text",
+    "objects": 3611,
+    "patients": 913,
+    "images": 3075,
+    "tp": 3564,
+    "fp": 528,
+    "fn": 47,
+    "gt_errors": {
+      "TP": 3564,
+      "low_confidence": 32,
+      "no_residual_candidate": 5,
+      "localization": 10
+    },
+    "fp_errors": {
+      "localization": 321,
+      "duplicate": 95,
+      "background_or_unannotated": 107,
+      "classification": 5
+    }
+  },
+  {
+    "experiment": "E",
+    "class": "periostealreaction",
+    "objects": 493,
+    "patients": 163,
+    "images": 316,
+    "tp": 367,
+    "fp": 910,
+    "fn": 126,
+    "gt_errors": {
+      "no_residual_candidate": 9,
+      "localization": 6,
+      "TP": 367,
+      "low_confidence": 111
+    },
+    "fp_errors": {
+      "localization": 289,
+      "background_or_unannotated": 411,
+      "duplicate": 210
+    }
+  },
+  {
+    "experiment": "E",
+    "class": "pronatorsign",
+    "objects": 83,
+    "patients": 83,
+    "images": 83,
+    "tp": 58,
+    "fp": 129,
+    "fn": 25,
+    "gt_errors": {
+      "low_confidence": 24,
+      "TP": 58,
+      "no_residual_candidate": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 107,
+      "duplicate": 16,
+      "localization": 6
+    }
+  },
+  {
+    "experiment": "E",
+    "class": "bonelesion",
+    "objects": 5,
+    "patients": 4,
+    "images": 5,
+    "tp": 2,
+    "fp": 1,
+    "fn": 3,
+    "gt_errors": {
+      "TP": 2,
+      "low_confidence": 2,
+      "no_residual_candidate": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 1
+    }
+  },
+  {
+    "experiment": "E",
+    "class": "softtissue",
+    "objects": 72,
+    "patients": 61,
+    "images": 67,
+    "tp": 33,
+    "fp": 113,
+    "fn": 39,
+    "gt_errors": {
+      "low_confidence": 32,
+      "no_residual_candidate": 7,
+      "TP": 33
+    },
+    "fp_errors": {
+      "background_or_unannotated": 108,
+      "classification": 1,
+      "duplicate": 3,
+      "localization": 1
+    }
+  },
+  {
+    "experiment": "E",
+    "class": "boneanomaly",
+    "objects": 36,
+    "patients": 14,
+    "images": 21,
+    "tp": 7,
+    "fp": 38,
+    "fn": 29,
+    "gt_errors": {
+      "TP": 7,
+      "low_confidence": 12,
+      "classification": 3,
+      "no_residual_candidate": 14
+    },
+    "fp_errors": {
+      "background_or_unannotated": 28,
+      "localization": 4,
+      "duplicate": 1,
+      "classification": 5
+    }
+  },
+  {
+    "experiment": "F",
+    "class": "fracture",
+    "objects": 2808,
+    "patients": 538,
+    "images": 2082,
+    "tp": 2474,
+    "fp": 404,
+    "fn": 334,
+    "gt_errors": {
+      "low_confidence": 243,
+      "no_residual_candidate": 63,
+      "TP": 2474,
+      "localization": 27,
+      "classification": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 228,
+      "localization": 123,
+      "duplicate": 49,
+      "classification": 4
+    }
+  },
+  {
+    "experiment": "F",
+    "class": "metal",
+    "objects": 96,
+    "patients": 24,
+    "images": 88,
+    "tp": 89,
+    "fp": 25,
+    "fn": 7,
+    "gt_errors": {
+      "TP": 89,
+      "low_confidence": 1,
+      "localization": 2,
+      "no_residual_candidate": 3,
+      "classification": 1
+    },
+    "fp_errors": {
+      "duplicate": 8,
+      "localization": 14,
+      "background_or_unannotated": 2,
+      "classification": 1
+    }
+  },
+  {
+    "experiment": "F",
+    "class": "text",
+    "objects": 3611,
+    "patients": 913,
+    "images": 3075,
+    "tp": 3551,
+    "fp": 150,
+    "fn": 60,
+    "gt_errors": {
+      "TP": 3551,
+      "localization": 16,
+      "low_confidence": 38,
+      "no_residual_candidate": 6
+    },
+    "fp_errors": {
+      "background_or_unannotated": 37,
+      "duplicate": 21,
+      "localization": 88,
+      "classification": 4
+    }
+  },
+  {
+    "experiment": "F",
+    "class": "periostealreaction",
+    "objects": 493,
+    "patients": 163,
+    "images": 316,
+    "tp": 346,
+    "fp": 425,
+    "fn": 147,
+    "gt_errors": {
+      "no_residual_candidate": 20,
+      "localization": 6,
+      "low_confidence": 121,
+      "TP": 346
+    },
+    "fp_errors": {
+      "localization": 114,
+      "background_or_unannotated": 221,
+      "duplicate": 90
+    }
+  },
+  {
+    "experiment": "F",
+    "class": "pronatorsign",
+    "objects": 83,
+    "patients": 83,
+    "images": 83,
+    "tp": 55,
+    "fp": 75,
+    "fn": 28,
+    "gt_errors": {
+      "low_confidence": 26,
+      "TP": 55,
+      "no_residual_candidate": 1,
+      "localization": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 69,
+      "localization": 2,
+      "duplicate": 4
+    }
+  },
+  {
+    "experiment": "F",
+    "class": "bonelesion",
+    "objects": 5,
+    "patients": 4,
+    "images": 5,
+    "tp": 2,
+    "fp": 1,
+    "fn": 3,
+    "gt_errors": {
+      "TP": 2,
+      "low_confidence": 2,
+      "no_residual_candidate": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 1
+    }
+  },
+  {
+    "experiment": "F",
+    "class": "softtissue",
+    "objects": 72,
+    "patients": 61,
+    "images": 67,
+    "tp": 27,
+    "fp": 60,
+    "fn": 45,
+    "gt_errors": {
+      "low_confidence": 35,
+      "no_residual_candidate": 10,
+      "TP": 27
+    },
+    "fp_errors": {
+      "background_or_unannotated": 59,
+      "duplicate": 1
+    }
+  },
+  {
+    "experiment": "F",
+    "class": "boneanomaly",
+    "objects": 36,
+    "patients": 14,
+    "images": 21,
+    "tp": 8,
+    "fp": 12,
+    "fn": 28,
+    "gt_errors": {
+      "TP": 8,
+      "low_confidence": 10,
+      "classification": 2,
+      "no_residual_candidate": 16
+    },
+    "fp_errors": {
+      "background_or_unannotated": 8,
+      "duplicate": 1,
+      "localization": 3
+    }
+  },
+  {
+    "experiment": "C",
+    "class": "fracture",
+    "objects": 2808,
+    "patients": 538,
+    "images": 2082,
+    "tp": 2478,
+    "fp": 403,
+    "fn": 330,
+    "gt_errors": {
+      "low_confidence": 254,
+      "no_residual_candidate": 55,
+      "TP": 2478,
+      "localization": 20,
+      "classification": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 208,
+      "localization": 123,
+      "duplicate": 66,
+      "classification": 6
+    }
+  },
+  {
+    "experiment": "C",
+    "class": "metal",
+    "objects": 96,
+    "patients": 24,
+    "images": 88,
+    "tp": 86,
+    "fp": 25,
+    "fn": 10,
+    "gt_errors": {
+      "TP": 86,
+      "low_confidence": 4,
+      "localization": 4,
+      "classification": 1,
+      "no_residual_candidate": 1
+    },
+    "fp_errors": {
+      "duplicate": 15,
+      "localization": 8,
+      "background_or_unannotated": 1,
+      "classification": 1
+    }
+  },
+  {
+    "experiment": "C",
+    "class": "text",
+    "objects": 3611,
+    "patients": 913,
+    "images": 3075,
+    "tp": 3552,
+    "fp": 171,
+    "fn": 59,
+    "gt_errors": {
+      "TP": 3552,
+      "localization": 19,
+      "low_confidence": 34,
+      "no_residual_candidate": 6
+    },
+    "fp_errors": {
+      "background_or_unannotated": 42,
+      "localization": 98,
+      "duplicate": 27,
+      "classification": 4
+    }
+  },
+  {
+    "experiment": "C",
+    "class": "periostealreaction",
+    "objects": 493,
+    "patients": 163,
+    "images": 316,
+    "tp": 321,
+    "fp": 409,
+    "fn": 172,
+    "gt_errors": {
+      "no_residual_candidate": 12,
+      "low_confidence": 149,
+      "TP": 321,
+      "localization": 11
+    },
+    "fp_errors": {
+      "duplicate": 106,
+      "background_or_unannotated": 174,
+      "localization": 129
+    }
+  },
+  {
+    "experiment": "C",
+    "class": "pronatorsign",
+    "objects": 83,
+    "patients": 83,
+    "images": 83,
+    "tp": 46,
+    "fp": 35,
+    "fn": 37,
+    "gt_errors": {
+      "low_confidence": 33,
+      "TP": 46,
+      "no_residual_candidate": 2,
+      "classification": 1,
+      "localization": 1
+    },
+    "fp_errors": {
+      "background_or_unannotated": 26,
+      "duplicate": 6,
+      "localization": 3
+    }
+  },
+  {
+    "experiment": "C",
+    "class": "bonelesion",
+    "objects": 5,
+    "patients": 4,
+    "images": 5,
+    "tp": 1,
+    "fp": 0,
+    "fn": 4,
+    "gt_errors": {
+      "low_confidence": 2,
+      "no_residual_candidate": 2,
+      "TP": 1
+    },
+    "fp_errors": {}
+  },
+  {
+    "experiment": "C",
+    "class": "softtissue",
+    "objects": 72,
+    "patients": 61,
+    "images": 67,
+    "tp": 17,
+    "fp": 9,
+    "fn": 55,
+    "gt_errors": {
+      "low_confidence": 47,
+      "no_residual_candidate": 8,
+      "TP": 17
+    },
+    "fp_errors": {
+      "background_or_unannotated": 7,
+      "classification": 1,
+      "duplicate": 1
+    }
+  },
+  {
+    "experiment": "C",
+    "class": "boneanomaly",
+    "objects": 36,
+    "patients": 14,
+    "images": 21,
+    "tp": 4,
+    "fp": 3,
+    "fn": 32,
+    "gt_errors": {
+      "classification": 6,
+      "low_confidence": 11,
+      "TP": 4,
+      "no_residual_candidate": 15
+    },
+    "fp_errors": {
+      "localization": 1,
+      "background_or_unannotated": 2
+    }
+  }
+]
