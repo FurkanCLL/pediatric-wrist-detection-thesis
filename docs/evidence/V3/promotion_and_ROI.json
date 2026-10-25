@@ -1,0 +1,88 @@
+{
+  "V3_standard": {
+    "outcomes": {
+      "inherited_TP_to_FP": 0,
+      "inherited_FP_to_TP": 0,
+      "candidate_eligible": 1786,
+      "matching_no_unreserved_compatible_evidence": 1419,
+      "below_threshold": 76,
+      "matching_unique_pair": 120,
+      "arbitration_updated": 120,
+      "candidate_protected_conflict": 1087,
+      "promoted_FP": 33,
+      "matching_ambiguous_local_degree": 228,
+      "recovered_TP": 11,
+      "matching_no_selected_roi_coverage": 2,
+      "matching_ambiguous_global_degree": 17
+    },
+    "classes": {
+      "fracture": {
+        "below_threshold": 54,
+        "promoted_FP": 31,
+        "recovered_TP": 8
+      },
+      "metal": {},
+      "text": {},
+      "periostealreaction": {
+        "below_threshold": 22,
+        "recovered_TP": 3,
+        "promoted_FP": 2
+      },
+      "pronatorsign": {},
+      "bonelesion": {},
+      "softtissue": {},
+      "boneanomaly": {}
+    },
+    "roi_productivity": {
+      "local_calls": 981,
+      "rois_with_update": 118,
+      "rois_with_recovery": 11,
+      "rois_with_promoted_FP": 33,
+      "rois_both_recovery_and_FP": 0,
+      "rois_without_update": 863
+    }
+  },
+  "V3_rarity": {
+    "outcomes": {
+      "inherited_TP_to_FP": 0,
+      "inherited_FP_to_TP": 0,
+      "candidate_eligible": 1390,
+      "matching_no_unreserved_compatible_evidence": 1100,
+      "candidate_protected_conflict": 868,
+      "below_threshold": 96,
+      "matching_unique_pair": 137,
+      "arbitration_updated": 137,
+      "matching_ambiguous_local_degree": 134,
+      "recovered_TP": 20,
+      "matching_no_selected_roi_coverage": 1,
+      "matching_ambiguous_global_degree": 18,
+      "promoted_FP": 21
+    },
+    "classes": {
+      "fracture": {
+        "below_threshold": 67,
+        "recovered_TP": 17,
+        "promoted_FP": 15
+      },
+      "metal": {},
+      "text": {},
+      "periostealreaction": {
+        "below_threshold": 29,
+        "recovered_TP": 3,
+        "promoted_FP": 6
+      },
+      "pronatorsign": {},
+      "bonelesion": {},
+      "softtissue": {},
+      "boneanomaly": {}
+    },
+    "roi_productivity": {
+      "local_calls": 883,
+      "rois_with_update": 132,
+      "rois_with_recovery": 20,
+      "rois_with_promoted_FP": 21,
+      "rois_both_recovery_and_FP": 0,
+      "rois_without_update": 751
+    }
+  }
+}

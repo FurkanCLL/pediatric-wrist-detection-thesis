@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "all_validation_identity_strings_excluded": true,
+  "aggregate_JSON_finite": true,
+  "report_links_checked": true,
+  "historical_results_and_code_preserved": true,
+  "artifacts_sha256": {
+    "AP.csv": "c78925e6ae88c9bd96ef66612d429f661c2098a727f5b32474116ae9c3b2fb9d",
+    "component_attribution.json": "94c3d56e0448116d2fa391f59c0e536c74d4697aff25ee980d060fdc76d0296f",
+    "documentation_checks.json": "33b51ade5dac205c1c0a9b2569868f5ff237c789789ee96ee3c5b64bd78444dd",
+    "error_categories.json": "2b7a323b278d7e4f60689ca480dac49259fb6752ddb646118fa6816156ea2dcf",
+    "execution_commands.json": "398f57637e09273a59fb2739998fabc375e3bf4c74268b671c4b69f03f3bb8ce",
+    "execution_manifest.json": "0337d4f6208fe25b8dc56bdf116f643f28b907fd3bad29dae3af284dfa73713b",
+    "freeze.json": "790c4358f6ad18e1746804522d6ec158b9343feaf5b374887a4ec151493ca83e",
+    "full_rarity.json": "2302f8c1704398a883d33ebcbc3f0179873d93ec2267c36f8335eabfb0369972",
+    "full_standard.json": "fb9294b6d3e3ff3a9219b45588ef3470b1c2d3d9eee143486df41f341fbe62de",
+    "operating_points.csv": "9c521d5f9e4e0959a70fbd36f5b475eb3380ca9f3dbaa3c9743005260010e01f",
+    "paired_AP_contrasts.csv": "7e18e5fc0d17078605245828dc7af3ab9f5a5384a7d07ff059b885dd33a20e4e",
+    "pilot_rarity.json": "28e87a9748ea3840bc5cb43deb9ddcf47a4aaf082b1d2503498ca193b5bd540e",
+    "pilot_standard.json": "5b851e1fcaf3d7d265499569335d0b91d835a6c9983e8f39448df4775520130f",
+    "pre_gpu_tests.json": "fc516b11ce76aeb0cd79bc88cc8208fa45b7d646b69291d0335d7dcdc6142f66",
+    "promotion_and_ROI.json": "ab56129f065d236a9eeba27bebbec8ad89073ffad2950592c68fdcb91c48ea9a",
+    "results.json": "19ac84fc98e2891c08a00385c16c6a73bf0d99d8e4b8a827be1c93448f4e663b",
+    "runtime.csv": "852916a7fb6e85da74cfe3233ddac3d402df236371a44954f74cfcd96cf8c5f7",
+    "V3_DESIGN.md": "6406d30be35bcc4fb233d94b41576b329b36feaf26e5aa7b298a512e45e0101c",
+    "V3_EXPERIMENTAL_RESULTS.md": "0782c879d61791158cc290a787659c54cd570b58a752a647b6eedf39de787ab3",
+    "V3_IMPLEMENTATION_REPORT.md": "5cae54a5b6e76b9bbbb054e193f9518e7280f46b15ee19bcdbcd52cde0779573",
+    "V3_SCIENTIFIC_ASSESSMENT.md": "4ff0fb95f09c0229e656b524044dcfd5ab75a4f30dd8934088c8219460d8b744",
+    "verification.json": "6eb1ffacc8cb3560abca6c8a9c8b69e2e0cc437c7e569b03e64cd015afa4ade2"
+  },
+  "configuration_sha256": "6ff28f6591a149f46169769124922902c8324611284365ac6dc656f331390c7b"
+}

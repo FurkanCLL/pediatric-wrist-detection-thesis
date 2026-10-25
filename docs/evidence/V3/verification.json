@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "independent_operating_counts": {
+    "A": {
+      "tp": 6467,
+      "fp": 884,
+      "fn": 737
+    },
+    "C": {
+      "tp": 6505,
+      "fp": 1055,
+      "fn": 699
+    },
+    "V3_standard": {
+      "tp": 6478,
+      "fp": 917,
+      "fn": 726
+    },
+    "D": {
+      "tp": 6518,
+      "fp": 1016,
+      "fn": 686
+    },
+    "F": {
+      "tp": 6552,
+      "fp": 1152,
+      "fn": 652
+    },
+    "V3_rarity": {
+      "tp": 6538,
+      "fp": 1037,
+      "fn": 666
+    }
+  },
+  "all_6176_V3_bundle_replays_exact": true,
+  "immutable_source_ids_and_protected_geometry_checked": true,
+  "all_500_patient_draws_and_AP_intervals_checked": true,
+  "conditional_overall_and_bonelesion_replicates": 492,
+  "other_class_replicates": 500,
+  "actual_calls_and_all_recovery_FP_partitions_reconcile": true,
+  "preservation": {
+    "passed": true,
+    "stage": "after",
+    "historical_tracked_files": 386,
+    "historical_private_files": 784,
+    "data_stat_identity": "84601ecf4c83b72f9ed8542936ef6621ffce619cb0f748eeb58567736a427b8a",
+    "best_checkpoint_bytes_unchanged": {
+      "standard_baseline": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+      "rarity_only": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e"
+    },
+    "other_checkpoint_protection": "size and modification time"
+  },
+  "source_identity": {
+    "src/wrist_v3/__init__.py": "4f0e6ec3873d9e41ecd6041acf72cadd14d52a0ff3f6ed7d0862d7cc559771fb",
+    "src/wrist_v3/analysis.py": "f418114d2f125e05569caed09bc9f968840755a99a03f125aed99413021b15b3",
+    "src/wrist_v3/core.py": "c4408520c73261595b97fac9862245b3ac54b1c924586b1e19fdd2c653336ecd",
+    "src/wrist_v3/fusion.py": "d12a1e06bda905e51ecdd06b53a3e285ba7b5e36480bb5cc0698c95067f89567",
+    "src/wrist_v3/metrics.py": "5a4b9ccca0f1a0fd6848228bbd61c3a98f3744b20629a88d8ad045e864c32ba2",
+    "src/wrist_v3/planning.py": "6333accc99f55feeb7ae38bd383e89081f34bc36b6fb9892aa2efe75523ad08d",
+    "src/wrist_v3/protocol.py": "8429d56629ab61aad720f32b3b1b5b5f8f55f7912167ce516958c9f8801d0f84",
+    "src/wrist_v3/publication.py": "05d4538e3f3933b644b3cca130dc47612bc5202382c1e476e0db6c2ccf87962d",
+    "src/wrist_v3/reports.py": "8e601105edc30891886afcd91ee2b3377df9050b5adcfa1134b66dcf1e043a83",
+    "src/wrist_v3/runner.py": "c1abe811da110e3dae81013914d71a47f9528e61baef45eb903f2c747c8033fd",
+    "tests/test_v3_core.py": "c6f322613236cef75b7ecb0790c04c36d4bf753d24f611fd88c163fa34140de7",
+    "tests/test_v3_metrics.py": "c63b074f4715ae92919b160d39d01142b5e5b9ec67bc1c59cb67b9b30277d63d",
+    "tests/test_v3_protocol.py": "5d445fe7fdb477c996832df038192973d6ebdb7ae8d52893b3e9de7d58c7755c"
+  },
+  "freeze_sha256": "790c4358f6ad18e1746804522d6ec158b9343feaf5b374887a4ec151493ca83e",
+  "private_results_sha256": "98c299af71462c861d836c9efaca4be05e98ac9074873c05a95498007c817678",
+  "bootstrap_sha256": "0cb6eb78c5c33dd17622388fc37ad1ada3d0b5170cf9495df7b58bea0d9623f5",
+  "new_training": false,
+  "test_image_label_prediction_contents_opened": 0
+}

@@ -29,3 +29,13 @@ Before/after preservation compares the prior 386 tracked files, 784 private hist
 GPU timing uses sequential inference with three synthetic warmups. Complete image-path time includes decode, global and selected local views, planning and fusion; JSON serialization is outside the per-image interval and included separately in total loop time. The contemporaneous paired global prefix includes decode and the same global preprocessing/forward/NMS/restoration. Its timestamp precedes the global-reference assertion and V3 planning. Mean complete-path ratio is assessed against this prefix; session order and laptop GPU conditions remain limitations. Peak allocated and reserved CUDA memory and actual forwards are reported independently.
 
 No real V3 AP, TP/FP, recovery or bootstrap result was available when this report and the protocol were frozen. Numerical rules cannot be revised in response to later outcomes. A technical failure must retain its evidence and be documented transparently. Final method selection, further optimization and held-out evaluation remain outside this phase.
+
+
+## Completed runtime verification
+
+Both fixed pilots and full runs completed. Model hooks, global-reference equality, pilot/full identity, all saved bundle replays, original coordinates/protected fields, paired patient intervals and historical preservation pass. Results and criteria are in [the experimental report](V3_EXPERIMENTAL_RESULTS.md); [verification.json](verification.json) binds the aggregates. The algorithm/configuration remained frozen.
+
+
+## Execution provenance
+
+Frozen commit `01e1002bbf901b63c01830f8e2a46b213241dfaa` was pushed to `origin/main` before preflight and GPU execution. [execution_commands.json](execution_commands.json) records the ordered commands and private-log hashes; [execution_manifest.json](execution_manifest.json) records the software environment, validation identities, checkpoint receipts and freeze. Both 24-image pilots and exactly one 3,088-image full pass per checkpoint completed without a failed or repeated GPU stage. The final publication check is `.venv/Scripts/python.exe -m wrist_v3.publication check`; its output receipt is `publication_checks.json`.

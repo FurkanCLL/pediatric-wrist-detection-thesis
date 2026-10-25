@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "all_strict_failures_are_overall_interval_only": true,
+  "measured_tradeoff_arithmetic": {
+    "standard": {
+      "TP_delta_vs_standard": 11,
+      "FP_delta_vs_standard": 33,
+      "TP_delta_vs_V2": -27,
+      "FP_delta_vs_V2": -138,
+      "local_call_reduction_percent": 23.65758754863813,
+      "no_update_percent_V2_V3": [
+        69.80544747081711,
+        87.97145769622834
+      ],
+      "recovery_ROI_percent_V2_V3": [
+        2.8793774319066148,
+        1.1213047910295617
+      ]
+    },
+    "rarity": {
+      "TP_delta_vs_standard": 20,
+      "FP_delta_vs_standard": 21,
+      "TP_delta_vs_V2": -14,
+      "FP_delta_vs_V2": -115,
+      "local_call_reduction_percent": 27.325102880658434,
+      "no_update_percent_V2_V3": [
+        69.38271604938272,
+        85.05096262740656
+      ],
+      "recovery_ROI_percent_V2_V3": [
+        2.7983539094650207,
+        2.2650056625141564
+      ]
+    }
+  },
+  "historical_ROI_source": "docs/evidence/phase_5a_analysis/CG_ALR_V2_DIAGNOSTICS.md",
+  "manual_scientific_assessment_reviewed": true,
+  "frozen_sources_unchanged": true
+}

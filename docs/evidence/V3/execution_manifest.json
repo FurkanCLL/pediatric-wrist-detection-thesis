@@ -1,0 +1,136 @@
+{
+  "freeze_revision": "01e1002bbf901b63c01830f8e2a46b213241dfaa",
+  "freeze_sha256": "790c4358f6ad18e1746804522d6ec158b9343feaf5b374887a4ec151493ca83e",
+  "lock": {
+    "algorithm": "CG-ALR V3.0",
+    "source_identity": {
+      "src/wrist_v3/__init__.py": "4f0e6ec3873d9e41ecd6041acf72cadd14d52a0ff3f6ed7d0862d7cc559771fb",
+      "src/wrist_v3/analysis.py": "f418114d2f125e05569caed09bc9f968840755a99a03f125aed99413021b15b3",
+      "src/wrist_v3/core.py": "c4408520c73261595b97fac9862245b3ac54b1c924586b1e19fdd2c653336ecd",
+      "src/wrist_v3/fusion.py": "d12a1e06bda905e51ecdd06b53a3e285ba7b5e36480bb5cc0698c95067f89567",
+      "src/wrist_v3/metrics.py": "5a4b9ccca0f1a0fd6848228bbd61c3a98f3744b20629a88d8ad045e864c32ba2",
+      "src/wrist_v3/planning.py": "6333accc99f55feeb7ae38bd383e89081f34bc36b6fb9892aa2efe75523ad08d",
+      "src/wrist_v3/protocol.py": "8429d56629ab61aad720f32b3b1b5b5f8f55f7912167ce516958c9f8801d0f84",
+      "src/wrist_v3/publication.py": "05d4538e3f3933b644b3cca130dc47612bc5202382c1e476e0db6c2ccf87962d",
+      "src/wrist_v3/reports.py": "8e601105edc30891886afcd91ee2b3377df9050b5adcfa1134b66dcf1e043a83",
+      "src/wrist_v3/runner.py": "c1abe811da110e3dae81013914d71a47f9528e61baef45eb903f2c747c8033fd",
+      "tests/test_v3_core.py": "c6f322613236cef75b7ecb0790c04c36d4bf753d24f611fd88c163fa34140de7",
+      "tests/test_v3_metrics.py": "c63b074f4715ae92919b160d39d01142b5e5b9ec67bc1c59cb67b9b30277d63d",
+      "tests/test_v3_protocol.py": "5d445fe7fdb477c996832df038192973d6ebdb7ae8d52893b3e9de7d58c7755c"
+    },
+    "configuration_sha256": "6ff28f6591a149f46169769124922902c8324611284365ac6dc656f331390c7b",
+    "configuration_identity": "f0c615162557c072ce1235ac827aba4a1b6ea326bc8aa1ebeff464b5b7e05d98",
+    "design_sha256": "6406d30be35bcc4fb233d94b41576b329b36feaf26e5aa7b298a512e45e0101c",
+    "design_mirror_sha256": "6406d30be35bcc4fb233d94b41576b329b36feaf26e5aa7b298a512e45e0101c",
+    "test_gate_sha256": "fc516b11ce76aeb0cd79bc88cc8208fa45b7d646b69291d0335d7dcdc6142f66",
+    "performance_calculated_before_freeze": false,
+    "base_revision": "af5d01d6f9e1e25e8c3d1299b9b70887679e8165"
+  },
+  "environment": {
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "numpy": "2.3.5",
+      "opencv-python": "5.0.0.93",
+      "torch": "2.14.1+cu126",
+      "torchvision": "0.29.1+cu126",
+      "ultralytics": "8.4.177"
+    },
+    "python": "3.12.5",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "cuda_build": "12.6",
+    "free_vram_gib": 4.9443359375,
+    "total_vram_gib": 5.99658203125,
+    "allocated_after_probe_bytes": 0
+  },
+  "checkpoints": {
+    "standard": {
+      "condition": "A",
+      "sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+      "epoch": 22,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "pretrained_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a"
+    },
+    "rarity": {
+      "condition": "D",
+      "sha256": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e",
+      "epoch": 26,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "pretrained_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a"
+    }
+  },
+  "prepared_validation_bytes": {
+    "images": 3088,
+    "labels": 3088,
+    "all_sha256_match": true
+  },
+  "membership": "d6123801714defcaf61e5e339370e7af86f555b643f2d7ee628a79ea36b07f13",
+  "shape_profile_sha256": "f8592b2448a1d348058c6cea3a216d056b9d321663e5d69e2edb29fa213f73aa",
+  "configuration": {
+    "schema_version": 1,
+    "algorithm": "CG-ALR V3.0",
+    "checkpoint_specific_parameters": false,
+    "historical_proposal": "configs/adaptive_refinement_proposed.json",
+    "historical_proposal_identity": "a2e96ff54fdee455aefcb698b8a49008572a22decdb535cc2e65cd6d73997cc6",
+    "protected_confidence": 0.25,
+    "ownership_iou": 0.5,
+    "local_score_weight": 0.5,
+    "maximum_positive_delta": 0.1,
+    "maximum_updated_confidence": 0.35,
+    "geometry": "preserve every original global box",
+    "roi_policy": "V2 diversity/ranking/coalescing after direct protected-overlap candidate exclusion",
+    "matching": "reserve all protected-compatible evidence; accept only isolated one-to-one weak/local graph edges",
+    "promotion_guard": "reject update overlapping a current operating same-class row at IoU>=0.5",
+    "maximum_local_views": 2,
+    "maximum_model_calls": 3,
+    "checkpoints": {
+      "standard": {
+        "baseline": "A",
+        "v2": "C",
+        "epoch": 22,
+        "sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b"
+      },
+      "rarity": {
+        "baseline": "D",
+        "v2": "F",
+        "epoch": 26,
+        "sha256": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e"
+      }
+    },
+    "evaluation": {
+      "images": 3088,
+      "patients": 914,
+      "operating_confidences": [
+        0.05,
+        0.25,
+        0.5
+      ],
+      "operating_ious": [
+        0.5,
+        0.75
+      ],
+      "bootstrap_replicates": 500,
+      "bootstrap_seed": 314159,
+      "deterministic_tie_key": [
+        "descending unmodified confidence",
+        "frozen validation image index",
+        "original global row ID",
+        "bootstrap image occurrence"
+      ],
+      "deterministic_matching_input": "original global row ID order before unchanged native per-image TP matching",
+      "scientific_success": "all historical gates plus deterministic-track AP and fracture corroboration",
+      "global_verdict": "SUCCESS requires both checkpoints; PARTIAL IMPROVEMENT requires at least one strict success or lower FP than V2 plus positive recovery versus standard on both checkpoints; otherwise NO DEMONSTRATED IMPROVEMENT",
+      "fp_ratio_max": 1.1,
+      "fracture_interval_tolerance": -0.005,
+      "mean_latency_ratio_max": 2.0,
+      "technical_peak_allocated_gib_max": 4.0,
+      "technical_projected_seconds_max": 10800,
+      "component_attribution": [
+        "legacy_V1_on_historical_views",
+        "legacy_V1_on_V3_views",
+        "V3_arbitration_with_legacy_cap_on_V3_views",
+        "actual_V3"
+      ]
+    }
+  }
+}

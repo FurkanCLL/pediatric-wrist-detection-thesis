@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-26",
+  "freeze_revision": "01e1002bbf901b63c01830f8e2a46b213241dfaa",
+  "frozen_revision_pushed_before_GPU": true,
+  "ordered_completed_execution": [
+    {
+      "executable": ".venv/Scripts/python.exe",
+      "arguments": [
+        "-m",
+        "wrist_v3.runner",
+        "init"
+      ],
+      "exit_code": 0,
+      "private_log_sha256": "a0a73ad9850a9bded124d837c8ba984f58e8edab79d135820ef378f4f2534b87"
+    },
+    {
+      "executable": ".venv/Scripts/python.exe",
+      "arguments": [
+        "-m",
+        "wrist_v3.runner",
+        "pilot",
+        "standard"
+      ],
+      "exit_code": 0,
+      "private_log_sha256": "404c2ca31601101ba0d940d6538693e6e7e9fa3e155c1528d7c0230b5836e196"
+    },
+    {
+      "executable": ".venv/Scripts/python.exe",
+      "arguments": [
+        "-m",
+        "wrist_v3.runner",
+        "pilot",
+        "rarity"
+      ],
+      "exit_code": 0,
+      "private_log_sha256": "b58fe7d59644894ac380ea0a1bc983fa4cc4730268fff975e395bd07c6ddc5f0"
+    },
+    {
+      "executable": ".venv/Scripts/python.exe",
+      "arguments": [
+        "-m",
+        "wrist_v3.runner",
+        "full",
+        "standard"
+      ],
+      "exit_code": 0,
+      "private_log_sha256": "dfd1258ad7040042dfce9953bdd85a3be80d10a1a855d78164357a2a59ad2512"
+    },
+    {
+      "executable": ".venv/Scripts/python.exe",
+      "arguments": [
+        "-m",
+        "wrist_v3.runner",
+        "full",
+        "rarity"
+      ],
+      "exit_code": 0,
+      "private_log_sha256": "a398bb12c075520f21a7874271c69bb16203fdfb64da6908cf3af59b0b0b5aba"
+    },
+    {
+      "executable": ".venv/Scripts/python.exe",
+      "arguments": [
+        "-m",
+        "wrist_v3.analysis"
+      ],
+      "exit_code": 0,
+      "private_log_sha256": "9610df83e96ca6b24d0221213d5ef6c4140793256153679327ed515139e7c589"
+    },
+    {
+      "executable": ".venv/Scripts/python.exe",
+      "arguments": [
+        "-m",
+        "wrist_v3.publication",
+        "verify"
+      ],
+      "exit_code": 0,
+      "private_log_sha256": "82885b6daf0a18cbaed120000fd62f55e1f8bc4ee8ee28ebe0c2b48efc694ae5"
+    }
+  ],
+  "completed_aggregate_generation": [
+    [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "wrist_v3.publication",
+      "export"
+    ],
+    [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "wrist_v3.reports"
+    ]
+  ],
+  "private_logs_published": false,
+  "source_configuration_unchanged": true,
+  "no_failed_or_repeated_GPU_stage": true
+}
