@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "algorithm": "CG-ALR V3.0",
+  "checkpoint_specific_parameters": false,
+  "historical_proposal": "configs/adaptive_refinement_proposed.json",
+  "historical_proposal_identity": "a2e96ff54fdee455aefcb698b8a49008572a22decdb535cc2e65cd6d73997cc6",
+  "protected_confidence": 0.25,
+  "ownership_iou": 0.5,
+  "local_score_weight": 0.5,
+  "maximum_positive_delta": 0.1,
+  "maximum_updated_confidence": 0.35,
+  "geometry": "preserve every original global box",
+  "roi_policy": "V2 diversity/ranking/coalescing after direct protected-overlap candidate exclusion",
+  "matching": "reserve all protected-compatible evidence; accept only isolated one-to-one weak/local graph edges",
+  "promotion_guard": "reject update overlapping a current operating same-class row at IoU>=0.5",
+  "maximum_local_views": 2,
+  "maximum_model_calls": 3,
+  "checkpoints": {
+    "standard": {"baseline": "A", "v2": "C", "epoch": 22, "sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b"},
+    "rarity": {"baseline": "D", "v2": "F", "epoch": 26, "sha256": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e"}
+  },
+  "evaluation": {
+    "images": 3088,
+    "patients": 914,
+    "operating_confidences": [0.05, 0.25, 0.5],
+    "operating_ious": [0.5, 0.75],
+    "bootstrap_replicates": 500,
+    "bootstrap_seed": 314159,
+    "deterministic_tie_key": ["descending unmodified confidence", "frozen validation image index", "original global row ID", "bootstrap image occurrence"],
+    "deterministic_matching_input": "original global row ID order before unchanged native per-image TP matching",
+    "scientific_success": "all historical gates plus deterministic-track AP and fracture corroboration",
+    "global_verdict": "SUCCESS requires both checkpoints; PARTIAL IMPROVEMENT requires at least one strict success or lower FP than V2 plus positive recovery versus standard on both checkpoints; otherwise NO DEMONSTRATED IMPROVEMENT",
+    "fp_ratio_max": 1.1,
+    "fracture_interval_tolerance": -0.005,
+    "mean_latency_ratio_max": 2.0,
+    "technical_peak_allocated_gib_max": 4.0,
+    "technical_projected_seconds_max": 10800,
+    "component_attribution": ["legacy_V1_on_historical_views", "legacy_V1_on_V3_views", "V3_arbitration_with_legacy_cap_on_V3_views", "actual_V3"]
+  }
+}
