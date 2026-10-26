@@ -1,0 +1,72 @@
+{
+  "phase": "5D",
+  "authorized_request_sha256": "648345ba4ed62dd2d03a1ad9bbcbbb65dcc503ebbe91ec68c7c1858c48b8631e",
+  "base_revision": "354be69fbfaebb22b7cf8dbefde4647028b3c54a",
+  "sources": {
+    "src/wrist_final/execution.py": "2eafc4f6b66392ded09ed5892f44c292d8fb33192c5dde1a7122d0842846eb04",
+    "src/wrist_final/test_data.py": "e0f420fb6672a3fda346f77e3d7662fa542f232984a8c3098def226a86b1b8ea",
+    "src/wrist_final/test_runner.py": "aad456797736ef0833939bd16a0f1c80721f72b43a8980bb2be83899456a710a",
+    "src/wrist_final/test_analysis.py": "9988e04b908dd4826eeaf65d9de24b2856679427535d0b849920e063867bae98",
+    "src/wrist_final/test_verification.py": "5622941ed7b1f29d0d1cb1ceb1423a816fe6a0881e884a8078825a1c4c07717e",
+    "src/wrist_final/test_reports.py": "b843b9cbaecaec68b9de36faf98763c33589de1c089e5197576af7ac60df0dd2",
+    "tests/test_heldout_execution.py": "c37dd44f91899a8407760e6fb725fd3be6992f9b6ca154a4c0c6beb11c4dc809"
+  },
+  "matrix_sha256": "bf5d83c6bfb7ad0634ffd97af6aaff1757b87e7cd8cbf7e5a21dc3c0256e32a8",
+  "execution_notes_sha256": "a76e54ed87169965df15d810788618c19a8ab0a411205ffec4975c5559abb34d",
+  "pre_access_tests": {
+    "passed": true,
+    "count": 296,
+    "seconds": 112.5310270000009,
+    "private_log_sha256": "805fccd7e41ff841fd90fb5985decdaff9e2eabb8df25c714a4273476dc1c9b7"
+  },
+  "saved_validation_checks": {
+    "saved_validation_predictions": {
+      "final_A": {
+        "saved_source_sha256": "cb056711668c04ebe8a7736724e35d46c6092f5a6e8ac5a9becba9a53bd1bee6",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      },
+      "final_B": {
+        "saved_source_sha256": "79f48d390c566c454cc248966dc09f05d24aefc927949ec5e7816af4e6a5eec1",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      },
+      "final_D": {
+        "saved_source_sha256": "b653b3d5e1df5ca227b29588e6085bb115d8530c99e934495d6e1d630a2b661d",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      },
+      "final_E": {
+        "saved_source_sha256": "c7932bbe4ab78222a5c3381c2dc3fb88d52d8224db72de5df9d1b117631d873e",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      },
+      "final_C": {
+        "saved_source_sha256": "fefcedf42b8d43c54f343b70ef591f4a3c8458804e985958f324c8aac96c6f9a",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      },
+      "final_F": {
+        "saved_source_sha256": "e1584fca1c92bc87d300d09acdf1b68306b698e5d418f454b091cb603aa488f2",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      }
+    },
+    "all_3088_reference_shapes_reproduced": true,
+    "validation_images_or_labels_opened": 0,
+    "validation_performance_calculated": false
+  },
+  "test_content_accessed_before_freeze": false,
+  "condition_order": [
+    "final_A",
+    "final_B",
+    "final_C",
+    "final_D",
+    "final_E",
+    "final_F"
+  ],
+  "run": "study_01",
+  "full_passes_per_condition": 1,
+  "synthetic_warmups_per_condition": 3,
+  "no_test_pilot_or_replay": true
+}
