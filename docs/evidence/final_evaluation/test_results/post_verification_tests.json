@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "tests": 8,
+  "private_log_sha256": "8ccd497b2f5f93dba3068eac3b5e58da5cb55cc1c10bf8027c23bf293997b268",
+  "unchanged_execution_freeze_sha256": "0055076227c1635097d760a2a2b47a85329ace7d3e9740e91f816eea368c30b7",
+  "synthetic_only": true,
+  "new_test_inference": false
+}

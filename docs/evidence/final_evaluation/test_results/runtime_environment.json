@@ -1,0 +1,19 @@
+{
+  "python": "3.12.5",
+  "packages": {
+    "numpy": "2.3.5",
+    "Pillow": "12.3.0",
+    "opencv-python": "5.0.0.93",
+    "torch": "2.14.1+cu126",
+    "torchvision": "0.29.1+cu126",
+    "ultralytics": "8.4.177",
+    "sahi": "0.12.8",
+    "PyYAML": "6.0.3"
+  },
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "driver": "560.94",
+  "reported_total_memory_mib": 6141,
+  "hardware_query": "nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader",
+  "execution_freeze_revision": "507bbfe50c133f3470e076a51184891aeb11846a",
+  "timing_boundary": "decode through final output and CUDA completion; loading, warmups, export and offline metrics excluded"
+}

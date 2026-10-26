@@ -1,0 +1,17 @@
+split,class,objects,patients,images
+test,fracture,2860,538,2161
+test,metal,123,24,102
+test,text,3723,912,3169
+test,periostealreaction,463,163,329
+test,pronatorsign,84,83,84
+test,bonelesion,5,4,5
+test,softtissue,68,61,64
+test,boneanomaly,35,14,24
+validation,fracture,2808,538,2082
+validation,metal,96,24,88
+validation,text,3611,913,3075
+validation,periostealreaction,493,163,316
+validation,pronatorsign,83,83,83
+validation,bonelesion,5,4,5
+validation,softtissue,72,61,67
+validation,boneanomaly,36,14,21

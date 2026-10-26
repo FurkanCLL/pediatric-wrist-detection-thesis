@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "splits": {
+    "test": {
+      "passed": true,
+      "independent_operating_totals": {
+        "final_A": {
+          "tp": 6532,
+          "fp": 983,
+          "fn": 829
+        },
+        "final_B": {
+          "tp": 6702,
+          "fp": 3508,
+          "fn": 659
+        },
+        "final_C": {
+          "tp": 6547,
+          "fp": 1016,
+          "fn": 814
+        },
+        "final_D": {
+          "tp": 6601,
+          "fp": 1109,
+          "fn": 760
+        },
+        "final_E": {
+          "tp": 6760,
+          "fp": 3878,
+          "fn": 601
+        },
+        "final_F": {
+          "tp": 6627,
+          "fp": 1138,
+          "fn": 734
+        }
+      },
+      "every_native_assignment_checked": true,
+      "independent_all_point_AP_and_three_paired_AP_replicates_per_method": true,
+      "all_500_draws_and_all_contrast_intervals_checked": true,
+      "results_sha256": "3917f3698352c0c5d9f9ddac691b06ee330e1f2ee31f4edd208451c7fe06f373"
+    },
+    "validation": {
+      "passed": true,
+      "independent_operating_totals": {
+        "final_A": {
+          "tp": 6467,
+          "fp": 884,
+          "fn": 737
+        },
+        "final_B": {
+          "tp": 6599,
+          "fp": 3209,
+          "fn": 605
+        },
+        "final_C": {
+          "tp": 6478,
+          "fp": 917,
+          "fn": 726
+        },
+        "final_D": {
+          "tp": 6518,
+          "fp": 1016,
+          "fn": 686
+        },
+        "final_E": {
+          "tp": 6647,
+          "fp": 3648,
+          "fn": 557
+        },
+        "final_F": {
+          "tp": 6538,
+          "fp": 1037,
+          "fn": 666
+        }
+      },
+      "every_native_assignment_checked": true,
+      "independent_all_point_AP_and_three_paired_AP_replicates_per_method": true,
+      "all_500_draws_and_all_contrast_intervals_checked": true,
+      "results_sha256": "8a1a4cbd7a91820521b15e1d2555ae8d7b92aef253d4c83fbd4ec0ecb418e348"
+    }
+  },
+  "V3_replays": 6356,
+  "physical_call_and_runtime_checks": true,
+  "historical_tracked_files_preserved": 433,
+  "best_checkpoints_unchanged": true,
+  "execution_freeze_sha256": "0055076227c1635097d760a2a2b47a85329ace7d3e9740e91f816eea368c30b7",
+  "no_new_validation_inference": true,
+  "no_test_pilot_replay_or_parameter_revision": true
+}

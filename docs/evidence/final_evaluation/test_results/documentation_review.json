@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "labels_expanded_for_readability": true,
+  "observed_cross_partition_patterns_reviewed": true,
+  "primary_result_not_relabelled_as_success": true,
+  "frozen_code_and_metric_values_unchanged": true,
+  "aggregate_results_sha256": "7a9e652b317f3b8b33fb792b87c56c6a79264b95cfd54703a40b42798609a95c",
+  "original_generated_report_hashes": {
+    "FINAL_SCIENTIFIC_ASSESSMENT.md": "a20f0fd36e8afc2528981bdd9c9f1b3b983da0a1a262f68623fda2ac71b57f5e",
+    "FINAL_TEST_RESULTS.md": "3d5c2c0b26d9905d606b901555d4c15f5a75a22274c0a365f2af10700aa53391",
+    "VALIDATION_TEST_COMPARISON.md": "1d93e4055def406a52995229103ad038a32c7d411a011afb95a6577dfeab6b17"
+  },
+  "supplementary_audit_sha256": "5b0a7570fde776f67d87e8c6510550d61ab8fa514e3da37499682e5dd99e0410"
+}

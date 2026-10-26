@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "scalar_linear_interpolation_CI_channels_checked": 1584,
+  "tolerance": 1e-12,
+  "six_non_target_class_AP_exactly_invariant_for_V3_both_splits": true,
+  "all_recovered_minus_lost_counts_reconcile_with_net_TP": true,
+  "method": "independent math.fsum contrasts and sorted scalar linear interpolation; no shared quantile helper",
+  "private_audit_script_sha256": "c78d8bd46216b32e3a07d3a449ab4e04df46c491d5fbb2983636bcc2f1e39f07",
+  "frozen_evaluation_or_results_modified": false
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "images": 3178,
+  "patients": 913,
+  "objects": 7361,
+  "patient_overlap": 0,
+  "all_prepared_test_images_and_labels_sha256_verified": true,
+  "all_labels_match_frozen_record_bytes": true,
+  "records_sha256": "3f8d33010dddd4d7d213094548f8b1d7eb0fef723ff46168cc020f9437c041a9",
+  "validation_records_sha256": "c9a7c8f514dcecfc207f824d7f8b237f423626f6c1462836304c3c3278311e92",
+  "metadata_sha256": "3dc56b5138e1262cbf92a420998c0430f55490d7d8703539bbd780e5e682d3d3",
+  "prepared_hash_identity": "c21ff96b4943d0cddd2a79ca9ad19e57c22806f603597b217fdbc5c60906f858",
+  "membership_sha256": "736cacc1d06efc2b0c3c0c3a73dedfd8e4b19c2503ad8f529bc7f14b093f278f",
+  "shape_identity": "b680f82dc0d52d91d36a8442a43a6e9bf0c38ba3cf58144372bad4ea0084a2f3",
+  "execution_freeze_sha256": "0055076227c1635097d760a2a2b47a85329ace7d3e9740e91f816eea368c30b7",
+  "execution_revision": "507bbfe50c133f3470e076a51184891aeb11846a"
+}

@@ -1,0 +1,65 @@
+{
+  "execution_freeze_revision": "507bbfe50c133f3470e076a51184891aeb11846a",
+  "ordered_completed_commands": [
+    {
+      "command": ".venv/Scripts/python.exe -m wrist_final.execution",
+      "exit_code": 0,
+      "scope": "pre-access synthetic and saved-validation checks"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m wrist_final.test_runner init",
+      "exit_code": 0,
+      "private_log_sha256": "ababc74811e40dd7e7e521b0e242b017f9da429397c0a219122ad25162a397fb"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m wrist_final.test_runner final_A",
+      "exit_code": 0,
+      "private_log_sha256": "121cd0421ecfda9d52345ddc2fc315876a9effa0b43e121d8cd9d5a1debab39a"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m wrist_final.test_runner final_B",
+      "exit_code": 0,
+      "private_log_sha256": "8cc070409b29b7e0c6e8e791981e0fed90b1e37c2fc36f3f2c791115e998167a"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m wrist_final.test_runner final_C",
+      "exit_code": 0,
+      "private_log_sha256": "6ac9af0f53ca8199913b7363fb7a87e554a9d490bb01d5405071c7337d83ae65"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m wrist_final.test_runner final_D",
+      "exit_code": 0,
+      "private_log_sha256": "4383e5b86c3691d7239a7afd46317fa0c642e26ac2bf2c2f3a4ceb23b0813058"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m wrist_final.test_runner final_E",
+      "exit_code": 0,
+      "private_log_sha256": "57a952cd0b9d73f767f09f3a46b63db8ace38d14d35cc1a0971c7aad74aa5176"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m wrist_final.test_runner final_F",
+      "exit_code": 0,
+      "private_log_sha256": "f5d52f032df48ec096577fd34a58a093956ee6238bc34f2c82a49270c711f7c9"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m wrist_final.test_analysis",
+      "exit_code": 0,
+      "private_log_sha256": "356efa38ce23715ae677c7cff03d45749a1bdbea3ef99b1825a4881430e6b065"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m wrist_final.test_verification verify",
+      "exit_code": 0,
+      "private_log_sha256": "978bf0fb0b1fbc61dd7262afeaf6c88bf98df00419a82ca3f2feeb6a45aa9cc1"
+    }
+  ],
+  "aggregate_export_command": ".venv/Scripts/python.exe -m wrist_final.test_verification export",
+  "report_command": ".venv/Scripts/python.exe -m wrist_final.test_reports",
+  "condition_summary_source_sha256": "7a9e652b317f3b8b33fb792b87c56c6a79264b95cfd54703a40b42798609a95c",
+  "derived_cost_formulas": {
+    "images_per_second": "1 / mean e2e seconds",
+    "standalone_ratio": "mean e2e / corresponding final_A or final_D mean; descriptive session comparison"
+  },
+  "actual_full_inference_passes": 6,
+  "no_failed_or_repeated_inference_condition": true,
+  "private_logs_published": false
+}
