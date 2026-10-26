@@ -1,0 +1,82 @@
+{
+  "phase": "5C",
+  "status": "READY",
+  "ready_for": "separately authorized Phase 5D; no test execution authorized by this receipt",
+  "matrix_sha256": "bf5d83c6bfb7ad0634ffd97af6aaff1757b87e7cd8cbf7e5a21dc3c0256e32a8",
+  "matrix_identity": "ee6f0f6fdfa5ae77b3fde010e12ec3f2bdb9ae61948aabfc4de8ae4a07082236",
+  "protocol_sha256": "068fbcf756af949a2eecc5aaa6f894a0eb7e7cd7a79239ffd6c869ea836eb3de",
+  "tests": {
+    "passed": true,
+    "tests": 288,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 42.28391399999964,
+    "private_log_sha256": "2758ec4d27805c20cde46417bb5ceb948f1df486b3924bbabf69685cfeb61a02",
+    "dataset_access_guard_active": true
+  },
+  "validation_only_checks": {
+    "saved_validation_predictions": {
+      "final_A": {
+        "saved_source_sha256": "cb056711668c04ebe8a7736724e35d46c6092f5a6e8ac5a9becba9a53bd1bee6",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      },
+      "final_B": {
+        "saved_source_sha256": "79f48d390c566c454cc248966dc09f05d24aefc927949ec5e7816af4e6a5eec1",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      },
+      "final_D": {
+        "saved_source_sha256": "b653b3d5e1df5ca227b29588e6085bb115d8530c99e934495d6e1d630a2b661d",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      },
+      "final_E": {
+        "saved_source_sha256": "c7932bbe4ab78222a5c3381c2dc3fb88d52d8224db72de5df9d1b117631d873e",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      },
+      "final_C": {
+        "saved_source_sha256": "fefcedf42b8d43c54f343b70ef591f4a3c8458804e985958f324c8aac96c6f9a",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      },
+      "final_F": {
+        "saved_source_sha256": "e1584fca1c92bc87d300d09acdf1b68306b698e5d418f454b091cb603aa488f2",
+        "images_checked": 24,
+        "row_permutation_invariant": true
+      }
+    },
+    "all_3088_reference_shapes_reproduced": true,
+    "validation_images_or_labels_opened": 0,
+    "validation_performance_calculated": false
+  },
+  "agents": {
+    "exists_locally": true,
+    "ignored": true,
+    "tracked": false,
+    "staged": false
+  },
+  "historical_preservation": {
+    "passed": true,
+    "tracked_files": 424,
+    "tracked_inventory_sha256": "a48a6d0a79098810320ed998527b08db38ff356eaeb1ed5473662e47b4dd6d5b",
+    "best_checkpoint_sha256": {
+      "standard": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+      "rarity_only": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e"
+    },
+    "prior_publication_receipts_verified": true,
+    "historical_output_directories_written": false
+  },
+  "test_boundaries": {
+    "test_images_opened": 0,
+    "test_annotations_opened": 0,
+    "mixed_annotation_containers_opened": 0,
+    "test_inference_calls": 0,
+    "test_metrics_calculated": false,
+    "new_training": false,
+    "actual_test_membership_annotation_and_byte_checks": "deferred until Phase 5D authorization; only frozen preparation aggregates used"
+  },
+  "execution_command": ".venv/Scripts/python.exe -m wrist_final.verify preflight",
+  "no_final_performance_claim": true
+}

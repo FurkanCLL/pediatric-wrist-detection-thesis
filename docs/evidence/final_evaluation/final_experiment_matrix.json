@@ -1,0 +1,414 @@
+{
+  "schema_version": 1,
+  "phase": "5C",
+  "status": "frozen preparation; test execution requires separate authorization",
+  "historical_base_revision": "13a5931917f4afc34b80e4b98229d40d54a676c0",
+  "primary_proposed_configuration": "final_C",
+  "primary_comparison": "v3_standard_training",
+  "conditions": [
+    {
+      "id": "final_A",
+      "display_id": "A",
+      "training": "standard",
+      "inference": "standard"
+    },
+    {
+      "id": "final_B",
+      "display_id": "B",
+      "training": "standard",
+      "inference": "sahi_context"
+    },
+    {
+      "id": "final_C",
+      "display_id": "C",
+      "training": "standard",
+      "inference": "cg_alr_v3"
+    },
+    {
+      "id": "final_D",
+      "display_id": "D",
+      "training": "rarity_only",
+      "inference": "standard"
+    },
+    {
+      "id": "final_E",
+      "display_id": "E",
+      "training": "rarity_only",
+      "inference": "sahi_context"
+    },
+    {
+      "id": "final_F",
+      "display_id": "F",
+      "training": "rarity_only",
+      "inference": "cg_alr_v3"
+    }
+  ],
+  "historical_ids_unchanged": {
+    "C": "CG-ALR V2",
+    "F": "CG-ALR V2"
+  },
+  "checkpoints": {
+    "standard": {
+      "path": "outputs/training/standard_baseline/weights/best.pt",
+      "condition": "A",
+      "sha256": "31b9b54c3c6cdf5cbd8110b312691e06db3e40def6072eeea5e8cfd687bc2f8b",
+      "epoch": 22,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "pretrained_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a"
+    },
+    "rarity_only": {
+      "path": "outputs/training/rarity_only/weights/best.pt",
+      "condition": "D",
+      "sha256": "cbac08863558a1f96b79bda26c198d2f27c853ff2019678c6104ebd8d0108b1e",
+      "epoch": 26,
+      "protocol_sha256": "281a36934cfef95599c92729bced3c0d2d1adbe589a35495f45f2c58fe259f01",
+      "pretrained_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a"
+    }
+  },
+  "population": {
+    "split": "test",
+    "images": 3178,
+    "patients": 913,
+    "annotations": 7361,
+    "classes": 8,
+    "source": "docs/evidence/dataset_preparation/aggregate_statistics.json",
+    "split_manifest_sha256": "ee49e4ae1810ac1fb9541261e2d8df43eb32b5ca827433e1f9f22c20bb3c9c49"
+  },
+  "primary_metric": "eight-class mAP50-95",
+  "secondary_metrics": [
+    "mAP50",
+    "mAP75",
+    "all eight per-class AP50/AP75/AP50-95",
+    "fracture AP",
+    "TP",
+    "FP",
+    "FN",
+    "precision",
+    "recall"
+  ],
+  "operating_point": {
+    "confidence": 0.25,
+    "iou": 0.5
+  },
+  "AP_order": {
+    "prediction_dtype": "float32",
+    "canonical_matching_rows": [
+      "descending unmodified confidence",
+      "class ID",
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "identical-row occurrence"
+    ],
+    "AP_sort": [
+      "descending unmodified confidence",
+      "frozen lexical image index",
+      "canonical row rank",
+      "bootstrap image occurrence"
+    ],
+    "native_matcher_and_integration": "unchanged pinned native_stats and compute_ap; ten IoUs .50:.05:.95",
+    "scores_rounded_or_perturbed": false,
+    "same_policy_for_SAHI_new_rows": true
+  },
+  "bootstrap": {
+    "replicates": 500,
+    "seed": 314159,
+    "unit": "patient",
+    "confidence_level": 0.95
+  },
+  "bootstrap_absent_classes": "undefined; omit affected paired class sample and eight-class overall, report effective counts",
+  "comparisons": {
+    "training_standard": {
+      "final_D": 1,
+      "final_A": -1
+    },
+    "training_sahi": {
+      "final_E": 1,
+      "final_B": -1
+    },
+    "training_v3": {
+      "final_F": 1,
+      "final_C": -1
+    },
+    "sahi_standard_training": {
+      "final_B": 1,
+      "final_A": -1
+    },
+    "sahi_rarity_training": {
+      "final_E": 1,
+      "final_D": -1
+    },
+    "v3_standard_training": {
+      "final_C": 1,
+      "final_A": -1
+    },
+    "v3_rarity_training": {
+      "final_F": 1,
+      "final_D": -1
+    },
+    "v3_vs_sahi_standard_training": {
+      "final_C": 1,
+      "final_B": -1
+    },
+    "v3_vs_sahi_rarity_training": {
+      "final_F": 1,
+      "final_E": -1
+    },
+    "training_sahi_interaction": {
+      "final_E": 1,
+      "final_D": -1,
+      "final_B": -1,
+      "final_A": 1
+    },
+    "training_v3_interaction": {
+      "final_F": 1,
+      "final_D": -1,
+      "final_C": -1,
+      "final_A": 1
+    }
+  },
+  "secondary_intervals": "nominal percentile, no multiplicity adjustment; no causal claim",
+  "numerical_configuration": {
+    "common_path": "configs/inference_feasibility.json",
+    "v3_path": "configs/cg_alr_v3.json",
+    "v3_proposal_path": "configs/adaptive_refinement_proposed.json",
+    "input_size": 768,
+    "reference_shape_batch": 12,
+    "precision": "FP32 unfused EMA; FP16 normalized input and CUDA FP16 autocast",
+    "retained_confidence_floor": 0.001,
+    "per_view_nms_iou": 0.7,
+    "max_detections": 300,
+    "multi_label": true,
+    "class_agnostic_nms": false,
+    "seed": 42,
+    "sahi_variant": "sahi_context",
+    "sahi_slice_fraction": 0.667,
+    "sahi_overlap": 0.2,
+    "sahi_merge": "class-aware NMS / IoU .70 with full-image prediction",
+    "V3": "identical CG-ALR V3.0 on both checkpoints; no numerical changes"
+  },
+  "execution": {
+    "test_authorized_in_phase5c": false,
+    "test_loader_available_in_phase5c": false,
+    "one_full_pass_per_condition_after_authorization": true,
+    "condition_order": [
+      "final_A",
+      "final_B",
+      "final_C",
+      "final_D",
+      "final_E",
+      "final_F"
+    ],
+    "serial_batch": 1,
+    "synthetic_warmups_per_condition": 3,
+    "no_test_pilot_or_replay": true,
+    "maximum_calls": {
+      "standard": 1,
+      "sahi_context": 5,
+      "cg_alr_v3": 3
+    },
+    "physical_calls_verified_by_model_hook": true,
+    "model_state_digest_before_after": true,
+    "outputs": "outputs/final_evaluation/phase5d/<new-run>/final_A through final_F",
+    "cost": [
+      "mean/median/p95 decode-to-final-output latency",
+      "actual forwards",
+      "slice/ROI count",
+      "peak CUDA allocated/reserved memory",
+      "paired global prefix for V3; no extra forward"
+    ],
+    "export_and_offline_metrics_excluded_from_per_image_latency": true,
+    "failure": "stop affected condition, preserve partial evidence; no policy repair from test outcomes"
+  },
+  "engineering_gates": {
+    "comparison": [
+      "final_C-final_A",
+      "final_F-final_D"
+    ],
+    "overall_delta_positive": true,
+    "overall_lower95_positive": true,
+    "map50_nondecreasing": true,
+    "fracture_AP_points_nondecreasing": true,
+    "fracture_lower95_tolerance": -0.005,
+    "FP_ratio_max": 1.1,
+    "fracture_FP_ratio_max": 1.1,
+    "V3_mean_paired_latency_ratio_max": 2.0,
+    "maximum_V3_calls": 3,
+    "meaning": "historical engineering criteria; not clinical safety or noninferiority margins"
+  },
+  "identities": {
+    "normalized_project_source_sha256": {
+      "src/wrist_analysis/__init__.py": "0e5373b878a3a2a9d7a5507b8174cbed593398a80e6121f47d4534197cac6ef1",
+      "src/wrist_analysis/__main__.py": "f0ce444e3eff9dcd769be3980ba3d51011f420401d7f8562be81d23e68175a29",
+      "src/wrist_analysis/calculations.py": "48aa92c6d4e3fa0b76fc9b7f342088f0390b630e3dd638e7f01351297660aa2b",
+      "src/wrist_analysis/errors.py": "d06d63a71183c52a2e1f4b9028133aa0631b9ef800e5e95ac03e53b84e4c2527",
+      "src/wrist_analysis/evidence.py": "f82f57255a0e0928ae5e85e0a6197387b1f92b20ab4282ea5ac9dc043db7b355",
+      "src/wrist_analysis/mechanism.py": "b7baf7ee231d75d82effa48904bb6635b65f169a35a0e44cce76887954d9d64f",
+      "src/wrist_analysis/reports.py": "a6f8ecb2cd394a27972dd02a71fb75dcd50bd478710658bbe10eec40b638bdc7",
+      "src/wrist_analysis/synthesis.py": "d6580b51f3fba8d2b2d8eba468bfb7c89225a2fc62467903d141dde2e2cc0115",
+      "src/wrist_analysis/verify.py": "5828ea97f3741f9210cb2ed622843d9e25ec366f337ba89b93f8827b5c76b2c4",
+      "src/wrist_audit/__init__.py": "ca5cdb521ecb170c8df936832018fbcb12aebc09157ceac52755877bd784d178",
+      "src/wrist_audit/annotations.py": "e872553247f289062f5a48959df8dc994dd6ba9675dfce810fc2eda8d2c2fa3b",
+      "src/wrist_audit/audit.py": "7c40e1b971536cec018b0ab9582a1e4d13238ebecdb6ac46065bb17ed47bc068",
+      "src/wrist_audit/evidence.py": "10aa2a1d7e6d736a398b85a37c2258bc0f817c63b0cec49dc45c592df1fbde4c",
+      "src/wrist_audit/exports.py": "06408f3162c48e5d0bb26fb49deb0be4012f295eb4315b075aac06087527a226",
+      "src/wrist_audit/images.py": "c46a99ac48b867b97feb3eb4868a72ccb48f0e8fc0da34250c1a59876564a813",
+      "src/wrist_audit/metadata.py": "1fa1172852182adcb67734433ec9e235829184fb7f1b09e88dc290453c743394",
+      "src/wrist_audit/provenance.py": "bbb4b9fce4a5eef06c8d01315c7b3daf128610f4284f106b9331c49cd1301069",
+      "src/wrist_compare/__init__.py": "77757f3380e77554ecc67508c4631f0ab5c327dae1a9cb4ad0012b095e0cf27d",
+      "src/wrist_compare/analysis.py": "b7e9b89fadc1ca76a1aaf4d917d813eba5371c391051c894714cb30fea7473d3",
+      "src/wrist_compare/common.py": "5e75523793ede1fa1bac18e78a8c25cacad49a24edd87f8d0198db02100a201c",
+      "src/wrist_compare/infer.py": "7e4fa50bce5e47dc452f72b4ba59d03b1a503803ba186329e331dde9e019b51d",
+      "src/wrist_completion/__init__.py": "5d178a56462068a1ae84e9b44f64304dbca191201aac16e1d4b829f6c9a9b2fb",
+      "src/wrist_completion/checks.py": "afe71292a7deae1790b584abf507641c2fed6031d63849200466374f808eab9e",
+      "src/wrist_completion/original.py": "67ed918e40d0a4ac65cbe5a290dd25dc54d8ae38530a5e9be985e366d54923ae",
+      "src/wrist_completion/verify.py": "c8ea01a5006117538bb171713106c92fb913e6f0930dde63f3b27c10490ac562",
+      "src/wrist_design/__init__.py": "fed95d3ef7e519ca242952b96c4313fbe85438e649b5b3a3d2ed5c005c910159",
+      "src/wrist_design/analyze.py": "0eb3049c4debc421b7433834ae83ed6ede73253ace4aa2c5a98d248de66c5f80",
+      "src/wrist_design/baseline.py": "668c5be0c91aa6263645c7193e80b5b249c55a4efe23d37fdb69c87fad95e9c1",
+      "src/wrist_design/common.py": "fa8473a23aab17531167d617967915d1ec270e04f1d75c266ac4cc0108cda904",
+      "src/wrist_design/crops.py": "eb49c9704f52c244e7ddf4585ba0c2c7ab9547143de4c89d6660913f2f0f0885",
+      "src/wrist_design/geometry.py": "780445b7adb9c0a53333b5df5abfe714d6bc0213db781b1ecc62cf3988fcf7f6",
+      "src/wrist_design/prototype.py": "891a32acda2a41ec6c1c41b47feb1022e2af3595ad9ff3cf23db807b72e05ef6",
+      "src/wrist_design/sampling.py": "7ec5a0b91f9233319a3e8ac6f96d1080880c52f796b5151de46eed43b30fb3d5",
+      "src/wrist_design/simulate.py": "726db8302188afa25971c2ababf6e6eb2c5ae622bcd251daff04bbffea037bf8",
+      "src/wrist_design/verify.py": "5ac6336f783e4372423af52e0a4cc043cc8f4ace334507ba7c32a74a9df8656c",
+      "src/wrist_eval/__init__.py": "ad01eb20499511661ae6003373d30a29c6683e432b3f54cc66f1a0cae88f3d56",
+      "src/wrist_eval/adaptive.py": "482898228b8d0a9ba6d84a5cf298b12707dafa9c09766e8b11984166dcbeae5e",
+      "src/wrist_eval/adaptive_analysis.py": "72d1d7882608c09547cab5d03a2a689c66e5bbbd3bfa71ac910f6bf2f8c6a7cf",
+      "src/wrist_eval/adaptive_config.py": "7357d1fc5d1215f8d4743088b28435da32bfed2a07eb4ef46ad9f0ad3e631a7c",
+      "src/wrist_eval/adaptive_evidence.py": "1b86688da8bcf0d516441b8049788ade8354fede1dd6c2925c67de116fac103e",
+      "src/wrist_eval/adaptive_study.py": "62389e76002c466d1a62827c0c6eecb216f51a08d2a2ed2f90b639de63de077f",
+      "src/wrist_eval/adaptive_timing.py": "abe84e6d2682e78b7332ec4b60f55d88678f6714a9fb4bb3325c3d2af50f08f8",
+      "src/wrist_eval/adaptive_validation.py": "5a6197798dbe5c1a3f0efaa1c4dbf100bb56dd147724df872dae202ee0550652",
+      "src/wrist_eval/analyze.py": "2e6761a93391ec7b19d331c0ac1bf2b87e82e88845526ae995db28bd5bacbc43",
+      "src/wrist_eval/bootstrap.py": "347f85843bad609fce3f769884e38a5a496ba20f6b18ed548e6fd40d77e46b41",
+      "src/wrist_eval/bridge.py": "f56a3f4d92b78cdad3fcbb62a21cf150c6a30266b299d5825166e64833f5b3a1",
+      "src/wrist_eval/common.py": "3cfe41a11db35934e591da3fdf0e51b152e8836401161d633e714980023a4820",
+      "src/wrist_eval/feasibility.py": "08b69137949e09507b7e2cee62542f7e056d91f32069bb5175b7532744be672f",
+      "src/wrist_eval/metrics.py": "a602d77bedd6517ad5324bb07cca52a458932052403c392998904f07feb95406",
+      "src/wrist_eval/provenance.py": "9f88142231571d76b38ad2abca4e8aa513aba8728e8852085af83707fee25657",
+      "src/wrist_eval/qualitative.py": "2cbdaf981c0683d65404461f143141892f4b4f1d14017ef39280299ca0fda74a",
+      "src/wrist_eval/reference.py": "cb181f9c3e0c11cd87aa3394ced8b1974bd1965a74f980a1a54d9ceb0c1cd413",
+      "src/wrist_eval/sliced.py": "80d9370321a991f11b37135da730978a3036b5fb9ef0498b625e4dce6d764ffc",
+      "src/wrist_eval/verify.py": "f9818b1f06040d1be6ca2a26ff625fcf0a95317ac088ab1ab99beda6c924a013",
+      "src/wrist_figures/__init__.py": "8a361164bce04340e8ae08447a4aef421fb4aa59bc4b584046a4be7e17b43126",
+      "src/wrist_figures/__main__.py": "7ae97bda1eaa8dba59d8fce9584358545f1137760f1ea912113ccb7a99b26de5",
+      "src/wrist_figures/build.py": "03176cf97acceb92b83f1f38be26be151e82bd820386c3df1dd799b584252f54",
+      "src/wrist_figures/data.py": "6c2376b5ce3e71d9eb58e10aa1545c5b6f1a8a5cf46017cfcc09da7b8abf333c",
+      "src/wrist_figures/render.py": "1b9a2ee7f73d244912f6a9d49c91ba393df6de927ed3022f395221680a41fed8",
+      "src/wrist_figures/select.py": "120e1c48e9249cc17ff2328c172128b5e3174ca792db41a960ad0c9cc4d9f269",
+      "src/wrist_figures/verify.py": "1fe727945f531a5dc68264ccb81859b1c0e5c234f4489b5f4fe01236787185ed",
+      "src/wrist_final/__init__.py": "dc0969b1d39e36ec7d98a1b03ac2f8ad3bc7aee9a94c3aee9184f1fa7122e76a",
+      "src/wrist_final/inference.py": "6a9f472da43873d213cbfca8bce3ca6c0beb0f5ecae0d78b017365b368401919",
+      "src/wrist_final/metrics.py": "67684cb4d8cd41d33d3de0f350d022a36de7e872627cd7e67ae8557b926eb506",
+      "src/wrist_final/protocol.py": "fcc465f29b190dbd03cb50d8c4c3369ff9a5de6a859b7cba7816ba1cf1b4c27e",
+      "src/wrist_final/verify.py": "1c4a3cfee928b9a84f8d784264e712e6541c6890a479b1a0cb9d245bce199749",
+      "src/wrist_inference_comparison/__init__.py": "8a024aff85874e437fefa6a2ecfb6757a6e162865d60692b24f6cd98b04708d6",
+      "src/wrist_inference_comparison/analysis.py": "16cac4fa5bb0981777ecf70295fb6b37d37ba0a06c2238b9713046ef618ec01a",
+      "src/wrist_inference_comparison/checks.py": "ea3ae1a94b28e68333c088c6d5252f7af58710612e9214acbeaf1ea21bba6833",
+      "src/wrist_inference_comparison/common.py": "92c9b43eaa267a7d7cd77fa80900b077499efbab5ecfc67021288b1e750b116d",
+      "src/wrist_inference_comparison/export.py": "2dceb124be02d55e97f9eca51ad0b13b0d7c6db31564448991ccba6f12740430",
+      "src/wrist_inference_comparison/run.py": "fb96acb933ca8c1e171d08a9c1db86e4b0cc892b07f131d822ba81f9cc056d84",
+      "src/wrist_mining/__init__.py": "e6d5774cbdce9164f02e250c498c6b963c9387ca09fd6eeb9e0ae1d3ea18a896",
+      "src/wrist_mining/analysis.py": "bbc37a413c356c254a7e534419960391288e98eb12d5c84c828142543c06f085",
+      "src/wrist_mining/common.py": "80764b607583c82fbb9598f1e5fbb036155360d6f09774102725d79c95198f58",
+      "src/wrist_mining/difficulty.py": "e7af5f5af9c35fdd9a7364ed2c017706687ddbbfa3b24886ab05299fdb6300ae",
+      "src/wrist_mining/inference.py": "578fa524029ab3153026e49c698da016a28fdebca052c940f991aa11e88dfe0d",
+      "src/wrist_mining/preservation.py": "635521a1fcb214da7ba4134309be993750140569a5da085b91f7d2ece56850f7",
+      "src/wrist_mining/qualitative.py": "d0bb4a228884698224e7d33d3d8f95d98d1b9eec8b1e5bce1547a76e1d9be93d",
+      "src/wrist_mining/sampling.py": "caa80124e191736b2228030827deab8857953f9f2b1e7b102c87df720552788f",
+      "src/wrist_mining/simulate.py": "443629d003bb229120466702c64f581909f8a5e99f53f4511cae550e5b6b1f52",
+      "src/wrist_mining/verify.py": "685135c01b5e4318a0886c34d6cfe6283e276ffbe6c1d964c2400cafb1f313e9",
+      "src/wrist_prepare/__init__.py": "0a417ecb0a11e8fdc4310c6fdf43575883ff3534e3334479de73edef7031e56b",
+      "src/wrist_prepare/common.py": "3c1a119bdde34540b848f8bf47f6c06ef9dec8f21920874263591d69ae2d2920",
+      "src/wrist_prepare/evidence.py": "20ab1353489feb1dd6c7d0c5b60a7cca67fbbde1e53cba70b0be707c95778a9b",
+      "src/wrist_prepare/images.py": "511c415892b7cb6d253540882acd37c1a1f1de216691911bc4a1e45598f96c37",
+      "src/wrist_prepare/labels.py": "ba1758e9bcb660ecc3113abad7cd6ad06e25e3dbb8cef8df745a9456d363b1ef",
+      "src/wrist_prepare/loader.py": "d3cc01410624b6ce41f037d207c7e0c033c61ed7f40bfd76d9b231e5ac840109",
+      "src/wrist_prepare/pilot.py": "378faa034b2308ac1bd1a7043f2778f72ff902b5d8fc73d18c69b418497fe7e1",
+      "src/wrist_prepare/pipeline.py": "035f49d9f800a6944004d1a68a834bb39e5bf45abf72a72a08f10b0834c5245d",
+      "src/wrist_prepare/records.py": "24fcc70fa3ab76b83128ac96fc8562594544fa770d3379c1721155d8d0fbb1c6",
+      "src/wrist_prepare/splits.py": "3090f50d029f2aded69fabe74e40762068f92fb6da37d0ce262c066c0c387da9",
+      "src/wrist_prepare/validation.py": "47084abbc7ffba5828aeb499f6df7047bb12a25daf5cff819f58b90f8d5c5bad",
+      "src/wrist_rarity/__init__.py": "858002c300ddf133406055a577069d739658151454eb7072cec98ea791790680",
+      "src/wrist_rarity/data.py": "36bc2ee66084d0b9125639be455278c310e8ef621d2eed4335526fd71362437b",
+      "src/wrist_rarity/launch.py": "fd96afb650cd9a0c630fc8cf4244aa49a1c43eca7fcfc30f9f714aad62340d09",
+      "src/wrist_rarity/policy.py": "58953ebaa35f4a315519f73803029ea57196993a7f20465dd5043fa317499d30",
+      "src/wrist_rarity/protocol.py": "de5065b9a2a765008e85af6f0e4b0a3547817600947d9268ae128a0cf3f05c44",
+      "src/wrist_rarity/trainer.py": "6252e2339effe20d56a587f3dbc31356e66c2817ec6610a68e326afd504faacb",
+      "src/wrist_rarity/verify.py": "7af0a07e22eb2d2b39b59acbcbd2fbfc28964810312d9b8ce4ce3b512107d5a5",
+      "src/wrist_train/__init__.py": "034a1bb4e174afd67997e6bd0a1665adf4951ab1e552cb1701dca9c710468cd3",
+      "src/wrist_train/amp.py": "8761f4cb77bde8ba590eb7ff4eb737c49f99c634b05ceddedcd78d3a85a163f1",
+      "src/wrist_train/budget.py": "9ed21135fb65a6a77c7f6d44b25ee365a5fb488dfb7b8777f3903732fff25b09",
+      "src/wrist_train/checkpoints.py": "3606970cdc65b9ba2ee8128de8b185b0c114a15375ba119384bc2e8215656e40",
+      "src/wrist_train/common.py": "5d15a2be3302796bf40f1cd611938b4fcf3dab9f93e4d2a2b023d3f4764d14ac",
+      "src/wrist_train/diagnostics.py": "ec6e945d84cf1d2eeff90ebf3c381e995ac6af3ce8ae182d1a44114134db91ab",
+      "src/wrist_train/environment.py": "e2772e7b33341cfea1990aea4926ef8990ceb5ec05d3b9cc216627b92abf3803",
+      "src/wrist_train/evidence.py": "8d7a46a6a854acddb096c1385750097cae669bc1febdde7bfc633cd237cee2f6",
+      "src/wrist_train/feasibility.py": "bd4be5e557440d47f573c09a072646eb6c0c188e4bedc6da2ca1efa4817247f7",
+      "src/wrist_train/launch.py": "b0493f6fbd41d6e61a9b54626d8fc3f6a4f73388a12a7d45e45fddf33dc08d83",
+      "src/wrist_train/official.py": "0ddc9e94c0f8360df1fa869a56229854c8f210f62cb4dd0b123e56443105b714",
+      "src/wrist_train/precision_probe.py": "5e29e21086e06391d4f266c43e0fa816a01f2f391fe325963137860cd98d6d9e",
+      "src/wrist_train/progress.py": "567875c0b08447c8b28a46d1c6553ae3e79e2536a68dba267102c4b1416e347c",
+      "src/wrist_train/protocol.py": "e0c4b920c4fa060500cd7a177913c4e26cfa31440efa8fa36810dc6dcc36bbb2",
+      "src/wrist_v3/__init__.py": "4f0e6ec3873d9e41ecd6041acf72cadd14d52a0ff3f6ed7d0862d7cc559771fb",
+      "src/wrist_v3/analysis.py": "f418114d2f125e05569caed09bc9f968840755a99a03f125aed99413021b15b3",
+      "src/wrist_v3/core.py": "c4408520c73261595b97fac9862245b3ac54b1c924586b1e19fdd2c653336ecd",
+      "src/wrist_v3/fusion.py": "d12a1e06bda905e51ecdd06b53a3e285ba7b5e36480bb5cc0698c95067f89567",
+      "src/wrist_v3/metrics.py": "5a4b9ccca0f1a0fd6848228bbd61c3a98f3744b20629a88d8ad045e864c32ba2",
+      "src/wrist_v3/planning.py": "6333accc99f55feeb7ae38bd383e89081f34bc36b6fb9892aa2efe75523ad08d",
+      "src/wrist_v3/protocol.py": "8429d56629ab61aad720f32b3b1b5b5f8f55f7912167ce516958c9f8801d0f84",
+      "src/wrist_v3/publication.py": "05d4538e3f3933b644b3cca130dc47612bc5202382c1e476e0db6c2ccf87962d",
+      "src/wrist_v3/reports.py": "8e601105edc30891886afcd91ee2b3377df9050b5adcfa1134b66dcf1e043a83",
+      "src/wrist_v3/runner.py": "c1abe811da110e3dae81013914d71a47f9528e61baef45eb903f2c747c8033fd",
+      "tests/test_final_protocol.py": "0d29fc94befb387cc32223792ade8f9ea8c4625f46173aca80456f2b9e828292"
+    },
+    "artifact_sha256": {
+      "configs/inference_feasibility.json": "3e6ad59c6592206b674136864fd7cc72972fada425dc4e023103a73faf1074f3",
+      "configs/cg_alr_v3.json": "6ff28f6591a149f46169769124922902c8324611284365ac6dc656f331390c7b",
+      "configs/adaptive_refinement_proposed.json": "b4ad64a0bb865123e2a2bf3375a15f490bbf08974858ee13f852c3bb01ddab3e",
+      "configs/training_official.json": "4ea79153b89784a18b89678d8c8b257dfac792164be024ec65fecd8d40e1217d",
+      "configs/rarity_training.json": "fae0963d5e8d662d2279436a5038dc42acd707386ab7620d70eff038f053226a",
+      "docs/evidence/dataset_preparation/frozen_manifest_hashes.json": "90d0ce0fd578263acbf7283c1890c64ccbbbc4b703ed961ebb2875ae4640e67a",
+      "docs/evidence/dataset_preparation/aggregate_statistics.json": "e0e98612b89b4611ab491a9976fa1c3180d993df7b302dadc79cf271efe1f4fb",
+      "docs/evidence/dataset_preparation/validation.json": "a9387ae21047bd1b0619d4e1fd23c1265dcc0389d8b4375d96820cfdcb0b13ee",
+      "docs/evidence/error_analysis_sahi/compatibility_verified.json": "4e1b06ca2e27420b69260ddb4ff82d214e8b89ff24ec2559b4df907d18dbb39e",
+      "docs/evidence/V3/freeze.json": "790c4358f6ad18e1746804522d6ec158b9343feaf5b374887a4ec151493ca83e",
+      "docs/evidence/V3/publication_checks.json": "9c77237d910788cecf02d2063a9b58838fd1b467d8a5e41b03b94bef0dad7f85",
+      "docs/evidence/V3/verification.json": "6eb1ffacc8cb3560abca6c8a9c8b69e2e0cc437c7e569b03e64cd015afa4ade2",
+      "docs/evidence/rarity_inference_comparison/publication_checks.json": "a25b2112ed232f214077748924f211d0522cb19f0fcb806c811cfc2ad39e4f4d",
+      "docs/evidence/final_evaluation/FINAL_EVALUATION_PROTOCOL.md": "068fbcf756af949a2eecc5aaa6f894a0eb7e7cd7a79239ffd6c869ea836eb3de"
+    },
+    "dependencies": {
+      "packages": {
+        "numpy": "2.3.5",
+        "Pillow": "12.3.0",
+        "opencv-python": "5.0.0.93",
+        "torch": "2.14.1+cu126",
+        "torchvision": "0.29.1+cu126",
+        "ultralytics": "8.4.177",
+        "sahi": "0.12.8",
+        "PyYAML": "6.0.3"
+      },
+      "source_sha256": {
+        "sahi": {
+          "models/base.py": "ba551f07e6002cacb1183db5515bffa5f6dd0acd0759dc8f32cb5c34bf4b68b2",
+          "models/ultralytics.py": "daac4f8a29545687216e4da86cfc59b478b76cb3d9ba8847c3b5c0e85cea631b",
+          "postprocess/combine.py": "f9017441e788d62370e2ac3c647aa5572a5c106f8b61bfa93bb5cafd806a4f2c",
+          "predict.py": "1e431b102c70af84545b3701531df1b56deba72b08989718d92631fe99f711aa",
+          "slicing.py": "18a75a080d2ef930a760ad2a7d6fc429d114c7c6dc573be0872fbc058ff868c7"
+        },
+        "ultralytics": {
+          "engine/validator.py": "4fa6e43d3b090e50c563ab904e7af095348e5f8471374048adb60eee66452111",
+          "models/yolo/detect/val.py": "c9f738b513ba3e59f19fbc7e97028e4e68b70b4846c6b96a1611e3f65b3322d7",
+          "utils/metrics.py": "e2f216964bb0d89ac26efecb4e0a76750b554d2e670a27e6ed4a8f42d998b2a0",
+          "utils/ops.py": "c66d0eff4c6da3ba53247bc235de84bbe6db6682829ecaecd333c136070441cb",
+          "utils/nms.py": "386cd0e3e38fddef5d434fbcfd58264bedfa37295534e9a2b7174a3436d4db62",
+          "data/augment.py": "802333ea359def55e88f61d6726e35c29d28a6491110840a5e912ec1fafd1de3"
+        }
+      }
+    }
+  }
+}
