@@ -1,0 +1,14 @@
+# Table 3 class AP support
+
+Test class-specific AP50–95 and support. AP columns are percentages rounded to two decimals; tiny V3 changes can disappear at this precision. All 7,361 annotations are included. Bone-lesion and bone-anomaly support is sparse. AP50/AP75 remain available in the verified Phase 5D AP.csv.
+
+| Class | Objects | Patients | A AP (%) | B AP (%) | C AP (%) | D AP (%) | E AP (%) | F AP (%) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Fracture | 2860 | 538 | 50.52 | 47.77 | 50.54 | 49.97 | 47.10 | 49.99 |
+| Metal | 123 | 24 | 56.01 | 39.47 | 56.01 | 57.15 | 37.41 | 57.15 |
+| Text | 3723 | 912 | 69.19 | 68.65 | 69.19 | 69.76 | 67.99 | 69.76 |
+| Periosteal reaction | 463 | 163 | 18.81 | 14.56 | 18.81 | 21.72 | 15.83 | 21.73 |
+| Pronator sign | 84 | 83 | 27.43 | 25.62 | 27.43 | 28.01 | 23.13 | 28.01 |
+| Bone lesion | 5 | 4 | 15.77 | 15.64 | 15.77 | 19.00 | 18.97 | 19.00 |
+| Soft tissue | 68 | 61 | 12.63 | 12.11 | 12.63 | 11.67 | 11.99 | 11.67 |
+| Bone anomaly | 35 | 14 | 3.30 | 4.27 | 3.30 | 6.93 | 4.44 | 6.93 |
